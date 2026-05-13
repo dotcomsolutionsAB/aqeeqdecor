@@ -380,10 +380,10 @@
             border-radius: 8px;
             background: var(--olive);
             color: #fff !important;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
             border: 1px solid var(--olive);
             transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
@@ -755,6 +755,13 @@
             padding: 26px 22px;
             box-shadow: var(--shadow);
             text-align: center;
+            transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .why-card:hover {
+            background: var(--olive);
+            border-color: var(--olive);
+            transform: translateY(-4px);
         }
 
         .why-card .feature-icon {
@@ -769,6 +776,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             color: var(--olive);
+            transition: color 0.25s ease;
         }
 
         .why-card p {
@@ -776,6 +784,18 @@
             color: #5d564e;
             line-height: 1.8;
             font-size: 14px;
+            transition: color 0.25s ease;
+        }
+
+        .why-card:hover h3,
+        .why-card:hover p {
+            color: #fff;
+        }
+
+        .why-card:hover .feature-icon {
+            background: rgba(255,255,255,0.14);
+            border-color: rgba(255,255,255,0.45);
+            color: #fff;
         }
 
         .clients-section {
@@ -2040,7 +2060,6 @@
                 <p>☎ +91 86987 25668</p>
                 <p>☎ +91 83191 63736</p>
                 <p>✉ aqeeqdecor@gmail.com</p>
-                <p>📍 S no. 63, PL 54, Ganga Plaza, Salunke Vihar,<br>Kondhwa, Pune, Maharashtra, 411022</p>
                 <p>📍 Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</p>
             </div>
 
