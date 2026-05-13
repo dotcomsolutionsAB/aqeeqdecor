@@ -841,6 +841,54 @@
             padding: 10px;
         }
 
+        .testimonials-section {
+            padding: 48px 0 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border: 1px solid #ece4d9;
+            border-radius: 18px;
+            padding: 26px 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-rating {
+            color: var(--olive);
+            letter-spacing: 0.18em;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+
+        .testimonial-text {
+            margin: 0 0 18px;
+            color: #5d564e;
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .testimonial-author strong {
+            font-size: 15px;
+            color: var(--olive);
+        }
+
+        .testimonial-author span {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
         @keyframes clientsScroll {
             from {
                 transform: translateX(0);
@@ -1298,6 +1346,9 @@
             .why-choose-grid {
                 grid-template-columns: 1fr 1fr;
             }
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
 
             .nav-item > a {
                 justify-content: center;
@@ -1498,6 +1549,9 @@
                 border-color: var(--olive);
             }
             .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -2013,6 +2067,40 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">CLIENT TESTIMONIALS</h2>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">Aqeeq Decor transformed our living room beautifully. The curtains and blinds were finished neatly, and the overall experience was smooth from selection to installation.</p>
+                        <div class="testimonial-author">
+                            <strong>Burhani Family</strong>
+                            <span>Residential Client</span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">We were impressed by the design suggestions, material quality, and timely execution. The team understood our requirements well and delivered exactly what we wanted.</p>
+                        <div class="testimonial-author">
+                            <strong>Saifee Interiors</strong>
+                            <span>Commercial Client</span>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">From wallpapers to furniture selection, everything was handled professionally. The finishing and detailing added a premium touch to the entire space.</p>
+                        <div class="testimonial-author">
+                            <strong>Hakimi Residency</strong>
+                            <span>Project Client</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
