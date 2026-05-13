@@ -954,6 +954,166 @@
             color: var(--muted);
         }
 
+        .contact-form-section {
+            padding: 52px 0 0;
+        }
+
+        .contact-form-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #f8f4ee 0%, #f3ede4 100%);
+            border: 1px solid #e8dfd3;
+            border-radius: 26px;
+            box-shadow: var(--shadow);
+            padding: 44px;
+        }
+
+        .contact-form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-form-header h2 {
+            margin: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.8rem, 5vw, 4.4rem);
+            line-height: 0.95;
+            color: #241f1a;
+        }
+
+        .contact-form-header p {
+            margin: 14px auto 0;
+            max-width: 760px;
+            font-size: 1.02rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #625b52;
+        }
+
+        .get-in-touch-form {
+            display: grid;
+            gap: 26px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .form-field {
+            display: grid;
+            gap: 10px;
+        }
+
+        .form-field.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-field label,
+        .form-group-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #322d28;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            border: 1px solid #cfc4b7;
+            background: rgba(255,255,255,0.72);
+            border-radius: 14px;
+            min-height: 58px;
+            padding: 16px 18px;
+            font: inherit;
+            color: #2d2924;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .form-field textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--olive);
+            box-shadow: 0 0 0 4px rgba(74, 84, 48, 0.10);
+            background: #fff;
+        }
+
+        .checkbox-group {
+            display: grid;
+            gap: 14px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px 20px;
+        }
+
+        .checkbox-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #3a342d;
+            font-size: 15px;
+        }
+
+        .checkbox-option input {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1.5px solid #b8aa99;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.7);
+            margin: 0;
+            position: relative;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-option input:checked {
+            background: var(--olive);
+            border-color: var(--olive);
+        }
+
+        .checkbox-option input:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: 0;
+            border-radius: 14px;
+            min-height: 60px;
+            background: linear-gradient(90deg, #302a24 0%, #3c352d 100%);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            box-shadow: 0 14px 28px rgba(34, 29, 24, 0.18);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #383128 0%, #4a4137 100%);
+        }
+
         @keyframes clientsScroll {
             from {
                 transform: translateX(0);
@@ -1610,6 +1770,15 @@
                 grid-template-columns: 1fr 1fr;
             }
 
+            .contact-form-wrap {
+                padding: 34px 24px;
+            }
+
+            .form-grid,
+            .checkbox-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .dropdown-menu > li > a,
             .sub-dropdown > li > a {
                 padding-top: 12px;
@@ -1784,6 +1953,28 @@
 
             .newsletter-form button {
                 width: 100%;
+            }
+
+            .contact-form-wrap {
+                padding: 28px 18px;
+                border-radius: 20px;
+            }
+
+            .contact-form-header p {
+                font-size: 0.9rem;
+                letter-spacing: 0.08em;
+            }
+
+            .form-grid,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-field input,
+            .form-field select,
+            .form-field textarea {
+                min-height: 54px;
+                padding: 14px 16px;
             }
         }
 
@@ -2228,6 +2419,73 @@
                             <span>Client</span>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-form-wrap">
+                    <div class="contact-form-header">
+                        <h2>Get in Touch</h2>
+                        <p>Please help us to understand your requirement</p>
+                    </div>
+
+                    <form class="get-in-touch-form">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="first-name">First name</label>
+                                <input id="first-name" type="text" placeholder="Enter your first name">
+                            </div>
+                            <div class="form-field">
+                                <label for="last-name">Last name</label>
+                                <input id="last-name" type="text" placeholder="Enter your last name">
+                            </div>
+                            <div class="form-field full-width">
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="tel" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <div class="form-group-title">Which of our products are you most interested in?</div>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-option"><input type="checkbox"> Curtains</label>
+                                <label class="checkbox-option"><input type="checkbox"> Window Blinds</label>
+                                <label class="checkbox-option"><input type="checkbox"> Wallcoverings</label>
+                                <label class="checkbox-option"><input type="checkbox"> Bespoke Furniture</label>
+                                <label class="checkbox-option"><input type="checkbox"> Office Furniture</label>
+                                <label class="checkbox-option"><input type="checkbox"> Flooring</label>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <div class="form-group-title">Which is the type of property you are looking products for?</div>
+                            <div class="checkbox-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+                                <label class="checkbox-option"><input type="checkbox"> Commercial</label>
+                                <label class="checkbox-option"><input type="checkbox"> Residential</label>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-field full-width">
+                                <label for="area">Which area are you located in? <span style="color:#8f5447;">*</span></label>
+                                <select id="area">
+                                    <option value="">Select your area</option>
+                                    <option>Pune</option>
+                                    <option>Mumbai</option>
+                                    <option>PCMC</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-field full-width">
+                                <label for="message">Tell us more about your requirement</label>
+                                <textarea id="message" placeholder="Share your space, preferred products, budget, or any specific requirement"></textarea>
+                            </div>
+                        </div>
+
+                        <button class="submit-btn" type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
         </section>
