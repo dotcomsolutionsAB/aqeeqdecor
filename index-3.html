@@ -119,6 +119,43 @@
             gap: 28px;
         }
 
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #e9e2d8;
+            border-radius: 10px;
+            background: #fff;
+            color: var(--olive);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -1032,14 +1069,18 @@
             .navbar {
                 flex-wrap: wrap;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: center;
                 padding: 16px 0;
                 gap: 16px;
             }
 
             .logo {
-                width: 100%;
-                justify-content: center;
+                width: auto;
+                justify-content: flex-start;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
             }
 
             nav {
@@ -1050,6 +1091,11 @@
                 flex-direction: column;
                 align-items: stretch;
                 padding-top: 6px;
+                display: none;
+            }
+
+            nav.mobile-open {
+                display: flex;
             }
 
             nav > a,
@@ -1392,6 +1438,12 @@
                     <span>DECOR</span>
                 </div>
             </a>
+
+            <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <nav>
                 <a href="#">HOME</a>
@@ -1794,6 +1846,22 @@
         const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
         const servicesMenu = document.querySelector('.services-menu');
         const childMenuItems = document.querySelectorAll('.services-menu .has-children');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('header nav');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                if (!mobileMenuQuery.matches) return;
+                const isOpen = mainNav.classList.toggle('mobile-open');
+                menuToggle.classList.toggle('active', isOpen);
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+                if (!isOpen && servicesMenu) {
+                    servicesMenu.classList.remove('open');
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                }
+            });
+        }
 
         if (servicesMenu) {
             const servicesTrigger = servicesMenu.querySelector(':scope > a');
@@ -1828,9 +1896,15 @@
 
             document.addEventListener('click', (event) => {
                 if (!mobileMenuQuery.matches) return;
-                if (!servicesMenu.contains(event.target)) {
+                const clickedInsideHeader = event.target.closest('header');
+                if (!clickedInsideHeader) {
                     servicesMenu.classList.remove('open');
                     childMenuItems.forEach((child) => child.classList.remove('open'));
+                    if (mainNav && menuToggle) {
+                        mainNav.classList.remove('mobile-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
 
@@ -1838,6 +1912,11 @@
                 if (!mobileMenuQuery.matches) {
                     servicesMenu.classList.remove('open');
                     childMenuItems.forEach((child) => child.classList.remove('open'));
+                    if (mainNav && menuToggle) {
+                        mainNav.classList.remove('mobile-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
         }
