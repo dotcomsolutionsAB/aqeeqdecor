@@ -1297,12 +1297,15 @@
             }
 
             nav {
-                position: absolute;
-                top: calc(100% + 10px);
-                right: 0;
-                width: min(320px, calc(100vw - 28px));
+                position: fixed;
+                top: 88px;
+                left: 14px;
+                right: 14px;
+                width: auto;
+                max-height: calc(100vh - 108px);
+                overflow-y: auto;
                 gap: 10px;
-                justify-content: center;
+                justify-content: flex-start;
                 flex-direction: column;
                 align-items: stretch;
                 padding: 12px;
@@ -1311,11 +1314,14 @@
                 border: 1px solid #e9e2d8;
                 border-radius: 16px;
                 box-shadow: 0 20px 40px rgba(29, 24, 18, 0.14);
-                z-index: 30;
+                z-index: 999;
             }
 
             nav.mobile-open {
                 display: flex !important;
+            }
+            body.menu-open {
+                overflow: hidden;
             }
 
             nav > a,
@@ -1505,8 +1511,11 @@
                 width: calc(100% - 24px);
             }
             nav {
-                width: min(100%, calc(100vw - 24px));
-                right: 0;
+                top: 82px;
+                left: 12px;
+                right: 12px;
+                width: auto;
+                max-height: calc(100vh - 98px);
             }
 
             .top-bar .container {
@@ -2188,7 +2197,7 @@
             menuToggle.addEventListener('click', () => {
                 if (!mobileMenuQuery.matches) return;
                 const isOpen = mainNav.classList.toggle('mobile-open');
-                mainNav.style.display = isOpen ? 'flex' : 'none';
+                document.body.classList.toggle('menu-open', isOpen);
                 menuToggle.classList.toggle('active', isOpen);
                 menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
@@ -2233,11 +2242,15 @@
             document.addEventListener('click', (event) => {
                 if (!mobileMenuQuery.matches) return;
                 const clickedInsideHeader = event.target.closest('header');
-                if (!clickedInsideHeader) {
+                const clickedInsideNav = event.target.closest('header nav');
+                const clickedToggle = event.target.closest('.menu-toggle');
+
+                if (!clickedInsideHeader && !clickedInsideNav && !clickedToggle) {
                     servicesMenu.classList.remove('open');
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     if (mainNav && menuToggle) {
                         mainNav.classList.remove('mobile-open');
+                        document.body.classList.remove('menu-open');
                         menuToggle.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
                     }
@@ -2250,27 +2263,22 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     if (mainNav && menuToggle) {
                         mainNav.classList.remove('mobile-open');
-                        mainNav.style.display = '';
+                        document.body.classList.remove('menu-open');
                         menuToggle.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
                     }
-                } else if (mainNav && !mainNav.classList.contains('mobile-open')) {
-                    mainNav.style.display = 'none';
                 }
             });
         }
         if (mainNav) {
-            if (mobileMenuQuery.matches) {
-                mainNav.style.display = 'none';
-            }
-
             mobileMenuQuery.addEventListener('change', (event) => {
-                if (event.matches) {
-                    if (!mainNav.classList.contains('mobile-open')) {
-                        mainNav.style.display = 'none';
+                if (!event.matches) {
+                    mainNav.classList.remove('mobile-open');
+                    document.body.classList.remove('menu-open');
+                    if (menuToggle) {
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
                     }
-                } else {
-                    mainNav.style.display = '';
                 }
             });
         }
