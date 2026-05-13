@@ -456,11 +456,12 @@
 
         .section-title {
             text-align: center;
-            font-size: 1.85rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: 0.05em;
             margin: 0 0 28px;
-            color: #2c2823;
+            color: var(--olive);
         }
 
         .section-title::after {
@@ -585,10 +586,22 @@
         }
 
         .faq-answer {
-            padding: 0 26px 22px;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 26px;
             color: #5d564e;
             line-height: 1.8;
             font-size: 15px;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 220px;
+            padding: 0 26px 22px;
+        }
+
+        .faq-item.active .faq-question span:last-child {
+            transform: rotate(45deg);
         }
 
         .custom-banner {
@@ -940,7 +953,7 @@
             }
 
             .faq-answer {
-                padding: 0 20px 18px;
+                padding: 0 20px;
             }
         }
     </style>
@@ -1182,7 +1195,7 @@
                 <div class="faq-wrap">
                     <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
                     <div class="faq-list">
-                        <div class="faq-item">
+                        <div class="faq-item active">
                             <button class="faq-question" type="button">
                                 <span>What services does Aqeeq Decor offer?</span>
                                 <span>+</span>
@@ -1191,7 +1204,6 @@
                                 We offer Curtains, Wallpapers, Furniture, Window Blinds, Mattresses, and Flooring solutions tailored to homes, offices, and commercial spaces.
                             </div>
                         </div>
-
                         <div class="faq-item">
                             <button class="faq-question" type="button">
                                 <span>Do you provide customised decor solutions?</span>
@@ -1201,7 +1213,6 @@
                                 Yes, we provide customised solutions based on your space, theme, measurements, preferred materials, and design preferences.
                             </div>
                         </div>
-
                         <div class="faq-item">
                             <button class="faq-question" type="button">
                                 <span>Can I request a site visit before finalising?</span>
@@ -1211,7 +1222,6 @@
                                 Absolutely. We can arrange a site visit to understand your requirements, take measurements, and suggest the most suitable decor options.
                             </div>
                         </div>
-
                         <div class="faq-item">
                             <button class="faq-question" type="button">
                                 <span>Do you help with both design and installation?</span>
@@ -1221,7 +1231,6 @@
                                 Yes, our team supports you from product selection and design guidance to delivery and professional installation.
                             </div>
                         </div>
-
                         <div class="faq-item">
                             <button class="faq-question" type="button">
                                 <span>How do I get a quotation for my project?</span>
@@ -1231,7 +1240,6 @@
                                 You can use the Get a Quote button on the website or contact us directly with your requirements, and we will prepare a detailed quotation for you.
                             </div>
                         </div>
-
                         <div class="faq-item">
                             <button class="faq-question" type="button">
                                 <span>Do you work on residential as well as commercial spaces?</span>
@@ -1306,4 +1314,20 @@
         <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
     </footer>
 </body>
+    <script>
+        document.querySelectorAll('.faq-question').forEach((button) => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach((faq) => {
+                    faq.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
 </html>
