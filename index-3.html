@@ -117,6 +117,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 28px;
+            position: relative;
         }
 
         .menu-toggle {
@@ -1067,7 +1068,7 @@
             }
 
             .navbar {
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 justify-content: space-between;
                 align-items: center;
                 padding: 16px 0;
@@ -1077,21 +1078,34 @@
             .logo {
                 width: auto;
                 justify-content: flex-start;
+                flex: 0 0 auto;
+                position: relative;
+                z-index: 31;
             }
 
             .menu-toggle {
                 display: inline-flex;
+                flex: 0 0 auto;
+                position: relative;
+                z-index: 31;
             }
 
             nav {
-                order: 3;
-                width: 100%;
+                position: absolute;
+                top: calc(100% + 10px);
+                right: 0;
+                width: min(320px, calc(100vw - 28px));
                 gap: 10px;
                 justify-content: center;
                 flex-direction: column;
                 align-items: stretch;
-                padding-top: 6px;
+                padding: 12px;
                 display: none;
+                background: #fff;
+                border: 1px solid #e9e2d8;
+                border-radius: 16px;
+                box-shadow: 0 20px 40px rgba(29, 24, 18, 0.14);
+                z-index: 30;
             }
 
             nav.mobile-open {
@@ -1177,6 +1191,10 @@
                 border: 0;
                 border-top: 1px solid #eee6db;
                 background: #fcfaf6;
+            }
+
+            nav.mobile-open .dropdown-menu {
+                position: static;
             }
 
             .nav-item.services-menu:hover > .dropdown-menu,
@@ -1273,6 +1291,10 @@
         @media (max-width: 640px) {
             .container {
                 width: calc(100% - 24px);
+            }
+            nav {
+                width: min(100%, calc(100vw - 24px));
+                right: 0;
             }
 
             .top-bar .container {
