@@ -205,43 +205,42 @@
             background: linear-gradient(180deg, #f6f2eb 0%, #f3efe9 100%);
             border-bottom: 1px solid #ece6de;
             width: 100%;
-            overflow: hidden;
         }
 
         .hero {
             width: 100%;
             min-height: 640px;
             display: grid;
-            grid-template-columns: minmax(380px, 520px) 1fr;
+            grid-template-columns: minmax(420px, 560px) 1fr;
             align-items: stretch;
             position: relative;
         }
 
         .hero-content {
-            padding: 80px 56px 50px max(24px, calc((100vw - var(--container)) / 2));
+            padding: 80px 72px 50px max(48px, calc((100vw - var(--container)) / 2));
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
             z-index: 2;
-            background: linear-gradient(90deg, rgba(246,242,235,0.98) 0%, rgba(243,239,233,0.94) 78%, rgba(243,239,233,0) 100%);
+            background: #f3efe9;
         }
 
         .hero-content h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3.7rem, 6vw, 5.5rem);
-            line-height: 0.95;
+            font-size: clamp(3.4rem, 5.5vw, 5.2rem);
+            line-height: 0.98;
             margin: 0 0 26px;
             font-weight: 600;
-            max-width: 420px;
+            max-width: 460px;
             color: #171512;
         }
 
         .hero-content p {
-            max-width: 430px;
+            max-width: 420px;
             color: #534d45;
-            font-size: 1.2rem;
-            line-height: 1.9;
+            font-size: 1.08rem;
+            line-height: 1.85;
             margin: 0 0 30px;
         }
 
@@ -283,12 +282,13 @@
         }
 
         .hero-features {
-            margin-top: 42px;
+            margin-top: 36px;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px 20px;
             padding-top: 24px;
             border-top: 1px solid #e7dfd6;
+            max-width: 430px;
         }
 
         .feature-item {
@@ -343,19 +343,11 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, rgba(243,239,233,0.46) 0%, rgba(243,239,233,0.14) 15%, rgba(0,0,0,0.06) 100%);
+            background: rgba(0, 0, 0, 0.04);
             pointer-events: none;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0 auto 0 0;
-            width: min(46vw, 620px);
-            background: linear-gradient(90deg, rgba(246,242,235,0.98) 0%, rgba(243,239,233,0.9) 70%, rgba(243,239,233,0) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
+
 
         .section {
             padding: 52px 0 0;
@@ -657,7 +649,7 @@
             }
 
             .hero {
-                grid-template-columns: minmax(320px, 430px) 1fr;
+                grid-template-columns: minmax(360px, 460px) 1fr;
             }
 
             .hero-features,
@@ -698,9 +690,6 @@
 
             .hero-content {
                 padding: 54px 24px 32px;
-            }
-            .hero::before {
-                display: none;
             }
 
             .hero-image,
@@ -823,7 +812,7 @@
                     <p>Timeless designs. Exceptional comfort. Crafted to complement your lifestyle and elevate every corner of your home.</p>
                     <button class="btn-dark">Explore Collection</button>
 
-                    <div class="hero-features">
+                    <!-- <div class="hero-features">
                         <div class="feature-item">
                             <div class="feature-icon">✦</div>
                             <div>
@@ -852,7 +841,7 @@
                                 <span>At your doorstep</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="hero-image">
