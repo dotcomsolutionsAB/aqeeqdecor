@@ -1211,7 +1211,31 @@
         }
 
         .footer-contact p {
-            margin: 0 0 8px;
+            margin: 0 0 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.22);
+            color: #fff;
+            font-size: 14px;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .contact-text {
+            display: inline-block;
+            line-height: 1.8;
         }
 
         .newsletter-form {
@@ -2233,10 +2257,22 @@
 
             <div class="footer-contact">
                 <h4>CONTACT US</h4>
-                <p>☎ +91 86987 25668</p>
-                <p>☎ +91 83191 63736</p>
-                <p>✉ aqeeqdecor@gmail.com</p>
-                <p>📍 Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</p>
+                <p>
+                    <span class="contact-icon" aria-hidden="true">☎</span>
+                    <span class="contact-text">+91 86987 25668</span>
+                </p>
+                <p>
+                    <span class="contact-icon" aria-hidden="true">☎</span>
+                    <span class="contact-text">+91 83191 63736</span>
+                </p>
+                <p>
+                    <span class="contact-icon" aria-hidden="true">✉</span>
+                    <span class="contact-text">aqeeqdecor@gmail.com</span>
+                </p>
+                <p>
+                    <span class="contact-icon" aria-hidden="true">⌂</span>
+                    <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+                </p>
             </div>
 
             <div class="footer-newsletter">
