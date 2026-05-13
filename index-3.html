@@ -203,8 +203,7 @@
             transition: transform 0.25s ease;
         }
 
-        .nav-item.services-menu:hover > a::after,
-        .nav-item.services-menu:focus-within > a::after {
+        .nav-item.services-menu:hover > a::after {
             transform: rotate(180deg);
         }
 
@@ -212,8 +211,7 @@
             position: relative;
         }
 
-        .has-children:hover > a::after,
-        .has-children:focus-within > a::after {
+        .has-children:hover > a::after {
             transform: rotate(-90deg);
         }
 
@@ -270,12 +268,14 @@
         }
 
         .dropdown-menu > li > a:hover,
-        .sub-dropdown > li > a:hover,
-        .has-children:hover > a,
-        .has-children:focus-within > a {
+        .sub-dropdown > li > a:hover {
             background: rgba(74, 84, 48, 0.12);
             color: var(--olive);
             padding-left: 22px;
+        }
+
+        .has-children:hover > a {
+            color: var(--olive);
         }
 
         .dropdown-menu > li > a,
@@ -285,22 +285,31 @@
 
         .sub-dropdown {
             position: absolute;
-            top: -12px;
-            left: calc(100% + 10px);
+            top: 0;
+            left: 100%;
             min-width: 240px;
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transform: translateX(8px);
-            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+            transform: translateX(0);
+            transition: opacity 0.25s ease, visibility 0.25s ease;
             z-index: 70;
+            margin-left: 0;
+        }
+
+        .has-children::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -14px;
+            width: 14px;
+            height: 100%;
         }
 
         .has-children:hover > .sub-dropdown {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transform: translateX(0);
         }
 
         .quote-btn {
