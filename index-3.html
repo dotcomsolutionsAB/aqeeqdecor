@@ -377,7 +377,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 20px;
+            gap: 10px;
+            padding: 12px 18px;
             border-radius: 8px;
             background: var(--olive);
             color: #fff !important;
@@ -393,6 +394,59 @@
             background: var(--olive-dark);
             border-color: var(--olive-dark);
             color: #fff;
+        }
+
+        .call-icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            font-size: 16px;
+            line-height: 1;
+            transform-origin: 50% 100%;
+            animation: ringPhone 1.4s ease-in-out infinite;
+        }
+
+        .call-icon::before,
+        .call-icon::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border: 1px solid rgba(255,255,255,0.45);
+            border-radius: 999px;
+            opacity: 0;
+            transform: scale(0.7);
+            animation: ringPulse 1.4s ease-out infinite;
+        }
+
+        .call-icon::after {
+            animation-delay: 0.35s;
+        }
+
+        @keyframes ringPhone {
+            0%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-12deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-10deg); }
+            50% { transform: rotate(8deg); }
+            60% { transform: rotate(0deg); }
+        }
+
+        @keyframes ringPulse {
+            0% {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+            30% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.35);
+            }
         }
 
         .nav-icons {
@@ -1770,7 +1824,9 @@
                     </ul>
                 </div>
                 <a href="#">CONTACT US</a>
-                <a href="tel:+918698725668" class="call-btn">Call: +91 86987 25668</a>
+                <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
+                    <span class="call-icon" aria-hidden="true">☎</span>
+                </a>
             </nav>
         </div>
     </header>
