@@ -195,7 +195,8 @@
             gap: 6px;
         }
 
-        .nav-item.services-menu > a::after {
+        .nav-item.services-menu > a::after,
+        .has-children > a::after {
             content: '▾';
             font-size: 0.85em;
             line-height: 1;
@@ -207,75 +208,96 @@
             transform: rotate(180deg);
         }
 
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% + 18px);
-            left: 50%;
-            transform: translateX(-50%) translateY(12px);
-            min-width: 920px;
+        .has-children {
+            position: relative;
+        }
+
+        .has-children:hover > a::after,
+        .has-children:focus-within > a::after {
+            transform: rotate(-90deg);
+        }
+
+        .dropdown-menu,
+        .sub-dropdown {
+            list-style: none;
+            margin: 0;
+            padding: 12px 0;
             background: #fff;
             border: 1px solid #ece4d9;
-            border-radius: 20px;
+            border-radius: 18px;
             box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12);
-            padding: 26px;
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: 22px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 280px;
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
+            transform: translateY(10px);
             transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
-            z-index: 50;
+            z-index: 60;
+            display: block;
         }
 
-        .nav-item.services-menu:hover .dropdown-menu,
-        .nav-item.services-menu:focus-within .dropdown-menu {
+        .nav-item.services-menu:hover > .dropdown-menu,
+        .nav-item.services-menu:focus-within > .dropdown-menu {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
+            transform: translateY(0);
         }
 
-        .dropdown-column {
-            min-width: 0;
+        .dropdown-menu > li,
+        .sub-dropdown > li {
+            position: relative;
         }
 
-        .dropdown-title {
-            display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--olive);
-            margin-bottom: 12px;
-            letter-spacing: 0.03em;
-        }
-
-        .dropdown-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: grid;
-            gap: 8px;
-        }
-
-        .dropdown-list li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .dropdown-list a {
+        .dropdown-menu > li > a,
+        .sub-dropdown > li > a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 18px;
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             font-weight: 500;
             letter-spacing: 0;
             color: #5a544a;
-            display: inline-flex;
-            transition: color 0.2s ease, transform 0.2s ease;
+            transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
         }
 
-        .dropdown-list a:hover {
+        .dropdown-menu > li > a:hover,
+        .sub-dropdown > li > a:hover,
+        .has-children:hover > a,
+        .has-children:focus-within > a {
+            background: #f7f3ec;
             color: var(--olive);
-            transform: translateX(3px);
+            padding-left: 22px;
+        }
+
+        .sub-dropdown {
+            position: absolute;
+            top: -12px;
+            left: calc(100% + 10px);
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateX(8px);
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+            z-index: 70;
+        }
+
+        .has-children:hover > .sub-dropdown,
+        .has-children:focus-within > .sub-dropdown {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(0);
         }
 
         .quote-btn {
@@ -929,11 +951,6 @@
                 gap: 18px;
             }
 
-            .dropdown-menu {
-                min-width: 760px;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
             .hero {
                 grid-template-columns: minmax(360px, 460px) 1fr;
             }
@@ -977,23 +994,39 @@
 
             .dropdown-menu {
                 position: static;
-                transform: none;
                 min-width: 100%;
                 margin-top: 12px;
-                padding: 18px;
-                grid-template-columns: 1fr 1fr;
+                padding: 12px 0;
                 opacity: 1;
                 visibility: visible;
                 pointer-events: auto;
                 display: none;
+                transform: none;
                 box-shadow: none;
                 border-radius: 14px;
             }
 
-            .nav-item.services-menu:hover .dropdown-menu,
-            .nav-item.services-menu:focus-within .dropdown-menu {
+            .nav-item.services-menu:hover > .dropdown-menu,
+            .nav-item.services-menu:focus-within > .dropdown-menu {
+                display: block;
+            }
+
+            .sub-dropdown {
+                position: static;
+                min-width: 100%;
+                margin: 8px 12px 0;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                display: none;
                 transform: none;
-                display: grid;
+                box-shadow: none;
+                border-radius: 12px;
+            }
+
+            .has-children:hover > .sub-dropdown,
+            .has-children:focus-within > .sub-dropdown {
+                display: block;
             }
 
             .hero,
@@ -1048,10 +1081,6 @@
 
             nav {
                 justify-content: flex-start;
-            }
-
-            .dropdown-menu {
-                grid-template-columns: 1fr;
             }
 
             .hero-content h1 {
@@ -1125,22 +1154,12 @@
                 <a href="#">PROJECTS</a>
                 <div class="nav-item services-menu">
                     <a href="#">SERVICES</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-column">
-                            <span class="dropdown-title">Curtains</span>
-                            <ul class="dropdown-list">
-                                <li><a href="#">Curtains</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-column">
-                            <span class="dropdown-title">Wallpapers</span>
-                            <ul class="dropdown-list">
-                                <li><a href="#">Wallpapers</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-column">
-                            <span class="dropdown-title">Furniture</span>
-                            <ul class="dropdown-list">
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Curtains</a></li>
+                        <li><a href="#">Wallpapers</a></li>
+                        <li class="has-children">
+                            <a href="#">Furniture</a>
+                            <ul class="sub-dropdown">
                                 <li><a href="#">Modular</a></li>
                                 <li><a href="#">Office furniture</a></li>
                                 <li><a href="#">Sofas</a></li>
@@ -1151,10 +1170,10 @@
                                 <li><a href="#">Bedside table</a></li>
                                 <li><a href="#">Pouffee</a></li>
                             </ul>
-                        </div>
-                        <div class="dropdown-column">
-                            <span class="dropdown-title">Window Blinds</span>
-                            <ul class="dropdown-list">
+                        </li>
+                        <li class="has-children">
+                            <a href="#">Window Blinds</a>
+                            <ul class="sub-dropdown">
                                 <li><a href="#">Roller</a></li>
                                 <li><a href="#">Zebra</a></li>
                                 <li><a href="#">Vertical</a></li>
@@ -1166,22 +1185,19 @@
                                 <li><a href="#">Wooden</a></li>
                                 <li><a href="#">Aluminium Venetian</a></li>
                             </ul>
-                        </div>
-                        <div class="dropdown-column">
-                            <span class="dropdown-title">Mattress</span>
-                            <ul class="dropdown-list">
-                                <li><a href="#">Mattress</a></li>
-                            </ul>
-                            <span class="dropdown-title" style="margin-top: 18px;">Floorings</span>
-                            <ul class="dropdown-list">
+                        </li>
+                        <li><a href="#">Mattress</a></li>
+                        <li class="has-children">
+                            <a href="#">Floorings</a>
+                            <ul class="sub-dropdown">
                                 <li><a href="#">Wooden</a></li>
                                 <li><a href="#">PVC</a></li>
                                 <li><a href="#">Engineered</a></li>
                                 <li><a href="#">Sports</a></li>
                                 <li><a href="#">Gym</a></li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
                 <a href="#">CONTACT US</a>
                 <a href="#" class="quote-btn">Get a Quote</a>
