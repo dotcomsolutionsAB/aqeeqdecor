@@ -456,7 +456,7 @@
         }
 
         .category-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .collection-grid {
@@ -778,11 +778,13 @@
             }
 
             .hero-features,
-            .category-grid,
             .collection-grid,
             .usp-grid,
             .banner-features-box,
             .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .category-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
@@ -817,11 +819,13 @@
             }
 
             .hero-features,
-            .category-grid,
             .collection-grid,
             .usp-grid,
             .banner-features-box,
             .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -864,20 +868,11 @@
 
             <nav>
                 <a href="#">HOME</a>
-                <a href="#">LIVING ROOM</a>
-                <a href="#">DINING ROOM</a>
-                <a href="#">BEDROOM</a>
-                <a href="#">ACCENT FURNITURE</a>
-                <a href="#">COLLECTIONS</a>
                 <a href="#">ABOUT US</a>
-                <a href="#">CONTACT</a>
+                <a href="#">PROJECTS</a>
+                <a href="#">SERVICES</a>
+                <a href="#">CONTACT US</a>
             </nav>
-
-            <div class="nav-icons">
-                <button class="icon-btn" aria-label="Search">⌕</button>
-                <button class="icon-btn" aria-label="Wishlist">♡</button>
-                <button class="icon-btn" aria-label="Cart">👜</button>
-            </div>
         </div>
     </header>
 
@@ -886,7 +881,9 @@
             <section class="hero">
                 <div class="hero-content">
                     <h1>Furniture That Defines Your Space</h1>
-                    <p>Timeless designs. Exceptional comfort. Crafted to complement your lifestyle and elevate every corner of your home.</p>
+                    <p>Upgrade your home with beautifully designed Curtains, Wallpapers, Furniture, Window Blinds, & Flooring solutions — all tailored to match your style and space.
+
+</p>
                     <button class="btn-dark">Explore Collection</button>
 
                     <!-- <div class="hero-features">
@@ -943,65 +940,49 @@
                 <h2 class="section-title">SHOP BY CATEGORY</h2>
                 <div class="category-grid">
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Sofas"></div>
+                        <div class="card-image"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Curtains"></div>
                         <div class="card-body">
-                            <h3>Sofas</h3>
+                            <h3>Curtains</h3>
                             <a href="#" class="card-link">View Collection</a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Dining Tables"></div>
+                        <div class="card-image"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Wallpapers"></div>
                         <div class="card-body">
-                            <h3>Dining Tables</h3>
+                            <h3>Wallpapers</h3>
                             <a href="#" class="card-link">View Collection</a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=900&q=80" alt="Dining Chairs"></div>
+                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Furniture"></div>
                         <div class="card-body">
-                            <h3>Dining Chairs</h3>
+                            <h3>Furniture</h3>
                             <a href="#" class="card-link">View Collection</a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=900&q=80" alt="Accent Chairs"></div>
+                        <div class="card-image"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Window Blinds"></div>
                         <div class="card-body">
-                            <h3>Accent Chairs</h3>
+                            <h3>Window Blinds</h3>
                             <a href="#" class="card-link">View Collection</a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Beds"></div>
+                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80&sat=-20" alt="Mattress"></div>
                         <div class="card-body">
-                            <h3>Beds</h3>
+                            <h3>Mattress</h3>
                             <a href="#" class="card-link">View Collection</a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80" alt="Bedside Tables"></div>
+                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80&crop=entropy" alt="Floorings"></div>
                         <div class="card-body">
-                            <h3>Bedside Tables</h3>
-                            <a href="#" class="card-link">View Collection</a>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=900&q=80" alt="Consoles"></div>
-                        <div class="card-body">
-                            <h3>Consoles</h3>
-                            <a href="#" class="card-link">View Collection</a>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Pouffees"></div>
-                        <div class="card-body">
-                            <h3>Pouffees</h3>
+                            <h3>Floorings</h3>
                             <a href="#" class="card-link">View Collection</a>
                         </div>
                     </article>
