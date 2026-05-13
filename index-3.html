@@ -204,26 +204,20 @@
         .hero-wrap {
             background: linear-gradient(180deg, #f6f2eb 0%, #f3efe9 100%);
             border-bottom: 1px solid #ece6de;
-            width: 100%;
         }
 
         .hero {
-            width: 100%;
             min-height: 640px;
             display: grid;
-            grid-template-columns: minmax(320px, 520px) 1fr;
+            grid-template-columns: 1fr 1.45fr;
             align-items: stretch;
-            max-width: 100%;
         }
 
         .hero-content {
-            padding: 80px 56px 50px max(24px, calc((100vw - var(--container)) / 2));
+            padding: 80px 56px 50px 8px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
-            z-index: 2;
-            background: linear-gradient(90deg, rgba(246,242,235,0.98) 0%, rgba(243,239,233,0.94) 72%, rgba(243,239,233,0.7) 100%);
         }
 
         .hero-content h1 {
@@ -331,33 +325,16 @@
         }
 
         .hero-image img {
-            width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-            transform: scale(1.02);
         }
 
         .hero-image::after {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                linear-gradient(90deg, rgba(243,239,233,0.78) 0%, rgba(243,239,233,0.3) 18%, rgba(0,0,0,0.14) 100%),
-                linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.08));
+            background: linear-gradient(90deg, rgba(243,239,233,0.12), rgba(0,0,0,0.08));
             pointer-events: none;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: min(52vw, 620px);
-            background: linear-gradient(90deg, rgba(246,242,235,0.98) 0%, rgba(243,239,233,0.92) 68%, rgba(243,239,233,0) 100%);
-            pointer-events: none;
-            z-index: 1;
         }
 
         .section {
@@ -660,7 +637,7 @@
             }
 
             .hero {
-                grid-template-columns: minmax(300px, 470px) 1fr;
+                grid-template-columns: 1fr 1.1fr;
             }
 
             .hero-features,
@@ -700,10 +677,7 @@
             }
 
             .hero-content {
-                padding: 54px 24px 32px;
-            }
-            .hero::before {
-                display: none;
+                padding: 54px 0 32px;
             }
 
             .hero-image,
@@ -809,12 +783,18 @@
                 <a href="#">ABOUT US</a>
                 <a href="#">CONTACT</a>
             </nav>
+
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="Search">⌕</button>
+                <button class="icon-btn" aria-label="Wishlist">♡</button>
+                <button class="icon-btn" aria-label="Cart">👜</button>
+            </div>
         </div>
     </header>
 
     <main>
         <div class="hero-wrap">
-            <section class="hero">
+            <section class="container hero">
                 <div class="hero-content">
                     <h1>Furniture That Defines Your Space</h1>
                     <p>Timeless designs. Exceptional comfort. Crafted to complement your lifestyle and elevate every corner of your home.</p>
