@@ -1069,9 +1069,34 @@
             }
 
             .nav-item > a {
-                justify-content: space-between;
-                text-align: left;
-                padding: 14px 16px;
+                justify-content: center;
+                text-align: center;
+                padding: 14px 44px 14px 16px;
+                position: relative;
+            }
+
+            .nav-item.services-menu > a::after,
+            .has-children > a::after {
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .nav-item.services-menu:hover > a::after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+
+            .has-children:hover > a::after {
+                transform: translateY(-50%) rotate(-90deg);
+            }
+
+            .nav-item.services-menu.open > a::after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+
+            .has-children.open > a::after {
+                transform: translateY(-50%) rotate(-90deg);
             }
 
             .nav-item {
@@ -1760,7 +1785,14 @@
             servicesTrigger.addEventListener('click', (event) => {
                 if (!mobileMenuQuery.matches) return;
                 event.preventDefault();
-                servicesMenu.classList.toggle('open');
+                const isOpen = servicesMenu.classList.contains('open');
+
+                if (isOpen) {
+                    servicesMenu.classList.remove('open');
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                } else {
+                    servicesMenu.classList.add('open');
+                }
             });
 
             childMenuItems.forEach((item) => {
