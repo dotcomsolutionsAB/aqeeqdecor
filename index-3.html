@@ -550,6 +550,13 @@
 
         .faq-list {
             display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .faq-column {
+            display: grid;
             gap: 16px;
         }
 
@@ -947,6 +954,10 @@
                 padding-top: 42px;
             }
 
+            .faq-list {
+                grid-template-columns: 1fr;
+            }
+
             .faq-question {
                 padding: 18px 20px;
                 font-size: 1.25rem;
@@ -1195,58 +1206,62 @@
                 <div class="faq-wrap">
                     <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
                     <div class="faq-list">
-                        <div class="faq-item active">
-                            <button class="faq-question" type="button">
-                                <span>What services does Aqeeq Decor offer?</span>
-                                <span>+</span>
-                            </button>
-                            <div class="faq-answer">
-                                We offer Curtains, Wallpapers, Furniture, Window Blinds, Mattresses, and Flooring solutions tailored to homes, offices, and commercial spaces.
+                        <div class="faq-column">
+                            <div class="faq-item active">
+                                <button class="faq-question" type="button">
+                                    <span>What services does Aqeeq Decor offer?</span>
+                                    <span>+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    We offer Curtains, Wallpapers, Furniture, Window Blinds, Mattresses, and Flooring solutions tailored to homes, offices, and commercial spaces.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Do you provide customised decor solutions?</span>
+                                    <span>+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    Yes, we provide customised solutions based on your space, theme, measurements, preferred materials, and design preferences.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Can I request a site visit before finalising?</span>
+                                    <span>+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    Absolutely. We can arrange a site visit to understand your requirements, take measurements, and suggest the most suitable decor options.
+                                </div>
                             </div>
                         </div>
-                        <div class="faq-item">
-                            <button class="faq-question" type="button">
-                                <span>Do you provide customised decor solutions?</span>
-                                <span>+</span>
-                            </button>
-                            <div class="faq-answer">
-                                Yes, we provide customised solutions based on your space, theme, measurements, preferred materials, and design preferences.
+                        <div class="faq-column">
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Do you help with both design and installation?</span>
+                                    <span>+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    Yes, our team supports you from product selection and design guidance to delivery and professional installation.
+                                </div>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" type="button">
-                                <span>Can I request a site visit before finalising?</span>
-                                <span>+</span>
-                            </button>
-                            <div class="faq-answer">
-                                Absolutely. We can arrange a site visit to understand your requirements, take measurements, and suggest the most suitable decor options.
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>How do I get a quotation for my project?</span>
+                                    <span>+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    You can use the Get a Quote button on the website or contact us directly with your requirements, and we will prepare a detailed quotation for you.
+                                </div>
                             </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" type="button">
-                                <span>Do you help with both design and installation?</span>
-                                <span>+</span>
-                            </button>
-                            <div class="faq-answer">
-                                Yes, our team supports you from product selection and design guidance to delivery and professional installation.
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" type="button">
-                                <span>How do I get a quotation for my project?</span>
-                                <span>+</span>
-                            </button>
-                            <div class="faq-answer">
-                                You can use the Get a Quote button on the website or contact us directly with your requirements, and we will prepare a detailed quotation for you.
-                            </div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question" type="button">
-                                <span>Do you work on residential as well as commercial spaces?</span>
-                                <span>+</span>
-                            </button>
-                            <div class="faq-answer">
-                                Yes, we work on both residential and commercial projects, delivering decor solutions that match the purpose and style of each space.
+                            <div class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Do you work on residential as well as commercial spaces?</span>
+                                    <span>+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    Yes, we work on both residential and commercial projects, delivering decor solutions that match the purpose and style of each space.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1292,15 +1307,6 @@
                 </ul>
             </div>
 
-            <div class="footer-newsletter">
-                <h4>NEWSLETTER</h4>
-                <p>Subscribe to get updates on new collections &amp; offers.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button aria-label="Submit">↗</button>
-                </div>
-            </div>
-
             <div class="footer-contact">
                 <h4>CONTACT US</h4>
                 <p>+91 86987 25668</p>
@@ -1309,6 +1315,15 @@
                 <p>S no. 63, PL 54, Ganga Plaza, SalunkeVihar, <br> Kondhwakd, Pune,  Pune, Maharashtra, 411022
 
 </p>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>NEWSLETTER</h4>
+                <p>Subscribe to get updates on new collections &amp; offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button aria-label="Submit">↗</button>
+                </div>
             </div>
         </div>
         <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
