@@ -1315,7 +1315,7 @@
             }
 
             nav.mobile-open {
-                display: flex;
+                display: flex !important;
             }
 
             nav > a,
@@ -2188,6 +2188,7 @@
             menuToggle.addEventListener('click', () => {
                 if (!mobileMenuQuery.matches) return;
                 const isOpen = mainNav.classList.toggle('mobile-open');
+                mainNav.style.display = isOpen ? 'flex' : 'none';
                 menuToggle.classList.toggle('active', isOpen);
                 menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
@@ -2249,9 +2250,27 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     if (mainNav && menuToggle) {
                         mainNav.classList.remove('mobile-open');
+                        mainNav.style.display = '';
                         menuToggle.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
                     }
+                } else if (mainNav && !mainNav.classList.contains('mobile-open')) {
+                    mainNav.style.display = 'none';
+                }
+            });
+        }
+        if (mainNav) {
+            if (mobileMenuQuery.matches) {
+                mainNav.style.display = 'none';
+            }
+
+            mobileMenuQuery.addEventListener('change', (event) => {
+                if (event.matches) {
+                    if (!mainNav.classList.contains('mobile-open')) {
+                        mainNav.style.display = 'none';
+                    }
+                } else {
+                    mainNav.style.display = '';
                 }
             });
         }
