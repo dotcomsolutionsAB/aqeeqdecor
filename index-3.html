@@ -339,7 +339,7 @@
             padding: 12px 20px;
             border-radius: 8px;
             background: var(--olive);
-            color: #fff;
+            color: #fff !important;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.05rem;
             font-weight: 700;
@@ -1061,11 +1061,21 @@
                 background: #fff;
             }
 
-            nav > a,
-            .quote-btn {
+            nav > a {
                 justify-content: center;
                 text-align: center;
                 padding: 14px 16px;
+            }
+
+            .quote-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 14px 16px;
+                color: #fff !important;
+                background: var(--olive);
+                border-color: var(--olive);
             }
 
             .nav-item > a {
@@ -1250,7 +1260,13 @@
 
             .quote-btn {
                 width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 padding: 13px 16px;
+                color: #fff !important;
+                background: var(--olive);
+                border-color: var(--olive);
             }
 
             .hero {
