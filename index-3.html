@@ -372,7 +372,7 @@
             pointer-events: auto;
         }
 
-        .quote-btn {
+        .call-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -388,7 +388,7 @@
             transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
         }
 
-        .quote-btn:hover {
+        .call-btn:hover {
             background: var(--olive-dark);
             border-color: var(--olive-dark);
             color: #fff;
@@ -736,6 +736,98 @@
         .card-link::after {
             content: '→';
             font-size: 16px;
+        }
+
+        .why-choose-section {
+            padding: 48px 0 0;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .why-card {
+            background: #fff;
+            border: 1px solid #eee6db;
+            border-radius: 18px;
+            padding: 26px 22px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .why-card .feature-icon {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 14px;
+            font-size: 18px;
+        }
+
+        .why-card h3 {
+            margin: 0 0 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--olive);
+        }
+
+        .why-card p {
+            margin: 0;
+            color: #5d564e;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .clients-section {
+            padding: 48px 0 0;
+        }
+
+        .clients-marquee {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ece4d9;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: var(--shadow);
+            padding: 18px 0;
+        }
+
+        .clients-track {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            width: max-content;
+            animation: clientsScroll 24s linear infinite;
+        }
+
+        .clients-marquee:hover .clients-track {
+            animation-play-state: paused;
+        }
+
+        .client-logo {
+            width: 190px;
+            min-width: 190px;
+            height: 90px;
+            border: 1px solid #eee6db;
+            border-radius: 14px;
+            background: #faf7f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--olive);
+            letter-spacing: 0.04em;
+            padding: 10px;
+        }
+
+        @keyframes clientsScroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
         }
 
         .faq-section {
@@ -1160,7 +1252,7 @@
 
             nav > a,
             .nav-item,
-            .quote-btn {
+            .call-btn {
                 width: 100%;
                 border: 1px solid #e9e2d8;
                 border-radius: 12px;
@@ -1173,7 +1265,7 @@
                 padding: 14px 16px;
             }
 
-            .quote-btn {
+            .call-btn {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -1182,6 +1274,9 @@
                 color: #fff !important;
                 background: var(--olive);
                 border-color: var(--olive);
+            }
+            .why-choose-grid {
+                grid-template-columns: 1fr 1fr;
             }
 
             .nav-item > a {
@@ -1367,12 +1462,12 @@
 
             nav > a,
             .nav-item > a,
-            .quote-btn {
+            .call-btn {
                 padding-top: 13px;
                 padding-bottom: 13px;
             }
 
-            .quote-btn {
+            .call-btn {
                 width: 100%;
                 display: inline-flex;
                 align-items: center;
@@ -1381,6 +1476,16 @@
                 color: #fff !important;
                 background: var(--olive);
                 border-color: var(--olive);
+            }
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .client-logo {
+                width: 150px;
+                min-width: 150px;
+                height: 76px;
+                font-size: 1.2rem;
             }
 
             .hero {
@@ -1543,6 +1648,7 @@
                         <li class="has-children">
                             <a href="#">Window Blinds</a>
                             <ul class="sub-dropdown">
+                                <li><a href="#">Blinds</a></li>
                                 <li><a href="#">Roller</a></li>
                                 <li><a href="#">Zebra</a></li>
                                 <li><a href="#">Vertical</a></li>
@@ -1569,7 +1675,7 @@
                     </ul>
                 </div>
                 <a href="#">CONTACT US</a>
-                <a href="#" class="quote-btn">Get a Quote</a>
+                <a href="tel:+918698725668" class="call-btn">Call: +91 86987 25668</a>
             </nav>
         </div>
     </header>
@@ -1686,6 +1792,34 @@
             </div>
         </section>
 
+        <section class="why-choose-section">
+            <div class="container">
+                <h2 class="section-title">WHY CHOOSE US</h2>
+                <div class="why-choose-grid">
+                    <div class="why-card">
+                        <div class="feature-icon">✦</div>
+                        <h3>Premium Quality</h3>
+                        <p>We use carefully selected materials and finishes to deliver elegant decor solutions that last.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="feature-icon">⌂</div>
+                        <h3>Tailored Solutions</h3>
+                        <p>Every project is customized to your layout, style, taste, and practical requirements.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Expert Guidance</h3>
+                        <p>From selection to installation, our team helps you make the right decor decisions with confidence.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="feature-icon">⚒</div>
+                        <h3>Professional Execution</h3>
+                        <p>We focus on smooth execution, timely delivery, and neat finishing across every category we offer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="custom-banner">
             <div class="container">
                 <div class="banner-card">
@@ -1769,6 +1903,28 @@
                             <a href="#" class="card-link">Explore</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients-section">
+            <div class="container">
+                <h2 class="section-title">OUR CLIENTS</h2>
+                <div class="clients-marquee">
+                    <div class="clients-track">
+                        <div class="client-logo">Client One</div>
+                        <div class="client-logo">Client Two</div>
+                        <div class="client-logo">Client Three</div>
+                        <div class="client-logo">Client Four</div>
+                        <div class="client-logo">Client Five</div>
+                        <div class="client-logo">Client Six</div>
+                        <div class="client-logo">Client One</div>
+                        <div class="client-logo">Client Two</div>
+                        <div class="client-logo">Client Three</div>
+                        <div class="client-logo">Client Four</div>
+                        <div class="client-logo">Client Five</div>
+                        <div class="client-logo">Client Six</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1874,18 +2030,18 @@
             <div class="footer-links">
                 <h4>OPENING HOURS</h4>
                 <ul>
-                    <li>Mon - Fri: 10 am - 8 pm</li>
-                    <li>Saturday: 10 am - 8 pm</li>
+                    <li>Mon - Sat: 10 am - 8 pm</li>
                     <li>Sunday: Open on Request</li>
                 </ul>
             </div>
 
             <div class="footer-contact">
                 <h4>CONTACT US</h4>
-                <p>+91 86987 25668</p>
-                <p>+91 83191 63736</p>
-                <p>aqeeqdecor@gmail.com</p>
-                <p>S no. 63, PL 54, Ganga Plaza, Salunke Vihar,<br>Kondhwa, Pune, Maharashtra, 411022</p>
+                <p>☎ +91 86987 25668</p>
+                <p>☎ +91 83191 63736</p>
+                <p>✉ aqeeqdecor@gmail.com</p>
+                <p>📍 S no. 63, PL 54, Ganga Plaza, Salunke Vihar,<br>Kondhwa, Pune, Maharashtra, 411022</p>
+                <p>📍 Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</p>
             </div>
 
             <div class="footer-newsletter">
