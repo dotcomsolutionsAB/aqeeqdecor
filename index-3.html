@@ -150,6 +150,7 @@
             font-size: 2rem;
             font-weight: 700;
             letter-spacing: 0.08em;
+            color: var(--olive);
         }
 
         .logo-text span {
@@ -518,6 +519,9 @@
         .card-body h3 {
             margin: 0 0 8px;
             font-size: 1.35rem;
+            color: var(--olive);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
         }
 
         .card-link {
@@ -532,6 +536,59 @@
         .card-link::after {
             content: '→';
             font-size: 16px;
+        }
+
+        .faq-section {
+            padding: 52px 0 0;
+        }
+
+        .faq-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid #ede6dc;
+            border-radius: 18px;
+            padding: 0;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            text-align: left;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--olive);
+        }
+
+        .faq-question span:last-child {
+            font-size: 1.8rem;
+            line-height: 1;
+            color: var(--olive);
+        }
+
+        .faq-answer {
+            padding: 0 26px 22px;
+            color: #5d564e;
+            line-height: 1.8;
+            font-size: 15px;
         }
 
         .custom-banner {
@@ -686,18 +743,27 @@
 
         .social-links {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             margin-top: 18px;
         }
 
-        .social-links span {
-            width: 34px;
-            height: 34px;
+        .social-links a {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: 1px solid rgba(255,255,255,0.25);
-            display: grid;
-            place-items: center;
-            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-2px);
         }
 
         .footer-contact p {
@@ -866,6 +932,15 @@
 
             .section {
                 padding-top: 42px;
+            }
+
+            .faq-question {
+                padding: 18px 20px;
+                font-size: 1.25rem;
+            }
+
+            .faq-answer {
+                padding: 0 20px 18px;
             }
         }
     </style>
@@ -1102,42 +1177,69 @@
             </div>
         </section>
 
-        <section class="usp-row">
+        <section class="faq-section">
             <div class="container">
-                <div class="usp-grid">
-                    <div class="usp-item">
-                        <div class="feature-icon">🛡</div>
-                        <div>
-                            <strong>5 Year Warranty</strong>
-                            <span>On select products</span>
+                <div class="faq-wrap">
+                    <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>What services does Aqeeq Decor offer?</span>
+                                <span>+</span>
+                            </button>
+                            <div class="faq-answer">
+                                We offer Curtains, Wallpapers, Furniture, Window Blinds, Mattresses, and Flooring solutions tailored to homes, offices, and commercial spaces.
+                            </div>
                         </div>
-                    </div>
-                    <div class="usp-item">
-                        <div class="feature-icon">↺</div>
-                        <div>
-                            <strong>Easy Returns</strong>
-                            <span>Hassle-free returns</span>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>Do you provide customised decor solutions?</span>
+                                <span>+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Yes, we provide customised solutions based on your space, theme, measurements, preferred materials, and design preferences.
+                            </div>
                         </div>
-                    </div>
-                    <div class="usp-item">
-                        <div class="feature-icon">💳</div>
-                        <div>
-                            <strong>Secure Payments</strong>
-                            <span>100% secure checkout</span>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>Can I request a site visit before finalising?</span>
+                                <span>+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Absolutely. We can arrange a site visit to understand your requirements, take measurements, and suggest the most suitable decor options.
+                            </div>
                         </div>
-                    </div>
-                    <div class="usp-item">
-                        <div class="feature-icon">🚚</div>
-                        <div>
-                            <strong>White Glove Delivery</strong>
-                            <span>Carefully delivered</span>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>Do you help with both design and installation?</span>
+                                <span>+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Yes, our team supports you from product selection and design guidance to delivery and professional installation.
+                            </div>
                         </div>
-                    </div>
-                    <div class="usp-item">
-                        <div class="feature-icon">☎</div>
-                        <div>
-                            <strong>Dedicated Support</strong>
-                            <span>We're here to help</span>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>How do I get a quotation for my project?</span>
+                                <span>+</span>
+                            </button>
+                            <div class="faq-answer">
+                                You can use the Get a Quote button on the website or contact us directly with your requirements, and we will prepare a detailed quotation for you.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">
+                                <span>Do you work on residential as well as commercial spaces?</span>
+                                <span>+</span>
+                            </button>
+                            <div class="faq-answer">
+                                Yes, we work on both residential and commercial projects, delivering decor solutions that match the purpose and style of each space.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1151,29 +1253,26 @@
                 <div class="logo" style="color:#fff; margin-bottom: 14px;">
                     <div class="logo-icon" style="border-color: rgba(255,255,255,0.72);"></div>
                     <div class="logo-text">
-                        <strong style="color:#fff;">AQEEQ</strong>
+                        <strong style="color: #8fa15f;">AQEEQ</strong>
                         <span style="color: rgba(255,255,255,0.75);">DECOR</span>
                     </div>
                 </div>
                 <p>Thoughtfully designed decor solutions crafted with quality materials and a passion for detail.</p>
                 <div class="social-links">
-                    <span>f</span>
-                    <span>◎</span>
-                    <span>p</span>
-                    <span>▶</span>
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="YouTube">▶</a>
                 </div>
             </div>
 
             <div class="footer-links">
                 <h4>QUICK LINKS</h4>
                 <ul>
-                    <li>Curtains</li>
-                    <li>Wallpapers</li>
-                    <li>Furniture</li>
-                    <li>Window Blinds</li>
-                    <li>Mattress</li>
-                    <li>Floorings</li>
+                    <li>Home</li>
                     <li>About Us</li>
+                    <li>Projects</li>
+                    <li>Services</li>
                     <li>Contact Us</li>
                 </ul>
             </div>
@@ -1192,9 +1291,11 @@
 
             <div class="footer-contact">
                 <h4>CONTACT US</h4>
-                <p>+91 98765 43210</p>
-                <p>hello@curatefurniture.com</p>
-                <p>Studio 101, Design Avenue,<br>Andheri (W), Mumbai - 400058</p>
+                <p>+91 86987 25668</p>
+                <p>aqeeqdecor@gmail.com</p>
+                <p>S no. 63, PL 54, Ganga Plaza, SalunkeVihar, <br> Kondhwakd, Pune,  Pune, Maharashtra, 411022
+
+</p>
             </div>
 
             <div class="footer-newsletter">
@@ -1206,7 +1307,7 @@
                 </div>
             </div>
         </div>
-        <div class="container copyright">© 2024 Curaté Furniture. All Rights Reserved.</div>
+        <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
     </footer>
 </body>
 </html>
