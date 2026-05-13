@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aqeeq Decor</title>
+  <title>Curaté Furniture</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -23,8 +24,8 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-      <h2>AQEEQ</h2>
-      <span>DECOR</span>
+      <h2>CURATÉ</h2>
+      <span>FURNITURE</span>
     </div>
 
     <nav>
@@ -279,9 +280,7 @@
 
 </body>
 </html>
-```
 
----
 <style>
 * {
   margin: 0;
@@ -323,7 +322,6 @@ img {
   font-family: 'Cormorant Garamond', serif;
   font-size: 34px;
   letter-spacing: 2px;
-  color: #4b5030;
 }
 
 .logo span {
@@ -352,10 +350,17 @@ nav a {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  align-items: center;
-  padding: 70px 60px;
-  gap: 50px;
+  grid-template-columns: 42% 58%;
+  min-height: 720px;
+  background: #ece5da;
+}
+
+.hero-content {
+  background: #ffffff;
+  padding: 90px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-content h1 {
@@ -383,10 +388,16 @@ nav a {
   letter-spacing: 1px;
 }
 
+.hero-image {
+  width: 100%;
+  height: 100%;
+}
+
 .hero-image img {
-  border-radius: 12px;
-  height: 650px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .hero-features {
@@ -550,6 +561,14 @@ footer {
   .custom-banner,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 60px 40px;
   }
 
   .category-grid,
