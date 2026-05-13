@@ -57,6 +57,22 @@
             margin: 0 auto;
         }
 
+        .logo,
+        nav,
+        .hero-content,
+        .hero-image,
+        .category-grid,
+        .collection-grid,
+        .faq-list,
+        .footer-grid,
+        .banner-layout,
+        .banner-features-box,
+        .newsletter-form,
+        .dropdown-menu,
+        .sub-dropdown {
+            min-width: 0;
+        }
+
         .top-bar {
             background: linear-gradient(90deg, #556337, #434e2b 55%, #59673d);
             color: #fff;
@@ -167,15 +183,15 @@
             align-items: center;
             justify-content: flex-end;
             flex: 1;
-            gap: 26px;
+            gap: 22px;
             flex-wrap: wrap;
         }
 
         nav a {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             color: #47433c;
             transition: color 0.2s ease;
         }
@@ -365,13 +381,13 @@
             width: 100%;
             min-height: 640px;
             display: grid;
-            grid-template-columns: minmax(420px, 560px) 1fr;
+            grid-template-columns: minmax(380px, 560px) minmax(0, 1fr);
             align-items: stretch;
             position: relative;
         }
 
         .hero-content {
-            padding: 80px 72px 50px max(48px, calc((100vw - var(--container)) / 2));
+            padding: 80px 56px 50px max(40px, calc((100vw - var(--container)) / 2));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -382,7 +398,7 @@
 
         .hero-content h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3.4rem, 5.5vw, 5.2rem);
+            font-size: clamp(2.8rem, 5vw, 5.2rem);
             line-height: 0.98;
             margin: 0 0 26px;
             font-weight: 600;
@@ -393,8 +409,8 @@
         .hero-content p {
             max-width: 420px;
             color: #534d45;
-            font-size: 1.08rem;
-            line-height: 1.85;
+            font-size: 1rem;
+            line-height: 1.8;
             margin: 0 0 30px;
         }
 
@@ -611,11 +627,11 @@
         }
 
         .category-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .collection-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
         }
 
         .card {
@@ -860,7 +876,7 @@
         .footer-grid {
             padding: 42px 0 22px;
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1.1fr 1.2fr;
+            grid-template-columns: 1.2fr 1fr 1fr 1.1fr 1.1fr;
             gap: 30px;
         }
 
@@ -960,25 +976,44 @@
         }
 
         @media (max-width: 1200px) {
+            .container {
+                width: min(var(--container), calc(100% - 36px));
+            }
+
+            .navbar {
+                gap: 20px;
+            }
+
             nav {
-                gap: 18px;
+                gap: 16px;
+            }
+
+            nav a {
+                font-size: 0.98rem;
             }
 
             .hero {
-                grid-template-columns: minmax(360px, 460px) 1fr;
+                grid-template-columns: minmax(340px, 470px) minmax(0, 1fr);
             }
 
-            .hero-features,
-            .category-grid,
-            .collection-grid,
-            .usp-grid,
-            .banner-features-box,
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hero-content {
+                padding: 64px 34px 44px max(24px, calc((100vw - var(--container)) / 2));
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .collection-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .faq-list {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -987,28 +1022,53 @@
                 width: min(var(--container), calc(100% - 28px));
             }
 
+            header {
+                position: static;
+            }
+
             .navbar {
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: space-between;
+                align-items: flex-start;
                 padding: 16px 0;
+                gap: 16px;
+            }
+
+            .logo {
+                width: 100%;
+                justify-content: center;
             }
 
             nav {
                 order: 3;
                 width: 100%;
-                gap: 14px;
-                justify-content: flex-end;
+                gap: 10px;
+                justify-content: center;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav > a,
+            .nav-item,
+            .quote-btn {
+                width: 100%;
+            }
+
+            nav > a,
+            .nav-item > a,
+            .quote-btn {
+                justify-content: center;
+                text-align: center;
             }
 
             .nav-item {
-                width: 100%;
-                justify-content: flex-end;
+                justify-content: center;
             }
 
             .dropdown-menu {
                 position: static;
                 min-width: 100%;
-                margin-top: 12px;
+                margin-top: 10px;
                 padding: 12px 0;
                 opacity: 1;
                 visibility: visible;
@@ -1036,6 +1096,10 @@
                 border-radius: 12px;
             }
 
+            .has-children::before {
+                display: none;
+            }
+
             .has-children:hover > .sub-dropdown {
                 display: block;
             }
@@ -1047,9 +1111,14 @@
 
             .hero-content {
                 padding: 54px 24px 32px;
+                order: 1;
             }
 
-            .hero-image,
+            .hero-image {
+                order: 2;
+                min-height: 360px;
+            }
+
             .hero-slide,
             .banner-visual,
             .banner-visual img {
@@ -1059,11 +1128,12 @@
 
             .hero-features,
             .collection-grid,
-            .usp-grid,
             .banner-features-box,
-            .footer-grid {
+            .footer-grid,
+            .faq-list {
                 grid-template-columns: 1fr 1fr;
             }
+
             .category-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1081,51 +1151,96 @@
         }
 
         @media (max-width: 640px) {
+            .container {
+                width: calc(100% - 24px);
+            }
+
             .top-bar .container {
-                gap: 10px 18px;
+                gap: 8px 14px;
                 padding: 10px 0;
+                min-height: auto;
+            }
+
+            .top-bar {
+                font-size: 11px;
             }
 
             .logo-text strong {
                 font-size: 1.55rem;
             }
 
-            nav {
-                justify-content: flex-start;
+            .logo-text span {
+                letter-spacing: 0.22em;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .quote-btn {
+                width: 100%;
+                padding: 12px 16px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 40px 18px 26px;
             }
 
             .hero-content h1 {
                 max-width: none;
+                font-size: clamp(2.2rem, 10vw, 3rem);
+            }
+
+            .hero-content p {
+                max-width: none;
+                font-size: 0.96rem;
             }
 
             .hero-features,
             .collection-grid,
-            .usp-grid,
             .banner-features-box,
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .footer-grid,
+            .faq-list,
             .category-grid {
                 grid-template-columns: 1fr;
             }
 
             .feature-item,
-            .mini-feature,
-            .usp-item {
+            .mini-feature {
                 padding-left: 0;
                 padding-right: 0;
             }
 
+            .hero-image,
+            .hero-slide,
+            .banner-visual,
+            .banner-visual img {
+                min-height: 280px;
+                height: 280px;
+            }
+
             .banner-text {
-                padding: 34px 24px;
+                padding: 28px 20px;
+            }
+
+            .banner-text p {
+                max-width: none;
             }
 
             .section {
                 padding-top: 42px;
             }
 
-            .faq-list {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .card-body {
+                padding: 14px 16px 16px;
             }
 
             .faq-question {
@@ -1135,6 +1250,38 @@
 
             .faq-answer {
                 padding: 0 20px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 20px 18px;
+                max-height: 320px;
+            }
+
+            .footer-grid {
+                gap: 24px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .hero-content {
+                padding-left: max(48px, calc((100vw - var(--container)) / 2));
+            }
+
+            .hero-image,
+            .hero-slide,
+            .hero-slide img {
+                min-height: 700px;
+                height: 700px;
             }
         }
     </style>
@@ -1221,9 +1368,7 @@
             <section class="hero">
                 <div class="hero-content">
                     <h1>Furniture That Defines Your Space</h1>
-                    <p>Upgrade your home with beautifully designed Curtains, Wallpapers, Furniture, Window Blinds, & Flooring solutions — all tailored to match your style and space.
-
-</p>
+                    <p>Upgrade your home with beautifully designed Curtains, Wallpapers, Furniture, Window Blinds, and Flooring solutions — all tailored to match your style and space.</p>
                     <button class="btn-dark">Explore Collection</button>
 
                     <!-- <div class="hero-features">
@@ -1529,9 +1674,7 @@
                 <p>+91 86987 25668</p>
                 <p>+91 83191 63736</p>
                 <p>aqeeqdecor@gmail.com</p>
-                <p>S no. 63, PL 54, Ganga Plaza, SalunkeVihar, <br> Kondhwakd, Pune,  Pune, Maharashtra, 411022
-
-</p>
+                <p>S no. 63, PL 54, Ganga Plaza, Salunke Vihar,<br>Kondhwa, Pune, Maharashtra, 411022</p>
             </div>
 
             <div class="footer-newsletter">
