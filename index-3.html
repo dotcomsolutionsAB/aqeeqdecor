@@ -329,6 +329,8 @@
             overflow: hidden;
             min-height: 640px;
             width: 100%;
+            isolation: isolate;
+            background: #ddd6cc;
         }
 
         .hero-image img {
@@ -343,8 +345,83 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.04);
+            background: linear-gradient(90deg, rgba(243, 239, 233, 0.12) 0%, rgba(243, 239, 233, 0) 18%, rgba(0, 0, 0, 0.04) 100%);
             pointer-events: none;
+            z-index: 3;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            animation: heroFade 20s infinite ease-in-out;
+            transform: scale(1.03);
+        }
+
+        .hero-slide img {
+            animation: heroZoom 20s infinite ease-in-out;
+        }
+
+        .hero-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-slide:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .hero-slide:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .hero-slide:nth-child(4) {
+            animation-delay: 15s;
+        }
+
+        .hero-slide:nth-child(1) img {
+            animation-delay: 0s;
+        }
+
+        .hero-slide:nth-child(2) img {
+            animation-delay: 5s;
+        }
+
+        .hero-slide:nth-child(3) img {
+            animation-delay: 10s;
+        }
+
+        .hero-slide:nth-child(4) img {
+            animation-delay: 15s;
+        }
+
+        @keyframes heroFade {
+            0% {
+                opacity: 0;
+            }
+            4% {
+                opacity: 1;
+            }
+            21% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes heroZoom {
+            0% {
+                transform: scale(1.03);
+            }
+            25% {
+                transform: scale(1.09);
+            }
+            100% {
+                transform: scale(1.09);
+            }
         }
 
 
@@ -693,7 +770,7 @@
             }
 
             .hero-image,
-            .hero-image img,
+            .hero-slide,
             .banner-visual,
             .banner-visual img {
                 min-height: 360px;
@@ -845,7 +922,18 @@
                 </div>
 
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80" alt="Elegant living room with beige sofa and warm wooden interiors">
+                    <div class="hero-slide">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Elegant living room with beige sofa and warm wooden interiors">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&q=80" alt="Modern living room with stylish neutral furniture">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=1600&q=80" alt="Luxury interior with elegant seating and decor">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80&sat=-10" alt="Soft contemporary furniture setting with warm tones">
+                    </div>
                 </div>
             </section>
         </div>
