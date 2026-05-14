@@ -849,10 +849,7 @@
     }
 
     .about-story-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      align-items: stretch;
+      display: block;
     }
 
     .about-story-section {
@@ -939,6 +936,172 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       border: 1px solid #f0ebe3;
+    }
+
+    .roadmap-wrap {
+      position: relative;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 0 6px;
+    }
+
+    .roadmap-track {
+      position: relative;
+      display: grid;
+      gap: 26px;
+    }
+
+    .roadmap-track::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(85, 99, 50, 0.18) 0%, rgba(85, 99, 50, 0.85) 50%, rgba(85, 99, 50, 0.18) 100%);
+    }
+
+    .roadmap-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 84px 1fr;
+      align-items: center;
+      gap: 22px;
+      opacity: 0;
+      transform: translateY(22px);
+      animation: roadmapFadeUp 0.75s ease forwards;
+    }
+
+    .roadmap-item:nth-child(1) { animation-delay: 0.08s; }
+    .roadmap-item:nth-child(2) { animation-delay: 0.18s; }
+    .roadmap-item:nth-child(3) { animation-delay: 0.28s; }
+    .roadmap-item:nth-child(4) { animation-delay: 0.38s; }
+    .roadmap-item:nth-child(5) { animation-delay: 0.48s; }
+    .roadmap-item:nth-child(6) { animation-delay: 0.58s; }
+
+    .roadmap-item:nth-child(even) .roadmap-card {
+      grid-column: 3;
+    }
+
+    .roadmap-item:nth-child(even) .roadmap-spacer {
+      grid-column: 1;
+    }
+
+    .roadmap-item:nth-child(odd) .roadmap-card {
+      grid-column: 1;
+    }
+
+    .roadmap-item:nth-child(odd) .roadmap-spacer {
+      grid-column: 3;
+    }
+
+    .roadmap-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid #eadfce;
+      border-radius: 22px;
+      box-shadow: 0 16px 38px rgba(29, 24, 18, 0.07);
+      padding: 24px 24px 22px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .roadmap-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 42px rgba(29, 24, 18, 0.10);
+      border-color: #d8cab5;
+    }
+
+    .roadmap-year {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 84px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(85, 99, 50, 0.10);
+      color: var(--olive);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .roadmap-card h3 {
+      margin: 0 0 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 600;
+      color: var(--olive);
+    }
+
+    .roadmap-card p {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.96rem;
+      line-height: 1.85;
+      color: #645f57;
+    }
+
+    .roadmap-node {
+      position: relative;
+      z-index: 2;
+      width: 84px;
+      height: 84px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid rgba(85, 99, 50, 0.24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(29, 24, 18, 0.10);
+    }
+
+    .roadmap-node::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--olive);
+      box-shadow: 0 0 0 10px rgba(85, 99, 50, 0.10);
+      animation: roadmapPulse 2.6s ease-in-out infinite;
+    }
+
+    .roadmap-node-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--olive);
+      letter-spacing: 0.04em;
+    }
+
+    @keyframes roadmapFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes roadmapPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(85, 99, 50, 0.16);
+      }
+      50% {
+        box-shadow: 0 0 0 12px rgba(85, 99, 50, 0.04);
+      }
     }
 
     .about-story-card {
@@ -1840,22 +2003,69 @@
         <h2 class="about-section-title">OUR STORY</h2>
         <p class="about-section-copy">We help clients turn ideas into harmonious spaces by carefully combining materials, finishes and furnishing elements that reflect both lifestyle and visual identity.</p>
         <div class="about-story-grid">
-          <article class="about-story-card">
-            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Curtains and soft furnishings">
-            <div class="about-story-body">
-              <h3>Spaces with character</h3>
-              <p>Aqeeq Decor focuses on creating interiors that feel warm, elegant and thoughtfully resolved. Every category we offer is selected to work not just individually, but as part of a complete décor story.</p>
-              <p>From selecting the right drapery style to recommending surface finishes, furniture tones and flooring harmony, our approach is both aesthetic and practical.</p>
+          <div class="roadmap-wrap">
+            <div class="roadmap-track">
+              <div class="roadmap-item">
+                <div class="roadmap-card">
+                  <span class="roadmap-year">2016</span>
+                  <h3>The Beginning</h3>
+                  <p>Aqeeq Decor started with a simple vision — to bring elegant, practical and high-quality décor solutions to homes and commercial spaces with a more personal approach.</p>
+                </div>
+                <div class="roadmap-node"><span class="roadmap-node-label">01</span></div>
+                <div class="roadmap-spacer"></div>
+              </div>
+
+              <div class="roadmap-item">
+                <div class="roadmap-spacer"></div>
+                <div class="roadmap-node"><span class="roadmap-node-label">02</span></div>
+                <div class="roadmap-card">
+                  <span class="roadmap-year">2018</span>
+                  <h3>Expanding Categories</h3>
+                  <p>As client trust grew, the offering expanded beyond curtains into wallpapers, blinds, furniture and coordinated décor products designed to complete a space beautifully.</p>
+                </div>
+              </div>
+
+              <div class="roadmap-item">
+                <div class="roadmap-card">
+                  <span class="roadmap-year">2020</span>
+                  <h3>Custom Solutions</h3>
+                  <p>The brand evolved into a more tailored décor partner, helping clients with customized recommendations, measurements, material selection and execution planning.</p>
+                </div>
+                <div class="roadmap-node"><span class="roadmap-node-label">03</span></div>
+                <div class="roadmap-spacer"></div>
+              </div>
+
+              <div class="roadmap-item">
+                <div class="roadmap-spacer"></div>
+                <div class="roadmap-node"><span class="roadmap-node-label">04</span></div>
+                <div class="roadmap-card">
+                  <span class="roadmap-year">2022</span>
+                  <h3>Execution Excellence</h3>
+                  <p>With a stronger focus on delivery quality and on-site coordination, Aqeeq Decor refined its process to offer a smoother and more polished end-to-end client experience.</p>
+                </div>
+              </div>
+
+              <div class="roadmap-item">
+                <div class="roadmap-card">
+                  <span class="roadmap-year">2024</span>
+                  <h3>Signature Identity</h3>
+                  <p>The company strengthened its design language with a curated mix of premium materials, practical layouts and elegant finishing across multiple décor categories.</p>
+                </div>
+                <div class="roadmap-node"><span class="roadmap-node-label">05</span></div>
+                <div class="roadmap-spacer"></div>
+              </div>
+
+              <div class="roadmap-item">
+                <div class="roadmap-spacer"></div>
+                <div class="roadmap-node"><span class="roadmap-node-label">Now</span></div>
+                <div class="roadmap-card">
+                  <span class="roadmap-year">Present</span>
+                  <h3>Growing with Purpose</h3>
+                  <p>Today, Aqeeq Decor continues to shape refined residential and commercial interiors by combining thoughtful guidance, elegant products and dependable execution.</p>
+                </div>
+              </div>
             </div>
-          </article>
-          <article class="about-quote-card">
-            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" alt="Elegant furniture styling">
-            <div class="about-quote-body">
-              <h3>Design with intention</h3>
-              <p>We believe every room should feel like it belongs to the people who live or work in it. That is why our recommendations are always shaped around the client’s style, layout, practical use and comfort.</p>
-              <p>Our goal is simple — to make décor selection easier, more refined and more rewarding from start to finish.</p>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
