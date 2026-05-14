@@ -87,9 +87,7 @@
     }
 
     .about-hero-wrap {
-      background: linear-gradient(180deg, #f6f2eb 0%, #f3efe9 100%);
-      border-bottom: 1px solid #ece6de;
-      width: 100%;
+      display: none;
     }
 
     .about-hero {
@@ -255,7 +253,7 @@
 
     .about-story-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
       gap: 24px;
       align-items: stretch;
     }
@@ -281,6 +279,36 @@
     .about-story-card img {
       height: 320px;
       object-fit: cover;
+    }
+
+    .about-story-card {
+      align-self: stretch;
+    }
+
+    .about-story-card img,
+    .about-quote-card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about-quote-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+    }
+
+    .about-quote-card img {
+      height: 320px;
+    }
+
+    .about-story-body,
+    .about-quote-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: left;
     }
 
     .about-story-body,
@@ -456,11 +484,66 @@
       border: 1px solid rgba(255,255,255,0.26);
       color: #fff;
       min-width: 220px;
+      position: relative;
+      gap: 10px;
     }
 
     .about-cta-actions .about-btn-secondary:hover {
       background: rgba(255,255,255,0.08);
       color: #fff;
+    }
+
+    .cta-call-icon {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      font-size: 16px;
+      line-height: 1;
+      transform-origin: 50% 100%;
+      animation: ringPhone 1.4s ease-in-out infinite;
+    }
+
+    .cta-call-icon::before,
+    .cta-call-icon::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 999px;
+      opacity: 0;
+      transform: scale(0.7);
+      animation: ringPulse 1.4s ease-out infinite;
+    }
+
+    .cta-call-icon::after {
+      animation-delay: 0.35s;
+    }
+
+    @keyframes ringPhone {
+      0%, 100% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-12deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-10deg); }
+      50% { transform: rotate(8deg); }
+      60% { transform: rotate(0deg); }
+    }
+
+    @keyframes ringPulse {
+      0% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      30% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.35);
+      }
     }
 
     @media (max-width: 1200px) {
@@ -528,7 +611,6 @@
       }
 
       .about-story-grid,
-      .about-services-grid,
       .about-values-grid,
       .about-why-grid,
       .about-process-grid {
@@ -569,7 +651,6 @@
 
       .about-hero-highlights,
       .about-story-grid,
-      .about-services-grid,
       .about-values-grid,
       .about-why-grid,
       .about-process-grid {
@@ -614,178 +695,93 @@
 </head>
 <body class="about-modern">
 
-  <!-- Header Section Starts -->
-  <Header class="position-relative z-3">
-    <div class="header-top py-3">
-      <div class="container">
-        <div class="header-top-inner d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <div class="header-contact">
-            <ul class="d-flex white flex-wrap">
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="tel:+33877554332"><i class="fa fa-phone me-2" aria-hidden="true"></i>+33 877 554 332</a></li>
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="/cdn-cgi/l/email-protection#a2cbccc4cde2d5c7c0d1cbd6c78cc1cdcf"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i><span class="__cf_email__" data-cfemail="6e070008012e190b0c1d071a0b400d0103">[email&#160;protected]</span></a></li>
-              <li class="small"><i class="fa fa-clock-o me-2" aria-hidden="true"></i>Mon - Fri: 9:00 - 18:30</li>
-            </ul>
-          </div>
-          <div class="social-links">
-            <ul class="d-flex gap-2">
-              <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div> 
+  <div class="top-bar">
+    <div class="container">
+      <span>Premium Quality</span>
+      <span>Crafted to Last</span>
+      <span>Customizable Options</span>
+      <span>Expert Guidance</span>
+      <span>Fast Execution</span>
     </div>
-    <div class="header-nav header-nav-menu" id="header-nav-menu">
-      <div class="container">
-        <div class="header-nav-inner border-top border-light py-3">
-          <div class="row gx-xl-5 align-items-center justify-content-between">
-            <div class="col-xl-2 col-md-3 col-6 order-1">
-              <div class="header-logo">
-                <a href="index.html"><img src="image/logo.png" alt="logo" class="w-100"></a>
-              </div>
-            </div>
-            <div class="col-xl-7 col-0 order-3 order-xl-2">
-              <div class="header-nav">
-                <div class="navbar-collapse " id="bs-example-navbar-collapse-1">
-                  <ul class="navbar-nav flex-row align-items-center justify-content-center" id="responsive-menu">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Home
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index.html">Home 1</a></li>
-                        <li><a class="dropdown-item text-capitalize border-grey"
-                            href="index-2.html">Home 2</a></li> 
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index-3.html">Home 3</a></li>        
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase active" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize" 
-                            href="team.html">Our Team</a></li>
-                        <li><a class="dropdown-item text-capitalize" 
-                            href="team-detail.html">Team Detail</a></li>    
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-list.html">Career</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-detail.html">Career Detail</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="faq.html">Faq</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="pricing.html">pricing</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="testimonial.html">Testimonial</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="coming-soon.html">Coming Soon</a></li>
-                        <li><a class="dropdown-item  text-capitalize" 
-                            href="error.html">404Error</a></li>   
-                        <li><a class="dropdown-item  text-capitalize" 
-                            href="search.html">Search Result</a></li>   
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-list.html">Service List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html">Service Detail</a></li> 
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Projects
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project.html">Projet List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project-detail.html">Projet Detail</a></li>    
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown ">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Blog
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-list.html">Blog List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-detail.html">Blog Single</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase" href="contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-4 col-0  order-2 order-xl-3">
-              <div class="header-icons d-none d-xl-block">
-                <ul class="d-flex align-items-center gap-4  justify-content-xl-end">
-                  <li><a class="position-relative" data-bs-toggle="modal" data-bs-target="#interealModal"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                  </a></li>
-                  <li><a href="consultation.html" class="btn-secondary">Get A Qoute</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div id="slicknav-mobile"></div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="/" class="logo" aria-label="Aqeeq Decor home">
+        <div class="logo-text">
+          <strong>AQEEQ</strong>
+          <span>DECOR</span>
         </div>
-      </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">PROJECTS</a>
+        <div class="nav-item services-menu">
+          <a href="#">SERVICES</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Curtains</a></li>
+            <li><a href="#">Wallpapers</a></li>
+            <li class="has-children">
+              <a href="#">Furniture</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Modular</a></li>
+                <li><a href="#">Office furniture</a></li>
+                <li><a href="#">Sofas</a></li>
+                <li><a href="#">Dining table</a></li>
+                <li><a href="#">Dining chair</a></li>
+                <li><a href="#">Accent chair</a></li>
+                <li><a href="#">Beds</a></li>
+                <li><a href="#">Bedside table</a></li>
+                <li><a href="#">Pouffee</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a href="#">Window Blinds</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Blinds</a></li>
+                <li><a href="#">Roller</a></li>
+                <li><a href="#">Zebra</a></li>
+                <li><a href="#">Vertical</a></li>
+                <li><a href="#">Roman</a></li>
+                <li><a href="#">Honeycomb</a></li>
+                <li><a href="#">Outdoor</a></li>
+                <li><a href="#">PVC</a></li>
+                <li><a href="#">Mansoon</a></li>
+                <li><a href="#">Wooden</a></li>
+                <li><a href="#">Aluminium Venetian</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Mattress</a></li>
+            <li class="has-children">
+              <a href="#">Floorings</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Wooden</a></li>
+                <li><a href="#">PVC</a></li>
+                <li><a href="#">Engineered</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Gym</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <a href="#">CONTACT US</a>
+        <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
+          <span class="call-icon" aria-hidden="true">☎</span>
+          <span class="call-text">+91 86987 25668</span>
+        </a>
+      </nav>
     </div>
-  </Header>
-  <!-- Header Section Ends -->
+  </header>
 
   <main>
-    <div class="about-hero-wrap">
-      <section class="about-hero">
-        <div class="about-hero-content">
-          <span class="about-kicker">About Aqeeq Decor</span>
-          <h1>Designing elegant spaces that feel refined, comfortable and truly personal.</h1>
-          <p>Aqeeq Decor transforms residential and commercial interiors through thoughtfully selected curtains, wallpapers, furniture, window blinds, mattresses and flooring solutions. We bring together style, practicality and execution to create spaces that feel complete and timeless.</p>
-          <div class="about-hero-actions">
-            <a href="contact.html" class="about-btn-primary">Get In Touch</a>
-            <a href="index-3.html" class="about-btn-secondary">Explore Collections</a>
-          </div>
-          <div class="about-hero-highlights">
-            <div class="about-highlight">
-              <strong>6+</strong>
-              <span>Decor Categories</span>
-            </div>
-            <div class="about-highlight">
-              <strong>Tailored</strong>
-              <span>Design Guidance</span>
-            </div>
-            <div class="about-highlight">
-              <strong>Elegant</strong>
-              <span>Execution & Finish</span>
-            </div>
-          </div>
-        </div>
-        <div class="about-hero-media">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Elegant bedroom interior by Aqeeq Decor">
-        </div>
-      </section>
-    </div>
 
     <section class="about-section">
       <div class="container">
@@ -812,56 +808,6 @@
       </div>
     </section>
 
-    <section class="about-section">
-      <div class="container">
-        <h2 class="about-section-title">OUR SERVICES</h2>
-        <p class="about-section-copy">Each category contributes to a balanced and elegant interior. Together, they help build spaces that feel complete, layered and visually cohesive.</p>
-        <div class="about-services-grid">
-          <article class="about-service-card">
-            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Curtains">
-            <div class="about-service-body">
-              <h3>Curtains</h3>
-              <p>Custom drapery solutions that add softness, privacy and sophistication to every space.</p>
-            </div>
-          </article>
-          <article class="about-service-card">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Wallpapers">
-            <div class="about-service-body">
-              <h3>Wallpapers</h3>
-              <p>Statement wall finishes that bring texture, depth and personality to modern and classic interiors.</p>
-            </div>
-          </article>
-          <article class="about-service-card">
-            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Furniture">
-            <div class="about-service-body">
-              <h3>Furniture</h3>
-              <p>Elegant furniture selections designed to balance comfort, function and visual harmony.</p>
-            </div>
-          </article>
-          <article class="about-service-card">
-            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Window Blinds">
-            <div class="about-service-body">
-              <h3>Window Blinds</h3>
-              <p>Practical and polished blind systems that offer light control with a clean finished look.</p>
-            </div>
-          </article>
-          <article class="about-service-card">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80&sat=-30" alt="Mattress">
-            <div class="about-service-body">
-              <h3>Mattress</h3>
-              <p>Comfort-driven selections crafted to support restful living and refined bedroom styling.</p>
-            </div>
-          </article>
-          <article class="about-service-card">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Floorings">
-            <div class="about-service-body">
-              <h3>Floorings</h3>
-              <p>Durable, elegant flooring options that anchor the overall tone and character of a room.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="about-section about-values-section">
       <div class="container">
@@ -938,116 +884,89 @@
           <p>Whether you are furnishing a new home, enhancing a room or planning décor for a commercial setting, Aqeeq Decor is here to guide you with clarity, detail and style.</p>
           <div class="about-cta-actions">
             <a href="contact.html" class="about-btn-primary">Contact Us</a>
-            <a href="tel:+918698725668" class="about-btn-secondary">Call +91 86987 25668</a>
+            <a href="tel:+918698725668" class="about-btn-secondary"><span class="cta-call-icon" aria-hidden="true">☎</span><span>Call +91 86987 25668</span></a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer Section Starts -->
-  <footer class="section-padding position-relative pb-5">
-    <div class="overlay"></div>
-    <div class="container position-relative">
-      <div class="footer-inner white">
-        <div class="footer-top pb-5 mb-5 border-bottom border-2 border-light">
-          <div class="row align-items-center gx-lg-5 gy-4">
-            <div class="col-lg-3 col-md-4">
-              <div class="footer-top-left">
-                <img src="image/logo.png" alt="footer logo" class="w-100">
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-8">
-              <div class="footer-top-right">
-                <p class="white mb-0 h6 fw-normal fst-italic">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporatu incididunt ut labore et dolore magna aliqua.”</p>
-              </div>
-            </div>
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="Aqeeq Decor home" style="color:#fff; margin-bottom: 14px; display: inline-flex;">
+          <div class="logo-text">
+            <strong style="color: #8fa15f;">AQEEQ</strong>
+            <span style="color: rgba(255,255,255,0.75);">DECOR</span>
           </div>
+        </a>
+        <p>Thoughtfully designed decor solutions crafted with quality materials and a passion for detail.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
         </div>
-        <div class="footer-middle mb-5  pb-5 border-bottom border-light text-center text-md-start">
-          <div class="row gx-lg-5 gy-5">
-            <div class="col-lg-4">
-              <div class="footer-info">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui reprehenderit dolor officia. </p>
-                <div class="footer-socials mb-4">
-                  <ul class="d-flex gap-1 my-2 justify-content-center justify-content-md-start">
-                    <li><a href=""><i class="fa fa-facebook bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-linkedin bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-google-plus bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-                <div class="contact-info">
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                      <li>256 Elizaberth Ave, CA, 90025</li>
-                    </ul>
-                  </div>
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                      <li>+569 2316 2156</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                      <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="375e595158775e5943524552565b1954585a">[email&#160;protected]</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="quick-links">
-                <h4 class="white mb-2">Quick Link</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Services</a></li>
-                  <li><a href="service.html">Attorneys</a></li>
-                  <li><a href="blog-list.html">News & Articles</a></li>
-                  <li><a href="">Policies</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="services">
-                <h4 class="white mb-2">Services</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="service.html">Perfect Planning</a></li>
-                  <li><a href="service.html">Professional Design</a></li>
-                  <li><a href="service.html">Best Interior</a></li>
-                  <li><a href="service.html">Furniture Design</a></li>
-                  <li><a href="service.html">Complete Decoration</a></li>
-                  <li><a href="service.html">Terms & Conditions</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="services">
-                <h4 class="white mb-2">Get interesting news</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <p class="mb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ea dolorum.</p>
-                <div class="subscribe">
-                  <input type="email" placeholder="Email" class="mb-2">
-                  <a href="" class="btn-primary">Subscribe</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom text-center">
-          <p class="mb-0"> &copy;2025 Aqeeq Decor. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Projects</li>
+          <li>Services</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>OPENING HOURS</h4>
+        <ul>
+          <li>Mon - Sat: 10 am - 8 pm</li>
+          <li>Sunday: Open on Request</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>CONTACT US</h4>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <a class="contact-text" href="tel:+918698725668">+91 86987 25668</a>
+        </p>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <a class="contact-text" href="tel:+918319163736">+91 83191 63736</a>
+        </p>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+          </span>
+          <a class="contact-text" href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a>
+        </p>
+        <p>
+          <span class="contact-icon contact-icon-top" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+        </p>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>NEWSLETTER</h4>
+        <p>Subscribe to get updates on new collections &amp; offers.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email">
+          <button aria-label="Submit">↗</button>
         </div>
       </div>
     </div>
+    <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
   </footer>
-  <!-- Footer Section Ends -->
 
   <!--Back-to-top Button start-->
   <div id="back-to-top">
@@ -1104,10 +1023,113 @@
   </div>
   <!-- Intereal Info Ends -->
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/plugin.js"></script>
   <script src="js/main.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"e2e296138d64407b8469055f5cbf0b42","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  <script>
+    const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
+    const servicesMenu = document.querySelector('.services-menu');
+    const childMenuItems = document.querySelectorAll('.services-menu .has-children');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('header nav');
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', (event) => {
+        if (!mobileMenuQuery.matches) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = mainNav.classList.toggle('mobile-open');
+        document.body.classList.toggle('menu-open', isOpen);
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+        if (!isOpen && servicesMenu) {
+          servicesMenu.classList.remove('open');
+          childMenuItems.forEach((child) => child.classList.remove('open'));
+        }
+      });
+    }
+
+    if (servicesMenu) {
+      const servicesTrigger = servicesMenu.querySelector(':scope > a');
+
+      servicesTrigger.addEventListener('click', (event) => {
+        if (!mobileMenuQuery.matches) return;
+        event.preventDefault();
+        const isOpen = servicesMenu.classList.contains('open');
+
+        if (isOpen) {
+          servicesMenu.classList.remove('open');
+          childMenuItems.forEach((child) => child.classList.remove('open'));
+        } else {
+          servicesMenu.classList.add('open');
+        }
+      });
+
+      childMenuItems.forEach((item) => {
+        const trigger = item.querySelector(':scope > a');
+        trigger.addEventListener('click', (event) => {
+          if (!mobileMenuQuery.matches) return;
+          event.preventDefault();
+          const isOpen = item.classList.contains('open');
+
+          childMenuItems.forEach((child) => child.classList.remove('open'));
+
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!mobileMenuQuery.matches) return;
+        const clickedInsideMenu = event.target.closest('header nav');
+        const clickedToggle = event.target.closest('.menu-toggle');
+
+        if (!clickedInsideMenu && !clickedToggle) {
+          servicesMenu.classList.remove('open');
+          childMenuItems.forEach((child) => child.classList.remove('open'));
+          if (mainNav && menuToggle) {
+            mainNav.classList.remove('mobile-open');
+            document.body.classList.remove('menu-open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (!mobileMenuQuery.matches) {
+          servicesMenu.classList.remove('open');
+          childMenuItems.forEach((child) => child.classList.remove('open'));
+          if (mainNav && menuToggle) {
+            mainNav.classList.remove('mobile-open');
+            document.body.classList.remove('menu-open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+
+    if (mainNav) {
+      mobileMenuQuery.addEventListener('change', (event) => {
+        if (!event.matches) {
+          mainNav.classList.remove('mobile-open');
+          document.body.classList.remove('menu-open');
+          if (menuToggle) {
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+
+    if (mainNav && mobileMenuQuery.matches) {
+      mainNav.classList.remove('mobile-open');
+      document.body.classList.remove('menu-open');
+    }
+  </script>
 </body>
 </html>
