@@ -20,8 +20,568 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+  <style>
+    .about-modern {
+      background: #f7f3ed;
+    }
+
+    .about-modern section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-modern .container {
+      max-width: 1240px;
+    }
+
+    .about-hero {
+      padding: 110px 0 70px;
+      background: linear-gradient(180deg, #f8f5ef 0%, #f3ede4 100%);
+      overflow: hidden;
+    }
+
+    .about-hero:before,
+    .about-hero:after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(160, 134, 102, 0.08);
+      filter: blur(2px);
+      z-index: -1;
+    }
+
+    .about-hero:before {
+      width: 320px;
+      height: 320px;
+      top: -120px;
+      right: -80px;
+    }
+
+    .about-hero:after {
+      width: 240px;
+      height: 240px;
+      bottom: -100px;
+      left: -60px;
+    }
+
+    .about-kicker,
+    .about-section-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8b6a48;
+    }
+
+    .about-hero h1,
+    .about-story-content h2,
+    .about-services-intro h2,
+    .about-why-content h2,
+    .about-values-intro h2,
+    .about-cta h2,
+    .service-card h3,
+    .value-card h3,
+    .why-card-modern h3,
+    .about-stat strong {
+      font-family: 'Cormorant Garamond', serif;
+      color: #1f1a15;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.96;
+      margin-bottom: 22px;
+    }
+
+    .about-hero p,
+    .about-story-content p,
+    .about-services-intro p,
+    .service-card p,
+    .about-why-content p,
+    .why-card-modern p,
+    .value-card p,
+    .about-cta p {
+      font-family: 'Inter', sans-serif;
+      color: #5f574f;
+      line-height: 1.85;
+      margin-bottom: 0;
+    }
+
+    .about-hero p {
+      font-size: 1.03rem;
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .about-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .about-hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 26px;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: all 0.25s ease;
+    }
+
+    .about-btn-primary {
+      background: #4a5430;
+      color: #fff;
+      border: 1px solid #4a5430;
+    }
+
+    .about-btn-primary:hover {
+      background: #3d4627;
+      color: #fff;
+    }
+
+    .about-btn-secondary {
+      background: transparent;
+      color: #4a5430;
+      border: 1px solid rgba(74, 84, 48, 0.32);
+    }
+
+    .about-btn-secondary:hover {
+      background: rgba(74, 84, 48, 0.08);
+      color: #4a5430;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .about-stat {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid #e5dbcd;
+      border-radius: 20px;
+      padding: 22px 18px;
+      backdrop-filter: blur(4px);
+    }
+
+    .about-stat strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .about-stat span {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #6c645c;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .about-hero-media {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .about-hero-media-main {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(41, 31, 20, 0.14);
+      border: 8px solid rgba(255,255,255,0.7);
+    }
+
+    .about-hero-media-main img,
+    .about-story-media img,
+    .service-card img,
+    .about-why-gallery img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .about-hero-card {
+      position: absolute;
+      left: 0;
+      bottom: 34px;
+      max-width: 240px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px 18px;
+      box-shadow: 0 20px 45px rgba(41, 31, 20, 0.14);
+      border: 1px solid #ece2d5;
+    }
+
+    .about-hero-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+      color: #4a5430;
+    }
+
+    .about-hero-card p {
+      font-size: 14px;
+      color: #5f574f;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .about-story,
+    .about-services,
+    .about-why,
+    .about-values,
+    .about-cta {
+      padding: 80px 0;
+    }
+
+    .about-story {
+      background: #fff;
+    }
+
+    .about-story-wrap,
+    .about-why-wrap {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .about-story-media {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 18px;
+      align-items: end;
+    }
+
+    .about-story-media img:first-child {
+      min-height: 540px;
+      border-radius: 26px;
+    }
+
+    .about-story-media-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about-story-media-stack img {
+      border-radius: 24px;
+      min-height: 260px;
+    }
+
+    .about-story-content h2,
+    .about-services-intro h2,
+    .about-why-content h2,
+    .about-values-intro h2,
+    .about-cta h2 {
+      font-size: clamp(2.3rem, 4vw, 3.7rem);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .about-story-content p + p,
+    .about-why-content p + p {
+      margin-top: 16px;
+    }
+
+    .about-story-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+      margin-top: 28px;
+    }
+
+    .about-story-points li {
+      position: relative;
+      padding-left: 26px;
+      font-family: 'Inter', sans-serif;
+      color: #413932;
+      font-weight: 500;
+    }
+
+    .about-story-points li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #4a5430;
+      box-shadow: 0 0 0 6px rgba(74, 84, 48, 0.10);
+    }
+
+    .about-services {
+      background: linear-gradient(180deg, #f6f1e8 0%, #f9f7f2 100%);
+    }
+
+    .about-services-intro {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .about-services-grid,
+    .about-values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card,
+    .value-card,
+    .why-card-modern {
+      background: #fff;
+      border: 1px solid #ece2d5;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 35px rgba(34, 28, 22, 0.06);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .service-card:hover,
+    .value-card:hover,
+    .why-card-modern:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 45px rgba(34, 28, 22, 0.10);
+      border-color: rgba(74, 84, 48, 0.24);
+    }
+
+    .service-card img {
+      height: 280px;
+    }
+
+    .service-card-body,
+    .value-card-body,
+    .why-card-modern-body {
+      padding: 24px 24px 26px;
+    }
+
+    .service-card h3,
+    .value-card h3,
+    .why-card-modern h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p,
+    .value-card p,
+    .why-card-modern p {
+      font-size: 15px;
+    }
+
+    .about-why {
+      background: #fff;
+    }
+
+    .about-why-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .about-why-gallery img {
+      border-radius: 24px;
+      min-height: 250px;
+      box-shadow: 0 18px 35px rgba(34, 28, 22, 0.08);
+    }
+
+    .about-why-gallery img:first-child {
+      min-height: 520px;
+    }
+
+    .about-why-gallery img:last-child {
+      margin-top: 72px;
+      min-height: 320px;
+    }
+
+    .about-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .why-card-modern-body i,
+    .value-card-body i {
+      width: 58px;
+      height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(74, 84, 48, 0.10);
+      color: #4a5430;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .about-values {
+      background: linear-gradient(180deg, #f6f1e8 0%, #f9f7f2 100%);
+    }
+
+    .about-values-intro {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .about-cta {
+      background: #fff;
+      padding-top: 0;
+    }
+
+    .about-cta-wrap {
+      background: linear-gradient(135deg, #2f281f 0%, #4a5430 100%);
+      border-radius: 30px;
+      padding: 52px 46px;
+      color: #fff;
+      box-shadow: 0 24px 55px rgba(34, 28, 22, 0.14);
+    }
+
+    .about-cta h2,
+    .about-cta p,
+    .about-cta .about-section-kicker {
+      color: #fff;
+    }
+
+    .about-cta .about-section-kicker {
+      opacity: 0.8;
+    }
+
+    .about-cta p {
+      max-width: 760px;
+    }
+
+    .about-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .about-cta-actions .about-btn-primary {
+      background: #fff;
+      border-color: #fff;
+      color: #2d2a25;
+    }
+
+    .about-cta-actions .about-btn-primary:hover {
+      background: #f7f3ed;
+      color: #2d2a25;
+    }
+
+    .about-cta-actions .about-btn-secondary {
+      border-color: rgba(255,255,255,0.3);
+      color: #fff;
+    }
+
+    .about-cta-actions .about-btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    @media (max-width: 1199px) {
+      .about-story-wrap,
+      .about-why-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero-media {
+        padding-left: 0;
+      }
+
+      .about-services-grid,
+      .about-values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 991px) {
+      .about-hero {
+        padding: 92px 0 60px;
+      }
+
+      .about-hero-media {
+        margin-top: 18px;
+      }
+
+      .about-story,
+      .about-services,
+      .about-why,
+      .about-values,
+      .about-cta {
+        padding: 64px 0;
+      }
+
+      .about-story-media {
+        grid-template-columns: 1fr;
+      }
+
+      .about-story-media img:first-child,
+      .about-story-media-stack img,
+      .about-why-gallery img:first-child,
+      .about-why-gallery img:last-child,
+      .service-card img {
+        min-height: auto;
+        height: auto;
+      }
+
+      .about-why-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .about-why-gallery img:last-child {
+        margin-top: 0;
+      }
+
+      .about-cta-wrap {
+        padding: 42px 28px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .about-stats,
+      .about-services-grid,
+      .about-values-grid,
+      .about-why-grid,
+      .about-story-points {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero-card {
+        position: relative;
+        max-width: 100%;
+        left: auto;
+        bottom: auto;
+        margin-top: 16px;
+      }
+
+      .about-hero,
+      .about-story,
+      .about-services,
+      .about-why,
+      .about-values,
+      .about-cta {
+        padding: 56px 0;
+      }
+
+      .about-cta-wrap {
+        padding: 34px 20px;
+        border-radius: 24px;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="about-modern">
 
   <!-- Header Section Starts -->
   <Header class="position-relative z-3">
@@ -164,425 +724,222 @@
   </Header>
   <!-- Header Section Ends -->
 
-  <!-- Breadcrumb Section Starts -->
-  <section class="breadcrumb position-relative mb-0">
-    <div class="overlay"></div>
-    <div class="container position-absolute top-50 start-50 translate-middle text-center">
-      <div class="breadcrumb-inner mt-8">
-        <h2 class="grey mb-0">About Aqeeq Decor</h2>
-      </div>
-    </div>
-  </section>
-  <!-- Breadcrumb Section Ends -->
-
-  <!-- About Intro Section Starts -->
-  <section class="about position-relative z-0 pt-8">
-    <div class="container pt-lg-5">
-      <div class="about-inner border-dashed pb-6 mb-6 position-relative">
-        <span class="heading-clip">About Us</span>
-        <div class="row gx-lg-5 gy-5 align-items-center">
-          <div class="col-lg-6 order-lg-1 order-2">
-            <div class="about-left text-center text-lg-start">
-              <div class="about-info">
-                <span class="teko h5 secondary">Who We Are</span>
-                <div class="sperator bg-secondary mt-1 mb-2 mx-auto ms-lg-0" style="width: 40px; height: 2px;"></div>
-                <h2 class="mb-3">Designing elegant spaces with <span class="secondary d-block">comfort, function & detail</span></h2>
-                <p>Aqeeq Decor is dedicated to transforming residential and commercial spaces with thoughtfully selected furnishing and décor solutions. From curtains and wallpapers to bespoke furniture, flooring and blinds, we help clients build spaces that feel refined, warm and practical.</p>
-                <p>Our approach combines design guidance, material knowledge and on-ground execution. We focus on helping every client choose the right products for their space, style and budget without compromising on visual appeal or long-term usability.</p>
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <span class="about-kicker">About Aqeeq Decor</span>
+            <h1>Elegant interiors, tailored furnishings, and décor that feels personal.</h1>
+            <p>Aqeeq Decor helps transform residential and commercial spaces through thoughtfully selected curtains, wallpapers, furniture, blinds, mattresses and flooring solutions. We blend aesthetic direction with practical execution so every space feels refined, functional and complete.</p>
+            <div class="about-hero-actions">
+              <a href="contact.html" class="about-btn-primary">Get in Touch</a>
+              <a href="index-3.html" class="about-btn-secondary">Back to Home</a>
+            </div>
+            <div class="about-stats">
+              <div class="about-stat">
+                <strong>6+</strong>
+                <span>Core Categories</span>
               </div>
-              <div class="about-signature border-dashed mb-4 pb-4">
-                <span class="teko h5 secondary d-block mb-1">Aqeeq Decor</span>
-                <span class="teko h6 primary d-block">Curtains · Wallpapers · Furniture · Blinds · Mattress · Floorings</span>
+              <div class="about-stat">
+                <strong>100%</strong>
+                <span>Tailored Guidance</span>
               </div>
-              <div class="about-btns">
-                <ul class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3 gap-md-0">
-                  <li><a href="contact.html" class="btn-primary">Get In Touch</a></li>
-                  <li class="about-tel">
-                    <ul class="d-flex gap-3 align-items-center">
-                      <li><i class="fa fa-volume-control-phone text-center rounded-circle white bg-secondary" aria-hidden="true"></i></li>
-                      <li class="teko fw-medium primary h6 mb-0 text-start">
-                        Speak with our team
-                        <span class="d-block secondary h3 mb-0">+91 86987 25668</span>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+              <div class="about-stat">
+                <strong>End-to-End</strong>
+                <span>Décor Support</span>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 order-lg-2 order-1">
-            <div class="about-right p-4 p-lg-5 pb-0">
-              <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Aqeeq Decor interior styling" class="w-100">
-            </div>
-            <div class="about-qoute p-4 bg-primary w-75 white position-relative ms-auto" style="margin-top: -100px;">
-              <p class="ps-3 border-start border-4 border-secondary mb-0">We believe good décor is not only about beauty — it should also feel comfortable, functional and true to the client’s personality.
-                <span class="mb-0 h6 teko d-block mt-2">Aqeeq Decor</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Intro Section Ends -->
-
-  <!-- Categories Section Starts -->
-  <section class="teams pt-0">
-    <div class="container">
-      <div class="teams-inner">
-        <div class="teams-title position-relative pt-5 mb-5 text-center text-lg-start">
-          <span class="heading-clip">Categories</span>
-          <div class="row align-items-center gy-3">
-            <div class="col-lg-7">
-              <div class="teams-title-left">
-                <h2 class="mb-0">Our core <span class="secondary">service categories</span></h2>
-                <p class="mb-0">We provide décor solutions across multiple product categories, helping clients create a complete, coordinated and functional interior experience.</p>
+          <div class="col-lg-6">
+            <div class="about-hero-media">
+              <div class="about-hero-media-main">
+                <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Elegant dining room by Aqeeq Decor">
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="teams-body">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6">
-              <div class="teams-box p-2 border border-2 border-grey position-relative overflow-hidden mt-0">
-                <div class="teams-image">
-                  <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Curtains and soft furnishings">
-                </div>
-                <div class="overlay"></div>
-                <div class="teams-info position-absolute text-center mx-auto w-100 white">
-                  <h5 class="mb-0 white">Curtains</h5>
-                  <span>Elegant drapery & custom soft furnishing solutions</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="teams-box p-2 border border-2 border-grey position-relative overflow-hidden mt-md-4 mt-0">
-                <div class="teams-image">
-                  <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Wallpapers and wall coverings">
-                </div>
-                <div class="overlay"></div>
-                <div class="teams-info position-absolute text-center mx-auto w-100 white">
-                  <h5 class="mb-0 white">Wallpapers</h5>
-                  <span>Statement wall finishes for modern and classic interiors</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="teams-box p-2 border border-2 border-grey position-relative overflow-hidden mt-0">
-                <div class="teams-image">
-                  <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Furniture design and styling">
-                </div>
-                <div class="overlay"></div>
-                <div class="teams-info position-absolute text-center mx-auto w-100 white">
-                  <h5 class="mb-0 white">Furniture</h5>
-                  <span>Bespoke and ready solutions for homes and workspaces</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="teams-box p-2 border border-2 border-grey position-relative overflow-hidden mt-md-4 mt-0">
-                <div class="teams-image">
-                  <img src="image/photo-of-clever-male-lawyer-waits-for-client-outdo-2022-08-17-21-37-58-utc.jpg" alt="Window blinds solutions">
-                </div>
-                <div class="overlay"></div>
-                <div class="teams-info position-absolute text-center mx-auto w-100 white">
-                  <h5 class="mb-0 white">Window Blinds</h5>
-                  <span>Roller, zebra, roman and more for light & privacy control</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="teams-box p-2 border border-2 border-grey position-relative overflow-hidden mt-0">
-                <div class="teams-image">
-                  <img src="image/happy-mature-businessman-pointing-at-blank-noteboo-2022-11-17-08-47-48-utc.jpg" alt="Mattress and comfort category">
-                </div>
-                <div class="overlay"></div>
-                <div class="teams-info position-absolute text-center mx-auto w-100 white">
-                  <h5 class="mb-0 white">Mattress</h5>
-                  <span>Comfort-focused selections for restful living spaces</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="teams-box p-2 border border-2 border-grey position-relative overflow-hidden mt-md-4 mt-0">
-                <div class="teams-image">
-                  <img src="image/smart-asian-business-woman-smiling-at-office-space-2022-11-18-09-57-02-utc-e1743574185157.jpg" alt="Flooring solutions">
-                </div>
-                <div class="overlay"></div>
-                <div class="teams-info position-absolute text-center mx-auto w-100 white">
-                  <h5 class="mb-0 white">Floorings</h5>
-                  <span>Beautiful and durable flooring options for every setting</span>
-                </div>
+              <div class="about-hero-card">
+                <h3>Style with purpose</h3>
+                <p>We help you select materials and finishes that work beautifully in real spaces and everyday use.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Categories Section Ends -->
+    </section>
 
-  <!-- Why Choose Us Section Starts -->
-  <section class="why-us">
-    <div class="container">
-      <div class="why-us-inner position-relative pt-5">
-        <span class="heading-clip">Why Us</span>
-        <div class="row gx-lg-5 gy-5 align-items-center">
-          <div class="col-lg-6 order-lg-1 order-2">
-            <div class="why-us-left">
-              <div class="why-us-image me-lg-4">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Interior styling">
-                  </div>
-                  <div class="col-md-6">
-                    <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Decor execution" class="mt-5">
-                  </div>
-                </div>
-              </div>
-              <div class="why-us-progressbar p-4 bg-primary w-md-75 ms-auto position-relative" style="margin-top: -100px;">
-                <ul>
-                  <li class="mb-4">
-                    <span class="teko h6 white">Product Variety</span>
-                    <div class="progress-bar-section mt-2">
-                      <div class="progress rounded-0 bg-white position-relative overflow-visible" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="height: 7px">
-                        <div class="progress-bar bg-secondary position-relative overflow-visible" style="width: 95%">
-                          <div class="percentage-wrapper position-absolute rounded-circle p-2 bg-secondary white d-flex align-items-center justify-content-between">
-                            <span>95</span><span>%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="mb-4">
-                    <span class="teko h6 white">Design Guidance</span>
-                    <div class="progress-bar-section mt-2">
-                      <div class="progress rounded-0 bg-white position-relative overflow-visible" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="height: 7px">
-                        <div class="progress-bar bg-secondary position-relative overflow-visible" style="width: 92%">
-                          <div class="percentage-wrapper position-absolute rounded-circle p-2 bg-secondary white d-flex align-items-center justify-content-between">
-                            <span>92</span><span>%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="teko h6 white">Execution & Finishing</span>
-                    <div class="progress-bar-section mt-2">
-                      <div class="progress rounded-0 bg-white position-relative overflow-visible" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" style="height: 7px">
-                        <div class="progress-bar bg-secondary position-relative overflow-visible" style="width: 94%">
-                          <div class="percentage-wrapper position-absolute rounded-circle p-2 bg-secondary white d-flex align-items-center justify-content-between">
-                            <span>94</span><span>%</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+    <section class="about-story">
+      <div class="container">
+        <div class="about-story-wrap">
+          <div class="about-story-media">
+            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Luxury curtain styling">
+            <div class="about-story-media-stack">
+              <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Wallpaper styling">
+              <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Furniture styling">
             </div>
           </div>
-          <div class="col-lg-6 order-lg-2 order-1">
-            <div class="why-us-right">
-              <div class="why-us-title mb-4 pb-4 border-dashed text-center text-lg-start">
-                <span class="teko h5 secondary">Why Choose Us</span>
-                <div class="sperator bg-secondary mt-1 mb-2 mx-auto ms-lg-0" style="width: 40px; height: 2px;"></div>
-                <h2 class="mb-3">A trusted décor partner for <span class="secondary">homes and commercial spaces</span></h2>
-                <p>We work closely with clients to understand the space, category requirements and styling direction before recommending products. Our objective is to make décor selection easier, more practical and more aligned with each client’s expectations.</p>
-                <p class="mb-0">Whether you are furnishing a new flat, upgrading a room, or finishing a larger project, Aqeeq Decor focuses on balancing design, budget, quality and timely execution.</p>
-              </div>
+          <div class="about-story-content">
+            <span class="about-section-kicker">Who We Are</span>
+            <h2>Designing spaces that balance comfort, detail and identity.</h2>
+            <p>Aqeeq Decor is focused on helping clients create warm, stylish and functional interiors through curated décor categories. Whether you are furnishing a new flat, upgrading a single room or completing a larger commercial environment, we guide the entire process with attention to quality, budget and usability.</p>
+            <p>We believe the right décor should not only look elegant, but also fit the way a space is actually lived in. Our role is to simplify selection, offer practical recommendations and deliver outcomes that feel complete and cohesive.</p>
+            <ul class="about-story-points list-unstyled mb-0">
+              <li>Personalized product guidance</li>
+              <li>Solutions for residential & commercial spaces</li>
+              <li>Balanced approach to budget and quality</li>
+              <li>Coordinated décor across multiple categories</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <div class="feature-lisiting">
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <div class="feature-box p-3 border border-2 border-grey">
-                      <ul class="d-flex align-items-center">
-                        <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                          <i class="fa fa-th-large secondary" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                          <h5 class="mb-0">Wide Product Range</h5>
-                          <p class="mb-0 small">Curtains, furniture, blinds, wallpapers and more under one roof.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="feature-box p-3 border border-2 border-grey">
-                      <ul class="d-flex align-items-center">
-                        <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                          <i class="fa fa-lightbulb-o secondary" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                          <h5 class="mb-0">Practical Advice</h5>
-                          <p class="mb-0 small">Thoughtful suggestions based on style, usage and budget.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="feature-box p-3 border border-2 border-grey">
-                      <ul class="d-flex align-items-center">
-                        <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                          <i class="fa fa-check-square-o secondary" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                          <h5 class="mb-0">Quality Focused</h5>
-                          <p class="mb-0 small">Selections that balance finish, comfort, durability and value.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="feature-box p-3 border border-2 border-grey">
-                      <ul class="d-flex align-items-center">
-                        <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                          <i class="fa fa-handshake-o secondary" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                          <h5 class="mb-0">Client Experience</h5>
-                          <p class="mb-0 small">Professional support from selection stage to final delivery.</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+    <section class="about-services">
+      <div class="container">
+        <div class="about-services-intro">
+          <span class="about-section-kicker">Service Categories</span>
+          <h2>Décor categories that shape a complete interior experience.</h2>
+          <p>Each category is selected to help clients create a space that feels layered, coordinated and visually refined — from soft furnishings to surface finishes and furniture elements.</p>
+        </div>
+        <div class="about-services-grid">
+          <article class="service-card">
+            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Curtains">
+            <div class="service-card-body">
+              <h3>Curtains</h3>
+              <p>Custom soft-furnishing solutions that frame the room with warmth, privacy and elegance.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Wallpapers">
+            <div class="service-card-body">
+              <h3>Wallpapers</h3>
+              <p>Statement wall finishes that add texture, tone and personality to both modern and classic interiors.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Furniture">
+            <div class="service-card-body">
+              <h3>Furniture</h3>
+              <p>Bespoke and practical furniture solutions for stylish homes, offices and hospitality spaces.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="image/photo-of-clever-male-lawyer-waits-for-client-outdo-2022-08-17-21-37-58-utc.jpg" alt="Window Blinds">
+            <div class="service-card-body">
+              <h3>Window Blinds</h3>
+              <p>Functional and elegant blind systems for light control, privacy and a cleaner visual finish.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="image/happy-mature-businessman-pointing-at-blank-noteboo-2022-11-17-08-47-48-utc.jpg" alt="Mattress">
+            <div class="service-card-body">
+              <h3>Mattress</h3>
+              <p>Comfort-driven options designed to support restful living while complementing bedroom styling.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="image/smart-asian-business-woman-smiling-at-office-space-2022-11-18-09-57-02-utc-e1743574185157.jpg" alt="Floorings">
+            <div class="service-card-body">
+              <h3>Floorings</h3>
+              <p>Durable and visually polished flooring selections to anchor the character of every room.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-why">
+      <div class="container">
+        <div class="about-why-wrap">
+          <div class="about-why-gallery">
+            <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Elegant room setup">
+            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Decor styling details">
+          </div>
+          <div class="about-why-content">
+            <span class="about-section-kicker">Why Choose Us</span>
+            <h2>A décor partner that brings together style, clarity and execution.</h2>
+            <p>We focus on making décor decisions easier for our clients by recommending the right categories, finishes and combinations for each type of space. Our strength lies in understanding how design should look, feel and function in real life.</p>
+            <p>From first conversation to final installation, we aim to provide a polished and supportive experience that helps clients feel confident in every choice.</p>
+            <div class="about-why-grid">
+              <article class="why-card-modern">
+                <div class="why-card-modern-body">
+                  <i class="fa fa-th-large" aria-hidden="true"></i>
+                  <h3>Wide Product Range</h3>
+                  <p>Multiple décor categories coordinated under one design direction.</p>
                 </div>
-              </div>
+              </article>
+              <article class="why-card-modern">
+                <div class="why-card-modern-body">
+                  <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                  <h3>Practical Guidance</h3>
+                  <p>Recommendations based on budget, use, durability and visual appeal.</p>
+                </div>
+              </article>
+              <article class="why-card-modern">
+                <div class="why-card-modern-body">
+                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                  <h3>Quality Focus</h3>
+                  <p>Selections that are elegant, comfortable and suited to long-term use.</p>
+                </div>
+              </article>
+              <article class="why-card-modern">
+                <div class="why-card-modern-body">
+                  <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                  <h3>End-to-End Support</h3>
+                  <p>Professional assistance from selection stage to delivery and execution.</p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Why Choose Us Section Ends -->
+    </section>
 
-  <!-- Process Section Starts -->
-  <section class="process bg-primary">
-    <div class="container">
-      <div class="process-inner position-relative">
-        <span class="heading-clip z-0 w-100 text-center top-50 start-50 translate-middle">Our Process</span>
-        <div class="row gx-md-5 position-relative gy-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="process-box grey">
-              <span class="h1 mb-0">01</span>
-              <h3 class="white mt-3">Understand Your Space</h3>
-              <p>We begin with your layout, product requirement, usage needs and overall décor preference.</p>
+    <section class="about-values">
+      <div class="container">
+        <div class="about-values-intro">
+          <span class="about-section-kicker">Our Approach</span>
+          <h2>How we help clients shape their space with confidence.</h2>
+          <p>Our process is built around understanding the client, recommending the right décor mix and ensuring the final look feels thoughtful and complete.</p>
+        </div>
+        <div class="about-values-grid">
+          <article class="value-card">
+            <div class="value-card-body">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <h3>Understand the Space</h3>
+              <p>We begin with the layout, the purpose of the room and the client’s preferred aesthetic direction.</p>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="process-box grey mt-md-5">
-              <span class="h1 mb-0">02</span>
-              <h3 class="white mt-3">Recommend the Right Fit</h3>
-              <p>Our team helps you choose materials, finishes, colours and categories that suit your vision and budget.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-card-body">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              <h3>Recommend the Right Fit</h3>
+              <p>We suggest categories, materials and styling options that work beautifully within the project goals.</p>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="process-box grey">
-              <span class="h1 mb-0">03</span>
-              <h3 class="white mt-3">Deliver & Execute</h3>
-              <p>We coordinate product readiness, finishing and installation so the outcome feels complete and refined.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-card-body">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <h3>Complete the Experience</h3>
+              <p>We support the final execution so the finished space feels polished, layered and well resolved.</p>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div class="container">
+        <div class="about-cta-wrap">
+          <span class="about-section-kicker">Let’s Work Together</span>
+          <h2>Ready to create a more elegant and functional space?</h2>
+          <p>Whether you are planning a residential makeover, furnishing a commercial environment or selecting products for a single room, Aqeeq Decor is here to guide you with clarity, style and practical support.</p>
+          <div class="about-cta-actions">
+            <a href="contact.html" class="about-btn-primary">Contact Us</a>
+            <a href="tel:+918698725668" class="about-btn-secondary">Call +91 86987 25668</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Process Section Ends -->
-
-  <!-- Testimonials Section Starts -->
-  <section class="review pt-0">
-    <div class="container">
-      <div class="review-inner pt-4 position-relative">
-        <span class="heading-clip text-center text-lg-start w-100">Reviews</span>
-        <div class="row gy-5 align-items-center">
-          <div class="col-lg-4">
-            <div class="review-left text-center text-lg-start">
-              <span class="teko h5 secondary">Client Experience</span>
-              <div class="sperator bg-secondary mt-1 mb-2 mx-auto ms-lg-0" style="width: 40px; height: 2px;"></div>
-              <h2 class="mb-3">What clients <span class="secondary">value about us</span></h2>
-              <p>Clients appreciate our product variety, clear guidance and the way we simplify the décor selection journey.</p>
-              <p class="mb-0">We focus on creating spaces that feel polished, practical and personalised — and that experience reflects in the feedback we receive.</p>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="review-right">
-              <div class="review-slider">
-                <div class="slide mx-3">
-                  <div class="review-box px-4 py-5 bg-primary border border-2 border-secondary text-center">
-                    <div class="review-icon h2 mb-3 white">
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                    </div>
-                    <div class="review-detail white">
-                      <p class="fw-normal fst-italic" style="font-size: 18px;">Excellent guidance while selecting curtains and blinds. The overall process felt smooth and professional.</p>
-                      <div class="sperator bg-secondary my-4 mx-auto" style="width: 40px; height: 2px;"></div>
-                      <p class="secondary"><span class="d-block h5 white teko mb-0">Residential Client</span>Pune</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide mx-3">
-                  <div class="review-box px-4 py-5 bg-primary border border-2 border-secondary text-center">
-                    <div class="review-icon h2 white mb-3">
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                    </div>
-                    <div class="review-detail white">
-                      <p class="fw-normal fst-italic" style="font-size: 18px;">Their product range and design suggestions helped us finalise our interiors with much more confidence.</p>
-                      <div class="sperator bg-secondary my-4 mx-auto" style="width: 40px; height: 2px;"></div>
-                      <p class="secondary"><span class="d-block h5 white teko mb-0">Decor Client</span>Maharashtra</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide mx-3">
-                  <div class="review-box px-4 py-5 bg-primary border border-2 border-secondary text-center">
-                    <div class="review-icon h2 white mb-3">
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                    </div>
-                    <div class="review-detail white">
-                      <p class="fw-normal fst-italic" style="font-size: 18px;">Aqeeq Decor brought together style, budget control and neat execution in a way that really stood out.</p>
-                      <div class="sperator bg-secondary my-4 mx-auto" style="width: 40px; height: 2px;"></div>
-                      <p class="secondary"><span class="d-block h5 white teko mb-0">Project Client</span>Commercial Space</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Testimonials Section Ends -->
-
-  <!-- Contact CTA Starts -->
-  <div class="appointment py-5 bg-secondarylight">
-    <div class="container">
-      <div class="appointment-inner">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-3 col-md-4">
-            <div class="appointment-left">
-              <ul class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                <li class="me-3 pe-3 border-end border-2 border-white"><img src="image/chat.png" alt="chat" style="height: 44px; width: 44px;"></li>
-                <li class="teko">
-                  <span class="h6 primary mb-0">Let’s discuss your décor plan</span>
-                  <span class="d-block h3 mb-0">+91 86987 25668</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-8">
-            <div class="appointment-center">
-              <p class="mb-0">From one room updates to complete décor coordination, Aqeeq Decor is here to help you select the right products for your space.</p>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="appointment-right text-center text-lg-end">
-              <a href="contact.html" class="btn-primary">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Contact CTA Ends -->
+    </section>
+  </main>
 
   <!-- Footer Section Starts -->
   <footer class="section-padding position-relative pb-5">
