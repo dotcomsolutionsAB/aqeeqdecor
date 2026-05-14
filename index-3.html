@@ -556,31 +556,35 @@
         }
 
         .hero-features {
-            margin-top: 36px;
+            margin-top: 34px;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px 20px;
-            padding-top: 24px;
+            gap: 16px 18px;
+            padding-top: 22px;
             border-top: 1px solid #e7dfd6;
-            max-width: 430px;
+            max-width: 500px;
         }
 
         .feature-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
+            padding: 14px 14px;
+            background: rgba(255,255,255,0.58);
+            border: 1px solid #e6ddd2;
+            border-radius: 14px;
         }
 
         .feature-icon {
-            width: 32px;
-            height: 32px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             border: 1px solid #dacfc3;
             display: grid;
             place-items: center;
-            font-size: 14px;
+            font-size: 15px;
             color: var(--olive);
-            background: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.9);
             flex-shrink: 0;
         }
 
@@ -589,13 +593,14 @@
             display: block;
             font-size: 13px;
             margin-bottom: 4px;
+            color: #2f2a24;
         }
 
         .feature-item span,
         .mini-feature span {
             font-size: 11px;
             color: var(--muted);
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         .hero-image {
@@ -1530,7 +1535,7 @@
 
             .hero-features {
                 gap: 14px 16px;
-                max-width: 380px;
+                max-width: 100%;
             }
         }
 
@@ -1872,6 +1877,16 @@
                 padding: 34px 16px 24px;
             }
 
+            .hero-features {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                max-width: 100%;
+            }
+
+            .feature-item {
+                padding: 12px 12px;
+            }
+
             .hero-content h1 {
                 max-width: none;
                 font-size: clamp(2.1rem, 10vw, 3rem);
@@ -2090,36 +2105,36 @@
                     <p>Upgrade your home with beautifully designed Curtains, Wallpapers, Furniture, Window Blinds, and Flooring solutions — all tailored to match your style and space.</p>
                     <button class="btn-dark">Explore Collection</button>
 
-                    <!-- <div class="hero-features">
+                    <div class="hero-features">
                         <div class="feature-item">
                             <div class="feature-icon">✦</div>
                             <div>
                                 <strong>Premium Materials</strong>
-                                <span>Built to last</span>
+                                <span>Carefully selected finishes and textures for a refined look.</span>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <div class="feature-icon">✧</div>
+                            <div class="feature-icon">⌂</div>
                             <div>
-                                <strong>Customizable</strong>
-                                <span>Made for you</span>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✹</div>
-                            <div>
-                                <strong>Expert Craftsmanship</strong>
-                                <span>Finely crafted</span>
+                                <strong>Tailored Styling</strong>
+                                <span>Solutions matched to your space, function and visual taste.</span>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">✓</div>
                             <div>
-                                <strong>Reliable Delivery</strong>
-                                <span>At your doorstep</span>
+                                <strong>Expert Guidance</strong>
+                                <span>Thoughtful recommendations from selection to final fit.</span>
                             </div>
                         </div>
-                    </div> -->
+                        <div class="feature-item">
+                            <div class="feature-icon">⚒</div>
+                            <div>
+                                <strong>Neat Execution</strong>
+                                <span>Smooth delivery and finishing across every décor category.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="hero-image">
