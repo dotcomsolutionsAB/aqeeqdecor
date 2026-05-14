@@ -426,10 +426,11 @@
     .footer-contact h4,
     .footer-newsletter h4 {
       margin: 0 0 14px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       color: #fff;
       font-family: 'Inter', sans-serif;
       font-weight: 500;
+      font-size: 0.95rem;
     }
 
     .footer-links ul {
@@ -859,7 +860,7 @@
     }
 
     .about-why-section {
-      padding-bottom: 60px;
+      padding-bottom: 88px;
     }
 
     .founders-section {
@@ -1040,6 +1041,7 @@
     .about-why-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       align-items: stretch;
+      gap: 28px;
     }
 
     .about-service-card:hover,
@@ -1078,7 +1080,7 @@
     .about-value-card,
     .about-why-card,
     .about-process-card {
-      text-align: left;
+      text-align: center;
     }
 
     .about-why-card-body,
@@ -1087,8 +1089,77 @@
       min-height: 100%;
     }
 
+    .about-why-card {
+      border-radius: 24px;
+      border: 1px solid #e8ddd0;
+      box-shadow: none;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .about-why-card-body {
+      min-height: 100%;
+      padding: 36px 30px 34px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+    }
+
+    .about-why-card .about-card-icon {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      border: 2px solid #d8ccbc;
+      background: transparent;
+      color: #5b6540;
+      font-size: 27px;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1;
+    }
+
+    .about-why-card-body h3 {
+      margin: 0 0 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.18;
+      color: #5a6440;
+    }
+
+    .about-why-card-body p {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.94rem;
+      line-height: 1.85;
+      color: #5f5a53;
+      max-width: 290px;
+    }
+
+    .about-why-card.highlight-card {
+      background: #556332;
+      border-color: #556332;
+    }
+
+    .about-why-card.highlight-card .about-card-icon {
+      border-color: rgba(255,255,255,0.42);
+      color: #fff;
+    }
+
+    .about-why-card.highlight-card h3,
+    .about-why-card.highlight-card p {
+      color: #fff;
+    }
+
+    .about-why-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
     .about-values-section {
-      background: linear-gradient(180deg, #f6f2eb 0%, #f3efe9 100%);
+      background: #f6f3ee;
       padding-bottom: 6px;
     }
 
@@ -1456,6 +1527,10 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .about-why-card-body {
+        padding: 30px 22px 28px;
+      }
+
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1554,6 +1629,21 @@
       .about-why-grid,
       .about-process-grid {
         grid-template-columns: 1fr;
+      }
+
+      .about-why-card-body {
+        padding: 28px 20px 26px;
+      }
+
+      .about-why-card .about-card-icon {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .about-why-card-body h3 {
+        font-size: 1.35rem;
       }
 
       .founders-grid {
@@ -1770,28 +1860,28 @@
             <div class="about-why-card-body">
               <div class="about-card-icon">✦</div>
               <h3>Premium Quality</h3>
-              <p>We focus on materials and finishes that look refined and continue to perform beautifully over time.</p>
+              <p>We use carefully selected materials and finishes to deliver elegant decor solutions that last.</p>
             </div>
           </article>
           <article class="about-why-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">⌂</div>
               <h3>Tailored Solutions</h3>
-              <p>Every recommendation is shaped around the layout, use and personal style of the client’s space.</p>
+              <p>Every project is customized to your layout, style, taste, and practical requirements.</p>
             </div>
           </article>
           <article class="about-why-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">✓</div>
               <h3>Expert Guidance</h3>
-              <p>We simplify décor decisions through thoughtful advice that balances style, comfort and practicality.</p>
+              <p>From selection to installation, our team helps you make the right decor decisions with confidence.</p>
             </div>
           </article>
-          <article class="about-why-card">
+          <article class="about-why-card highlight-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">⚒</div>
               <h3>Professional Execution</h3>
-              <p>Our process focuses on clarity, coordination and neat finishing to deliver an elegant end result.</p>
+              <p>We focus on smooth execution, timely delivery, and neat finishing across every category we offer.</p>
             </div>
           </article>
         </div>
