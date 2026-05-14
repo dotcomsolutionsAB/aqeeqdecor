@@ -21,457 +21,430 @@
 
 
   <style>
+    :root {
+      --olive: #4a5430;
+      --olive-dark: #31381f;
+      --cream: #f6f3ee;
+      --soft-cream: #fbfaf7;
+      --card: #ffffff;
+      --text: #2b2b2b;
+      --muted: #756f66;
+      --line: #e7e1d8;
+      --shadow: 0 10px 30px rgba(29, 24, 18, 0.08);
+      --radius: 18px;
+      --container: 1240px;
+    }
+
     .about-modern {
-      background: #f7f3ed;
+      background: var(--soft-cream);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
     }
 
-    .about-modern section {
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-modern .container {
-      max-width: 1240px;
-    }
-
-    .about-hero {
-      padding: 110px 0 70px;
-      background: linear-gradient(180deg, #f8f5ef 0%, #f3ede4 100%);
+    .about-modern main {
       overflow: hidden;
     }
 
-    .about-hero:before,
-    .about-hero:after {
-      content: "";
-      position: absolute;
+    .about-modern .container {
+      width: min(var(--container), calc(100% - 48px));
+      max-width: none;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .about-section {
+      padding: 52px 0 0;
+    }
+
+    .about-section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin: 0 0 14px;
+      color: var(--olive);
+    }
+
+    .about-section-title::after {
+      content: '';
+      display: block;
+      width: 54px;
+      height: 2px;
+      background: #d3cabd;
+      margin: 12px auto 0;
       border-radius: 999px;
-      background: rgba(160, 134, 102, 0.08);
-      filter: blur(2px);
-      z-index: -1;
     }
 
-    .about-hero:before {
-      width: 320px;
-      height: 320px;
-      top: -120px;
-      right: -80px;
+    .about-section-copy {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      text-align: center;
+      color: #5d564e;
+      line-height: 1.8;
+      font-size: 15px;
     }
 
-    .about-hero:after {
-      width: 240px;
-      height: 240px;
-      bottom: -100px;
-      left: -60px;
+    .about-hero-wrap {
+      background: linear-gradient(180deg, #f6f2eb 0%, #f3efe9 100%);
+      border-bottom: 1px solid #ece6de;
+      width: 100%;
     }
 
-    .about-kicker,
-    .about-section-kicker {
-      display: inline-block;
-      margin-bottom: 14px;
-      font-size: 13px;
-      font-weight: 600;
+    .about-hero {
+      width: 100%;
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: minmax(420px, 34vw) minmax(0, 1fr);
+      align-items: stretch;
+      position: relative;
+    }
+
+    .about-hero-content {
+      padding: clamp(56px, 6vw, 80px) clamp(28px, 4vw, 56px) clamp(36px, 4vw, 50px) max(32px, calc((100vw - var(--container)) / 2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      background: #f3efe9;
+    }
+
+    .about-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #8b6a48;
+      color: var(--olive);
+      margin-bottom: 16px;
     }
 
-    .about-hero h1,
-    .about-story-content h2,
-    .about-services-intro h2,
-    .about-why-content h2,
-    .about-values-intro h2,
-    .about-cta h2,
-    .service-card h3,
-    .value-card h3,
-    .why-card-modern h3,
-    .about-stat strong {
+    .about-kicker::before {
+      content: '✦';
+      font-size: 10px;
+      opacity: 0.85;
+    }
+
+    .about-hero-content h1 {
       font-family: 'Cormorant Garamond', serif;
-      color: #1f1a15;
-    }
-
-    .about-hero h1 {
-      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-size: clamp(3rem, 5vw, 5rem);
       line-height: 0.96;
-      margin-bottom: 22px;
+      margin: 0 0 20px;
+      font-weight: 600;
+      max-width: 560px;
+      color: #171512;
+      text-wrap: balance;
     }
 
-    .about-hero p,
-    .about-story-content p,
-    .about-services-intro p,
-    .service-card p,
-    .about-why-content p,
-    .why-card-modern p,
-    .value-card p,
-    .about-cta p {
-      font-family: 'Inter', sans-serif;
-      color: #5f574f;
+    .about-hero-content p {
+      max-width: 510px;
+      color: #534d45;
+      font-size: clamp(0.98rem, 1.2vw, 1.08rem);
       line-height: 1.85;
-      margin-bottom: 0;
-    }
-
-    .about-hero p {
-      font-size: 1.03rem;
-      max-width: 620px;
-      margin-bottom: 30px;
+      margin: 0 0 28px;
     }
 
     .about-hero-actions {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
-    .about-hero-actions a {
+    .about-btn-primary,
+    .about-btn-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 0 26px;
-      border-radius: 999px;
+      border-radius: 8px;
+      padding: 15px 24px;
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      transition: all 0.25s ease;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
     }
 
     .about-btn-primary {
-      background: #4a5430;
+      background: var(--olive);
       color: #fff;
-      border: 1px solid #4a5430;
+      border: 0;
+      box-shadow: 0 12px 24px rgba(73, 86, 42, 0.18);
     }
 
     .about-btn-primary:hover {
-      background: #3d4627;
+      background: var(--olive-dark);
       color: #fff;
     }
 
     .about-btn-secondary {
       background: transparent;
-      color: #4a5430;
-      border: 1px solid rgba(74, 84, 48, 0.32);
+      border: 1px solid #d4cbc0;
+      color: #312b24;
     }
 
     .about-btn-secondary:hover {
-      background: rgba(74, 84, 48, 0.08);
-      color: #4a5430;
+      background: #fff;
+      color: #312b24;
     }
 
-    .about-stats {
+    .about-hero-highlights {
+      margin-top: 10px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
+      max-width: 520px;
     }
 
-    .about-stat {
+    .about-highlight {
       background: rgba(255,255,255,0.72);
-      border: 1px solid #e5dbcd;
-      border-radius: 20px;
-      padding: 22px 18px;
-      backdrop-filter: blur(4px);
+      border: 1px solid #e7dfd6;
+      border-radius: 16px;
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
     }
 
-    .about-stat strong {
+    .about-highlight strong {
       display: block;
-      font-size: 2rem;
-      line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--olive);
     }
 
-    .about-stat span {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: #6c645c;
-      letter-spacing: 0.04em;
+    .about-highlight span {
+      display: block;
+      font-size: 11px;
+      line-height: 1.6;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      color: var(--muted);
     }
 
     .about-hero-media {
       position: relative;
-      padding-left: 28px;
-    }
-
-    .about-hero-media-main {
-      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(41, 31, 20, 0.14);
-      border: 8px solid rgba(255,255,255,0.7);
+      min-height: 620px;
+      background: #ddd6cc;
     }
 
-    .about-hero-media-main img,
-    .about-story-media img,
-    .service-card img,
-    .about-why-gallery img {
+    .about-hero-media img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
       display: block;
+    }
+
+    .about-hero-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(243, 239, 233, 0.12) 0%, rgba(243, 239, 233, 0) 18%, rgba(0, 0, 0, 0.04) 100%);
+      pointer-events: none;
+    }
+
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-story-card,
+    .about-quote-card,
+    .about-process-card,
+    .about-value-card,
+    .about-why-card,
+    .about-service-card {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #f0ebe3;
+    }
+
+    .about-story-card {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .about-story-card img {
+      height: 320px;
       object-fit: cover;
     }
 
-    .about-hero-card {
-      position: absolute;
-      left: 0;
-      bottom: 34px;
-      max-width: 240px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 20px 18px;
-      box-shadow: 0 20px 45px rgba(41, 31, 20, 0.14);
-      border: 1px solid #ece2d5;
-    }
-
-    .about-hero-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      margin-bottom: 8px;
-      color: #4a5430;
-    }
-
-    .about-hero-card p {
-      font-size: 14px;
-      color: #5f574f;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .about-story,
-    .about-services,
-    .about-why,
-    .about-values,
-    .about-cta {
-      padding: 80px 0;
-    }
-
-    .about-story {
-      background: #fff;
-    }
-
-    .about-story-wrap,
-    .about-why-wrap {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .about-story-media {
-      display: grid;
-      grid-template-columns: 1fr 0.8fr;
-      gap: 18px;
-      align-items: end;
-    }
-
-    .about-story-media img:first-child {
-      min-height: 540px;
-      border-radius: 26px;
-    }
-
-    .about-story-media-stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .about-story-media-stack img {
-      border-radius: 24px;
-      min-height: 260px;
-    }
-
-    .about-story-content h2,
-    .about-services-intro h2,
-    .about-why-content h2,
-    .about-values-intro h2,
-    .about-cta h2 {
-      font-size: clamp(2.3rem, 4vw, 3.7rem);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    .about-story-content p + p,
-    .about-why-content p + p {
-      margin-top: 16px;
-    }
-
-    .about-story-points {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px 18px;
-      margin-top: 28px;
-    }
-
-    .about-story-points li {
-      position: relative;
-      padding-left: 26px;
-      font-family: 'Inter', sans-serif;
-      color: #413932;
-      font-weight: 500;
-    }
-
-    .about-story-points li:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #4a5430;
-      box-shadow: 0 0 0 6px rgba(74, 84, 48, 0.10);
-    }
-
-    .about-services {
-      background: linear-gradient(180deg, #f6f1e8 0%, #f9f7f2 100%);
-    }
-
-    .about-services-intro {
-      max-width: 760px;
-      margin: 0 auto 34px;
-      text-align: center;
-    }
-
-    .about-services-grid,
-    .about-values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .service-card,
-    .value-card,
-    .why-card-modern {
-      background: #fff;
-      border: 1px solid #ece2d5;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 18px 35px rgba(34, 28, 22, 0.06);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-
-    .service-card:hover,
-    .value-card:hover,
-    .why-card-modern:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 45px rgba(34, 28, 22, 0.10);
-      border-color: rgba(74, 84, 48, 0.24);
-    }
-
-    .service-card img {
-      height: 280px;
-    }
-
-    .service-card-body,
-    .value-card-body,
-    .why-card-modern-body {
+    .about-story-body,
+    .about-quote-body,
+    .about-process-body,
+    .about-value-body,
+    .about-why-card-body,
+    .about-service-body {
       padding: 24px 24px 26px;
     }
 
-    .service-card h3,
-    .value-card h3,
-    .why-card-modern h3 {
+    .about-story-body h3,
+    .about-quote-body h3,
+    .about-process-body h3,
+    .about-value-body h3,
+    .about-why-card-body h3,
+    .about-service-body h3 {
+      margin: 0 0 10px;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
-      margin-bottom: 10px;
+      color: var(--olive);
+      font-weight: 700;
+      line-height: 1.02;
     }
 
-    .service-card p,
-    .value-card p,
-    .why-card-modern p {
-      font-size: 15px;
+    .about-story-body p,
+    .about-quote-body p,
+    .about-process-body p,
+    .about-value-body p,
+    .about-why-card-body p,
+    .about-service-body p {
+      margin: 0;
+      color: #5d564e;
+      line-height: 1.8;
+      font-size: 14px;
     }
 
-    .about-why {
-      background: #fff;
+    .about-story-body p + p,
+    .about-quote-body p + p {
+      margin-top: 12px;
     }
 
-    .about-why-gallery {
+    .about-services-grid,
+    .about-values-grid,
+    .about-why-grid,
+    .about-process-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: start;
+      gap: 22px;
     }
 
-    .about-why-gallery img {
-      border-radius: 24px;
-      min-height: 250px;
-      box-shadow: 0 18px 35px rgba(34, 28, 22, 0.08);
+    .about-services-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .about-why-gallery img:first-child {
-      min-height: 520px;
-    }
-
-    .about-why-gallery img:last-child {
-      margin-top: 72px;
-      min-height: 320px;
+    .about-values-grid,
+    .about-process-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .about-why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 28px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .why-card-modern-body i,
-    .value-card-body i {
-      width: 58px;
-      height: 58px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .about-service-card:hover,
+    .about-value-card:hover,
+    .about-why-card:hover,
+    .about-process-card:hover,
+    .about-story-card:hover,
+    .about-quote-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(29, 24, 18, 0.11);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .about-service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #e9e2d8;
+    }
+
+    .about-card-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 14px 0;
       border-radius: 50%;
-      background: rgba(74, 84, 48, 0.10);
-      color: #4a5430;
-      font-size: 22px;
-      margin-bottom: 16px;
+      border: 1px solid #dacfc3;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      color: var(--olive);
+      background: rgba(255,255,255,0.7);
+      flex-shrink: 0;
     }
 
-    .about-values {
-      background: linear-gradient(180deg, #f6f1e8 0%, #f9f7f2 100%);
+    .about-value-card,
+    .about-why-card,
+    .about-process-card {
+      text-align: left;
     }
 
-    .about-values-intro {
-      max-width: 760px;
-      margin: 0 auto 34px;
-      text-align: center;
+    .about-why-card-body,
+    .about-value-body,
+    .about-process-body {
+      min-height: 100%;
     }
 
-    .about-cta {
-      background: #fff;
-      padding-top: 0;
+    .about-values-section {
+      background: linear-gradient(180deg, #f6f2eb 0%, #f3efe9 100%);
+      padding-bottom: 6px;
+    }
+
+    .about-cta-section {
+      padding: 62px 0 14px;
     }
 
     .about-cta-wrap {
       background: linear-gradient(135deg, #2f281f 0%, #4a5430 100%);
-      border-radius: 30px;
-      padding: 52px 46px;
+      border-radius: 22px;
+      padding: 56px 46px;
       color: #fff;
       box-shadow: 0 24px 55px rgba(34, 28, 22, 0.14);
     }
 
-    .about-cta h2,
-    .about-cta p,
-    .about-cta .about-section-kicker {
+    .about-cta-wrap .about-section-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .about-cta-wrap h2 {
+      margin: 0 0 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.3rem, 4vw, 3.5rem);
+      line-height: 1;
       color: #fff;
     }
 
-    .about-cta .about-section-kicker {
-      opacity: 0.8;
-    }
-
-    .about-cta p {
+    .about-cta-wrap p {
       max-width: 760px;
+      margin: 0;
+      color: rgba(255,255,255,0.84);
+      line-height: 1.85;
+      font-size: 15px;
     }
 
     .about-cta-actions {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 26px;
     }
 
     .about-cta-actions .about-btn-primary {
       background: #fff;
-      border-color: #fff;
       color: #2d2a25;
+      box-shadow: none;
+      min-width: 180px;
     }
 
     .about-cta-actions .about-btn-primary:hover {
@@ -480,8 +453,9 @@
     }
 
     .about-cta-actions .about-btn-secondary {
-      border-color: rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.26);
       color: #fff;
+      min-width: 220px;
     }
 
     .about-cta-actions .about-btn-secondary:hover {
@@ -489,94 +463,151 @@
       color: #fff;
     }
 
-    @media (max-width: 1199px) {
-      .about-story-wrap,
-      .about-why-wrap {
-        grid-template-columns: 1fr;
+    @media (max-width: 1200px) {
+      .about-modern .container {
+        width: min(var(--container), calc(100% - 36px));
       }
 
-      .about-hero-media {
-        padding-left: 0;
+      .about-hero {
+        grid-template-columns: minmax(360px, 40vw) minmax(0, 1fr);
+      }
+
+      .about-hero-content {
+        padding: 56px 28px 38px max(20px, calc((100vw - var(--container)) / 2));
       }
 
       .about-services-grid,
-      .about-values-grid {
+      .about-values-grid,
+      .about-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-why-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1024px) {
       .about-hero {
-        padding: 92px 0 60px;
+        grid-template-columns: minmax(320px, 42vw) minmax(0, 1fr);
       }
 
-      .about-hero-media {
-        margin-top: 18px;
+      .about-hero-content {
+        padding: 46px 22px 30px 22px;
       }
 
-      .about-story,
-      .about-services,
-      .about-why,
-      .about-values,
-      .about-cta {
-        padding: 64px 0;
+      .about-hero-content h1 {
+        font-size: clamp(2.6rem, 5vw, 3.8rem);
+        max-width: 420px;
       }
 
-      .about-story-media {
-        grid-template-columns: 1fr;
-      }
-
-      .about-story-media img:first-child,
-      .about-story-media-stack img,
-      .about-why-gallery img:first-child,
-      .about-why-gallery img:last-child,
-      .service-card img {
-        min-height: auto;
-        height: auto;
-      }
-
-      .about-why-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .about-why-gallery img:last-child {
-        margin-top: 0;
-      }
-
-      .about-cta-wrap {
-        padding: 42px 28px;
+      .about-hero-content p {
+        max-width: 420px;
+        font-size: 0.96rem;
       }
     }
 
-    @media (max-width: 767px) {
-      .about-stats,
+    @media (max-width: 900px) {
+      .about-modern .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .about-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .about-hero-content {
+        padding: 42px 22px 28px;
+        order: 1;
+      }
+
+      .about-hero-media {
+        order: 2;
+        min-height: 320px;
+      }
+
+      .about-story-grid,
       .about-services-grid,
       .about-values-grid,
       .about-why-grid,
-      .about-story-points {
+      .about-process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-cta-wrap {
+        padding: 44px 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-modern .container {
+        width: calc(100% - 24px);
+      }
+
+      .about-section {
+        padding-top: 42px;
+      }
+
+      .about-section-title {
+        font-size: 1.8rem;
+      }
+
+      .about-hero-content {
+        padding: 34px 16px 24px;
+      }
+
+      .about-hero-content h1 {
+        max-width: none;
+        font-size: clamp(2.1rem, 10vw, 3rem);
+        line-height: 1.02;
+      }
+
+      .about-hero-media {
+        min-height: 280px;
+      }
+
+      .about-hero-highlights,
+      .about-story-grid,
+      .about-services-grid,
+      .about-values-grid,
+      .about-why-grid,
+      .about-process-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-hero-card {
-        position: relative;
-        max-width: 100%;
-        left: auto;
-        bottom: auto;
-        margin-top: 16px;
+      .about-service-card img,
+      .about-story-card img {
+        height: 220px;
       }
 
-      .about-hero,
-      .about-story,
-      .about-services,
-      .about-why,
-      .about-values,
-      .about-cta {
-        padding: 56px 0;
+      .about-story-body,
+      .about-quote-body,
+      .about-process-body,
+      .about-value-body,
+      .about-why-card-body,
+      .about-service-body {
+        padding: 20px 18px 22px;
+      }
+
+      .about-cta-section {
+        padding: 52px 0 8px;
       }
 
       .about-cta-wrap {
         padding: 34px 20px;
-        border-radius: 24px;
+        border-radius: 20px;
+      }
+
+      .about-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .about-cta-actions .about-btn-primary,
+      .about-cta-actions .about-btn-secondary {
+        width: 100%;
+        min-width: 0;
       }
     }
   </style>
@@ -725,213 +756,186 @@
   <!-- Header Section Ends -->
 
   <main>
-    <section class="about-hero">
+    <div class="about-hero-wrap">
+      <section class="about-hero">
+        <div class="about-hero-content">
+          <span class="about-kicker">About Aqeeq Decor</span>
+          <h1>Designing elegant spaces that feel refined, comfortable and truly personal.</h1>
+          <p>Aqeeq Decor transforms residential and commercial interiors through thoughtfully selected curtains, wallpapers, furniture, window blinds, mattresses and flooring solutions. We bring together style, practicality and execution to create spaces that feel complete and timeless.</p>
+          <div class="about-hero-actions">
+            <a href="contact.html" class="about-btn-primary">Get In Touch</a>
+            <a href="index-3.html" class="about-btn-secondary">Explore Collections</a>
+          </div>
+          <div class="about-hero-highlights">
+            <div class="about-highlight">
+              <strong>6+</strong>
+              <span>Decor Categories</span>
+            </div>
+            <div class="about-highlight">
+              <strong>Tailored</strong>
+              <span>Design Guidance</span>
+            </div>
+            <div class="about-highlight">
+              <strong>Elegant</strong>
+              <span>Execution & Finish</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-hero-media">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Elegant bedroom interior by Aqeeq Decor">
+        </div>
+      </section>
+    </div>
+
+    <section class="about-section">
       <div class="container">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-6">
-            <span class="about-kicker">About Aqeeq Decor</span>
-            <h1>Elegant interiors, tailored furnishings, and décor that feels personal.</h1>
-            <p>Aqeeq Decor helps transform residential and commercial spaces through thoughtfully selected curtains, wallpapers, furniture, blinds, mattresses and flooring solutions. We blend aesthetic direction with practical execution so every space feels refined, functional and complete.</p>
-            <div class="about-hero-actions">
-              <a href="contact.html" class="about-btn-primary">Get in Touch</a>
-              <a href="index-3.html" class="about-btn-secondary">Back to Home</a>
+        <h2 class="about-section-title">OUR STORY</h2>
+        <p class="about-section-copy">We help clients turn ideas into harmonious spaces by carefully combining materials, finishes and furnishing elements that reflect both lifestyle and visual identity.</p>
+        <div class="about-story-grid">
+          <article class="about-story-card">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Curtains and soft furnishings">
+            <div class="about-story-body">
+              <h3>Spaces with character</h3>
+              <p>Aqeeq Decor focuses on creating interiors that feel warm, elegant and thoughtfully resolved. Every category we offer is selected to work not just individually, but as part of a complete décor story.</p>
+              <p>From selecting the right drapery style to recommending surface finishes, furniture tones and flooring harmony, our approach is both aesthetic and practical.</p>
             </div>
-            <div class="about-stats">
-              <div class="about-stat">
-                <strong>6+</strong>
-                <span>Core Categories</span>
-              </div>
-              <div class="about-stat">
-                <strong>100%</strong>
-                <span>Tailored Guidance</span>
-              </div>
-              <div class="about-stat">
-                <strong>End-to-End</strong>
-                <span>Décor Support</span>
-              </div>
+          </article>
+          <article class="about-quote-card">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" alt="Elegant furniture styling">
+            <div class="about-quote-body">
+              <h3>Design with intention</h3>
+              <p>We believe every room should feel like it belongs to the people who live or work in it. That is why our recommendations are always shaped around the client’s style, layout, practical use and comfort.</p>
+              <p>Our goal is simple — to make décor selection easier, more refined and more rewarding from start to finish.</p>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="about-hero-media">
-              <div class="about-hero-media-main">
-                <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Elegant dining room by Aqeeq Decor">
-              </div>
-              <div class="about-hero-card">
-                <h3>Style with purpose</h3>
-                <p>We help you select materials and finishes that work beautifully in real spaces and everyday use.</p>
-              </div>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="about-story">
+    <section class="about-section">
       <div class="container">
-        <div class="about-story-wrap">
-          <div class="about-story-media">
-            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Luxury curtain styling">
-            <div class="about-story-media-stack">
-              <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Wallpaper styling">
-              <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Furniture styling">
-            </div>
-          </div>
-          <div class="about-story-content">
-            <span class="about-section-kicker">Who We Are</span>
-            <h2>Designing spaces that balance comfort, detail and identity.</h2>
-            <p>Aqeeq Decor is focused on helping clients create warm, stylish and functional interiors through curated décor categories. Whether you are furnishing a new flat, upgrading a single room or completing a larger commercial environment, we guide the entire process with attention to quality, budget and usability.</p>
-            <p>We believe the right décor should not only look elegant, but also fit the way a space is actually lived in. Our role is to simplify selection, offer practical recommendations and deliver outcomes that feel complete and cohesive.</p>
-            <ul class="about-story-points list-unstyled mb-0">
-              <li>Personalized product guidance</li>
-              <li>Solutions for residential & commercial spaces</li>
-              <li>Balanced approach to budget and quality</li>
-              <li>Coordinated décor across multiple categories</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-services">
-      <div class="container">
-        <div class="about-services-intro">
-          <span class="about-section-kicker">Service Categories</span>
-          <h2>Décor categories that shape a complete interior experience.</h2>
-          <p>Each category is selected to help clients create a space that feels layered, coordinated and visually refined — from soft furnishings to surface finishes and furniture elements.</p>
-        </div>
+        <h2 class="about-section-title">OUR SERVICES</h2>
+        <p class="about-section-copy">Each category contributes to a balanced and elegant interior. Together, they help build spaces that feel complete, layered and visually cohesive.</p>
         <div class="about-services-grid">
-          <article class="service-card">
-            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Curtains">
-            <div class="service-card-body">
+          <article class="about-service-card">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Curtains">
+            <div class="about-service-body">
               <h3>Curtains</h3>
-              <p>Custom soft-furnishing solutions that frame the room with warmth, privacy and elegance.</p>
+              <p>Custom drapery solutions that add softness, privacy and sophistication to every space.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Wallpapers">
-            <div class="service-card-body">
+          <article class="about-service-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Wallpapers">
+            <div class="about-service-body">
               <h3>Wallpapers</h3>
-              <p>Statement wall finishes that add texture, tone and personality to both modern and classic interiors.</p>
+              <p>Statement wall finishes that bring texture, depth and personality to modern and classic interiors.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Furniture">
-            <div class="service-card-body">
+          <article class="about-service-card">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Furniture">
+            <div class="about-service-body">
               <h3>Furniture</h3>
-              <p>Bespoke and practical furniture solutions for stylish homes, offices and hospitality spaces.</p>
+              <p>Elegant furniture selections designed to balance comfort, function and visual harmony.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="image/photo-of-clever-male-lawyer-waits-for-client-outdo-2022-08-17-21-37-58-utc.jpg" alt="Window Blinds">
-            <div class="service-card-body">
+          <article class="about-service-card">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Window Blinds">
+            <div class="about-service-body">
               <h3>Window Blinds</h3>
-              <p>Functional and elegant blind systems for light control, privacy and a cleaner visual finish.</p>
+              <p>Practical and polished blind systems that offer light control with a clean finished look.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="image/happy-mature-businessman-pointing-at-blank-noteboo-2022-11-17-08-47-48-utc.jpg" alt="Mattress">
-            <div class="service-card-body">
+          <article class="about-service-card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80&sat=-30" alt="Mattress">
+            <div class="about-service-body">
               <h3>Mattress</h3>
-              <p>Comfort-driven options designed to support restful living while complementing bedroom styling.</p>
+              <p>Comfort-driven selections crafted to support restful living and refined bedroom styling.</p>
             </div>
           </article>
-          <article class="service-card">
-            <img src="image/smart-asian-business-woman-smiling-at-office-space-2022-11-18-09-57-02-utc-e1743574185157.jpg" alt="Floorings">
-            <div class="service-card-body">
+          <article class="about-service-card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Floorings">
+            <div class="about-service-body">
               <h3>Floorings</h3>
-              <p>Durable and visually polished flooring selections to anchor the character of every room.</p>
+              <p>Durable, elegant flooring options that anchor the overall tone and character of a room.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="about-why">
+    <section class="about-section about-values-section">
       <div class="container">
-        <div class="about-why-wrap">
-          <div class="about-why-gallery">
-            <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Elegant room setup">
-            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Decor styling details">
-          </div>
-          <div class="about-why-content">
-            <span class="about-section-kicker">Why Choose Us</span>
-            <h2>A décor partner that brings together style, clarity and execution.</h2>
-            <p>We focus on making décor decisions easier for our clients by recommending the right categories, finishes and combinations for each type of space. Our strength lies in understanding how design should look, feel and function in real life.</p>
-            <p>From first conversation to final installation, we aim to provide a polished and supportive experience that helps clients feel confident in every choice.</p>
-            <div class="about-why-grid">
-              <article class="why-card-modern">
-                <div class="why-card-modern-body">
-                  <i class="fa fa-th-large" aria-hidden="true"></i>
-                  <h3>Wide Product Range</h3>
-                  <p>Multiple décor categories coordinated under one design direction.</p>
-                </div>
-              </article>
-              <article class="why-card-modern">
-                <div class="why-card-modern-body">
-                  <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                  <h3>Practical Guidance</h3>
-                  <p>Recommendations based on budget, use, durability and visual appeal.</p>
-                </div>
-              </article>
-              <article class="why-card-modern">
-                <div class="why-card-modern-body">
-                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                  <h3>Quality Focus</h3>
-                  <p>Selections that are elegant, comfortable and suited to long-term use.</p>
-                </div>
-              </article>
-              <article class="why-card-modern">
-                <div class="why-card-modern-body">
-                  <i class="fa fa-handshake-o" aria-hidden="true"></i>
-                  <h3>End-to-End Support</h3>
-                  <p>Professional assistance from selection stage to delivery and execution.</p>
-                </div>
-              </article>
+        <h2 class="about-section-title">WHY CHOOSE US</h2>
+        <p class="about-section-copy">We combine aesthetic understanding with practical execution so clients feel confident throughout the décor journey, from selection to finishing.</p>
+        <div class="about-why-grid">
+          <article class="about-why-card">
+            <div class="about-why-card-body">
+              <div class="about-card-icon">✦</div>
+              <h3>Premium Quality</h3>
+              <p>We focus on materials and finishes that look refined and continue to perform beautifully over time.</p>
             </div>
-          </div>
+          </article>
+          <article class="about-why-card">
+            <div class="about-why-card-body">
+              <div class="about-card-icon">⌂</div>
+              <h3>Tailored Solutions</h3>
+              <p>Every recommendation is shaped around the layout, use and personal style of the client’s space.</p>
+            </div>
+          </article>
+          <article class="about-why-card">
+            <div class="about-why-card-body">
+              <div class="about-card-icon">✓</div>
+              <h3>Expert Guidance</h3>
+              <p>We simplify décor decisions through thoughtful advice that balances style, comfort and practicality.</p>
+            </div>
+          </article>
+          <article class="about-why-card">
+            <div class="about-why-card-body">
+              <div class="about-card-icon">⚒</div>
+              <h3>Professional Execution</h3>
+              <p>Our process focuses on clarity, coordination and neat finishing to deliver an elegant end result.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="about-values">
+    <section class="about-section">
       <div class="container">
-        <div class="about-values-intro">
-          <span class="about-section-kicker">Our Approach</span>
-          <h2>How we help clients shape their space with confidence.</h2>
-          <p>Our process is built around understanding the client, recommending the right décor mix and ensuring the final look feels thoughtful and complete.</p>
-        </div>
-        <div class="about-values-grid">
-          <article class="value-card">
-            <div class="value-card-body">
-              <i class="fa fa-search" aria-hidden="true"></i>
+        <h2 class="about-section-title">HOW WE WORK</h2>
+        <p class="about-section-copy">Our process is designed to feel simple and collaborative, helping clients shape their space with clarity and confidence.</p>
+        <div class="about-process-grid">
+          <article class="about-process-card">
+            <div class="about-process-body">
+              <div class="about-card-icon">01</div>
               <h3>Understand the Space</h3>
-              <p>We begin with the layout, the purpose of the room and the client’s preferred aesthetic direction.</p>
+              <p>We begin with your layout, decor preferences, practical needs and the atmosphere you want the space to create.</p>
             </div>
           </article>
-          <article class="value-card">
-            <div class="value-card-body">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-              <h3>Recommend the Right Fit</h3>
-              <p>We suggest categories, materials and styling options that work beautifully within the project goals.</p>
+          <article class="about-process-card">
+            <div class="about-process-body">
+              <div class="about-card-icon">02</div>
+              <h3>Curate the Right Mix</h3>
+              <p>We guide you through suitable categories, tones, finishes and combinations that work beautifully together.</p>
             </div>
           </article>
-          <article class="value-card">
-            <div class="value-card-body">
-              <i class="fa fa-home" aria-hidden="true"></i>
+          <article class="about-process-card">
+            <div class="about-process-body">
+              <div class="about-card-icon">03</div>
               <h3>Complete the Experience</h3>
-              <p>We support the final execution so the finished space feels polished, layered and well resolved.</p>
+              <p>From final selections to smooth execution, we aim to deliver a polished and cohesive décor outcome.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="about-cta">
+    <section class="about-cta-section">
       <div class="container">
         <div class="about-cta-wrap">
           <span class="about-section-kicker">Let’s Work Together</span>
           <h2>Ready to create a more elegant and functional space?</h2>
-          <p>Whether you are planning a residential makeover, furnishing a commercial environment or selecting products for a single room, Aqeeq Decor is here to guide you with clarity, style and practical support.</p>
+          <p>Whether you are furnishing a new home, enhancing a room or planning décor for a commercial setting, Aqeeq Decor is here to guide you with clarity, detail and style.</p>
           <div class="about-cta-actions">
             <a href="contact.html" class="about-btn-primary">Contact Us</a>
             <a href="tel:+918698725668" class="about-btn-secondary">Call +91 86987 25668</a>
