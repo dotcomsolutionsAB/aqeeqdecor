@@ -179,7 +179,7 @@
       display: block;
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.08em;
       color: var(--olive);
     }
@@ -204,7 +204,7 @@
     nav a {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.05rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.06em;
       color: #47433c;
       transition: color 0.2s ease;
@@ -427,6 +427,7 @@
     .footer-newsletter h4 {
       margin: 0 0 14px;
       letter-spacing: 0.04em;
+      color: #fff;
     }
 
     .footer-links ul {
@@ -558,6 +559,14 @@
       padding: 16px 0 22px;
     }
 
+    #back-to-top a {
+      background: var(--olive) !important;
+    }
+
+    #back-to-top a:hover {
+      background: var(--olive-dark) !important;
+    }
+
     @media (max-width: 1200px) {
       .about-modern .container {
         width: min(var(--container), calc(100% - 36px));
@@ -593,7 +602,7 @@
     }
 
     .about-section {
-      padding: 52px 0 0;
+      padding: 52px 0 30px;
     }
 
     .about-section-title {
@@ -797,6 +806,78 @@
       align-items: stretch;
     }
 
+    .about-story-section {
+      padding-bottom: 34px;
+    }
+
+    .about-why-section {
+      padding-bottom: 34px;
+    }
+
+    .founders-section {
+      padding-top: 8px;
+      padding-bottom: 12px;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .founder-card {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #f0ebe3;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .founder-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(29, 24, 18, 0.11);
+    }
+
+    .founder-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      background: #e9e2d8;
+    }
+
+    .founder-body {
+      padding: 24px 24px 26px;
+      text-align: left;
+    }
+
+    .founder-body h3 {
+      margin: 0 0 6px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--olive);
+      line-height: 1.02;
+    }
+
+    .founder-body h4 {
+      margin: 0 0 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7b755f;
+    }
+
+    .founder-body p {
+      margin: 0;
+      color: #5d564e;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
     .about-story-card,
     .about-quote-card,
     .about-process-card,
@@ -970,7 +1051,8 @@
       border-radius: 22px;
       padding: 56px 46px;
       color: #fff;
-      box-shadow: 0 24px 55px rgba(34, 28, 22, 0.14);
+      box-shadow: 0 14px 28px rgba(34, 28, 22, 0.10);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .about-cta-wrap .about-section-kicker {
@@ -1414,6 +1496,18 @@
         grid-template-columns: 1fr;
       }
 
+      .founders-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-card img {
+        height: 260px;
+      }
+
+      .founder-body {
+        padding: 20px 18px 22px;
+      }
+
       .about-story-body,
       .about-quote-body,
       .about-process-body,
@@ -1550,7 +1644,7 @@
 
   <main>
 
-    <section class="about-section">
+    <section class="about-section about-story-section">
       <div class="container">
         <h2 class="about-section-title">OUR STORY</h2>
         <p class="about-section-copy">We help clients turn ideas into harmonious spaces by carefully combining materials, finishes and furnishing elements that reflect both lifestyle and visual identity.</p>
@@ -1575,8 +1669,33 @@
       </div>
     </section>
 
+    <section class="about-section founders-section">
+      <div class="container">
+        <h2 class="about-section-title">FOUNDERS</h2>
+        <p class="about-section-copy">Meet the visionaries behind Aqeeq Decor, bringing together elegant design thinking, practical guidance and a passion for beautifully finished spaces.</p>
+        <div class="founders-grid">
+          <article class="founder-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80" alt="Founder 1 placeholder portrait">
+            <div class="founder-body">
+              <h3>Founder Name One</h3>
+              <h4>Co-Founder & Creative Director</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel augue non turpis facilisis dictum. He leads the design vision, helping shape interiors with elegance, balance and thoughtful detail.</p>
+            </div>
+          </article>
+          <article class="founder-card">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80" alt="Founder 2 placeholder portrait">
+            <div class="founder-body">
+              <h3>Founder Name Two</h3>
+              <h4>Co-Founder & Operations Lead</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat, tortor vel imperdiet pulvinar, supports smooth execution, product coordination and client experience across every décor journey.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="about-section about-values-section">
+
+    <section class="about-section about-values-section about-why-section">
       <div class="container">
         <h2 class="about-section-title">WHY CHOOSE US</h2>
         <p class="about-section-copy">We combine aesthetic understanding with practical execution so clients feel confident throughout the décor journey, from selection to finishing.</p>
