@@ -179,7 +179,7 @@
       display: block;
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 0.08em;
       color: var(--olive);
     }
@@ -204,7 +204,7 @@
     nav a {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.06em;
       color: #47433c;
       transition: color 0.2s ease;
@@ -428,6 +428,8 @@
       margin: 0 0 14px;
       letter-spacing: 0.04em;
       color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
     }
 
     .footer-links ul {
@@ -601,8 +603,54 @@
       padding-right: 0;
     }
 
+    .about-breadcrumb {
+      position: relative;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: linear-gradient(rgba(26, 24, 20, 0.38), rgba(26, 24, 20, 0.38)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .about-breadcrumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.10) 100%);
+      pointer-events: none;
+    }
+
+    .about-breadcrumb-inner {
+      position: relative;
+      z-index: 1;
+      padding: 36px 0;
+    }
+
+    .about-breadcrumb h1 {
+      margin: 0 0 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-weight: 500;
+      line-height: 1;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+
+    .about-breadcrumb p {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.86);
+    }
+
     .about-section {
-      padding: 52px 0 30px;
+      padding: 56px 0 34px;
     }
 
     .about-section-title {
@@ -627,7 +675,7 @@
 
     .about-section-copy {
       max-width: 760px;
-      margin: 0 auto 28px;
+      margin: 0 auto 32px;
       text-align: center;
       color: #5d564e;
       line-height: 1.8;
@@ -807,22 +855,23 @@
     }
 
     .about-story-section {
-      padding-bottom: 34px;
+      padding-bottom: 42px;
     }
 
     .about-why-section {
-      padding-bottom: 34px;
+      padding-bottom: 60px;
     }
 
     .founders-section {
-      padding-top: 8px;
-      padding-bottom: 12px;
+      padding-top: 12px;
+      padding-bottom: 48px;
     }
 
     .founders-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      gap: 28px;
+      align-items: stretch;
     }
 
     .founder-card {
@@ -990,6 +1039,7 @@
 
     .about-why-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
     }
 
     .about-service-card:hover,
@@ -1051,7 +1101,7 @@
       border-radius: 22px;
       padding: 56px 46px;
       color: #fff;
-      box-shadow: 0 14px 28px rgba(34, 28, 22, 0.10);
+      box-shadow: none;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -1482,7 +1532,17 @@
       }
 
       .about-section {
-        padding-top: 42px;
+        padding-top: 44px;
+        padding-bottom: 24px;
+      }
+
+      .about-breadcrumb {
+        min-height: 200px;
+      }
+
+      .about-breadcrumb p {
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
       }
 
       .about-section-title {
@@ -1595,40 +1655,39 @@
                             <ul class="sub-dropdown">
                                 <li><a href="#">Modular</a></li>
                                 <li><a href="#">Office furniture</a></li>
-                                <li><a href="#">Sofas</a></li>
-                                <li><a href="#">Dining table</a></li>
-                                <li><a href="#">Dining chair</a></li>
-                                <li><a href="#">Accent chair</a></li>
-                                <li><a href="#">Beds</a></li>
-                                <li><a href="#">Bedside table</a></li>
-                                <li><a href="#">Pouffee</a></li>
+                                <li><a href="#">sofas</a></li>
+                                <li><a href="#">dining table</a></li>
+                                <li><a href="#">dining chair</a></li>
+                                <li><a href="#">accent chair</a></li>
+                                <li><a href="#">beds</a></li>
+                                <li><a href="#">bedside table</a></li>
+                                <li><a href="#">pouffee</a></li>
                             </ul>
                         </li>
                         <li class="has-children">
                             <a href="#">Window Blinds</a>
                             <ul class="sub-dropdown">
-                                <li><a href="#">Blinds</a></li>
-                                <li><a href="#">Roller</a></li>
-                                <li><a href="#">Zebra</a></li>
-                                <li><a href="#">Vertical</a></li>
-                                <li><a href="#">Roman</a></li>
-                                <li><a href="#">Honeycomb</a></li>
-                                <li><a href="#">Outdoor</a></li>
-                                <li><a href="#">PVC</a></li>
-                                <li><a href="#">Mansoon</a></li>
-                                <li><a href="#">Wooden</a></li>
-                                <li><a href="#">Aluminium Venetian</a></li>
+                                <li><a href="#">roller</a></li>
+                                <li><a href="#">zebra</a></li>
+                                <li><a href="#">vertical</a></li>
+                                <li><a href="#">roman</a></li>
+                                <li><a href="#">honeycomb</a></li>
+                                <li><a href="#">outdoor</a></li>
+                                <li><a href="#">pvc</a></li>
+                                <li><a href="#">mansoon</a></li>
+                                <li><a href="#">wooden</a></li>
+                                <li><a href="#">aluminium venetian</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Mattress</a></li>
                         <li class="has-children">
                             <a href="#">Floorings</a>
                             <ul class="sub-dropdown">
-                                <li><a href="#">Wooden</a></li>
-                                <li><a href="#">PVC</a></li>
-                                <li><a href="#">Engineered</a></li>
-                                <li><a href="#">Sports</a></li>
-                                <li><a href="#">Gym</a></li>
+                                <li><a href="#">wooden</a></li>
+                                <li><a href="#">pvc</a></li>
+                                <li><a href="#">engineered</a></li>
+                                <li><a href="#">sports</a></li>
+                                <li><a href="#">gym</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -1641,6 +1700,13 @@
             </nav>
         </div>
     </header>
+
+  <section class="about-breadcrumb">
+    <div class="container about-breadcrumb-inner">
+      <h1>About Us</h1>
+      <p>Home / About Us</p>
+    </div>
+  </section>
 
   <main>
 
