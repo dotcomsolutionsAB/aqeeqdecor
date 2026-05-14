@@ -484,13 +484,13 @@
             width: 100%;
             min-height: 640px;
             display: grid;
-            grid-template-columns: minmax(420px, 34vw) minmax(0, 1fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             align-items: stretch;
             position: relative;
         }
 
         .hero-content {
-            padding: clamp(56px, 6vw, 80px) clamp(28px, 4vw, 56px) clamp(36px, 4vw, 50px) max(32px, calc((100vw - var(--container)) / 2));
+            padding: clamp(56px, 6vw, 80px) clamp(42px, 4vw, 72px) clamp(36px, 4vw, 50px) clamp(42px, 4vw, 72px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -501,19 +501,19 @@
 
         .hero-content h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+            font-size: clamp(3rem, 4.8vw, 5rem);
             line-height: 0.96;
             margin: 0 0 22px;
             font-weight: 600;
-            max-width: 560px;
+            max-width: 520px;
             color: #171512;
             text-wrap: balance;
         }
 
         .hero-content p {
-            max-width: 500px;
+            max-width: 480px;
             color: #534d45;
-            font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+            font-size: clamp(0.98rem, 1.1vw, 1.06rem);
             line-height: 1.8;
             margin: 0 0 30px;
         }
@@ -1476,11 +1476,11 @@
             }
 
             .hero {
-                grid-template-columns: minmax(360px, 40vw) minmax(0, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .hero-content {
-                padding: 56px 28px 38px max(20px, calc((100vw - var(--container)) / 2));
+                padding: 56px 32px 38px 32px;
             }
 
             .hero-content h1 {
@@ -1511,11 +1511,11 @@
 
         @media (max-width: 1024px) {
             .hero {
-                grid-template-columns: minmax(320px, 42vw) minmax(0, 1fr);
+                grid-template-columns: 1fr 1fr;
             }
 
             .hero-content {
-                padding: 46px 22px 30px 22px;
+                padding: 46px 24px 30px 24px;
             }
 
             .hero-content h1 {
