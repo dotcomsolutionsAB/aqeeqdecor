@@ -535,6 +535,14 @@
       font-size: 14px;
     }
 
+    .detail-copy,
+    .mini-copy {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+      flex: 1;
+    }
+
     .detail-copy a:hover,
     .mini-copy a:hover {
       color: var(--olive);
@@ -545,10 +553,18 @@
       gap: 24px;
     }
 
+    .contact-right-info-only {
+      align-self: stretch;
+    }
+
     .mini-grid {
       display: grid;
       gap: 16px;
       grid-template-columns: 1fr 1fr;
+    }
+
+    .single-column-mini-grid {
+      grid-template-columns: 1fr;
     }
 
     .mini-card {
@@ -557,6 +573,7 @@
       gap: 14px;
       align-items: flex-start;
       background: linear-gradient(180deg, rgba(74,84,48,0.07) 0%, rgba(74,84,48,0.025) 100%);
+      min-height: 100%;
     }
 
     .mini-copy p {
