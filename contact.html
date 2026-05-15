@@ -345,14 +345,14 @@
 
     .page-hero {
       position: relative;
-      min-height: 280px;
+      min-height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       background-image: linear-gradient(rgba(26, 24, 20, 0.42), rgba(26, 24, 20, 0.42)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
-      background-position: center;
+      background-position: center center;
       overflow: hidden;
     }
 
@@ -366,15 +366,15 @@
     .page-hero-inner {
       position: relative;
       z-index: 1;
-      padding: 42px 0;
+      padding: 56px 0 52px;
     }
 
     .page-hero h1 {
       margin: 0 0 10px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.9rem, 5vw, 4.8rem);
+      font-size: clamp(3.2rem, 5.4vw, 5rem);
       font-weight: 500;
-      line-height: 1;
+      line-height: 0.96;
       letter-spacing: 0.04em;
       color: #fff;
     }
@@ -1306,7 +1306,7 @@
         background: var(--olive);
         border-color: var(--olive);
       }
-      .page-hero { min-height: 220px; }
+      .page-hero { min-height: 300px; }
       .page-hero p { font-size: 0.78rem; letter-spacing: 0.1em; }
       .section { padding-top: 48px; }
       .section-title { font-size: 1.85rem; }
