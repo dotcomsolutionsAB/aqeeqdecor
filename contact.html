@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Contact - Intereal</title>
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="image/01_intereal_thumbnail.png">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!--CSS Plugins-->
-  <link rel="stylesheet" href="css/plugin.css">
-  <!--Custom CSS-->
-  <link rel="stylesheet" href="css/style.css">
+  <title>Aqeeq Decor | Contact Us</title>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
+  <link rel="apple-touch-icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --olive: #4a5430;
@@ -26,8 +20,8 @@
       --muted: #756f66;
       --line: #e7e1d8;
       --shadow: 0 10px 30px rgba(29, 24, 18, 0.08);
-      --radius: 18px;
       --container: 1240px;
+      --radius: 22px;
     }
 
     * { box-sizing: border-box; }
@@ -251,7 +245,7 @@
 
     .dropdown-menu > li > a:hover,
     .sub-dropdown > li > a:hover {
-      background: rgba(74, 84, 48, 0.12);
+      background: rgba(74,84,48,0.12);
       color: var(--olive);
       padding-left: 22px;
     }
@@ -378,7 +372,7 @@
     .page-hero h1 {
       margin: 0 0 10px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-size: clamp(2.9rem, 5vw, 4.8rem);
       font-weight: 500;
       line-height: 1;
       letter-spacing: 0.04em;
@@ -388,7 +382,7 @@
     .page-hero p {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.86);
@@ -399,7 +393,7 @@
     .section-title {
       text-align: center;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
+      font-size: 2.25rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       margin: 0 0 14px;
@@ -422,70 +416,81 @@
       text-align: center;
       color: #5d564e;
       line-height: 1.8;
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    .contact-grid {
+    .contact-shell {
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
+      gap: 34px;
+    }
+
+    .contact-top-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 26px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .contact-panel,
     .contact-form-panel,
+    .contact-hours-panel,
     .map-panel,
-    .hours-panel,
-    .contact-info-card {
+    .detail-card,
+    .mini-card {
       background: #fff;
       border: 1px solid #eee6db;
-      border-radius: 22px;
+      border-radius: 18px;
       box-shadow: var(--shadow);
     }
 
     .contact-panel,
     .contact-form-panel,
-    .hours-panel,
+    .contact-hours-panel,
     .map-panel {
       overflow: hidden;
     }
 
-    .panel-body { padding: 30px 28px; }
+    .panel-body {
+      padding: 30px 28px;
+    }
 
     .contact-panel h2,
     .contact-form-panel h2,
-    .hours-panel h2 {
-      margin: 0 0 14px;
+    .contact-hours-panel h2,
+    .map-caption h2 {
+      margin: 0 0 12px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      color: var(--olive);
+      font-size: 2.05rem;
       line-height: 1;
+      color: var(--olive);
     }
 
-    .contact-panel p,
-    .contact-form-panel p,
-    .hours-panel p {
+    .contact-panel > .panel-body > p,
+    .contact-form-panel > .panel-body > p,
+    .contact-hours-panel > .panel-body > p,
+    .map-caption p {
       margin: 0;
-      color: #5f5a53;
+      color: #625c55;
       line-height: 1.8;
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    .contact-info-list {
+    .detail-grid {
       display: grid;
       gap: 18px;
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
-    .contact-info-card {
-      padding: 20px 20px;
+    .detail-card {
+      padding: 18px;
       display: flex;
       gap: 14px;
       align-items: flex-start;
-      background: linear-gradient(180deg, rgba(74,84,48,0.06) 0%, rgba(74,84,48,0.02) 100%);
+      background: linear-gradient(180deg, rgba(74,84,48,0.06) 0%, rgba(74,84,48,0.025) 100%);
     }
 
-    .info-icon {
+    .detail-icon,
+    .mini-icon {
       width: 46px;
       height: 46px;
       min-width: 46px;
@@ -493,14 +498,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(74,84,48,0.10);
+      background: rgba(74,84,48,0.1);
       border: 1px solid rgba(74,84,48,0.18);
       color: var(--olive);
-      font-size: 18px;
       line-height: 1;
+      box-shadow: 0 10px 20px rgba(74,84,48,0.08);
     }
 
-    .info-icon svg {
+    .detail-icon svg,
+    .mini-icon svg {
       width: 18px;
       height: 18px;
       stroke: currentColor;
@@ -510,36 +516,63 @@
       stroke-linejoin: round;
     }
 
-    .info-copy h3 {
+    .detail-copy h3,
+    .mini-copy h3 {
       margin: 0 0 8px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       color: var(--olive);
+      line-height: 1;
     }
 
-    .info-copy p,
-    .info-copy a {
+    .detail-copy p,
+    .detail-copy a,
+    .mini-copy p,
+    .mini-copy a {
       margin: 0;
       color: #5f5a53;
       line-height: 1.8;
       font-size: 14px;
     }
 
-    .info-copy a:hover { color: var(--olive); }
+    .detail-copy a:hover,
+    .mini-copy a:hover {
+      color: var(--olive);
+    }
 
-    .contact-right {
+    .contact-right-stack {
       display: grid;
-      gap: 26px;
+      gap: 24px;
+    }
+
+    .mini-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .mini-card {
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: linear-gradient(180deg, rgba(74,84,48,0.07) 0%, rgba(74,84,48,0.025) 100%);
+    }
+
+    .mini-copy p {
+      line-height: 1.7;
     }
 
     .contact-form-panel .panel-body,
-    .hours-panel .panel-body { padding: 30px 28px; }
+    .contact-hours-panel .panel-body {
+      padding: 28px;
+    }
 
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
-      margin-top: 24px;
+      margin-top: 22px;
     }
 
     .form-field {
@@ -560,8 +593,8 @@
     .form-field input,
     .form-field textarea {
       width: 100%;
-      border: 1px solid rgba(74,84,48,0.20);
-      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(74,84,48,0.22);
+      background: rgba(255,255,255,0.95);
       border-radius: 14px;
       min-height: 56px;
       padding: 15px 16px;
@@ -571,7 +604,7 @@
     }
 
     .form-field textarea {
-      min-height: 150px;
+      min-height: 160px;
       resize: vertical;
     }
 
@@ -597,12 +630,14 @@
       transition: transform 0.2s ease;
     }
 
-    .submit-btn:hover { transform: translateY(-2px); }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
 
     .hours-list {
       display: grid;
-      gap: 16px;
-      margin-top: 24px;
+      gap: 14px;
+      margin-top: 22px;
     }
 
     .hours-row {
@@ -628,13 +663,138 @@
       line-height: 1.7;
     }
 
+    .map-layout {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .map-caption {
+      background: linear-gradient(135deg, #f6f2eb 0%, #efe7dc 52%, #e9dfd3 100%);
+      border: 1px solid #ebe3d8;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 30px 28px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .map-highlights {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .map-highlight {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(74,84,48,0.13);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .map-highlight strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: #2f2a24;
+    }
+
+    .map-highlight span {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
     .map-panel iframe {
       width: 100%;
       height: 100%;
-      min-height: 560px;
+      min-height: 480px;
       border: 0;
       display: block;
       filter: grayscale(12%);
+    }
+
+    .cta-band {
+      margin-top: 34px;
+      background: linear-gradient(90deg, #4d5730 0%, #596733 50%, #73893f 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(59, 70, 35, 0.24);
+    }
+
+    .cta-copy small {
+      display: inline-block;
+      margin-bottom: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 11px;
+      opacity: 0.82;
+    }
+
+    .cta-copy h3 {
+      margin: 0 0 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 500;
+      line-height: 1.02;
+    }
+
+    .cta-copy p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      max-width: 620px;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-solid,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 20px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-solid {
+      background: #fff;
+      color: #253015;
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      gap: 10px;
+    }
+
+    .btn-solid:hover,
+    .btn-outline:hover {
+      transform: translateY(-2px);
     }
 
     footer {
@@ -786,8 +946,9 @@
 
     @media (max-width: 1200px) {
       .container { width: min(var(--container), calc(100% - 36px)); }
+      .contact-top-grid,
+      .map-layout { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .contact-grid { grid-template-columns: 1fr; }
       .map-panel iframe { min-height: 420px; }
     }
 
@@ -924,7 +1085,15 @@
       }
       .has-children::before { display: none; }
       .has-children.open > .sub-dropdown { display: block; }
+      .mini-grid,
+      .form-grid,
+      .footer-grid,
+      .cta-band { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .cta-band {
+        display: grid;
+        padding: 24px 20px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -960,19 +1129,19 @@
         border-color: var(--olive);
       }
       .page-hero { min-height: 220px; }
-      .page-hero p { font-size: 0.82rem; letter-spacing: 0.1em; }
+      .page-hero p { font-size: 0.78rem; letter-spacing: 0.1em; }
       .section { padding-top: 48px; }
-      .section-title { font-size: 1.8rem; }
-      .form-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.85rem; }
+      .panel-body,
+      .contact-form-panel .panel-body,
+      .contact-hours-panel .panel-body,
+      .map-caption { padding: 22px 18px; }
+      .map-panel iframe { min-height: 320px; }
       .hours-row {
         flex-direction: column;
         align-items: flex-start;
       }
       .hours-row span { text-align: left; }
-      .panel-body,
-      .contact-form-panel .panel-body,
-      .hours-panel .panel-body { padding: 24px 18px; }
-      .map-panel iframe { min-height: 320px; }
       .footer-grid {
         gap: 24px;
         grid-template-columns: 1fr;
@@ -983,452 +1152,342 @@
         gap: 0;
       }
       .newsletter-form button { width: 100%; }
+      .cta-actions { width: 100%; }
+      .btn-solid,
+      .btn-outline { width: 100%; }
     }
   </style>
-
-  <!-- Font Awesome 4.7.0 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 </head>
 <body>
-
-  <!-- Header Section Starts -->
-  <Header class="position-relative z-3">
-    <div class="header-top py-3">
-      <div class="container">
-        <div class="header-top-inner d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <div class="header-contact">
-            <ul class="d-flex white flex-wrap">
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="tel:+33877554332"><i class="fa fa-phone me-2" aria-hidden="true"></i>+33 877 554 332</a></li>
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="/cdn-cgi/l/email-protection#2940474f46695e4c4b5a405d4c074a4644"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i><span class="__cf_email__" data-cfemail="0e676068614e796b6c7d677a6b206d6163">[email&#160;protected]</span></a></li>
-              <li class="small"><i class="fa fa-clock-o me-2" aria-hidden="true"></i>Mon - Fri: 9:00 - 18:30</li>
-            </ul>
-          </div>
-          <div class="social-links">
-            <ul class="d-flex gap-2">
-              <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div> 
-    </div>
-    <div class="header-nav header-nav-menu" id="header-nav-menu">
-      <div class="container">
-        <div class="header-nav-inner border-top border-light py-3">
-          <div class="row gx-xl-5 align-items-center justify-content-between">
-            <div class="col-xl-2 col-md-3 col-6 order-1">
-              <div class="header-logo">
-                <a href="index.html"><img src="image/logo.png" alt="logo" class="w-100"></a>
-              </div>
-            </div>
-            <div class="col-xl-7 col-0 order-3 order-xl-2">
-              <div class="header-nav">
-                <div class="navbar-collapse " id="bs-example-navbar-collapse-1">
-                  <ul class="navbar-nav flex-row align-items-center justify-content-center" id="responsive-menu">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Home
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index.html">Home 1</a></li>
-                        <li><a class="dropdown-item text-capitalize border-grey"
-                            href="index-2.html">Home 2</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index-3.html">Home 3</a></li>         
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize" 
-                            href="team.html">Our Team</a></li>
-                        <li><a class="dropdown-item text-capitalize" 
-                            href="team-detail.html">Team Detail</a></li>    
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-list.html">Career</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-detail.html">Career Detail</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="faq.html">Faq</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="pricing.html">pricing</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="testimonial.html">Testimonial</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="coming-soon.html">Coming Soon</a></li>
-                        <li><a class="dropdown-item  text-capitalize" 
-                            href="error.html">404Error</a></li>   
-                        <li><a class="dropdown-item  text-capitalize" 
-                            href="search.html">Search Result</a></li>   
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-list.html">Service List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html">Service Detail</a></li> 
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Projects
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project.html">Projet List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project-detail.html">Projet Detail</a></li>    
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown ">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Blog
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-list.html">Blog List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-detail.html">Blog Single</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase active" href="contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-4 col-0  order-2 order-xl-3">
-              <div class="header-icons d-none d-xl-block">
-                <ul class="d-flex align-items-center gap-4  justify-content-xl-end">
-                  <li><a class="position-relative" data-bs-toggle="modal" data-bs-target="#interealModal"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                  </a></li>
-                  <li><a href="consultation.html" class="btn-secondary">Get A Qoute</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div id="slicknav-mobile"></div>
-        </div>
-      </div>
-    </div>
-  </Header>
-  <!-- Header Section Ends -->
-
-  <!-- Breadcrumb Section Starts -->
-  <section class="breadcrumb position-relative mb-0">
-    <div class="overlay"></div>
-    <div class="container position-absolute top-50 start-50 translate-middle text-center">
-      <div class="breadcrumb-inner mt-8">
-        <h2 class="grey mb-0 w-xl-50 w-md-75 m-auto">Contact Us</h2>
-      </div>
-    </div>
-  </section>
-  <!-- Breadcrumb Section Ends -->
-
-  <!-- Contact Section Starts -->
-  <section class="contact">
+  <div class="top-bar">
     <div class="container">
-      <div class="contact-inner">
-        <div class="contact-title w-xl-50 w-md-75 m-auto text-center mb-4">
-          <h2 class="mb-0">we love to hear from you, say hi & <span class="secondary">get in touch</span></h2>
-          <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="contact-info mb-5">
-          <div class="row gx-lg-5 gy-4">
-            <div class="col-lg-4 col-md-6 d-flex">
-              <div class="contact-info-box p-4 bg-grey w-100">
-                <ul class="d-flex align-items-center gap-3">
-                  <li><i class="fa fa-map-marker bg-secondary white text-center rounded-circle" aria-hidden="true"></i></li>
-                  <li>
-                    <h4 class="mb-1">Location</h4>
-                    <span>25 31th Street New York, USA</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 d-flex">
-              <div class="contact-info-box p-4 bg-grey w-100">
-                <ul class="d-flex align-items-center gap-3">
-                  <li><i class="fa fa-envelope-o bg-secondary white text-center rounded-circle" aria-hidden="true"></i></li>
-                  <li>
-                    <h4 class="mb-1">Email Address</h4>
-                    <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aad9dfdadac5d8deeac3c4decfd8cfcbc684c9c5c7">[email&#160;protected]</a></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4 d-flex">
-              <div class="contact-info-box p-4 bg-grey w-100">
-                <ul class="d-flex align-items-center gap-3">
-                  <li><i class="fa fa-phone bg-secondary white text-center rounded-circle" aria-hidden="true"></i></li>
-                  <li>
-                    <h4 class="mb-1">Contact No.</h4>
-                    <span>(+977) 524-191-2022</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form">
-          <div class="row gx-lg-5 align-items-center gy-5">
-            <div class="col-lg-6">
-              <div class="contact-form-left">
-                <iframe height="500" class="w-100 d-block" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="contact-form-right">
-                <h4>Leave A Message</h4>
-                <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <form>
-                  <div class="row gy-3">
-                    <div class="col-md-6">
-                      <input type="text" name="full-name" id="full-name" class="w-100 border border-grey" placeholder="Full Name">
-                    </div>
-                    <div class="col-md-6">
-                      <input type="email" name="email" id="email" class="w-100 border border-grey" placeholder="Email Address">
-                    </div>
-                    <div class="col-lg-12">
-                      <input type="tel" name="phone" id="phone" class="w-100 border border-grey" placeholder="Phone No.">
-                    </div>
-                    <div class="col-lg-12">
-                      <input type="text" name="subject" id="subject" class="w-100 border border-grey" placeholder="Subject">
-                    </div>
-                    <div class="col-12">
-                      <textarea name="message" id="message" placeholder="Message..." rows="4" class="w-100 border border-grey"></textarea>
-                    </div>
-                    <div class="col-12 text-center">
-                      <button class="btn-primary">Send Message</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Contact Section Ends -->
-
-  <!-- Appointment Section Starts -->
-  <div class="appointment py-5 bg-secondarylight">
-    <div class="container">
-      <div class="appointment-inner">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-3 col-md-4">
-            <div class="appointment-left">
-              <ul class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                <li class="me-3 pe-3 border-end border-2 border-white"><img src="image/chat.png" alt="chat" style="height: 44px; width: 44px;"></li>
-                <li class="teko">
-                  <span class="h6 primary mb-0">Book Your Schedule</span>
-                  <span class="d-block h3 mb-0">666 888 0000</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-8">
-            <div class="appointment-center">
-              <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="appointment-right text-center text-lg-end">
-              <a href="consultation.html" class="btn-primary">Book An Appointment</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <span>Premium Quality</span>
+      <span>Crafted to Last</span>
+      <span>Customizable Options</span>
+      <span>Expert Guidance</span>
+      <span>Fast Execution</span>
     </div>
   </div>
-  <!-- Appointment Section Ends -->
 
-  <!-- Footer Section Starts -->
-  <footer class="section-padding position-relative pb-5">
-    <div class="overlay"></div>
-    <div class="container position-relative">
-      <div class="footer-inner white">
-        <div class="footer-top pb-5 mb-5 border-bottom border-2 border-light">
-          <div class="row align-items-center gx-lg-5 gy-4">
-            <div class="col-lg-3 col-md-4">
-              <div class="footer-top-left">
-                <a href="index.html"><img src="image/logo.png" alt="footer logo" class="w-100"></a>
+  <header>
+    <div class="container navbar">
+      <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home">
+        <div class="logo-text">
+          <strong>AQEEQ</strong>
+          <span>DECOR</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <a href="index-3.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="#">PROJECTS</a>
+        <div class="nav-item services-menu">
+          <a href="#">SERVICES</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Curtains</a></li>
+            <li><a href="#">Wallpapers</a></li>
+            <li class="has-children">
+              <a href="#">Furniture</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Modular</a></li>
+                <li><a href="#">Office furniture</a></li>
+                <li><a href="#">sofas</a></li>
+                <li><a href="#">dining table</a></li>
+                <li><a href="#">dining chair</a></li>
+                <li><a href="#">accent chair</a></li>
+                <li><a href="#">beds</a></li>
+                <li><a href="#">bedside table</a></li>
+                <li><a href="#">pouffee</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a href="#">Window Blinds</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">roller</a></li>
+                <li><a href="#">zebra</a></li>
+                <li><a href="#">vertical</a></li>
+                <li><a href="#">roman</a></li>
+                <li><a href="#">honeycomb</a></li>
+                <li><a href="#">outdoor</a></li>
+                <li><a href="#">pvc</a></li>
+                <li><a href="#">mansoon</a></li>
+                <li><a href="#">wooden</a></li>
+                <li><a href="#">aluminium venetian</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Mattress</a></li>
+            <li class="has-children">
+              <a href="#">Floorings</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">wooden</a></li>
+                <li><a href="#">pvc</a></li>
+                <li><a href="#">engineered</a></li>
+                <li><a href="#">sports</a></li>
+                <li><a href="#">gym</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <a href="contact.html" class="active">CONTACT US</a>
+        <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
+          <span class="call-icon" aria-hidden="true">☎</span>
+          <span>+91 86987 25668</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <h1>Contact Us</h1>
+      <p>Home / Contact Us</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <p class="section-copy">We would love to hear from you. Reach out for showroom visits, décor consultations, product enquiries or customized solutions for your home or commercial space.</p>
+
+        <div class="contact-shell">
+          <div class="contact-top-grid">
+            <div class="contact-panel">
+              <div class="panel-body">
+                <h2>Visit or Contact Aqeeq Decor</h2>
+                <p>Connect with us for curtains, wallpapers, furniture, blinds, mattresses and flooring solutions. Our team is here to guide you with the right recommendations for your space.</p>
+
+                <div class="detail-grid">
+                  <div class="detail-card">
+                    <div class="detail-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                    </div>
+                    <div class="detail-copy">
+                      <h3>Showroom Address 1</h3>
+                      <p>Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</p>
+                    </div>
+                  </div>
+
+                  <div class="detail-card">
+                    <div class="detail-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                    </div>
+                    <div class="detail-copy">
+                      <h3>Showroom Address 2</h3>
+                      <p>Shop no.04, Masjid Complex near Ramoshi Gate, Bhawani Peth, Pune - 411042</p>
+                    </div>
+                  </div>
+
+                  <div class="detail-card">
+                    <div class="detail-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                    </div>
+                    <div class="detail-copy">
+                      <h3>Registered Address</h3>
+                      <p>S no. 63, PL 54, Ganga Plaza, SalunkeVihar, Kondhwakd, Pune, Pune, Maharashtra, 411022</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-lg-9 col-md-8">
-              <div class="footer-top-right">
-                <p class="white mb-0 h6 fw-normal fst-italic">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporatu incididunt ut labore et dolore magna aliqua.”</p>
+
+            <div class="contact-right-stack">
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <div class="mini-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                  <div class="mini-copy">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+918698725668">+91 86987 25668</a><br><a href="tel:+918319163736">+91 83191 63736</a></p>
+                  </div>
+                </div>
+
+                <div class="mini-card">
+                  <div class="mini-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><path d="m22 6-10 7L2 6"></path></svg>
+                  </div>
+                  <div class="mini-copy">
+                    <h3>Email</h3>
+                    <p><a href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-form-panel">
+                <div class="panel-body">
+                  <h2>Leave a Message</h2>
+                  <p>Share your requirement with us and our team will get back to you for the right décor solution.</p>
+                  <form>
+                    <div class="form-grid">
+                      <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input id="name" type="text" placeholder="Enter your full name">
+                      </div>
+                      <div class="form-field">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" placeholder="Enter your email address">
+                      </div>
+                      <div class="form-field full">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" type="tel" placeholder="Enter your phone number">
+                      </div>
+                      <div class="form-field full">
+                        <label for="subject">Subject</label>
+                        <input id="subject" type="text" placeholder="Enter subject">
+                      </div>
+                      <div class="form-field full">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Tell us about your requirement"></textarea>
+                      </div>
+                      <div class="form-field full">
+                        <button class="submit-btn" type="submit">Send Message</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="footer-middle mb-5  pb-5 border-bottom border-light text-center text-md-start">
-          <div class="row gx-lg-5 gy-5">
-            <div class="col-lg-4">
-              <div class="footer-info">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui reprehenderit dolor officia. </p>
-                <div class="footer-socials mb-4">
-                  <ul class="d-flex gap-1 my-2 justify-content-center justify-content-md-start">
-                    <li><a href=""><i class="fa fa-facebook bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-linkedin bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-google-plus bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-                <div class="contact-info">
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                      <li>256 Elizaberth Ave, CA, 90025</li>
-                    </ul>
-                  </div>
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                      <li>+569 2316 2156</li>
-                    </ul>
+
+          <div class="map-layout">
+            <div class="map-caption">
+              <h2>Opening Hours & Location</h2>
+              <p>Visit our showroom during business hours or connect with us to request a Sunday appointment. We are happy to assist with product guidance, consultations and project discussions.</p>
+
+              <div class="map-highlights">
+                <div class="map-highlight">
+                  <div class="mini-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="9"></circle></svg>
                   </div>
                   <div>
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                      <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8b1b6beb798b1b6acbdaabdb9b4f6bbb7b5">[email&#160;protected]</a></li>
-                    </ul>
+                    <strong>Mon - Sat</strong>
+                    <span>10:00 am – 8:00 pm</span>
+                  </div>
+                </div>
+
+                <div class="map-highlight">
+                  <div class="mini-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                  </div>
+                  <div>
+                    <strong>Sunday</strong>
+                    <span>Open on request</span>
+                  </div>
+                </div>
+
+                <div class="map-highlight">
+                  <div class="mini-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                  </div>
+                  <div>
+                    <strong>Primary Location</strong>
+                    <span>Bhawani Peth, Pune - easy showroom access for visits and consultations.</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="quick-links">
-                <h4 class="white mb-2">Quick Link</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Services</a></li>
-                  <li><a href="service.html">Attorneys</a></li>
-                  <li><a href="blog-list.html">News & Articles</a></li>
-                  <li><a href="">Policies</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
+
+            <div class="map-panel">
+              <iframe src="https://www.google.com/maps?q=Bhawani%20Peth%2C%20Pune&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="services">
-                <h4 class="white mb-2">Services</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="service.html">Perfect Planning</a></li>
-                  <li><a href="service.html">Professional Design</a></li>
-                  <li><a href="service.html">Best Interior</a></li>
-                  <li><a href="service.html">Furniture Design</a></li>
-                  <li><a href="service.html">Complete Decoration</a></li>
-                  <li><a href="service.html">Terms & Conditions</a></li>
-                </ul>
-              </div>
+          </div>
+
+          <div class="cta-band">
+            <div class="cta-copy">
+              <small>Let's work together</small>
+              <h3>Ready To Discuss Your Space?</h3>
+              <p>Whether you are planning curtains, wallpapers, blinds, furniture or flooring, our team is here to help you choose the right combination with clarity, detail and style.</p>
             </div>
-            <div class="col-lg-4">
-              <div class="services">
-                <h4 class="white mb-2">Get interesting news</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <p class="mb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ea dolorum.</p>
-                <div class="subscribe">
-                  <input type="email" placeholder="Email" class="mb-2">
-                  <a href="" class="btn-primary">Subscribe</a>
-                </div>
-              </div>
+            <div class="cta-actions">
+              <a href="#message" class="btn-solid">Contact Us</a>
+              <a href="tel:+918698725668" class="btn-outline">☎ &nbsp; Call +91 86987 25668</a>
             </div>
           </div>
         </div>
-        <div class="footer-bottom text-center">
-          <p class="mb-0"> &copy;2025 Intereal. All rights reserved.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home" style="color:#fff; margin-bottom: 14px; display: inline-flex;">
+          <div class="logo-text">
+            <strong style="color: #8fa15f;">AQEEQ</strong>
+            <span style="color: rgba(255,255,255,0.75);">DECOR</span>
+          </div>
+        </a>
+        <p>Thoughtfully designed decor solutions crafted with quality materials and a passion for detail.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="index-3.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>OPENING HOURS</h4>
+        <ul>
+          <li>Mon - Sat: 10:00 am - 8:00 pm</li>
+          <li>Sunday: Open on Request</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>CONTACT US</h4>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <span class="contact-text"><a class="contact-text" href="tel:+918698725668">+91 86987 25668</a><br><a class="contact-text" href="tel:+918319163736">+91 83191 63736</a></span>
+        </p>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><path d="m22 6-10 7L2 6"></path></svg>
+          </span>
+          <a class="contact-text" href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a>
+        </p>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+          </span>
+          <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+        </p>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>NEWSLETTER</h4>
+        <p>Subscribe to get updates on new collections &amp; offers.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email">
+          <button aria-label="Submit">↗</button>
         </div>
       </div>
     </div>
+    <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
   </footer>
-  <!-- Footer Section Ends -->
 
-  <!--Back-to-top Button start-->
-  <div id="back-to-top">
-    <a href="#" class="bg-secondary position-relative align-items-center rounded-circle d-block"></a>
-  </div>
-  <!--Back-to-top Button end-->
-
-  <!-- Intereal Info Starts -->
-  <div class="modal fade intereal-info-modal" id="interealModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog  h-100 my-0 rounded-0 me-0 modal-sm">
-      <div class="modal-content h-100 rounded-0">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close me-4" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times bg-secondary text-center white" aria-hidden="true"></i></button>
-        </div>
-        <div class="modal-body mt-5 mx-3">
-          <div class="logo mb-4">
-            <img src="image/logo1.png" alt="logo">
-          </div>
-          <div class="info mb-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="contact-info mb-4">
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                <li>256 Elizaberth Ave, CA, 90025</li>
-              </ul>
-            </div>
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                <li>+569 2316 2156</li>
-              </ul>
-            </div>
-            <div>
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0d64636b624d646379687f686c61236e6260">[email&#160;protected]</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-socials mb-4">
-            <ul class="d-flex gap-1 my-2">
-              <li><a href=""><i class="fa fa-facebook bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Intereal Info Ends -->
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.7.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/plugin.js"></script>
-  <script src="js/main.js"></script>
-</script>
-<script>
+  <script>
     const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
     const servicesMenu = document.querySelector('.services-menu');
     const childMenuItems = document.querySelectorAll('.services-menu .has-children');
@@ -1528,6 +1587,6 @@
       mainNav.classList.remove('mobile-open');
       document.body.classList.remove('menu-open');
     }
-</script>
+  </script>
 </body>
 </html>
