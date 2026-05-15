@@ -1049,12 +1049,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      align-self: center;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.26);
       color: #fff;
       line-height: 1;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-      margin-top: 2px;
+      margin-top: 0;
     }
 
     .contact-icon svg {
@@ -1075,6 +1076,11 @@
     }
 
     a.contact-text:hover { color: #fff; }
+
+    .contact-icon-top {
+      align-self: flex-start;
+      margin-top: 2px;
+    }
 
     .newsletter-form {
       display: flex;
@@ -1666,7 +1672,7 @@
           <a class="contact-text" href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a>
         </p>
         <p>
-          <span class="contact-icon" aria-hidden="true">
+          <span class="contact-icon contact-icon-top" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
           </span>
           <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
