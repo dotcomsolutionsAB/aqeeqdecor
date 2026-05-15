@@ -1322,36 +1322,66 @@
                 </div>
               </div>
 
-              <div class="contact-form-panel">
+              <div class="contact-form-panel home-form-panel">
                 <div class="panel-body">
-                  <h2>Leave a Message</h2>
-                  <p>Share your requirement with us and our team will get back to you for the right décor solution.</p>
-                  <form>
+                  <div class="home-form-header">
+                    <h2>Get in Touch</h2>
+                    <p>Please help us to understand your requirement</p>
+                  </div>
+                  <form class="home-contact-form">
                     <div class="form-grid">
                       <div class="form-field">
-                        <label for="name">Full Name</label>
-                        <input id="name" type="text" placeholder="Enter your full name">
+                        <label for="first-name">First name</label>
+                        <input id="first-name" type="text" placeholder="Enter your first name">
                       </div>
                       <div class="form-field">
-                        <label for="email">Email Address</label>
-                        <input id="email" type="email" placeholder="Enter your email address">
+                        <label for="last-name">Last name</label>
+                        <input id="last-name" type="text" placeholder="Enter your last name">
                       </div>
                       <div class="form-field full">
-                        <label for="phone">Phone Number</label>
+                        <label for="phone">Phone</label>
                         <input id="phone" type="tel" placeholder="Enter your phone number">
                       </div>
-                      <div class="form-field full">
-                        <label for="subject">Subject</label>
-                        <input id="subject" type="text" placeholder="Enter subject">
-                      </div>
-                      <div class="form-field full">
-                        <label for="message">Message</label>
-                        <textarea id="message" placeholder="Tell us about your requirement"></textarea>
-                      </div>
-                      <div class="form-field full">
-                        <button class="submit-btn" type="submit">Send Message</button>
+                    </div>
+
+                    <div class="checkbox-group">
+                      <div class="form-group-title">Which of our products are you most interested in?</div>
+                      <div class="checkbox-grid">
+                        <label class="checkbox-option"><input type="checkbox"> Curtains</label>
+                        <label class="checkbox-option"><input type="checkbox"> Window Blinds</label>
+                        <label class="checkbox-option"><input type="checkbox"> Wallcoverings</label>
+                        <label class="checkbox-option"><input type="checkbox"> Bespoke Furniture</label>
+                        <label class="checkbox-option"><input type="checkbox"> Office Furniture</label>
+                        <label class="checkbox-option"><input type="checkbox"> Flooring</label>
                       </div>
                     </div>
+
+                    <div class="checkbox-group">
+                      <div class="form-group-title">Which is the type of property you are looking products for?</div>
+                      <div class="checkbox-grid property-grid">
+                        <label class="checkbox-option"><input type="checkbox"> Commercial</label>
+                        <label class="checkbox-option"><input type="checkbox"> Residential</label>
+                      </div>
+                    </div>
+
+                    <div class="form-grid">
+                      <div class="form-field full">
+                        <label for="area">Which area are you located in? <span class="required-mark">*</span></label>
+                        <select id="area">
+                          <option value="">Select your area</option>
+                          <option>Pune</option>
+                          <option>Mumbai</option>
+                          <option>PCMC</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <div class="form-field full">
+                        <label for="message">Tell us more about your requirement</label>
+                        <textarea id="message" placeholder="Share your space, preferred products, budget, or any specific requirement"></textarea>
+                      </div>
+                    </div>
+
+                    <button class="submit-btn" type="submit">Submit</button>
                   </form>
                 </div>
               </div>
