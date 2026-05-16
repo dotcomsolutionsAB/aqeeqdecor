@@ -616,6 +616,10 @@
             transition: transform 0.22s ease, box-shadow 0.22s ease;
         }
 
+        .project-card.is-hidden {
+            display: none;
+        }
+
         .project-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 34px rgba(29, 24, 18, 0.11);
@@ -1451,7 +1455,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card" data-category="residential living">
                         <div class="project-card-media">
                             <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1100&q=80" alt="Furniture styling project">
                             <span class="project-badge">Furniture</span>
@@ -1466,7 +1470,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card" data-category="residential living">
                         <div class="project-card-media">
                             <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1100&q=80" alt="Curtain and fabric styling project">
                             <span class="project-badge">Curtains</span>
@@ -1481,7 +1485,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card" data-category="commercial">
                         <div class="project-card-media">
                             <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1100&q=80" alt="Commercial office décor project">
                             <span class="project-badge">Commercial</span>
@@ -1614,6 +1618,8 @@
         const childMenuItems = document.querySelectorAll('.services-menu .has-children');
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('header nav');
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const projectCards = document.querySelectorAll('.project-card');
 
         if (menuToggle && mainNav) {
             menuToggle.addEventListener('click', (event) => {
@@ -1710,6 +1716,24 @@
         if (mainNav && mobileMenuQuery.matches) {
             mainNav.classList.remove('mobile-open');
             document.body.classList.remove('menu-open');
+        }
+
+        if (filterChips.length && projectCards.length) {
+            filterChips.forEach((chip) => {
+                chip.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const selectedFilter = chip.dataset.filter || 'all';
+
+                    filterChips.forEach((item) => item.classList.remove('active'));
+                    chip.classList.add('active');
+
+                    projectCards.forEach((card) => {
+                        const categories = (card.dataset.category || '').split(' ');
+                        const shouldShow = selectedFilter === 'all' || categories.includes(selectedFilter);
+                        card.classList.toggle('is-hidden', !shouldShow);
+                    });
+                });
+            });
         }
     </script>
 </body>
