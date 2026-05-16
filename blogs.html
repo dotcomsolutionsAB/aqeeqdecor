@@ -20,7 +20,6 @@
             --muted: #756f66;
             --line: #e7e1d8;
             --shadow: 0 10px 30px rgba(29, 24, 18, 0.08);
-            --radius: 18px;
             --container: 1240px;
         }
 
@@ -364,12 +363,6 @@
         .section {
             padding: 58px 0 0;
         }
-        .blogs-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 1.34fr) minmax(320px, 0.66fr);
-            gap: 28px;
-            align-items: start;
-        }
         .section-title {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
@@ -395,6 +388,13 @@
             color: #5d564e;
             line-height: 1.8;
             font-size: 14px;
+        }
+
+        .blogs-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.34fr) minmax(320px, 0.66fr);
+            gap: 28px;
+            align-items: start;
         }
 
         .featured-blog,
@@ -459,8 +459,11 @@
         .featured-actions {
             margin-top: 24px;
         }
+
         .btn-dark,
-        .btn-outline {
+        .btn-outline,
+        .btn-solid,
+        .btn-ghost {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -489,521 +492,1029 @@
             color: #312b24;
         }
         .btn-outline:hover { background: #fff; }
+        .btn-solid {
+            background: #fff;
+            color: #253015;
+        }
+        .btn-ghost {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.22);
+            color: #fff;
+            gap: 10px;
+        }
 
-  <!-- Breadcrumb Section Starts -->
-  <section class="breadcrumb position-relative mb-0">
-    <div class="overlay"></div>
-    <div class="container position-absolute top-50 start-50 translate-middle text-center">
-      <div class="breadcrumb-inner mt-8">
-        <h2 class="grey mb-0">Archives</h2>
-      </div>
-    </div>
-  </section>
-  <!-- Breadcrumb Section Ends -->
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+        .blog-card {
+            overflow: hidden;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 34px rgba(29, 24, 18, 0.11);
+        }
+        .blog-card-image {
+            position: relative;
+            aspect-ratio: 1.1 / 0.9;
+            overflow: hidden;
+            background: #e9e2d8;
+        }
+        .blog-card-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+        .blog-card:hover .blog-card-image img { transform: scale(1.05); }
+        .blog-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 0 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.94);
+            color: var(--olive);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid #ece4d9;
+        }
+        .blog-card-body {
+            padding: 20px 20px 22px;
+        }
+        .blog-card-body h3 {
+            margin: 0 0 10px;
+            font-size: 1.6rem;
+            color: var(--olive);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            line-height: 1.05;
+        }
+        .blog-card-body p {
+            margin: 0 0 16px;
+            color: #5d564e;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #efe8de;
+        }
+        .blog-card-footer span {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--olive);
+        }
+        .blog-link::after {
+            content: '→';
+            font-size: 16px;
+        }
 
-  <!-- Blog List Section Starts -->
-  <section class="blog">
-    <div class="container">
-      <div class="blog-inner">
-        <div class="row gx-lg-5 gy-5">
-          <div class="col-lg-8">
-            <div class="blog-left">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/office-building-2022-12-15-19-40-07-utc.jpg" alt="building">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">Learn the right way to use wall sheet right now</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 28, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg" alt="bedroom">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">How to protect your damaged walls using DIY</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 28, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/office-building-2022-12-15-19-37-04-utc1.jpg" alt="building">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">More off this hello salamander lied much over tightly</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 26, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/architectural-building-design-2021-08-27-19-27-36-utc.jpg" alt="building">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">how changing your thinking can change your life</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 23, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg" alt="bedroom">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">Best Investment for short-term & long-term goals</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 21, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/office-building-2022-12-15-19-37-04-utc1.jpg" alt="bedroom">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">your items will be promoted on our on-site sale</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 19, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/architectural-building-design-2021-08-27-19-27-36-utc.jpg" alt="building">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">how changing your thinking can change your life</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 23, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="blog-box border border-2 border-grey">
-                    <div class="blog-image position-relative">
-                      <a href="blog-detail.html">
-                        <img src="image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg" alt="bedroom">
-                        <div class="overlay"></div>
-                      </a>
-                    </div>
-                    <div class="blog-info p-4 text-center border-bottom border-grey">
-                      <h4 class="mb-2"><a href="blog-detail.html" class="primary">Best Investment for short-term & long-term goals</a></h4>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ipsum delectu.</p>
-                      <a href="blog-detail.html" class="secondary">Continue Reading</a>
-                    </div>
-                    <div class="blog-data px-4 py-3">
-                      <ul class="d-flex justify-content-center small">
-                        <li class="me-2 pe-2 border-end">February 21, 2025 </li>
-                        <li>No Comments</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="blog-right">
-              <div class="searchbar bg-secondarylight p-4 mb-4">
-                <div class="serachbar-inner bg-white p-4">
-                  <ul class="d-flex">
-                    <li class="d-flex flex-grow-1"><input type="text" class="bg-grey" placeholder="Search..."></li>
-                    <li><a href="" class="btn-primary"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="author bg-secondarylight p-4 mb-4">
-                <div class="author-inner bg-white p-4 text-center">
-                   <div class="author-image">
-                    <img src="image/female-entrepreneur-2021-08-29-03-28-29-utc.jpg" alt="female" class="rounded-circle object-fit-cover border border-4 border-grey" style="width: 140px; height: 140px;">
-                   </div>
-                   <div class="author-info">
-                    <h5 class="secondary mt-2">Hi, Jenny Loral</h5>
-                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore magna aliqua.</p>
-                    <ul class="d-flex gap-2 social-links justify-content-center">
-                      <li><a href=""><i class="fa fa-facebook bg-grey text" aria-hidden="true"></i></a></li>
-                      <li><a href=""><i class="fa fa-twitter bg-grey text" aria-hidden="true"></i></a></li>
-                      <li><a href=""><i class="fa fa-linkedin bg-grey text" aria-hidden="true"></i></a></li>
-                      <li><a href=""><i class="fa fa-google-plus bg-grey text" aria-hidden="true"></i></a></li>
-                    </ul>
-                   </div>
-                </div>
-              </div>
-              <div class="categories bg-secondarylight p-4 mb-4">
-                <div class="categories-inner p-4 bg-white">
-                  <h4 class="secondary border-bottom pb-3 text-start">Categories</h4>
-                  <div class="sperator bg-secondary mb-3 ms-0" style="width: 40px; height: 2px; margin-top: -10px;"></div>
-                  <ul>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Interior service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Architecture service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Architecture service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Exterior service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>General Contractor</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Interior Decorator</a>
-                    </li>
-                    <li class="d-flex align-items-center">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Hospitality Design</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="popular-post bg-secondarylight p-4 mb-4">
-                <div class="popular-post-inner p-4 bg-white">
-                  <h4 class="secondary border-bottom pb-3 text-start">popular posts</h4>
-                  <div class="sperator bg-secondary mb-3 ms-0" style="width: 40px; height: 2px; margin-top: -10px;"></div>
-                  <ul class="post-list">
-                    <li class="mb-3">
-                      <div class="row align-items-center">
-                        <div class="col-4">
-                          <div class="post-image">
-                            <a href="blog-detail.html"><img src="image/office-building-2022-12-15-19-40-07-utc.jpg" alt="building"></a>
-                          </div>
-                        </div>
-                        <div class="col-8">
-                          <div class="post-info">
-                            <h6 class="mb-0"><a href="blog-detail.html" class="primary">Learn the right way to use wall sheet</a></h6>
-                            <span class="small">February 28, 2025</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="mb-3">
-                      <div class="row align-items-center">
-                        <div class="col-4">
-                          <div class="post-image">
-                            <a href="blog-detail.html"><img src="image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg" alt="building"></a>
-                          </div>
-                        </div>
-                        <div class="col-8">
-                          <div class="post-info">
-                            <h6 class="mb-0"><a href="blog-detail.html" class="primary">How to protect your damaged walls</a></h6>
-                            <span class="small">February 27, 2025</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="row align-items-center">
-                        <div class="col-4">
-                          <div class="post-image">
-                            <a href="blog-detail.html"><img src="image/office-building-2022-12-15-19-37-04-utc1.jpg" alt="building"></a>
-                          </div>
-                        </div>
-                        <div class="col-8">
-                          <div class="post-info">
-                            <h6 class="mb-0"><a href="blog-detail.html" class="primary">How changig your thinking can change your life</a></h6>
-                            <span class="small">February 27, 2025</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="cv-box py-5 px-4 text-center white position-relative">
-                <div class="overlay bg-primary opacity-50"></div>
-                <div class="cv-box-inner position-relative">
-                  <div class="cv-icon text-center mb-3">
-                    <i class="fa fa-phone bg-secondary text-center rounded-circle white" aria-hidden="true"></i>
-                  </div>
-                  <span class="fw-medium h5 teko white text-capitalize">Do You Need Help?</span>
-                  <h3 class="white">+569 2316 2156</h3>
-                  <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  <a href="contact.html" class="btn-primary">Contact Us</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        .sidebar-card {
+            padding: 22px 20px;
+            margin-bottom: 18px;
+        }
+        .sidebar-card:last-child { margin-bottom: 0; }
+        .sidebar-card h3 {
+            margin: 0 0 14px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--olive);
+        }
+        .search-form {
+            display: flex;
+            gap: 10px;
+        }
+        .search-form input {
+            flex: 1;
+            min-width: 0;
+            border: 1px solid #e5ddd1;
+            border-radius: 12px;
+            padding: 14px 16px;
+            outline: none;
+            background: #fff;
+            color: var(--text);
+        }
+        .search-form button {
+            min-width: 52px;
+            border: 0;
+            border-radius: 12px;
+            background: var(--olive);
+            color: #fff;
+            cursor: pointer;
+        }
+        .sidebar-copy {
+            color: #5d564e;
+            line-height: 1.8;
+            font-size: 14px;
+            margin: 0 0 16px;
+        }
+        .category-list,
+        .mini-posts {
+            display: grid;
+            gap: 12px;
+        }
+        .category-link,
+        .mini-post {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #efe8de;
+            color: #4f483f;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .category-link:last-child,
+        .mini-post:last-child { border-bottom: 0; padding-bottom: 0; }
+        .category-link:hover,
+        .mini-post:hover { color: var(--olive); }
+        .category-link::after {
+            content: '→';
+            font-size: 16px;
+            color: var(--olive);
+        }
+        .mini-post-thumb {
+            width: 90px;
+            min-width: 90px;
+            height: 78px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #e9e2d8;
+        }
+        .mini-post-thumb img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .mini-post-copy strong {
+            display: block;
+            font-size: 1rem;
+            color: #201c17;
+            line-height: 1.35;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .mini-post-copy span {
+            display: block;
+            margin-top: 8px;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .blog-cta {
+            margin-top: 18px;
+            background: linear-gradient(90deg, #4d5730 0%, #596733 50%, #73893f 100%);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 18px;
+            color: #fff;
+            box-shadow: 0 16px 34px rgba(59,70,35,0.24);
+        }
+        .blog-cta-copy { width: 100%; }
+        .blog-cta-copy small {
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-size: 11px;
+            opacity: 0.82;
+        }
+        .blog-cta-copy h3 {
+            margin: 0 0 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 3vw, 2.45rem);
+            font-weight: 500;
+            line-height: 1.06;
+            color: #fff;
+        }
+        .blog-cta-copy p {
+            margin: 0;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        .blog-cta-actions {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        footer {
+            margin-top: 56px;
+            background: linear-gradient(90deg, #566236, #3f4826 50%, #58643a);
+            color: #fff;
+        }
+        .footer-grid {
+            padding: 42px 0 22px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr 1.1fr 1.1fr;
+            gap: 30px;
+        }
+        .footer-brand p,
+        .footer-links li,
+        .footer-contact p,
+        .footer-newsletter p {
+            color: rgba(255,255,255,0.82);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .footer-brand h2,
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-newsletter h4 {
+            margin: 0 0 14px;
+            letter-spacing: 0.03em;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-links li { margin-bottom: 6px; }
+        .footer-links a:hover { color: #fff; }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.25);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .social-links a:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-2px);
+        }
+        .footer-contact p {
+            margin: 0 0 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.26);
+            color: #fff;
+            line-height: 1;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+            margin-top: 0;
+        }
+        .contact-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .contact-text {
+            display: inline-block;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.82);
+            transition: color 0.2s ease;
+        }
+        a.contact-text:hover { color: #fff; }
+        .contact-icon-top {
+            align-self: flex-start;
+            margin-top: 2px;
+        }
+        .newsletter-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.28);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 14px;
+        }
+        .newsletter-form input {
+            flex: 1;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            padding: 14px;
+            outline: none;
+        }
+        .newsletter-form input::placeholder { color: rgba(255,255,255,0.65); }
+        .newsletter-form button {
+            border: 0;
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            padding: 14px 16px;
+            cursor: pointer;
+        }
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            text-align: center;
+            color: rgba(255,255,255,0.72);
+            font-size: 13px;
+            padding: 16px 0 22px;
+        }
+
+        @media (max-width: 1200px) {
+            .container { width: min(var(--container), calc(100% - 36px)); }
+            .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (max-width: 1024px) {
+            .blogs-layout { grid-template-columns: 1fr; }
+            .blogs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 900px) {
+            header { position: static; }
+            .navbar {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 0;
+                gap: 16px;
+            }
+            .logo {
+                width: auto;
+                justify-content: flex-start;
+                flex: 0 0 auto;
+                position: relative;
+                z-index: 31;
+            }
+            .menu-toggle {
+                display: inline-flex;
+                flex: 0 0 auto;
+                position: relative;
+                z-index: 31;
+            }
+            nav {
+                position: fixed;
+                top: 88px;
+                left: 14px;
+                right: 14px;
+                width: auto;
+                max-height: calc(100vh - 108px);
+                overflow-y: auto;
+                gap: 10px;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                display: flex;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateY(-10px);
+                transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+                background: #fff;
+                border: 1px solid #e9e2d8;
+                border-radius: 16px;
+                box-shadow: 0 20px 40px rgba(29,24,18,0.14);
+                z-index: 1300;
+            }
+            nav.mobile-open {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                transform: translateY(0) !important;
+            }
+            nav > * { flex: 0 0 auto; }
+            body.menu-open { overflow: hidden; }
+            nav > a,
+            .nav-item,
+            .call-btn {
+                width: 100%;
+                border: 1px solid #e9e2d8;
+                border-radius: 12px;
+                background: #fff;
+            }
+            nav > a {
+                justify-content: center;
+                text-align: center;
+                padding: 14px 16px;
+            }
+            .call-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 10px;
+                padding: 14px 16px;
+                color: #fff !important;
+                background: var(--olive);
+                border-color: var(--olive);
+            }
+            .nav-item > a {
+                justify-content: center;
+                text-align: center;
+                padding: 14px 44px 14px 16px;
+                position: relative;
+            }
+            .nav-item.services-menu > a::after,
+            .has-children > a::after {
+                position: absolute;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .nav-item.services-menu.open > a::after { transform: translateY(-50%) rotate(180deg); }
+            .has-children.open > a::after { transform: translateY(-50%) rotate(-90deg); }
+            .nav-item {
+                justify-content: center;
+                flex-direction: column;
+                align-items: stretch;
+                overflow: hidden;
+            }
+            .dropdown-menu {
+                position: static;
+                min-width: 100%;
+                margin-top: 0;
+                padding: 8px 0 10px;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                display: none;
+                transform: none;
+                box-shadow: none;
+                border-radius: 0;
+                border: 0;
+                border-top: 1px solid #eee6db;
+                background: #fcfaf6;
+            }
+            .nav-item.services-menu.open > .dropdown-menu { display: block; }
+            .sub-dropdown {
+                position: static;
+                min-width: 100%;
+                margin: 6px 12px 2px;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                display: none;
+                transform: none;
+                box-shadow: none;
+                border-radius: 10px;
+                border: 1px solid #ebe3d8;
+                background: #fff;
+            }
+            .has-children::before { display: none; }
+            .has-children.open > .sub-dropdown { display: block; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .container { width: calc(100% - 24px); }
+            nav {
+                top: 82px;
+                left: 12px;
+                right: 12px;
+                width: auto;
+                max-height: calc(100vh - 98px);
+            }
+            .top-bar .container {
+                gap: 8px 14px;
+                padding: 10px 0;
+                min-height: auto;
+            }
+            .top-bar { font-size: 11px; }
+            .logo-text strong { font-size: 1.55rem; }
+            .logo-text span { letter-spacing: 0.22em; }
+            nav a { font-size: 1rem; }
+            nav > a,
+            .nav-item > a,
+            .call-btn {
+                padding-top: 13px;
+                padding-bottom: 13px;
+            }
+            .call-btn {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 13px 16px;
+                color: #fff !important;
+                background: var(--olive);
+                border-color: var(--olive);
+            }
+            .page-hero { min-height: 300px; }
+            .page-hero p {
+                font-size: 0.78rem;
+                letter-spacing: 0.1em;
+            }
+            .section { padding-top: 44px; }
+            .blogs-grid { grid-template-columns: 1fr; }
+            .featured-blog-body,
+            .blog-card-body,
+            .sidebar-card,
+            .blog-cta { padding-left: 18px; padding-right: 18px; }
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+            .newsletter-form button { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <span>Premium Quality</span>
+            <span>Crafted to Last</span>
+            <span>Customizable Options</span>
+            <span>Expert Guidance</span>
+            <span>Fast Execution</span>
         </div>
-      </div>
     </div>
-  </section>
-  <!-- Blog List Section Ends -->
 
-  <!-- Appointment Section Starts -->
-  <div class="appointment py-5 bg-secondarylight">
-    <div class="container">
-      <div class="appointment-inner">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-3 col-md-4">
-            <div class="appointment-left">
-              <ul class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                <li class="me-3 pe-3 border-end border-2 border-white"><img src="image/chat.png" alt="chat" style="height: 44px; width: 44px;"></li>
-                <li class="teko">
-                  <span class="h6 primary mb-0">Book Your Schedule</span>
-                  <span class="d-block h3 mb-0">666 888 0000</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-8">
-            <div class="appointment-center">
-              <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="appointment-right text-center text-lg-end">
-              <a href="consultation.html" class="btn-primary">Book An Appointment</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Appointment Section Ends -->
+    <header>
+        <div class="container navbar">
+            <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home">
+                <div class="logo-text">
+                    <strong>AQEEQ</strong>
+                    <span>DECOR</span>
+                </div>
+            </a>
 
-  <!-- Footer Section Starts -->
-  <footer class="section-padding position-relative pb-5">
-    <div class="overlay"></div>
-    <div class="container position-relative">
-      <div class="footer-inner white">
-        <div class="footer-top pb-5 mb-5 border-bottom border-2 border-light">
-          <div class="row align-items-center gx-lg-5 gy-4">
-            <div class="col-lg-3 col-md-4">
-              <div class="footer-top-left">
-                <img src="image/logo.png" alt="footer logo" class="w-100">
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-8">
-              <div class="footer-top-right">
-                <p class="white mb-0 h6 fw-normal fst-italic">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporatu incididunt ut labore et dolore magna aliqua.”</p>
-              </div>
-            </div>
-          </div>
+            <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <a href="index-3.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="project.html">PROJECTS</a>
+                <div class="nav-item services-menu">
+                    <a href="#">SERVICES</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Curtains</a></li>
+                        <li><a href="#">Wallpapers</a></li>
+                        <li class="has-children">
+                            <a href="#">Furniture</a>
+                            <ul class="sub-dropdown">
+                                <li><a href="#">Modular</a></li>
+                                <li><a href="#">Office furniture</a></li>
+                                <li><a href="#">Sofas</a></li>
+                                <li><a href="#">Dining table</a></li>
+                                <li><a href="#">Dining chair</a></li>
+                                <li><a href="#">Accent chair</a></li>
+                                <li><a href="#">Beds</a></li>
+                                <li><a href="#">Bedside table</a></li>
+                                <li><a href="#">Pouffee</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#">Window Blinds</a>
+                            <ul class="sub-dropdown">
+                                <li><a href="#">Roller</a></li>
+                                <li><a href="#">Zebra</a></li>
+                                <li><a href="#">Vertical</a></li>
+                                <li><a href="#">Roman</a></li>
+                                <li><a href="#">Honeycomb</a></li>
+                                <li><a href="#">Outdoor</a></li>
+                                <li><a href="#">PVC</a></li>
+                                <li><a href="#">Mansoon</a></li>
+                                <li><a href="#">Wooden</a></li>
+                                <li><a href="#">Aluminium Venetian</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Mattress</a></li>
+                        <li class="has-children">
+                            <a href="#">Floorings</a>
+                            <ul class="sub-dropdown">
+                                <li><a href="#">Wooden</a></li>
+                                <li><a href="#">PVC</a></li>
+                                <li><a href="#">Engineered</a></li>
+                                <li><a href="#">Sports</a></li>
+                                <li><a href="#">Gym</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <a href="blogs.html" class="active">BLOGS</a>
+                <a href="contact.html">CONTACT US</a>
+                <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
+                    <span class="call-icon" aria-hidden="true">☎</span>
+                    <span>+91 86987 25668</span>
+                </a>
+            </nav>
         </div>
-        <div class="footer-middle mb-5  pb-5 border-bottom border-light text-center text-md-start">
-          <div class="row gx-lg-5 gy-5">
-            <div class="col-lg-4">
-              <div class="footer-info">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui reprehenderit dolor officia. </p>
-                <div class="footer-socials mb-4">
-                  <ul class="d-flex gap-1 my-2 justify-content-center justify-content-md-start">
-                    <li><a href=""><i class="fa fa-facebook bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-linkedin bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-google-plus bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                  </ul>
+    </header>
+
+    <section class="page-hero">
+        <div class="container page-hero-inner">
+            <h1>Blogs</h1>
+            <p>Home / Blogs</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">INTERIOR INSIGHTS & DESIGN STORIES</h2>
+                <p class="section-copy">Explore décor inspiration, material guidance, styling ideas and practical interior knowledge curated to help you shape more elegant and functional spaces.</p>
+
+                <div class="blogs-layout">
+                    <div>
+                        <article class="featured-blog">
+                            <div class="featured-blog-image">
+                                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80" alt="Featured blog interior living room">
+                            </div>
+                            <div class="featured-blog-body">
+                                <p class="eyebrow">Featured Article</p>
+                                <h2>How To Build A Warm, Elegant Living Space With Layered Interior Styling</h2>
+                                <p>Discover how textures, window styling, lighting balance and carefully selected furnishings can transform an ordinary room into a space that feels rich, welcoming and timeless.</p>
+                                <div class="featured-meta">
+                                    <span>Design Guide</span>
+                                    <span>March 2026</span>
+                                    <span>5 Min Read</span>
+                                </div>
+                                <div class="featured-actions">
+                                    <a href="blog-detail.html" class="btn-dark">Read Article</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <div class="blogs-grid">
+                            <article class="blog-card">
+                                <div class="blog-card-image">
+                                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1100&q=80" alt="Bedroom interior blog">
+                                    <span class="blog-tag">Bedrooms</span>
+                                </div>
+                                <div class="blog-card-body">
+                                    <h3>Simple Bedroom Details That Instantly Elevate Comfort</h3>
+                                    <p>Learn how soft furnishings, calming palettes and better layout planning can make bedroom interiors feel more balanced and refined.</p>
+                                    <div class="blog-card-footer">
+                                        <span>March 12, 2026</span>
+                                        <a href="blog-detail.html" class="blog-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-card">
+                                <div class="blog-card-image">
+                                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1100&q=80" alt="Furniture styling blog">
+                                    <span class="blog-tag">Furniture</span>
+                                </div>
+                                <div class="blog-card-body">
+                                    <h3>Choosing Custom Furniture That Fits Both Style And Scale</h3>
+                                    <p>Explore how furniture dimensions, fabric choices and room proportions influence the final visual harmony of a space.</p>
+                                    <div class="blog-card-footer">
+                                        <span>March 08, 2026</span>
+                                        <a href="blog-detail.html" class="blog-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-card">
+                                <div class="blog-card-image">
+                                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1100&q=80" alt="Curtains blog">
+                                    <span class="blog-tag">Curtains</span>
+                                </div>
+                                <div class="blog-card-body">
+                                    <h3>Why Window Styling Changes The Entire Mood Of A Room</h3>
+                                    <p>From sheers to blackout drapes, discover how the right curtain treatment improves softness, privacy and elegance.</p>
+                                    <div class="blog-card-footer">
+                                        <span>March 03, 2026</span>
+                                        <a href="blog-detail.html" class="blog-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-card">
+                                <div class="blog-card-image">
+                                    <img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1100&q=80" alt="Dining décor blog">
+                                    <span class="blog-tag">Dining</span>
+                                </div>
+                                <div class="blog-card-body">
+                                    <h3>Creating A Dining Space That Feels Both Stylish And Practical</h3>
+                                    <p>See how layered décor, well-planned furniture and finish coordination help dining spaces feel complete and inviting.</p>
+                                    <div class="blog-card-footer">
+                                        <span>February 27, 2026</span>
+                                        <a href="blog-detail.html" class="blog-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-card">
+                                <div class="blog-card-image">
+                                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1100&q=80" alt="Luxury styling blog">
+                                    <span class="blog-tag">Styling</span>
+                                </div>
+                                <div class="blog-card-body">
+                                    <h3>Luxury Through Simplicity: The Power Of Thoughtful Interior Layers</h3>
+                                    <p>Not every elegant interior needs excess. Discover how restraint and smart detailing can create timeless sophistication.</p>
+                                    <div class="blog-card-footer">
+                                        <span>February 22, 2026</span>
+                                        <a href="blog-detail.html" class="blog-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-card">
+                                <div class="blog-card-image">
+                                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1100&q=80&sat=-10" alt="Flooring blog">
+                                    <span class="blog-tag">Flooring</span>
+                                </div>
+                                <div class="blog-card-body">
+                                    <h3>Flooring Choices That Support A More Cohesive Interior</h3>
+                                    <p>Understand how texture, tone and durability should guide flooring selection across residential and commercial spaces.</p>
+                                    <div class="blog-card-footer">
+                                        <span>February 15, 2026</span>
+                                        <a href="blog-detail.html" class="blog-link">Read More</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <aside>
+                        <div class="sidebar-card">
+                            <h3>Search Articles</h3>
+                            <form class="search-form">
+                                <input type="text" placeholder="Search blogs...">
+                                <button type="button" aria-label="Search">⌕</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>About The Journal</h3>
+                            <p class="sidebar-copy">A curated collection of interior thoughts, décor guidance and design inspiration from Aqeeq Decor, focused on practical ideas with elegant outcomes.</p>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Categories</h3>
+                            <div class="category-list">
+                                <a href="#" class="category-link">Living Room Styling</a>
+                                <a href="#" class="category-link">Bedroom Interiors</a>
+                                <a href="#" class="category-link">Curtains & Blinds</a>
+                                <a href="#" class="category-link">Custom Furniture</a>
+                                <a href="#" class="category-link">Flooring & Finishes</a>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h3>Popular Posts</h3>
+                            <div class="mini-posts">
+                                <a href="blog-detail.html" class="mini-post">
+                                    <span class="mini-post-thumb"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Popular living room blog"></span>
+                                    <span class="mini-post-copy">
+                                        <strong>Building A Living Room With More Warmth And Character</strong>
+                                        <span>March 2026</span>
+                                    </span>
+                                </a>
+                                <a href="blog-detail.html" class="mini-post">
+                                    <span class="mini-post-thumb"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Popular bedroom blog"></span>
+                                    <span class="mini-post-copy">
+                                        <strong>Bedroom Styling Choices That Improve Everyday Comfort</strong>
+                                        <span>February 2026</span>
+                                    </span>
+                                </a>
+                                <a href="blog-detail.html" class="mini-post">
+                                    <span class="mini-post-thumb"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Popular curtain blog"></span>
+                                    <span class="mini-post-copy">
+                                        <strong>How Curtains Influence Light, Mood And Elegance</strong>
+                                        <span>February 2026</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="blog-cta">
+                            <div class="blog-cta-copy">
+                                <small>Need Design Guidance?</small>
+                                <h3>Let’s Discuss Your Space</h3>
+                                <p>Connect with Aqeeq Decor for interior styling support, curated décor ideas and material recommendations tailored to your project.</p>
+                            </div>
+                            <div class="blog-cta-actions">
+                                <a href="contact.html" class="btn-solid">Contact Us</a>
+                                <a href="tel:+918698725668" class="btn-ghost"><span class="call-icon" aria-hidden="true">☎</span><span>Call +91 86987 25668</span></a>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
-                <div class="contact-info">
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                      <li>256 Elizaberth Ave, CA, 90025</li>
-                    </ul>
-                  </div>
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                      <li>+569 2316 2156</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                      <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="51383f373e11383f25342334303d7f323e3c">[email&#160;protected]</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="quick-links">
-                <h4 class="white mb-2">Quick Link</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Services</a></li>
-                  <li><a href="service.html">Attorneys</a></li>
-                  <li><a href="blog-list.html">News & Articles</a></li>
-                  <li><a href="">Policies</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home" style="color:#fff; margin-bottom: 14px; display: inline-flex;">
+                    <div class="logo-text">
+                        <strong style="color: #8fa15f;">AQEEQ</strong>
+                        <span style="color: rgba(255,255,255,0.75);">DECOR</span>
+                    </div>
+                </a>
+                <p>Thoughtfully designed decor solutions crafted with quality materials and a passion for detail.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="index-3.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
-              </div>
             </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="services">
-                <h4 class="white mb-2">Services</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="service.html">Perfect Planning</a></li>
-                  <li><a href="service.html">Professional Design</a></li>
-                  <li><a href="service.html">Best Interior</a></li>
-                  <li><a href="service.html">Furniture Design</a></li>
-                  <li><a href="service.html">Complete Decoration</a></li>
-                  <li><a href="service.html">Terms & Conditions</a></li>
+
+            <div class="footer-links footer-hours">
+                <h4>OPENING HOURS</h4>
+                <ul>
+                    <li>Mon - Sat: 10:00 am - 8:00 pm</li>
+                    <li>Sunday: Open on Request</li>
                 </ul>
-              </div>
             </div>
-            <div class="col-lg-4">
-              <div class="services">
-                <h4 class="white mb-2">Get interesting news</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <p class="mb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ea dolorum.</p>
-                <div class="subscribe">
-                  <input type="email" placeholder="Email" class="mb-2">
-                  <a href="" class="btn-primary">Subscribe</a>
+
+            <div class="footer-contact">
+                <h4>CONTACT US</h4>
+                <p>
+                    <span class="contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"></path></svg>
+                    </span>
+                    <span class="contact-text"><a class="contact-text" href="tel:+918698725668">+91 86987 25668</a><br><a class="contact-text" href="tel:+918319163736">+91 83191 63736</a></span>
+                </p>
+                <p>
+                    <span class="contact-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path><path d="m22 6-10 7L2 6"></path></svg>
+                    </span>
+                    <a class="contact-text" href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a>
+                </p>
+                <p>
+                    <span class="contact-icon contact-icon-top" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+                    </span>
+                    <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+                </p>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>NEWSLETTER</h4>
+                <p>Subscribe to get updates on new collections &amp; offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button aria-label="Submit">↗</button>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="footer-bottom text-center">
-          <p class="mb-0"> &copy;2025 Intereal. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer Section Ends -->
+        <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
+    </footer>
 
-  <!--Back-to-top Button start-->
-  <div id="back-to-top">
-    <a href="#" class="bg-secondary position-relative align-items-center rounded-circle d-block"></a>
-  </div>
-  <!--Back-to-top Button end-->
+    <script>
+        const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
+        const servicesMenu = document.querySelector('.services-menu');
+        const childMenuItems = document.querySelectorAll('.services-menu .has-children');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('header nav');
 
-  <!-- Intereal Info Starts -->
-  <div class="modal fade intereal-info-modal" id="interealModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog  h-100 my-0 rounded-0 me-0 modal-sm">
-      <div class="modal-content h-100 rounded-0">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close me-4" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times bg-secondary text-center white" aria-hidden="true"></i></button>
-        </div>
-        <div class="modal-body mt-5 mx-3">
-          <div class="logo mb-4">
-            <img src="image/logo1.png" alt="logo">
-          </div>
-          <div class="info mb-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="contact-info mb-4">
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                <li>256 Elizaberth Ave, CA, 90025</li>
-              </ul>
-            </div>
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                <li>+569 2316 2156</li>
-              </ul>
-            </div>
-            <div>
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="244d4a424b644d4a5041564145480a474b49">[email&#160;protected]</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-socials mb-4">
-            <ul class="d-flex gap-1 my-2">
-              <li><a href=""><i class="fa fa-facebook bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Intereal Info Ends -->
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', (event) => {
+                if (!mobileMenuQuery.matches) return;
+                event.preventDefault();
+                event.stopPropagation();
+                const isOpen = mainNav.classList.toggle('mobile-open');
+                document.body.classList.toggle('menu-open', isOpen);
+                menuToggle.classList.toggle('active', isOpen);
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.7.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/plugin.js"></script>
-  <script src="js/main.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"e2e296138d64407b8469055f5cbf0b42","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+                if (!isOpen && servicesMenu) {
+                    servicesMenu.classList.remove('open');
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                }
+            });
+        }
+
+        if (servicesMenu) {
+            const servicesTrigger = servicesMenu.querySelector(':scope > a');
+
+            servicesTrigger.addEventListener('click', (event) => {
+                if (!mobileMenuQuery.matches) return;
+                event.preventDefault();
+                const isOpen = servicesMenu.classList.contains('open');
+
+                if (isOpen) {
+                    servicesMenu.classList.remove('open');
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                } else {
+                    servicesMenu.classList.add('open');
+                }
+            });
+
+            childMenuItems.forEach((item) => {
+                const trigger = item.querySelector(':scope > a');
+                trigger.addEventListener('click', (event) => {
+                    if (!mobileMenuQuery.matches) return;
+                    event.preventDefault();
+                    const isOpen = item.classList.contains('open');
+
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+
+                    if (!isOpen) {
+                        item.classList.add('open');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!mobileMenuQuery.matches) return;
+                const clickedInsideMenu = event.target.closest('header nav');
+                const clickedToggle = event.target.closest('.menu-toggle');
+
+                if (!clickedInsideMenu && !clickedToggle) {
+                    servicesMenu.classList.remove('open');
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    if (mainNav && menuToggle) {
+                        mainNav.classList.remove('mobile-open');
+                        document.body.classList.remove('menu-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (!mobileMenuQuery.matches) {
+                    servicesMenu.classList.remove('open');
+                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    if (mainNav && menuToggle) {
+                        mainNav.classList.remove('mobile-open');
+                        document.body.classList.remove('menu-open');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        }
+
+        if (mainNav) {
+            mobileMenuQuery.addEventListener('change', (event) => {
+                if (!event.matches) {
+                    mainNav.classList.remove('mobile-open');
+                    document.body.classList.remove('menu-open');
+                    if (menuToggle) {
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        }
+
+        if (mainNav && mobileMenuQuery.matches) {
+            mainNav.classList.remove('mobile-open');
+            document.body.classList.remove('menu-open');
+        }
+    </script>
 </body>
 </html>
