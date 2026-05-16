@@ -414,7 +414,7 @@
 
         .detail-layout {
             display: grid;
-            grid-template-columns: 1.06fr 0.94fr;
+            grid-template-columns: minmax(0, 1.24fr) minmax(300px, 0.76fr);
             gap: 28px;
             align-items: start;
         }
@@ -590,10 +590,10 @@
 
         .detail-lower-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
             gap: 28px;
             margin-top: 28px;
-            align-items: start;
+            align-items: stretch;
         }
 
         .detail-story h3,
@@ -855,6 +855,14 @@
             box-shadow: 0 16px 34px rgba(59, 70, 35, 0.24);
         }
 
+        .detail-side .project-cta {
+            margin-top: 18px;
+            padding: 24px 24px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
         .project-cta-copy small {
             display: inline-block;
             margin-bottom: 10px;
@@ -880,11 +888,33 @@
             font-size: 14px;
         }
 
+        .detail-side .project-cta-copy {
+            width: 100%;
+        }
+
+        .detail-side .project-cta-copy h3 {
+            margin: 0 0 10px;
+            font-size: clamp(1.9rem, 3vw, 2.45rem);
+            line-height: 1.06;
+        }
+
+        .detail-side .project-cta-copy p {
+            max-width: none;
+        }
+
         .project-cta-actions {
             display: flex;
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
+        }
+
+        .detail-side .project-cta-actions {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            align-items: stretch;
         }
 
         .project-cta .btn-solid,
@@ -900,6 +930,11 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+
+        .detail-side .project-cta .btn-solid,
+        .detail-side .project-cta .btn-ghost {
+            width: 100%;
         }
 
         .project-cta .btn-solid {
