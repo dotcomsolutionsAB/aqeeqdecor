@@ -1476,17 +1476,26 @@
 
                         <div class="detail-gallery">
                             <div class="gallery-main">
-                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Main project interior image">
+                                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Main project interior image" class="project-lightbox-image">
                             </div>
                             <div class="gallery-grid">
                                 <figure>
-                                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1100&q=80" alt="Project living room image">
+                                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1100&q=80" alt="Project living room image" class="project-lightbox-image">
                                 </figure>
                                 <figure>
-                                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1100&q=80" alt="Project bedroom image">
+                                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1100&q=80" alt="Project bedroom image" class="project-lightbox-image">
                                 </figure>
                                 <figure>
-                                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1100&q=80" alt="Project furniture image">
+                                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1100&q=80" alt="Project furniture image" class="project-lightbox-image">
+                                </figure>
+                                <figure>
+                                    <img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1100&q=80" alt="Project dining area image" class="project-lightbox-image">
+                                </figure>
+                                <figure>
+                                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1100&q=80&sat=-12" alt="Project styled interior image" class="project-lightbox-image">
+                                </figure>
+                                <figure>
+                                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1100&q=80" alt="Project curtain styling image" class="project-lightbox-image">
                                 </figure>
                             </div>
                         </div>
@@ -1575,21 +1584,6 @@
                             </div>
                         </div>
 
-                        <div class="side-card help-card">
-                            <div class="help-top">
-                                <span class="call-icon-wrap"><span class="call-icon" aria-hidden="true">☎</span></span>
-                                <div>
-                                    <span class="eyebrow" style="color: rgba(255,255,255,0.86); margin-bottom: 6px;">Need Design Help?</span>
-                                    <h3 style="margin: 0; font-size: 2rem; color: #fff;">Let’s Discuss Your Space</h3>
-                                </div>
-                            </div>
-                            <p>Looking to design a similar residential or commercial interior? Connect with our team for materials, styling and complete execution guidance.</p>
-                            <a href="tel:+918698725668" class="help-phone"><span class="call-icon" aria-hidden="true">☎</span><span>+91 86987 25668</span></a>
-                            <div class="help-actions">
-                                <a href="contact.html" class="btn-light">Contact Us</a>
-                                <a href="project.html" class="btn-glass">View Projects</a>
-                            </div>
-                        </div>
                     </aside>
                 </div>
 
@@ -1607,6 +1601,13 @@
             </div>
         </section>
     </main>
+
+    <div class="lightbox-overlay" id="projectLightbox" aria-hidden="true">
+        <div class="lightbox-dialog">
+            <button class="lightbox-close" type="button" aria-label="Close project image preview">×</button>
+            <img src="" alt="Expanded project image" class="lightbox-image" id="projectLightboxImage">
+        </div>
+    </div>
 
     <footer>
         <div class="container footer-grid">
@@ -1684,6 +1685,10 @@
         const childMenuItems = document.querySelectorAll('.services-menu .has-children');
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNav = document.querySelector('header nav');
+        const lightbox = document.getElementById('projectLightbox');
+        const lightboxImage = document.getElementById('projectLightboxImage');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const lightboxTriggers = document.querySelectorAll('.project-lightbox-image');
 
         if (menuToggle && mainNav) {
             menuToggle.addEventListener('click', (event) => {
@@ -1780,6 +1785,38 @@
         if (mainNav && mobileMenuQuery.matches) {
             mainNav.classList.remove('mobile-open');
             document.body.classList.remove('menu-open');
+        }
+
+        if (lightbox && lightboxImage && lightboxClose && lightboxTriggers.length) {
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('menu-open');
+            };
+
+            lightboxTriggers.forEach((image) => {
+                image.addEventListener('click', () => {
+                    lightboxImage.src = image.src;
+                    lightboxImage.alt = image.alt;
+                    lightbox.classList.add('active');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('menu-open');
+                });
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
         }
     </script>
 </body>
