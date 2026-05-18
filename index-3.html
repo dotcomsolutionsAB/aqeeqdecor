@@ -738,8 +738,8 @@
 
         .creative-grid .creative-card:first-child {
             grid-column: 1 / -1;
-            grid-template-columns: minmax(0, 1.28fr) 260px;
-            min-height: 300px;
+            grid-template-columns: minmax(0, 1.34fr) 340px;
+            min-height: 320px;
         }
 
         .creative-card {
@@ -747,15 +747,15 @@
             overflow: hidden;
             min-height: 280px;
             border-radius: 22px;
-            padding: 28px 28px;
+            padding: 28px 0 28px 28px;
             display: grid;
-            grid-template-columns: minmax(0, 1.12fr) 180px;
+            grid-template-columns: minmax(0, 1.12fr) 220px;
             grid-template-areas:
                 "top image"
                 "copy image"
                 "footer image";
             align-items: start;
-            column-gap: 22px;
+            column-gap: 24px;
             row-gap: 16px;
             color: #fff;
             box-shadow: 0 18px 40px rgba(29, 24, 18, 0.12);
@@ -781,12 +781,14 @@
             grid-area: image;
             position: relative;
             width: 100%;
-            height: 100%;
-            min-height: 180px;
-            border-radius: 20px;
+            height: calc(100% + 56px);
+            min-height: calc(100% + 56px);
+            margin-top: -28px;
+            margin-bottom: -28px;
+            border-radius: 0;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.22);
-            box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+            border: 0;
+            box-shadow: none;
             z-index: 1;
             align-self: stretch;
         }
@@ -823,7 +825,7 @@
             grid-area: top;
             display: flex;
             align-items: flex-start;
-            justify-content: space-between;
+            justify-content: flex-start;
             gap: 14px;
         }
 
@@ -849,21 +851,7 @@
         }
 
         .creative-arrow {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.18);
-            flex-shrink: 0;
-        }
-
-        .creative-card--soft .creative-arrow {
-            background: rgba(255,255,255,0.48);
-            border-color: rgba(45, 36, 28, 0.08);
+            display: none;
         }
 
         .creative-copy h3 {
@@ -881,9 +869,9 @@
 
         .creative-copy p {
             margin: 0;
-            max-width: 320px;
+            max-width: 420px;
             font-size: 14px;
-            line-height: 1.8;
+            line-height: 1.9;
             color: inherit;
             opacity: 0.92;
         }
@@ -2282,7 +2270,7 @@
 
             .creative-card {
                 min-height: 220px;
-                padding: 22px 18px;
+                padding: 22px 0 0;
                 grid-template-columns: 1fr;
                 grid-template-areas:
                     "top"
@@ -2292,13 +2280,21 @@
                 row-gap: 14px;
             }
 
+            .creative-top,
+            .creative-copy,
+            .creative-footer {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
             .creative-image {
                 position: static;
                 width: 100%;
-                height: 160px;
-                min-height: 160px;
+                height: 180px;
+                min-height: 180px;
                 margin-top: 0;
-                border-radius: 16px;
+                margin-bottom: 0;
+                border-radius: 0;
             }
 
             .creative-footer {
@@ -2548,45 +2544,42 @@
                     <a href="#home-cta" class="creative-card creative-card--olive" aria-label="Go to consultation call to action section">
                         <div class="creative-top">
                             <span class="creative-badge">Design Consultation</span>
-                            <span class="creative-arrow" aria-hidden="true">↗</span>
                         </div>
                         <div class="creative-copy">
                             <h3>Bring Your Dream Space To Life</h3>
-                            <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or office.</p>
+                            <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or office. Let us help you shape a space that feels premium, inviting and completely aligned with your lifestyle.</p>
                         </div>
                         <div class="creative-footer">Explore With Us</div>
                         <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=700&q=80" alt="Elegant living space inspiration">
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80" alt="Elegant living space inspiration">
                         </div>
                     </a>
 
                     <a href="#home-cta" class="creative-card creative-card--warm" aria-label="Go to home page call to action section for customized decor solutions">
                         <div class="creative-top">
                             <span class="creative-badge">Custom Solutions</span>
-                            <span class="creative-arrow" aria-hidden="true">↗</span>
                         </div>
                         <div class="creative-copy">
                             <h3>Made Around Your Style & Space</h3>
-                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement.</p>
+                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement. Create a polished look with products designed around your room dimensions, finishes and personal taste.</p>
                         </div>
                         <div class="creative-footer">Book Your Project</div>
                         <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80" alt="Custom furniture and styling concept">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80" alt="Custom furniture and styling concept">
                         </div>
                     </a>
 
                     <a href="#home-cta" class="creative-card creative-card--soft" aria-label="Go to home page call to action section for expert design guidance">
                         <div class="creative-top">
                             <span class="creative-badge">Expert Guidance</span>
-                            <span class="creative-arrow" aria-hidden="true">↗</span>
                         </div>
                         <div class="creative-copy">
                             <h3>Need Help Choosing The Right Decor?</h3>
-                            <p>Connect with our team for curated recommendations, material guidance and practical styling support.</p>
+                            <p>Connect with our team for curated recommendations, material guidance and practical styling support. We simplify the decision-making process and help you choose the most suitable decor for every corner.</p>
                         </div>
                         <div class="creative-footer">Talk To Our Team</div>
                         <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=80" alt="Decor fabrics and styling assistance">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" alt="Decor fabrics and styling assistance">
                         </div>
                     </a>
                 </div>
