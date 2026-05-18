@@ -731,8 +731,15 @@
 
         .creative-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 20px;
+            align-items: stretch;
+        }
+
+        .creative-grid .creative-card:first-child {
+            grid-column: 1 / -1;
+            grid-template-columns: minmax(0, 1.28fr) 260px;
+            min-height: 300px;
         }
 
         .creative-card {
@@ -742,7 +749,7 @@
             border-radius: 22px;
             padding: 28px 28px;
             display: grid;
-            grid-template-columns: minmax(0, 1.15fr) 180px;
+            grid-template-columns: minmax(0, 1.12fr) 180px;
             grid-template-areas:
                 "top image"
                 "copy image"
@@ -862,10 +869,14 @@
         .creative-copy h3 {
             margin: 0 0 12px;
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-size: clamp(1.9rem, 2.6vw, 2.55rem);
             line-height: 0.98;
             font-weight: 600;
             color: inherit;
+        }
+
+        .creative-grid .creative-card:first-child .creative-copy h3 {
+            font-size: clamp(2.3rem, 3.6vw, 3.3rem);
         }
 
         .creative-copy p {
@@ -2038,6 +2049,12 @@
             }
             .creative-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .creative-grid .creative-card:first-child {
+                grid-column: auto;
+                grid-template-columns: 1fr;
+                min-height: 280px;
             }
 
             .hero-content {
