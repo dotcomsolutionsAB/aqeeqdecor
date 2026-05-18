@@ -725,6 +725,142 @@
             padding: 52px 0 0;
         }
 
+        .creative-strip {
+            padding: 34px 0 0;
+        }
+
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .creative-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 260px;
+            border-radius: 22px;
+            padding: 26px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #fff;
+            box-shadow: 0 18px 40px rgba(29, 24, 18, 0.12);
+            border: 1px solid rgba(255,255,255,0.12);
+            isolation: isolate;
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .creative-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.38) 100%);
+            z-index: 0;
+        }
+
+        .creative-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .creative-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 44px rgba(29, 24, 18, 0.16);
+        }
+
+        .creative-card--olive {
+            background: linear-gradient(135deg, #3f4826 0%, #566236 55%, #748746 100%);
+        }
+
+        .creative-card--warm {
+            background: linear-gradient(135deg, #5b4538 0%, #8c6a57 55%, #c69774 100%);
+        }
+
+        .creative-card--soft {
+            background: linear-gradient(135deg, #8a7b67 0%, #b6a18a 52%, #d9c8b3 100%);
+            color: #2d241c;
+        }
+
+        .creative-card--soft::before {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.18) 100%);
+        }
+
+        .creative-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .creative-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 0 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.26);
+            background: rgba(255,255,255,0.10);
+            color: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .creative-card--soft .creative-badge {
+            background: rgba(255,255,255,0.44);
+            border-color: rgba(45, 36, 28, 0.08);
+        }
+
+        .creative-arrow {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.18);
+            flex-shrink: 0;
+        }
+
+        .creative-card--soft .creative-arrow {
+            background: rgba(255,255,255,0.48);
+            border-color: rgba(45, 36, 28, 0.08);
+        }
+
+        .creative-copy h3 {
+            margin: 0 0 12px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            line-height: 0.98;
+            font-weight: 600;
+            color: inherit;
+        }
+
+        .creative-copy p {
+            margin: 0;
+            max-width: 320px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: inherit;
+            opacity: 0.92;
+        }
+
+        .creative-footer {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: inherit;
+        }
+
         .section-title {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
@@ -2295,6 +2431,48 @@
             </section>
         </div>
 
+        <section class="creative-strip">
+            <div class="container">
+                <div class="creative-grid">
+                    <a href="#home-cta" class="creative-card creative-card--olive" aria-label="Go to consultation call to action section">
+                        <div class="creative-top">
+                            <span class="creative-badge">Design Consultation</span>
+                            <span class="creative-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="creative-copy">
+                            <h3>Bring Your Dream Space To Life</h3>
+                            <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or office.</p>
+                        </div>
+                        <div class="creative-footer">Explore With Us</div>
+                    </a>
+
+                    <a href="#home-cta" class="creative-card creative-card--warm" aria-label="Go to home page call to action section for customized decor solutions">
+                        <div class="creative-top">
+                            <span class="creative-badge">Custom Solutions</span>
+                            <span class="creative-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="creative-copy">
+                            <h3>Made Around Your Style & Space</h3>
+                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement.</p>
+                        </div>
+                        <div class="creative-footer">Book Your Project</div>
+                    </a>
+
+                    <a href="#home-cta" class="creative-card creative-card--soft" aria-label="Go to home page call to action section for expert design guidance">
+                        <div class="creative-top">
+                            <span class="creative-badge">Expert Guidance</span>
+                            <span class="creative-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="creative-copy">
+                            <h3>Need Help Choosing The Right Decor?</h3>
+                            <p>Connect with our team for curated recommendations, material guidance and practical styling support.</p>
+                        </div>
+                        <div class="creative-footer">Talk To Our Team</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <h2 class="section-title">SHOP BY CATEGORY</h2>
@@ -2653,7 +2831,7 @@
                 </div>
             </div>
         </section>
-        <section class="home-cta-section">
+        <section class="home-cta-section" id="home-cta">
             <div class="container">
                 <div class="home-cta-card">
                     <div class="home-cta-content">
