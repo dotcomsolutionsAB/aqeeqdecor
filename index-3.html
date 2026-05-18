@@ -764,6 +764,25 @@
             z-index: 1;
         }
 
+        .creative-image {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            width: 118px;
+            height: 118px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.22);
+            box-shadow: 0 16px 34px rgba(0,0,0,0.18);
+            z-index: 1;
+        }
+
+        .creative-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .creative-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 24px 44px rgba(29, 24, 18, 0.16);
@@ -852,6 +871,7 @@
         .creative-copy {
             display: grid;
             gap: 8px;
+            padding-right: 124px;
         }
 
         .creative-footer {
@@ -871,6 +891,7 @@
             border: 1px solid rgba(255,255,255,0.20);
             box-shadow: 0 10px 24px rgba(0,0,0,0.10);
             transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+            margin-top: 10px;
         }
 
         .creative-card:hover .creative-footer {
@@ -2236,11 +2257,23 @@
                 padding: 22px 18px;
             }
 
+            .creative-image {
+                position: static;
+                width: 100%;
+                height: 160px;
+                margin-top: 16px;
+                border-radius: 16px;
+            }
+
             .creative-footer {
                 min-height: 40px;
                 padding: 0 16px;
                 font-size: 11px;
                 letter-spacing: 0.1em;
+            }
+
+            .creative-copy {
+                padding-right: 0;
             }
 
             .section-title {
@@ -2486,6 +2519,9 @@
                             <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or office.</p>
                         </div>
                         <div class="creative-footer">Explore With Us</div>
+                        <div class="creative-image">
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=700&q=80" alt="Elegant living space inspiration">
+                        </div>
                     </a>
 
                     <a href="#home-cta" class="creative-card creative-card--warm" aria-label="Go to home page call to action section for customized decor solutions">
@@ -2498,6 +2534,9 @@
                             <p>From curtains to flooring, every selection can be refined to suit your exact requirement.</p>
                         </div>
                         <div class="creative-footer">Book Your Project</div>
+                        <div class="creative-image">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80" alt="Custom furniture and styling concept">
+                        </div>
                     </a>
 
                     <a href="#home-cta" class="creative-card creative-card--soft" aria-label="Go to home page call to action section for expert design guidance">
@@ -2510,6 +2549,9 @@
                             <p>Connect with our team for curated recommendations, material guidance and practical styling support.</p>
                         </div>
                         <div class="creative-footer">Talk To Our Team</div>
+                        <div class="creative-image">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=700&q=80" alt="Decor fabrics and styling assistance">
+                        </div>
                     </a>
                 </div>
             </div>
