@@ -775,11 +775,14 @@
             grid-area: image;
             position: relative;
             width: 100%;
-            height: calc(100% + 56px);
-            min-height: calc(100% + 56px);
-            margin-top: -28px;
-            margin-bottom: -28px;
-            border-radius: 0;
+            height: calc(100% + 68px);
+            min-height: calc(100% + 68px);
+            margin-top: -34px;
+            margin-bottom: -34px;
+            border-top-right-radius: 24px;
+            border-bottom-right-radius: 24px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
             overflow: hidden;
             border: 0;
             box-shadow: none;
@@ -882,7 +885,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            justify-self: start;
             align-self: flex-start;
+            width: auto;
+            max-width: max-content;
             min-height: 44px;
             padding: 0 18px;
             border-radius: 999px;
@@ -2288,7 +2294,10 @@
                 min-height: 180px;
                 margin-top: 0;
                 margin-bottom: 0;
-                border-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
             }
 
             .creative-footer {
