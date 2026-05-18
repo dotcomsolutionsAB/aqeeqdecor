@@ -731,32 +731,26 @@
 
         .creative-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 22px;
             align-items: stretch;
-        }
-
-        .creative-grid .creative-card:first-child {
-            grid-column: 1 / -1;
-            grid-template-columns: minmax(0, 1.34fr) 340px;
-            min-height: 320px;
         }
 
         .creative-card {
             position: relative;
             overflow: hidden;
-            min-height: 280px;
-            border-radius: 22px;
-            padding: 28px 0 28px 28px;
+            min-height: 340px;
+            border-radius: 24px;
+            padding: 34px 0 34px 34px;
             display: grid;
-            grid-template-columns: minmax(0, 1.12fr) 220px;
+            grid-template-columns: minmax(0, 1.36fr) 360px;
             grid-template-areas:
                 "top image"
                 "copy image"
                 "footer image";
             align-items: start;
-            column-gap: 24px;
-            row-gap: 16px;
+            column-gap: 28px;
+            row-gap: 18px;
             color: #fff;
             box-shadow: 0 18px 40px rgba(29, 24, 18, 0.12);
             border: 1px solid rgba(255,255,255,0.12);
@@ -2546,40 +2540,13 @@
                             <span class="creative-badge">Design Consultation</span>
                         </div>
                         <div class="creative-copy">
-                            <h3>Bring Your Dream Space To Life</h3>
+                            <h3>Bring Your Dream Space<br>To Life With<br>Refined Interiors</h3>
                             <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or office. Let us help you shape a space that feels premium, inviting and completely aligned with your lifestyle.</p>
+                            <p>From the first consultation to final styling, our team helps translate your ideas into a visually balanced interior that feels warm, thoughtful and truly complete.</p>
                         </div>
                         <div class="creative-footer">Explore With Us</div>
                         <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80" alt="Elegant living space inspiration">
-                        </div>
-                    </a>
-
-                    <a href="#home-cta" class="creative-card creative-card--warm" aria-label="Go to home page call to action section for customized decor solutions">
-                        <div class="creative-top">
-                            <span class="creative-badge">Custom Solutions</span>
-                        </div>
-                        <div class="creative-copy">
-                            <h3>Made Around Your Style & Space</h3>
-                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement. Create a polished look with products designed around your room dimensions, finishes and personal taste.</p>
-                        </div>
-                        <div class="creative-footer">Book Your Project</div>
-                        <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80" alt="Custom furniture and styling concept">
-                        </div>
-                    </a>
-
-                    <a href="#home-cta" class="creative-card creative-card--soft" aria-label="Go to home page call to action section for expert design guidance">
-                        <div class="creative-top">
-                            <span class="creative-badge">Expert Guidance</span>
-                        </div>
-                        <div class="creative-copy">
-                            <h3>Need Help Choosing The Right Decor?</h3>
-                            <p>Connect with our team for curated recommendations, material guidance and practical styling support. We simplify the decision-making process and help you choose the most suitable decor for every corner.</p>
-                        </div>
-                        <div class="creative-footer">Talk To Our Team</div>
-                        <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80" alt="Decor fabrics and styling assistance">
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Elegant living space inspiration">
                         </div>
                     </a>
                 </div>
@@ -2641,6 +2608,26 @@
             </div>
         </section>
 
+        <section class="creative-strip">
+            <div class="container">
+                <div class="creative-grid">
+                    <a href="#home-cta" class="creative-card creative-card--warm" aria-label="Go to home page call to action section for customized decor solutions">
+                        <div class="creative-top">
+                            <span class="creative-badge">Custom Solutions</span>
+                        </div>
+                        <div class="creative-copy">
+                            <h3>Made Around<br>Your Style &<br>Space Needs</h3>
+                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement. Create a polished look with products designed around your room dimensions, finishes and personal taste.</p>
+                            <p>We combine function, finish and visual harmony so each detail works together beautifully, helping you achieve a custom result that feels thoughtfully planned from edge to edge.</p>
+                        </div>
+                        <div class="creative-footer">Book Your Project</div>
+                        <div class="creative-image">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" alt="Custom furniture and styling concept">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
         <section class="why-choose-section">
             <div class="container">
                 <h2 class="section-title">WHY CHOOSE US</h2>
