@@ -347,8 +347,8 @@
       content: '';
       position: absolute;
       top: 0;
-      right: -14px;
-      width: 14px;
+      right: -18px;
+      width: 18px;
       height: 100%;
     }
 
@@ -369,6 +369,27 @@
     .dropdown-menu .sub-dropdown {
       left: calc(100% + 8px);
       top: -10px;
+    }
+
+    .services-menu,
+    .services-menu .dropdown-menu,
+    .services-menu .has-children,
+    .services-menu .sub-dropdown {
+      overflow: visible !important;
+    }
+
+    .services-menu .dropdown-menu {
+      z-index: 500 !important;
+    }
+    .services-menu .sub-dropdown {
+      z-index: 600 !important;
+    }
+    .services-menu .sub-dropdown {
+      left: calc(100% - 2px) !important;
+      top: 0 !important;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     .call-btn {
