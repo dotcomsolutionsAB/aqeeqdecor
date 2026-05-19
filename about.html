@@ -290,6 +290,7 @@
     .dropdown-menu>li,
     .sub-dropdown>li {
       position: relative;
+      overflow: visible;
     }
 
     .dropdown-menu>li>a,
@@ -352,11 +353,22 @@
     }
 
     .has-children:hover>.sub-dropdown,
-    .has-children:focus-within>.sub-dropdown {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      display: block;
+    .has-children:focus-within>.sub-dropdown,
+    .dropdown-menu .has-children:hover>.sub-dropdown,
+    .dropdown-menu .has-children:focus-within>.sub-dropdown {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      display: block !important;
+    }
+
+    .dropdown-menu {
+      overflow: visible;
+    }
+
+    .dropdown-menu .sub-dropdown {
+      left: calc(100% + 8px);
+      top: -10px;
     }
 
     .call-btn {
