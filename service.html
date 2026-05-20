@@ -20,6 +20,224 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+  <style>
+.aq-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  font-weight:600;
+  color:#7b7b5c;
+  margin-bottom:18px;
+}
+
+.aq-services-intro,
+.aq-services-grid,
+.aq-why-section{
+  background:#f8f5ef;
+}
+
+.aq-services-copy h1,
+.aq-section-heading h2,
+.aq-why-content h2,
+.aq-services-cta-card h2{
+  font-size:clamp(2.6rem,4vw,4.8rem);
+  line-height:.95;
+  font-weight:500;
+}
+
+.aq-services-copy h1 span,
+.aq-section-heading h2 span{
+  color:#7b7b5c;
+}
+
+.aq-services-copy p,
+.aq-section-heading p,
+.aq-why-content p,
+.aq-services-cta-card p{
+  font-size:1rem;
+  line-height:1.9;
+  color:#6b655d;
+}
+
+.aq-mini-point{
+  background:#fff;
+  border-radius:18px;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border:1px solid #ebe3d7;
+}
+
+.aq-mini-point i{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#7b7b5c;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.aq-services-image img,
+.aq-why-image img,
+.aq-service-image img{
+  width:100%;
+  object-fit:cover;
+  border-radius:30px;
+}
+
+.aq-services-image img{
+  min-height:620px;
+}
+
+.aq-services-floating-card{
+  position:absolute;
+  bottom:24px;
+  left:24px;
+  background:#fff;
+  border-radius:24px;
+  padding:20px 24px;
+  box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+.aq-services-floating-card span{
+  display:block;
+  font-size:2.8rem;
+  line-height:1;
+  color:#7b7b5c;
+  font-weight:600;
+}
+
+.aq-service-card{
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid #ece3d7;
+  transition:all .35s ease;
+}
+
+.aq-service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+
+.aq-service-image img{
+  height:280px;
+}
+
+.aq-service-content{
+  padding:28px 26px 30px;
+}
+
+.aq-service-tag{
+  display:inline-block;
+  margin-bottom:14px;
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#7b7b5c;
+  font-weight:700;
+}
+
+.aq-service-content h3{
+  font-size:2rem;
+  margin-bottom:16px;
+}
+
+.aq-service-content p{
+  color:#666057;
+  line-height:1.9;
+}
+
+.aq-subservices{
+  margin:18px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+
+.aq-subservices li{
+  position:relative;
+  padding-left:18px;
+  color:#4d4841;
+}
+
+.aq-subservices li::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:10px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#7b7b5c;
+}
+
+.aq-why-box{
+  background:#fff;
+  border-radius:22px;
+  padding:24px;
+  height:100%;
+  border:1px solid #ece3d7;
+}
+
+.aq-why-box i{
+  font-size:2rem;
+  color:#7b7b5c;
+  margin-bottom:18px;
+}
+
+.aq-services-cta{
+  background:#111;
+}
+
+.aq-services-cta-card{
+  background:#fff;
+  border-radius:36px;
+  padding:60px 28px;
+}
+
+@media (max-width:991px){
+  .aq-services-copy h1,
+  .aq-section-heading h2,
+  .aq-why-content h2,
+  .aq-services-cta-card h2{
+    font-size:3rem;
+  }
+
+  .aq-services-image img{
+    min-height:420px;
+  }
+}
+
+@media (max-width:640px){
+  .aq-services-copy h1,
+  .aq-section-heading h2,
+  .aq-why-content h2,
+  .aq-services-cta-card h2{
+    font-size:2.35rem;
+  }
+
+  .aq-services-image img{
+    min-height:320px;
+  }
+
+  .aq-service-image img{
+    height:220px;
+  }
+
+  .aq-service-content,
+  .aq-services-cta-card{
+    padding:24px 18px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -175,286 +393,248 @@
   </section>
   <!-- Breadcrumb Section Ends -->
 
-  <!-- Service Section Starts -->
-  <section class="service">
-    <div class="container">
-      <div class="service-title text-center mb-5" style="background-image: none;">
-        <h2>Solutions for every <span class="secondary">corner</span></h2>
-        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-      </div>
-      <div class="service-body position-relative">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box border border-2 bg-white border-grey text-center">
-              <div class="service-icon mb-4"><i class="fa fa-user-o border border-2 border-grey text-center secondary" aria-hidden="true"></i></div>
-              <div class="service-info">
-                <h3>Architecture</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rerum minima, nihil cupiditate culpa repellendus</p>
-                <a href="service-detail.html" class="btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box border border-2 bg-white border-grey text-center">
-              <div class="service-icon mb-4"><i class="fa fa-building-o border border-2 border-grey text-center secondary" aria-hidden="true"></i></div>
-              <div class="service-info">
-                <h3>Interior Design</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rerum minima, nihil cupiditate culpa repellendus</p>
-                <a href="service-detail.html" class="btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box border border-2 bg-white border-grey text-center">
-              <div class="service-icon mb-4"><i class="fa fa-pie-chart border border-2 border-grey text-center secondary" aria-hidden="true"></i></div>
-              <div class="service-info">
-                <h3>3D Modeling</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rerum minima, nihil cupiditate culpa repellendus</p>
-                <a href="service-detail.html" class="btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box border border-2 bg-white border-grey text-center">
-              <div class="service-icon mb-4"><i class="fa fa-columns border border-2 border-grey text-center secondary" aria-hidden="true"></i></div>
-              <div class="service-info">
-                <h3>PVC Panels</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rerum minima, nihil cupiditate culpa repellendus</p>
-                <a href="service-detail.html" class="btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box border border-2 bg-white border-grey text-center">
-              <div class="service-icon mb-4"><i class="fa fa-hospital-o border border-2 border-grey text-center secondary" aria-hidden="true"></i></div>
-              <div class="service-info">
-                <h3>Urban Design</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rerum minima, nihil cupiditate culpa repellendus</p>
-                <a href="service-detail.html" class="btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-box border border-2 bg-white border-grey text-center">
-              <div class="service-icon mb-4"><i class="fa fa-pie-chart border border-2 border-grey text-center secondary" aria-hidden="true"></i></div>
-              <div class="service-info">
-                <h3>Landscape Design</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rerum minima, nihil cupiditate culpa repellendus</p>
-                <a href="service-detail.html" class="btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Service Section Ends -->
 
-  <!-- Stat Section Starts -->
-  <section class="stat position-relative">
-    <div class="overlay bg-primary opacity-75"></div>
+  <!-- Services Hero Section -->
+  <section class="aq-services-intro py-5 position-relative overflow-hidden">
     <div class="container position-relative">
-      <div class="stat-inner grey">
-        <div class="stat-title mb-4 pb-4 border-bottom border-2 border-light text-center text-lg-start">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="stat-title-left">
-                <h2 class="mb-0 white">Milestones that We Are Proud of <span class="secondary">Reaching</span></h2>
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="aq-services-copy pe-lg-4">
+            <span class="aq-kicker">Aqeeq Decor Services</span>
+            <h1 class="mb-4">Complete Interior & Decor <span>Solutions</span> For Every Space.</h1>
+            <p class="mb-4">We create elegant residential and commercial spaces with premium furnishings, decor solutions, modern finishes and custom execution tailored to your lifestyle and vision.</p>
+
+            <div class="aq-service-points row gy-3">
+              <div class="col-sm-6">
+                <div class="aq-mini-point">
+                  <i class="fa fa-check"></i>
+                  <span>Premium Interior Styling</span>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="stat-title-right">
-                <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <div class="col-sm-6">
+                <div class="aq-mini-point">
+                  <i class="fa fa-check"></i>
+                  <span>Turnkey Project Execution</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="aq-mini-point">
+                  <i class="fa fa-check"></i>
+                  <span>Luxury Product Range</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="aq-mini-point">
+                  <i class="fa fa-check"></i>
+                  <span>Custom Design Consultation</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="stat-body text-center">
-          <ul class="d-flex justify-content-evenly flex-wrap gap-3">
-            <li>
-              <span class="h1">542+</span>
-              <span class="teko h4 d-block mt-1 mb-0">Successful Project Done</span>
-            </li>
-            <li>
-              <span class="h1">152+</span>
-              <span class="teko h4 d-block mt-1 mb-0">Delight Clients</span>
-            </li>
-            <li>
-              <span class="h1">105+</span>
-              <span class="teko h4 d-block mt-1 mb-0">Award Achivement</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Stat Section Ends -->
 
-  <!-- Why Us Section Starts -->
-  <section class="why-us">
-    <div class="container">
-      <div class="why-us-inner position-relative pt-5">
-        <span class="heading-clip">Why Us</span>
-        <div class="row gx-lg-5 gy-5 align-items-center">
-          <div class="col-lg-6 order-lg-1 order-2">
-            <div class="why-us-left">
-              <div class="why-us-image me-lg-4">
-                <div class="row">
-                  <div class="col-md-6">
-                    <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="interiror">
-                  </div>
-                  <div class="col-md-6">
-                    <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="interiror" class="mt-5">
-                  </div>
-                </div>
-              </div>
-              <div class="why-us-progressbar p-4 bg-primary w-md-75 ms-auto position-relative" style="margin-top: -100px;">
-                <ul>
-                  <li class="mb-4">
-                    <span class="teko h6 white">Idea & Concept</span>
-                    <div class="progress-bar-section mt-2">
-                      <div class="progress rounded-0 bg-white position-relative overflow-visible" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 7px">
-                        <div class="progress-bar bg-secondary position-relative overflow-visible" style="width: 90%">
-                          <div class="percentage-wrapper position-absolute rounded-circle p-2 bg-secondary white d-flex align-items-center justify-content-between">
-                            <span class="progress-num" data-val="90"></span><Span>%</Span>
-                          </div>
-                        </div>
-                      </div>
-                    </div> 
-                  </li>
-                  <li class="mb-4">
-                    <span class="teko h6 white">Architecture</span>
-                    <div class="progress-bar-section mt-2">
-                      <div class="progress rounded-0 bg-white position-relative overflow-visible" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 7px">
-                        <div class="progress-bar bg-secondary position-relative overflow-visible" style="width: 94%">
-                          <div class="percentage-wrapper position-absolute rounded-circle p-2 bg-secondary white d-flex align-items-center justify-content-between">
-                            <span class="progress-num" data-val="94"></span><Span>%</Span>
-                          </div>
-                        </div>
-                      </div>
-                    </div> 
-                  </li>
-                  <li>
-                    <span class="teko h6 white">Accuracy & Execution</span>
-                    <div class="progress-bar-section mt-2">
-                      <div class="progress rounded-0 bg-white position-relative overflow-visible" role="progressbar" aria-label="Basic example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height: 7px">
-                        <div class="progress-bar bg-secondary position-relative overflow-visible" style="width: 85%">
-                          <div class="percentage-wrapper position-absolute rounded-circle p-2 bg-secondary white d-flex align-items-center justify-content-between">
-                            <span class="progress-num" data-val="85"></span><Span>%</Span>
-                          </div>
-                        </div>
-                      </div>
-                    </div> 
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-2 order-1">
-            <div class="why-us-right">
-            <div class="why-us-title mb-4 pb-4 border-dashed text-center text-lg-start">
-              <span class="teko h5 secondary">Why Choose Us</span>
-              <div class="sperator bg-secondary mt-1 mb-2" style="width: 40px; height: 2px;"></div>
-              <h2 class="mb-3">A Behind-the-Scenes Look at <span class="secondary">Our Agency</span></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-              <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div> 
-
-            <div class="feature-lisiting">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <div class="feature-box p-3 border border-2 border-grey">
-                    <ul class="d-flex align-items-center">
-                      <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                        <i class="fa fa-building-o secondary" aria-hidden="true"></i>
-                      </li>
-                      <li>
-                        <h5 class="mb-0">Fast Building</h5>
-                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="feature-box p-3 border border-2 border-grey">
-                    <ul class="d-flex align-items-center">
-                      <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                        <i class="fa fa-lightbulb-o secondary" aria-hidden="true"></i>
-                      </li>
-                      <li>
-                        <h5 class="mb-0">Smart Execute</h5>
-                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="feature-box p-3 border border-2 border-grey">
-                    <ul class="d-flex align-items-center">
-                      <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                        <i class="fa fa-file-text-o secondary" aria-hidden="true"></i>
-                      </li>
-                      <li>
-                        <h5 class="mb-0">Fine Planned</h5>
-                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="feature-box p-3 border border-2 border-grey">
-                    <ul class="d-flex align-items-center">
-                      <li class="h3 mb-0 me-3 pe-3 border-end border-grey border-2">
-                        <i class="fa fa-picture-o secondary" aria-hidden="true"></i>
-                      </li>
-                      <li>
-                        <h5 class="mb-0">Perfect Design</h5>
-                        <p class="mb-0 small">Lorem ipsum dolor sit amet, consectetur.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="col-lg-6">
+          <div class="aq-services-image position-relative">
+            <img src="image/luxury-living-room-interior.jpg" alt="services" class="w-100">
+            <div class="aq-services-floating-card">
+              <span>15+</span>
+              <p class="mb-0">Years Of Interior Excellence</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Why Us Section Starts -->
 
-  <!-- Appointment Section Starts -->
-  <div class="appointment py-5 bg-secondarylight">
+  <!-- Main Services Grid -->
+  <section class="aq-services-grid py-5">
     <div class="container">
-      <div class="appointment-inner">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-3 col-md-4">
-            <div class="appointment-left">
-              <ul class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                <li class="me-3 pe-3 border-end border-2 border-white"><img src="image/chat.png" alt="chat" style="height: 44px; width: 44px;"></li>
-                <li class="teko">
-                  <span class="h6 primary mb-0">Book Your Schedule</span>
-                  <span class="d-block h3 mb-0">666 888 0000</span>
-                </li>
+      <div class="aq-section-heading text-center mb-5">
+        <span class="aq-kicker">What We Offer</span>
+        <h2>Explore Our Signature <span>Services</span></h2>
+        <p>Carefully curated decor and interior solutions designed for modern living spaces.</p>
+      </div>
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="aq-service-card h-100">
+            <div class="aq-service-image">
+              <img src="image/luxury-curtain-interior.jpg" alt="Curtains">
+            </div>
+            <div class="aq-service-content">
+              <span class="aq-service-tag">Curtains</span>
+              <h3>Luxury Curtains</h3>
+              <p>Elegant fabric selections with custom stitching and premium installation solutions for modern interiors.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="aq-service-card h-100">
+            <div class="aq-service-image">
+              <img src="image/wallpaper-interior-modern.jpg" alt="Wallpapers">
+            </div>
+            <div class="aq-service-content">
+              <span class="aq-service-tag">Wallpapers</span>
+              <h3>Designer Wallpapers</h3>
+              <p>Transform plain walls into luxurious statement spaces with curated wallpaper collections.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="aq-service-card h-100">
+            <div class="aq-service-image">
+              <img src="image/luxury-sofa-living-room.jpg" alt="Furniture">
+            </div>
+            <div class="aq-service-content">
+              <span class="aq-service-tag">Furniture</span>
+              <h3>Custom Furniture</h3>
+              <p>Sofas, beds, dining tables, office furniture and luxury seating solutions crafted for comfort and style.</p>
+
+              <ul class="aq-subservices">
+                <li>Modular Furniture</li>
+                <li>Office Furniture</li>
+                <li>Sofas & Accent Chairs</li>
+                <li>Dining Tables & Chairs</li>
+                <li>Beds & Bedside Tables</li>
+                <li>Pouffee Collection</li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-6 col-md-8">
-            <div class="appointment-center">
-              <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="aq-service-card h-100">
+            <div class="aq-service-image">
+              <img src="image/window-blinds-modern.jpg" alt="Window Blinds">
+            </div>
+            <div class="aq-service-content">
+              <span class="aq-service-tag">Window Blinds</span>
+              <h3>Premium Window Blinds</h3>
+              <p>Stylish light-control solutions with modern mechanisms and premium textures.</p>
+
+              <ul class="aq-subservices">
+                <li>Roller Blinds</li>
+                <li>Zebra Blinds</li>
+                <li>Roman Blinds</li>
+                <li>Honeycomb Blinds</li>
+                <li>Wooden & Venetian Blinds</li>
+                <li>Outdoor & PVC Blinds</li>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-3">
-            <div class="appointment-right text-center text-lg-end">
-              <a href="consultation.html" class="btn-primary">Book An Appointment</a>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="aq-service-card h-100">
+            <div class="aq-service-image">
+              <img src="image/luxury-bedroom-mattress.jpg" alt="Mattress">
+            </div>
+            <div class="aq-service-content">
+              <span class="aq-service-tag">Mattress</span>
+              <h3>Comfort Mattress Collection</h3>
+              <p>Premium comfort mattresses designed to enhance sleep quality and complete luxurious bedrooms.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="aq-service-card h-100">
+            <div class="aq-service-image">
+              <img src="image/wooden-flooring-modern.jpg" alt="Floorings">
+            </div>
+            <div class="aq-service-content">
+              <span class="aq-service-tag">Floorings</span>
+              <h3>Modern Flooring Solutions</h3>
+              <p>Durable and elegant flooring systems designed for residential, commercial and luxury spaces.</p>
+
+              <ul class="aq-subservices">
+                <li>Wooden Flooring</li>
+                <li>PVC Flooring</li>
+                <li>Engineered Flooring</li>
+                <li>Sports Flooring</li>
+                <li>Gym Flooring</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="aq-why-section py-5 position-relative overflow-hidden">
+    <div class="container position-relative">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5">
+          <div class="aq-why-image">
+            <img src="image/modern-luxury-interior.jpg" alt="Interior Design" class="w-100">
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="aq-why-content ps-lg-5">
+            <span class="aq-kicker">Why Choose Aqeeq Decor</span>
+            <h2 class="mb-4">Designing Elegant Spaces With Precision & Style.</h2>
+            <p class="mb-4">From concept to execution, we deliver premium interior experiences through modern aesthetics, expert craftsmanship and curated decor collections.</p>
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="aq-why-box">
+                  <i class="fa fa-lightbulb-o"></i>
+                  <h5>Creative Concepts</h5>
+                  <p>Unique interior styling tailored for every client and space.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="aq-why-box">
+                  <i class="fa fa-building-o"></i>
+                  <h5>Premium Execution</h5>
+                  <p>High-quality finishing with attention to detail and luxury aesthetics.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="aq-why-box">
+                  <i class="fa fa-home"></i>
+                  <h5>Modern Designs</h5>
+                  <p>Contemporary solutions for homes, offices and commercial interiors.</p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="aq-why-box">
+                  <i class="fa fa-users"></i>
+                  <h5>Client Focused</h5>
+                  <p>Personalized consultations and seamless project coordination.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Appointment Section Ends -->
+  </section>
+
+  <!-- CTA Section -->
+  <section class="aq-services-cta py-5">
+    <div class="container">
+      <div class="aq-services-cta-card text-center">
+        <span class="aq-kicker">Let’s Build Your Dream Space</span>
+        <h2>Ready To Transform Your Interiors?</h2>
+        <p>Connect with Aqeeq Decor for personalized interior consultation and complete decor solutions.</p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="contact.html" class="btn btn-dark px-4 py-3 rounded-pill">Book Consultation</a>
+          <a href="project.html" class="btn btn-outline-dark px-4 py-3 rounded-pill">View Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer Section Starts -->
   <footer class="section-padding position-relative pb-5">
