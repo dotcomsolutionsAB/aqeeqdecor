@@ -20,373 +20,559 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+</style>
   <style>
-.aq-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-size:.78rem;
-  font-weight:600;
-  color:#7b7b5c;
-  margin-bottom:18px;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  background: #fff;
+  border-bottom: 1px solid #ece6dc;
 }
 
-.aq-services-intro,
-.aq-services-grid,
-.aq-why-section{
-  background:#f8f5ef;
+.site-header .site-navbar {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.aq-services-copy h1,
-.aq-section-heading h2,
-.aq-why-content h2,
-.aq-services-cta-card h2{
-  font-size:clamp(2.6rem,4vw,4.8rem);
-  line-height:.95;
-  font-weight:500;
+.site-logo {
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
 }
 
-.aq-services-copy h1 span,
-.aq-section-heading h2 span{
-  color:#7b7b5c;
+.site-logo strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.1rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #6d7740;
 }
 
-.aq-services-copy p,
-.aq-section-heading p,
-.aq-why-content p,
-.aq-services-cta-card p{
-  font-size:1rem;
-  line-height:1.9;
-  color:#6b655d;
+.site-logo span {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  letter-spacing: 0.34em;
+  color: #6c665d;
 }
 
-.aq-mini-point{
-  background:#fff;
-  border-radius:18px;
-  padding:16px 18px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  border:1px solid #ebe3d7;
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-left: auto;
 }
 
-.aq-mini-point i{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  background:#7b7b5c;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.site-nav > a,
+.site-nav > .site-nav-item > a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #4c473f;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.aq-services-image img,
-.aq-why-image img,
-.aq-service-image img{
-  width:100%;
-  object-fit:cover;
-  border-radius:30px;
+.site-nav > a:hover,
+.site-nav > .site-nav-item > a:hover {
+  color: #6d7740;
 }
 
-.aq-services-image img{
-  min-height:620px;
+.site-nav-item {
+  position: relative;
 }
 
-.aq-services-floating-card{
-  position:absolute;
-  bottom:24px;
-  left:24px;
-  background:#fff;
-  border-radius:24px;
-  padding:20px 24px;
-  box-shadow:0 25px 60px rgba(0,0,0,.12);
+.site-nav-item > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.aq-services-floating-card span{
-  display:block;
-  font-size:2.8rem;
-  line-height:1;
-  color:#7b7b5c;
-  font-weight:600;
+.site-nav-item.has-dropdown > a::after {
+  content: '▾';
+  font-size: 0.8em;
+  line-height: 1;
 }
 
-.aq-service-card{
-  background:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  border:1px solid #ece3d7;
-  transition:all .35s ease;
+.site-dropdown,
+.site-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  background: #fff;
+  border: 1px solid #ece4d9;
+  border-radius: 18px;
+  box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12);
 }
 
-.aq-service-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 25px 60px rgba(0,0,0,.08);
+.site-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 280px;
+  transform: translate(-50%, 10px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 50;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
 }
 
-.aq-service-image img{
-  height:280px;
+.site-nav-item:hover > .site-dropdown,
+.site-nav-item:focus-within > .site-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
 }
 
-.aq-service-content{
-  padding:28px 26px 30px;
+.site-dropdown > li,
+.site-submenu > li {
+  position: relative;
 }
 
-.aq-service-tag{
-  display:inline-block;
-  margin-bottom:14px;
-  font-size:.72rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:#7b7b5c;
-  font-weight:700;
+.site-dropdown > li > a,
+.site-submenu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5a544a;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.aq-service-content h3{
-  font-size:2rem;
-  margin-bottom:16px;
+.site-dropdown > li > a:hover,
+.site-submenu > li > a:hover {
+  background: rgba(74, 84, 48, 0.12);
+  color: #6d7740;
 }
 
-.aq-service-content p{
-  color:#666057;
-  line-height:1.9;
+.site-dropdown .has-children > a::after {
+  content: '▸';
+  font-size: 0.9em;
 }
 
-.aq-subservices{
-  margin:18px 0 0;
-  padding:0;
-  list-style:none;
-  display:grid;
-  gap:10px;
+.site-submenu {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 8px);
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 60;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.aq-subservices li{
-  position:relative;
-  padding-left:18px;
-  color:#4d4841;
+.site-dropdown .has-children:hover > .site-submenu,
+.site-dropdown .has-children:focus-within > .site-submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-.aq-subservices li::before{
-  content:'';
-  position:absolute;
-  left:0;
-  top:10px;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#7b7b5c;
+.site-call-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 24px;
+  border-radius: 12px;
+  background: #6d7740;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-.aq-why-box{
-  background:#fff;
-  border-radius:22px;
-  padding:24px;
-  height:100%;
-  border:1px solid #ece3d7;
+.site-call-btn:hover {
+  color: #fff;
+  background: #5d6635;
 }
 
-.aq-why-box i{
-  font-size:2rem;
-  color:#7b7b5c;
-  margin-bottom:18px;
+.site-call-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
 }
 
-.aq-services-cta{
-  background:#111;
+.site-footer {
+  background: linear-gradient(90deg, #3d4621 0%, #58672f 100%);
+  color: #fff;
+  padding: 62px 0 26px;
 }
 
-.aq-services-cta-card{
-  background:#fff;
-  border-radius:36px;
-  padding:60px 28px;
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 0.95fr 1.15fr 1fr;
+  gap: 42px;
 }
 
-@media (max-width:991px){
-  .aq-services-copy h1,
-  .aq-section-heading h2,
-  .aq-why-content h2,
-  .aq-services-cta-card h2{
-    font-size:3rem;
+.site-footer-logo {
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 26px;
+}
+
+.site-footer-logo strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #d9ddb6;
+}
+
+.site-footer-logo span {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.34em;
+  color: rgba(255,255,255,0.72);
+}
+
+.site-footer p,
+.site-footer li,
+.site-footer a,
+.site-footer input {
+  color: rgba(255,255,255,0.92);
+}
+
+.site-footer-about p,
+.site-footer-hours p,
+.site-footer-contact li,
+.site-footer-newsletter p {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.site-footer-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.site-footer-links,
+.site-footer-hours,
+.site-footer-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer-links li,
+.site-footer-hours li,
+.site-footer-contact li {
+  margin-bottom: 14px;
+}
+
+.site-footer-links a {
+  text-decoration: none;
+}
+
+.site-footer-links a:hover {
+  color: #fff;
+}
+
+.site-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.site-socials a {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.34);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.site-contact-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.site-contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.34);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.site-newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr 62px;
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-top: 22px;
+}
+
+.site-newsletter-form input {
+  min-height: 62px;
+  padding: 0 18px;
+  border: 0;
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+
+.site-newsletter-form input::placeholder {
+  color: rgba(255,255,255,0.78);
+}
+
+.site-newsletter-form button {
+  border: 0;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.35rem;
+}
+
+.site-footer-bottom {
+  margin-top: 42px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.site-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ddd6ca;
+  background: #fff;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.site-menu-toggle span {
+  width: 18px;
+  height: 2px;
+  background: #4c473f;
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  .site-nav {
+    gap: 22px;
   }
 
-  .aq-services-image img{
-    min-height:420px;
+  .site-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width:640px){
-  .aq-services-copy h1,
-  .aq-section-heading h2,
-  .aq-why-content h2,
-  .aq-services-cta-card h2{
-    font-size:2.35rem;
+@media (max-width: 991px) {
+  .site-header .site-navbar {
+    min-height: 82px;
   }
 
-  .aq-services-image img{
-    min-height:320px;
+  .site-menu-toggle {
+    display: inline-flex;
   }
 
-  .aq-service-image img{
-    height:220px;
+  .site-nav {
+    position: fixed;
+    top: 82px;
+    left: 14px;
+    right: 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #ece4d9;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(29, 24, 18, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
   }
 
-  .aq-service-content,
-  .aq-services-cta-card{
-    padding:24px 18px;
+  .site-nav.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-nav > a,
+  .site-nav > .site-nav-item,
+  .site-call-btn {
+    width: 100%;
+  }
+
+  .site-nav > a,
+  .site-nav > .site-nav-item > a,
+  .site-call-btn {
+    min-height: 52px;
+    justify-content: center;
+    border: 1px solid #ece4d9;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .site-call-btn {
+    background: #6d7740;
+    border-color: #6d7740;
+  }
+
+  .site-dropdown,
+  .site-submenu {
+    position: static;
+    min-width: 100%;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    display: none;
+    box-shadow: none;
+    border-radius: 12px;
+    margin-top: 8px;
+  }
+
+  .site-nav-item.open > .site-dropdown,
+  .site-dropdown .has-children.open > .site-submenu {
+    display: block;
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
   }
 }
+
+@media (max-width: 640px) {
+  .site-logo strong,
+  .site-footer-logo strong {
+    font-size: 2.45rem;
+  }
+
+  .site-call-btn {
+    width: 100%;
+  }
+
+  .site-footer {
+    padding-top: 48px;
+  }
+}
+  </style>
 </style>
 </head>
 <body>
 
   <!-- Header Section Starts -->
-  <header class="position-relative z-3">
-    <div class="header-top py-3">
-      <div class="container">
-        <div class="header-top-inner d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <div class="header-contact">
-            <ul class="d-flex white flex-wrap">
-              <li class="me-3 pe-3 border-end border-lightgrey small">
-                <a href="tel:+33877554332"><i class="fa fa-phone me-2" aria-hidden="true"></i>+33 877 554 332</a>
-              </li>
-              <li class="me-3 pe-3 border-end border-lightgrey small">
-                <a href="/cdn-cgi/l/email-protection#bfd6d1d9d0ffc8daddccd6cbda91dcd0d2">
-                  <i class="fa fa-envelope-o me-2" aria-hidden="true"></i>
-                  <span class="__cf_email__" data-cfemail="a4cdcac2cbe4d3c1c6d7cdd0c18ac7cbc9">[email&#160;protected]</span>
-                </a>
-              </li>
-              <li class="small"><i class="fa fa-clock-o me-2" aria-hidden="true"></i>Mon - Fri: 9:00 - 18:30</li>
-            </ul>
-          </div>
-          <div class="social-links">
-            <ul class="d-flex gap-2">
-              <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
+  <header class="site-header">
+    <div class="container site-navbar">
+      <a href="index-3.html" class="site-logo" aria-label="Aqeeq Decor Home">
+        <strong>AQEEQ</strong>
+        <span>DECOR</span>
+      </a>
+
+      <button class="site-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav">
+        <a href="index-3.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="project.html">PROJECTS</a>
+
+        <div class="site-nav-item has-dropdown">
+          <a href="#">SERVICES</a>
+          <ul class="site-dropdown">
+            <li><a href="#">Curtains</a></li>
+            <li><a href="#">Wallpapers</a></li>
+            <li class="has-children">
+              <a href="#">Furniture</a>
+              <ul class="site-submenu">
+                <li><a href="#">Modular</a></li>
+                <li><a href="#">Office furniture</a></li>
+                <li><a href="#">Sofas</a></li>
+                <li><a href="#">Dining table</a></li>
+                <li><a href="#">Dining chair</a></li>
+                <li><a href="#">Accent chair</a></li>
+                <li><a href="#">Beds</a></li>
+                <li><a href="#">Bedside table</a></li>
+                <li><a href="#">Pouffee</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a href="#">Window Blinds</a>
+              <ul class="site-submenu">
+                <li><a href="#">Roller</a></li>
+                <li><a href="#">Zebra</a></li>
+                <li><a href="#">Vertical</a></li>
+                <li><a href="#">Roman</a></li>
+                <li><a href="#">Honeycomb</a></li>
+                <li><a href="#">Outdoor</a></li>
+                <li><a href="#">PVC</a></li>
+                <li><a href="#">Mansoon</a></li>
+                <li><a href="#">Wooden</a></li>
+                <li><a href="#">Aluminium Venetian</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Mattress</a></li>
+            <li class="has-children">
+              <a href="#">Floorings</a>
+              <ul class="site-submenu">
+                <li><a href="#">Wooden</a></li>
+                <li><a href="#">PVC</a></li>
+                <li><a href="#">Engineered</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Gym</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="header-nav header-nav-menu" id="header-nav-menu">
-      <div class="container">
-        <div class="header-nav-inner border-top border-light py-3">
-          <div class="row gx-xl-5 align-items-center justify-content-between">
-            <div class="col-xl-2 col-md-3 col-6 order-1">
-              <div class="header-logo">
-                <a href="index.html"><img src="image/logo.png" alt="logo" class="w-100"></a>
-              </div>
-            </div>
-            <div class="col-xl-7 col-0 order-3 order-xl-2">
-              <div class="header-nav">
-                <div class="navbar-collapse " id="bs-example-navbar-collapse-1">
-                  <ul class="navbar-nav flex-row align-items-center justify-content-center" id="responsive-menu">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase active" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Home
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize active"
-                            href="index.html">Home 1</a></li>
-                        <li><a class="dropdown-item text-capitalize border-grey"
-                            href="index-2.html">Home 2</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index-3.html">Home 3</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize"
-                            href="team.html">Our Team</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="team-detail.html">Team Detail</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-list.html">Career</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-detail.html">Career Detail</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="faq.html">Faq</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="pricing.html">pricing</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="testimonial.html">Testimonial</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="coming-soon.html">Coming Soon</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="error.html">404Error</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="search.html">Search Result</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-list.html">Service List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html">Service Detail</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Projects
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project.html">Projet List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project-detail.html">Projet Detail</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown ">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Blog
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-list.html">Blog List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-detail.html">Blog Single</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase" href="contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-4 col-0  order-2 order-xl-3">
-              <div class="header-icons d-none d-xl-block">
-                <ul class="d-flex align-items-center gap-4  justify-content-xl-end">
-                  <li>
-                    <a class="position-relative" data-bs-toggle="modal" data-bs-target="#interealModal"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li><a href="consultation.html" class="btn-secondary">Get A Qoute</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div id="slicknav-mobile"></div>
-        </div>
-      </div>
+
+        <a href="blogs.html">BLOGS</a>
+        <a href="contact.html">CONTACT US</a>
+
+        <a href="tel:+918698725668" class="site-call-btn" aria-label="Call +91 86987 25668">
+          <span class="site-call-icon" aria-hidden="true">☎</span>
+          <span>+91 86987 25668</span>
+        </a>
+      </nav>
     </div>
   </header>
   <!-- Header Section Ends -->
@@ -646,157 +832,83 @@
   </section>
 
   <!-- Footer Section Starts -->
-  <footer class="section-padding position-relative pb-5">
-    <div class="overlay"></div>
-    <div class="container position-relative">
-      <div class="footer-inner white">
-        <div class="footer-top pb-5 mb-5 border-bottom border-2 border-light">
-          <div class="row align-items-center gx-lg-5 gy-4">
-            <div class="col-lg-3 col-md-4">
-              <div class="footer-top-left">
-                <img src="image/logo.png" alt="footer logo" class="w-100">
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-8">
-              <div class="footer-top-right">
-                <p class="white mb-0 h6 fw-normal fst-italic">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporatu incididunt ut labore et dolore magna aliqua.”</p>
-              </div>
-            </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer-grid">
+        <div class="site-footer-about">
+          <a href="index-3.html" class="site-footer-logo">
+            <strong>AQEEQ</strong>
+            <span>DECOR</span>
+          </a>
+          <p>Thoughtfully designed decor solutions crafted with quality materials and a passion for detail.</p>
+          <div class="site-socials">
+            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa fa-play"></i></a>
           </div>
         </div>
-        <div class="footer-middle mb-5  pb-5 border-bottom border-light text-center text-md-start">
-          <div class="row gx-lg-5 gy-5">
-            <div class="col-lg-4">
-              <div class="footer-info">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui reprehenderit dolor officia. </p>
-                <div class="footer-socials mb-4">
-                  <ul class="d-flex gap-1 my-2 justify-content-center justify-content-md-start">
-                    <li><a href=""><i class="fa fa-facebook bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-linkedin bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-google-plus bg-white bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-                  </ul>
-                </div>
-                <div class="contact-info">
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                      <li>256 Elizaberth Ave, CA, 90025</li>
-                    </ul>
-                  </div>
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                      <li>+569 2316 2156</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                      <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb92959d94bb92958f9e899e9a97d5989496">[email&#160;protected]</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="quick-links">
-                <h4 class="white mb-2">Quick Link</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Services</a></li>
-                  <li><a href="service.html">Attorneys</a></li>
-                  <li><a href="blog-list.html">News & Articles</a></li>
-                  <li><a href="">Policies</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="services">
-                <h4 class="white mb-2">Services</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="service.html">Perfect Planning</a></li>
-                  <li><a href="service.html">Professional Design</a></li>
-                  <li><a href="service.html">Best Interior</a></li>
-                  <li><a href="service.html">Furniture Design</a></li>
-                  <li><a href="service.html">Complete Decoration</a></li>
-                  <li><a href="service.html">Terms & Conditions</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="services">
-                <h4 class="white mb-2">Get interesting news</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <p class="mb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ea dolorum.</p>
-                <div class="subscribe">
-                  <input type="email" placeholder="Email" class="mb-2">
-                  <a href="" class="btn-primary">Subscribe</a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        <div>
+          <h3 class="site-footer-heading">QUICK LINKS</h3>
+          <ul class="site-footer-links">
+            <li><a href="index-3.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom text-center">
-          <p class="mb-0"> &copy;2025 Intereal. All rights reserved.</p>
+
+        <div>
+          <h3 class="site-footer-heading">OPENING HOURS</h3>
+          <ul class="site-footer-hours">
+            <li>Mon - Sat: 10 am - 8 pm</li>
+            <li>Sunday: Open on Request</li>
+          </ul>
         </div>
+
+        <div>
+          <h3 class="site-footer-heading">CONTACT US</h3>
+          <ul class="site-footer-contact">
+            <li class="site-contact-item">
+              <span class="site-contact-icon"><i class="fa fa-phone"></i></span>
+              <span>+91 86987 25668</span>
+            </li>
+            <li class="site-contact-item">
+              <span class="site-contact-icon"><i class="fa fa-phone"></i></span>
+              <span>+91 83191 63736</span>
+            </li>
+            <li class="site-contact-item">
+              <span class="site-contact-icon"><i class="fa fa-envelope-o"></i></span>
+              <span>aqeeqdecor@gmail.com</span>
+            </li>
+            <li class="site-contact-item">
+              <span class="site-contact-icon"><i class="fa fa-map-marker"></i></span>
+              <span>Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="site-footer-newsletter">
+          <h3 class="site-footer-heading">NEWSLETTER</h3>
+          <p>Subscribe to get updates on new collections & offers.</p>
+          <form class="site-newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit" aria-label="Submit newsletter"><i class="fa fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="site-footer-bottom">
+        © 2026 Aqeeq Decor. All Rights Reserved.
       </div>
     </div>
   </footer>
   <!-- Footer Section Ends -->
 
-  <!-- Intereal Info Starts -->
-  <div class="modal fade intereal-info-modal" id="interealModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog  h-100 my-0 rounded-0 me-0 modal-sm">
-      <div class="modal-content h-100 rounded-0">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close me-4" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times bg-secondary text-center white" aria-hidden="true"></i></button>
-        </div>
-        <div class="modal-body mt-5 mx-3">
-          <div class="logo mb-4">
-            <img src="image/logo1.png" alt="logo">
-          </div>
-          <div class="info mb-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="contact-info mb-4">
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                <li>256 Elizaberth Ave, CA, 90025</li>
-              </ul>
-            </div>
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                <li>+569 2316 2156</li>
-              </ul>
-            </div>
-            <div>
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="21484f474e61484f55445344404d0f424e4c">[email&#160;protected]</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-socials mb-4">
-            <ul class="d-flex gap-1 my-2">
-              <li><a href=""><i class="fa fa-facebook bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Intereal Info Ends -->
+
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="js/jquery-3.7.1.min.js"></script>
@@ -805,3 +917,25 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+  <script>
+    (function () {
+      const toggle = document.querySelector('.site-menu-toggle');
+      const nav = document.querySelector('.site-nav');
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener('click', function () {
+        const open = nav.classList.toggle('mobile-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('menu-open', open);
+      });
+
+      nav.querySelectorAll('.site-nav-item.has-dropdown > a, .site-dropdown .has-children > a').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          if (window.innerWidth > 991) return;
+          e.preventDefault();
+          const item = this.parentElement;
+          item.classList.toggle('open');
+        });
+      });
+    })();
+  </script>
