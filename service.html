@@ -20,18 +20,48 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-</style>
   <style>
+  .top-ribbon {
+    background: linear-gradient(90deg, #4f5d28 0%, #68783b 100%);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .top-ribbon .container {
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .top-ribbon span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+  }
+
+  .top-ribbon span::before {
+    content: '✦';
+    font-size: 0.62rem;
+    opacity: 0.9;
+  }
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1200;
   background: #fff;
-  border-bottom: 1px solid #ece6dc;
+  border-bottom: 1px solid #e9e2d8;
 }
 
 .site-header .site-navbar {
-  min-height: 96px;
+  min-height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,32 +78,32 @@
 
 .site-logo strong {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.55rem;
+  font-size: 2.9rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   color: #6d7740;
 }
 
 .site-logo span {
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 0.72rem;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.34em;
   color: #6c665d;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 28px;
   margin-left: auto;
 }
 
 .site-nav > a,
 .site-nav > .site-nav-item > a {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.98rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   color: #4c473f;
   text-decoration: none;
   text-transform: uppercase;
@@ -186,29 +216,31 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-height: 52px;
-  padding: 0 20px;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 22px;
   border-radius: 12px;
-  background: #6d7740;
+  background: #5f6b32;
   color: #fff !important;
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   white-space: nowrap;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
 }
 
 .site-call-btn:hover {
-  color: #fff;
-  background: #5d6635;
+  color: #fff !important;
+  background: #55602c;
 }
 
 .site-call-icon {
+  position: relative;
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.28);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -217,6 +249,16 @@
   color: #fff;
   animation: siteCallRing 1.8s ease-in-out infinite;
   transform-origin: 50% 10%;
+  flex-shrink: 0;
+}
+
+.site-call-icon::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.20);
+  animation: siteCallPulse 1.8s ease-out infinite;
 }
 
 @keyframes siteCallRing {
@@ -227,6 +269,12 @@
   40% { transform: rotate(-8deg); }
   50% { transform: rotate(6deg); }
   60% { transform: rotate(0deg); }
+}
+
+@keyframes siteCallPulse {
+  0% { transform: scale(0.88); opacity: 0.75; }
+  70% { transform: scale(1.16); opacity: 0; }
+  100% { transform: scale(1.16); opacity: 0; }
 }
 
 .site-footer {
@@ -414,6 +462,12 @@
 }
 
 @media (max-width: 991px) {
+  .top-ribbon .container {
+    gap: 16px;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+  }
+
   .site-header .site-navbar {
     min-height: 82px;
   }
@@ -496,9 +550,15 @@
 }
 
 @media (max-width: 640px) {
+  .top-ribbon .container {
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.72rem;
+  }
+
   .site-logo strong,
   .site-footer-logo strong {
-    font-size: 2.1rem;
+    font-size: 2.25rem;
   }
 
   .site-logo span,
@@ -530,6 +590,16 @@
 <body>
 
   <!-- Header Section Starts -->
+  <div class="top-ribbon">
+    <div class="container">
+      <span>Premium Quality</span>
+      <span>Crafted to Last</span>
+      <span>Customizable Options</span>
+      <span>Expert Guidance</span>
+      <span>Fast Execution</span>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container site-navbar">
       <a href="index-3.html" class="site-logo" aria-label="Aqeeq Decor Home">
@@ -947,7 +1017,6 @@
   <script src="js/plugin.js"></script>
   <script src="js/main.js"></script>
 </body>
-</html>
   <script>
     (function () {
       const toggle = document.querySelector('.site-menu-toggle');
@@ -970,3 +1039,4 @@
       });
     })();
   </script>
+</html>
