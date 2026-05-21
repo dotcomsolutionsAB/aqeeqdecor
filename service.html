@@ -31,16 +31,16 @@
   }
 
   .top-bar .container {
-    min-height: 30px;
+    min-height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 34px;
+    gap: 28px;
     flex-wrap: wrap;
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     font-weight: 500;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 
   .top-bar span {
@@ -66,23 +66,24 @@
   }
 
   header .navbar {
-    min-height: 92px;
+    min-height: 84px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 20px;
   }
 
   .logo {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    padding-top: 0;
   }
 
   .logo-text strong {
     display: block;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.55rem;
+    font-size: 2.15rem;
     font-weight: 500;
     letter-spacing: 0.06em;
     color: #6d7740;
@@ -91,9 +92,9 @@
 
   .logo-text span {
     display: block;
-    margin-top: 2px;
-    font-size: 0.66rem;
-    letter-spacing: 0.30em;
+    margin-top: 1px;
+    font-size: 0.6rem;
+    letter-spacing: 0.24em;
     color: #6c665d;
     line-height: 1;
   }
@@ -123,13 +124,13 @@
     align-items: center;
     justify-content: flex-end;
     flex: 1;
-    gap: 28px;
+    gap: 24px;
     margin-left: auto;
   }
 
   nav a {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 0.96rem;
     font-weight: 700;
     letter-spacing: 0.03em;
     color: #4c473f;
@@ -247,15 +248,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    min-height: 54px;
-    padding: 0 22px;
+    gap: 8px;
+    min-height: 52px;
+    padding: 0 18px;
     border-radius: 12px;
     background: #5f6b32;
     color: #fff !important;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.01em;
     white-space: nowrap;
@@ -269,28 +270,28 @@
 
   .call-icon {
     position: relative;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.28);
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    border: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1;
     color: #fff;
-    animation: homeCallRing 1.8s ease-in-out infinite;
-    transform-origin: 50% 10%;
+    animation: homeCallRing 1.4s ease-in-out infinite;
+    transform-origin: 50% 100%;
     flex-shrink: 0;
   }
 
   @keyframes homeCallRing {
     0%, 100% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-12deg); }
-    30% { transform: rotate(10deg); }
-    40% { transform: rotate(-8deg); }
-    50% { transform: rotate(6deg); }
+    10% { transform: rotate(10deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(7deg); }
+    40% { transform: rotate(-5deg); }
+    50% { transform: rotate(3deg); }
     60% { transform: rotate(0deg); }
   }
 
