@@ -21,13 +21,13 @@
 
 
   <style>
-  .top-ribbon {
+  .top-bar {
     background: linear-gradient(90deg, #4f5d28 0%, #68783b 100%);
     color: #fff;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
-  .top-ribbon .container {
+  .top-bar .container {
     min-height: 30px;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@
     font-weight: 500;
   }
 
-  .top-ribbon span {
+  .top-bar span {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -46,10 +46,261 @@
     color: #fff;
   }
 
-  .top-ribbon span::before {
+  .top-bar span::before {
     content: '✦';
     font-size: 0.62rem;
     opacity: 0.9;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+    background: #fff;
+    border-bottom: 1px solid #e9e2d8;
+  }
+
+  header .navbar {
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .logo {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logo-text strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.9rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #6d7740;
+    line-height: 0.95;
+  }
+
+  .logo-text span {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    color: #6c665d;
+    line-height: 1;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ddd6ca;
+    background: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .menu-toggle span {
+    width: 18px;
+    height: 2px;
+    background: #4c473f;
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 28px;
+    margin-left: auto;
+  }
+
+  nav a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #4c473f;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav a:hover {
+    color: #6d7740;
+  }
+
+  .nav-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav-item > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-item.services-menu > a::after,
+  .has-children > a::after {
+    content: '▾';
+    font-size: 0.8em;
+    line-height: 1;
+  }
+
+  .dropdown-menu,
+  .sub-dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+    background: #fff;
+    border: 1px solid #ece4d9;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    z-index: 50;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  }
+
+  .nav-item.services-menu:hover > .dropdown-menu,
+  .nav-item.services-menu:focus-within > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu > li,
+  .sub-dropdown > li {
+    position: relative;
+  }
+
+  .dropdown-menu > li > a,
+  .sub-dropdown > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5a544a;
+    text-decoration: none;
+    text-transform: none;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu > li > a:hover,
+  .sub-dropdown > li > a:hover {
+    background: rgba(74, 84, 48, 0.12);
+    color: #6d7740;
+  }
+
+  .dropdown-menu .has-children > a::after {
+    content: '▸';
+    font-size: 0.9em;
+  }
+
+  .sub-dropdown {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 8px);
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 60;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .dropdown-menu .has-children:hover > .sub-dropdown,
+  .dropdown-menu .has-children:focus-within > .sub-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 0 22px;
+    border-radius: 12px;
+    background: #5f6b32;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+
+  .call-btn:hover {
+    color: #fff !important;
+    background: #55602c;
+  }
+
+  .call-icon {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.28);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    color: #fff;
+    animation: homeCallRing 1.8s ease-in-out infinite;
+    transform-origin: 50% 10%;
+    flex-shrink: 0;
+  }
+
+  .call-icon::after {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.20);
+    animation: homeCallPulse 1.8s ease-out infinite;
+  }
+
+  @keyframes homeCallRing {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-12deg); }
+    30% { transform: rotate(10deg); }
+    40% { transform: rotate(-8deg); }
+    50% { transform: rotate(6deg); }
+    60% { transform: rotate(0deg); }
+  }
+
+  @keyframes homeCallPulse {
+    0% { transform: scale(0.88); opacity: 0.75; }
+    70% { transform: scale(1.16); opacity: 0; }
+    100% { transform: scale(1.16); opacity: 0; }
   }
 
 .site-header {
@@ -462,7 +713,7 @@
 }
 
 @media (max-width: 991px) {
-  .top-ribbon .container {
+  .top-bar .container {
     gap: 16px;
     font-size: 0.78rem;
     padding: 6px 14px;
@@ -550,7 +801,7 @@
 }
 
 @media (max-width: 640px) {
-  .top-ribbon .container {
+  .top-bar .container {
     justify-content: center;
     gap: 12px;
     font-size: 0.72rem;
@@ -585,12 +836,11 @@
   }
 }
   </style>
-</style>
 </head>
 <body>
 
   <!-- Header Section Starts -->
-  <div class="top-ribbon">
+  <div class="top-bar">
     <div class="container">
       <span>Premium Quality</span>
       <span>Crafted to Last</span>
@@ -600,32 +850,33 @@
     </div>
   </div>
 
-  <header class="site-header">
-    <div class="container site-navbar">
-      <a href="index-3.html" class="site-logo" aria-label="Aqeeq Decor Home">
-        <strong>AQEEQ</strong>
-        <span>DECOR</span>
+  <header>
+    <div class="container navbar">
+      <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home">
+        <div class="logo-text">
+          <strong>AQEEQ</strong>
+          <span>DECOR</span>
+        </div>
       </a>
 
-      <button class="site-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="site-nav">
+      <nav>
         <a href="index-3.html">HOME</a>
         <a href="about.html">ABOUT US</a>
         <a href="project.html">PROJECTS</a>
-
-        <div class="site-nav-item has-dropdown">
+        <div class="nav-item services-menu">
           <a href="#">SERVICES</a>
-          <ul class="site-dropdown">
+          <ul class="dropdown-menu">
             <li><a href="#">Curtains</a></li>
             <li><a href="#">Wallpapers</a></li>
             <li class="has-children">
               <a href="#">Furniture</a>
-              <ul class="site-submenu">
+              <ul class="sub-dropdown">
                 <li><a href="#">Modular</a></li>
                 <li><a href="#">Office furniture</a></li>
                 <li><a href="#">Sofas</a></li>
@@ -639,7 +890,7 @@
             </li>
             <li class="has-children">
               <a href="#">Window Blinds</a>
-              <ul class="site-submenu">
+              <ul class="sub-dropdown">
                 <li><a href="#">Roller</a></li>
                 <li><a href="#">Zebra</a></li>
                 <li><a href="#">Vertical</a></li>
@@ -655,7 +906,7 @@
             <li><a href="#">Mattress</a></li>
             <li class="has-children">
               <a href="#">Floorings</a>
-              <ul class="site-submenu">
+              <ul class="sub-dropdown">
                 <li><a href="#">Wooden</a></li>
                 <li><a href="#">PVC</a></li>
                 <li><a href="#">Engineered</a></li>
@@ -665,13 +916,11 @@
             </li>
           </ul>
         </div>
-
         <a href="blogs.html">BLOGS</a>
         <a href="contact.html">CONTACT US</a>
-
-        <a href="tel:+918698725668" class="site-call-btn" aria-label="Call +91 86987 25668">
-          <span class="site-call-icon" aria-hidden="true">☎</span>
-          <span>+91 86987 25668</span>
+        <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
+          <span class="call-icon" aria-hidden="true">☎</span>
+          <span class="call-text">+91 86987 25668</span>
         </a>
       </nav>
     </div>
@@ -1019,8 +1268,8 @@
 </body>
   <script>
     (function () {
-      const toggle = document.querySelector('.site-menu-toggle');
-      const nav = document.querySelector('.site-nav');
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('header nav');
       if (!toggle || !nav) return;
 
       toggle.addEventListener('click', function () {
@@ -1029,12 +1278,11 @@
         document.body.classList.toggle('menu-open', open);
       });
 
-      nav.querySelectorAll('.site-nav-item.has-dropdown > a, .site-dropdown .has-children > a').forEach(function (link) {
+      nav.querySelectorAll('.nav-item.services-menu > a, .dropdown-menu .has-children > a').forEach(function (link) {
         link.addEventListener('click', function (e) {
           if (window.innerWidth > 991) return;
           e.preventDefault();
-          const item = this.parentElement;
-          item.classList.toggle('open');
+          this.parentElement.classList.toggle('open');
         });
       });
     })();
