@@ -2374,8 +2374,18 @@
     padding: 14px 16px;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    min-width: 84px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     line-height: normal;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  body footer .newsletter-form button:hover {
+    background: #fff;
+    color: var(--olive);
   }
 
   body footer .copyright {
@@ -3246,7 +3256,7 @@
         <p>Subscribe to get updates on new collections &amp; offers.</p>
         <div class="newsletter-form">
           <input type="email" placeholder="Enter your email">
-          <button aria-label="Submit">↗</button>
+          <button aria-label="Submit">Submit</button>
         </div>
       </div>
     </div>
