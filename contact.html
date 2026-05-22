@@ -1350,6 +1350,37 @@
     content: none !important;
     display: none !important;
   }
+  @media (max-width: 900px) {
+    header nav.mobile-open {
+      display: flex !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+      z-index: 10001 !important;
+    }
+
+    header nav.mobile-open > a,
+    header nav.mobile-open > .nav-item,
+    header nav.mobile-open > .call-btn {
+      display: flex !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    }
+
+    header nav.mobile-open > .nav-item > a {
+      display: flex !important;
+      width: 100% !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    header nav.mobile-open .services-menu.no-dropdown > a {
+      padding-right: 16px !important;
+    }
+  }
 </style>
 </head>
 <body>
