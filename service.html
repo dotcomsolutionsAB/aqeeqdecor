@@ -2690,7 +2690,12 @@
       padding-right: 14px !important;
     }
   }
-  </style>
+    .nav-item.services-menu.no-dropdown > a::after,
+  .nav-item.services-menu.no-dropdown>a::after {
+    content: none !important;
+    display: none !important;
+  }
+</style>
 </head>
 <body>
 
@@ -2724,7 +2729,7 @@
         <a href="https://aqeeqdecor.ongoingsites.xyz/index-3.html">HOME</a>
         <a href="https://aqeeqdecor.ongoingsites.xyz/about.html">ABOUT US</a>
         <a href="project.html">PROJECTS</a>
-        <div class="nav-item services-menu">
+        <div class="nav-item services-menu no-dropdown">
           <a href="service.html">SERVICES</a>
           <!-- Services dropdown temporarily disabled
 <ul class="dropdown-menu">

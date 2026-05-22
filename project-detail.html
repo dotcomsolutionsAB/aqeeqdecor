@@ -1403,7 +1403,12 @@
                 height: 38px;
             }
         }
-    </style>
+      .nav-item.services-menu.no-dropdown > a::after,
+  .nav-item.services-menu.no-dropdown>a::after {
+    content: none !important;
+    display: none !important;
+  }
+</style>
 </head>
 <body>
     <div class="top-bar">
@@ -1435,7 +1440,7 @@
                 <a href="index-3.html">HOME</a>
                 <a href="about.html">ABOUT US</a>
                 <a href="project.html" class="active">PROJECTS</a>
-                <div class="nav-item services-menu">
+                <div class="nav-item services-menu no-dropdown">
                     <a href="service.html">SERVICES</a>
                     <!-- Services dropdown temporarily disabled
 <ul class="dropdown-menu">
