@@ -702,13 +702,32 @@
     box-shadow: 0 18px 46px rgba(27, 22, 16, 0.06);
   }
 
+  .aq-services-showcase-panel > .row {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: stretch;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .aq-services-showcase-panel > .row > [class*="col-"] {
+    width: 100%;
+    max-width: none;
+    flex: none;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 0;
+  }
+
   .aq-services-showcase-image {
     height: 100%;
     min-height: 340px;
     aspect-ratio: 5 / 4;
+    overflow: hidden;
   }
 
   .aq-services-showcase-image img {
+    display: block;
     width: 100%;
     height: 100%;
     min-height: 340px;
@@ -720,6 +739,9 @@
   .aq-services-showcase-copy {
     padding: 42px 42px 38px;
     min-height: 340px;
+    position: relative;
+    z-index: 1;
+    background: #fff;
   }
 
   .aq-service-pill-list {
@@ -859,8 +881,12 @@
       padding: 32px 24px;
       min-height: 380px;
     }
+    .aq-services-showcase-panel > .row {
+      grid-template-columns: 1fr;
+    }
     .aq-services-showcase-image {
       min-height: 320px;
+      aspect-ratio: 16 / 9;
     }
     .aq-services-showcase-image img {
       min-height: 320px;
