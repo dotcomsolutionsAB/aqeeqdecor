@@ -2449,6 +2449,210 @@
   body .aq-services-cta + footer {
     margin-top: 0;
   }
+
+  body header nav .nav-item.services-menu > a::after,
+  body header nav .dropdown-menu .has-children > a::after {
+    content: '▾' !important;
+    font-size: 0.85em !important;
+    line-height: 1 !important;
+    transition: transform 0.25s ease !important;
+  }
+
+  body header nav .nav-item.services-menu:hover > a::after {
+    transform: rotate(180deg) !important;
+  }
+
+  body header nav .dropdown-menu .has-children:hover > a::after {
+    transform: rotate(-90deg) !important;
+  }
+
+  body header nav .dropdown-menu,
+  body header nav .sub-dropdown {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    background: #fff !important;
+    border: 1px solid #ece4d9 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12) !important;
+  }
+
+  body header nav .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: auto !important;
+    min-width: 280px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(10px) !important;
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease !important;
+    z-index: 60 !important;
+    display: block !important;
+  }
+
+  body header nav .nav-item.services-menu:hover > .dropdown-menu,
+  body header nav .nav-item.services-menu:focus-within > .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  body header nav .dropdown-menu > li,
+  body header nav .sub-dropdown > li {
+    position: relative !important;
+  }
+
+  body header nav .dropdown-menu > li > a,
+  body header nav .sub-dropdown > li > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 12px 18px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    color: #5a544a !important;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease !important;
+    text-align: left !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+    line-height: normal !important;
+  }
+
+  body header nav .dropdown-menu > li > a:hover,
+  body header nav .sub-dropdown > li > a:hover {
+    background: rgba(74, 84, 48, 0.12) !important;
+    color: var(--olive) !important;
+    padding-left: 22px !important;
+  }
+
+  body header nav .dropdown-menu .has-children:hover > a {
+    color: var(--olive) !important;
+  }
+
+  body header nav .sub-dropdown {
+    position: absolute !important;
+    top: 0 !important;
+    left: 100% !important;
+    right: auto !important;
+    min-width: 240px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateX(0) !important;
+    transition: opacity 0.25s ease, visibility 0.25s ease !important;
+    z-index: 70 !important;
+    margin-left: 0 !important;
+  }
+
+  body header nav .dropdown-menu .has-children::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: -14px !important;
+    width: 14px !important;
+    height: 100% !important;
+  }
+
+  body header nav .dropdown-menu .has-children:hover > .sub-dropdown,
+  body header nav .dropdown-menu .has-children:focus-within > .sub-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  @media (max-width: 900px) {
+    body header nav .nav-item.services-menu > a::after,
+    body header nav .dropdown-menu .has-children > a::after {
+      position: absolute !important;
+      right: 16px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+    }
+
+    body header nav .nav-item.services-menu:hover > a::after,
+    body header nav .nav-item.services-menu.open > a::after {
+      transform: translateY(-50%) rotate(180deg) !important;
+    }
+
+    body header nav .dropdown-menu .has-children:hover > a::after,
+    body header nav .dropdown-menu .has-children.open > a::after {
+      transform: translateY(-50%) rotate(-90deg) !important;
+    }
+
+    body header nav .dropdown-menu {
+      position: static !important;
+      min-width: 100% !important;
+      margin-top: 0 !important;
+      padding: 8px 0 10px !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      display: none !important;
+      transform: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      border: 0 !important;
+      border-top: 1px solid #eee6db !important;
+      background: #fcfaf6 !important;
+    }
+
+    body header nav.mobile-open .dropdown-menu {
+      position: static !important;
+    }
+
+    body header nav .nav-item.services-menu:hover > .dropdown-menu,
+    body header nav .nav-item.services-menu.open > .dropdown-menu {
+      display: block !important;
+    }
+
+    body header nav .sub-dropdown {
+      position: static !important;
+      min-width: 100% !important;
+      margin: 6px 12px 2px !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      display: none !important;
+      transform: none !important;
+      box-shadow: none !important;
+      border-radius: 10px !important;
+      border: 1px solid #ebe3d8 !important;
+      background: #fff !important;
+    }
+
+    body header nav .dropdown-menu .has-children::before {
+      display: none !important;
+    }
+
+    body header nav .dropdown-menu .has-children:hover > .sub-dropdown,
+    body header nav .dropdown-menu .has-children.open > .sub-dropdown {
+      display: block !important;
+    }
+
+    body header nav .dropdown-menu > li > a,
+    body header nav .sub-dropdown > li > a {
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+    }
+
+    body header nav .dropdown-menu > li > a {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
+    body header nav .sub-dropdown > li > a {
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+    }
+  }
   </style>
 </head>
 <body>
