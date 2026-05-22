@@ -697,13 +697,15 @@
     border-radius: 34px;
     overflow: hidden;
     box-shadow: 0 18px 46px rgba(27, 22, 16, 0.06);
+    height: 100%;
   }
 
   .aq-services-showcase-image img {
-    min-height: 100%;
+    width: 100%;
     height: 100%;
-    min-height: 380px;
-    max-height: 380px;
+    min-height: 520px;
+    max-height: none;
+    object-fit: cover;
   }
 
   .aq-services-showcase-copy {
@@ -847,8 +849,9 @@
       padding: 32px 24px;
     }
     .aq-services-showcase-image img {
-      min-height: 320px;
-      max-height: 320px;
+      min-height: 380px;
+      height: 100%;
+      max-height: none;
     }
 
     .aq-process-grid {
@@ -882,8 +885,9 @@
       height: 220px;
     }
     .aq-services-showcase-image img {
-      min-height: 260px;
-      max-height: 260px;
+      min-height: 300px;
+      height: 100%;
+      max-height: none;
     }
 
     .aq-service-content,
