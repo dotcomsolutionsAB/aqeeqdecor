@@ -3169,6 +3169,12 @@
                 if (!isOpen && servicesMenu) {
                     servicesMenu.classList.remove('open');
                     childMenuItems.forEach((child) => child.classList.remove('open'));
+                    const servicesTrigger = servicesMenu.querySelector(':scope > a');
+                    if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+                    childMenuItems.forEach((child) => {
+                        const childTrigger = child.querySelector(':scope > a');
+                        if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
+                    });
                 }
             });
         }
@@ -3179,6 +3185,7 @@
             servicesTrigger.addEventListener('click', (event) => {
                 if (!mobileMenuQuery.matches) return;
                 event.preventDefault();
+                event.stopPropagation();
                 const isOpen = servicesMenu.classList.contains('open');
 
                 if (isOpen) {
@@ -3187,6 +3194,8 @@
                 } else {
                     servicesMenu.classList.add('open');
                 }
+
+                servicesTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
             });
 
             childMenuItems.forEach((item) => {
@@ -3201,6 +3210,8 @@
                     if (!isOpen) {
                         item.classList.add('open');
                     }
+
+                    trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
                 });
             });
 
@@ -3212,6 +3223,12 @@
                 if (!clickedInsideMenu && !clickedToggle) {
                     servicesMenu.classList.remove('open');
                     childMenuItems.forEach((child) => child.classList.remove('open'));
+                    const servicesTrigger = servicesMenu.querySelector(':scope > a');
+                    if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+                    childMenuItems.forEach((child) => {
+                        const childTrigger = child.querySelector(':scope > a');
+                        if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
+                    });
                     if (mainNav && menuToggle) {
                         mainNav.classList.remove('mobile-open');
                         document.body.classList.remove('menu-open');
@@ -3225,6 +3242,12 @@
                 if (!mobileMenuQuery.matches) {
                     servicesMenu.classList.remove('open');
                     childMenuItems.forEach((child) => child.classList.remove('open'));
+                    const servicesTrigger = servicesMenu.querySelector(':scope > a');
+                    if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+                    childMenuItems.forEach((child) => {
+                        const childTrigger = child.querySelector(':scope > a');
+                        if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
+                    });
                     if (mainNav && menuToggle) {
                         mainNav.classList.remove('mobile-open');
                         document.body.classList.remove('menu-open');
