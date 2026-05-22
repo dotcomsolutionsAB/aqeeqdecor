@@ -1381,6 +1381,33 @@
       padding-right: 16px !important;
     }
   }
+   (max-width: 900px) {
+    header {
+      position: relative !important;
+      z-index: 20000 !important;
+    }
+
+    header .navbar {
+      position: relative !important;
+      z-index: 20001 !important;
+    }
+
+    header nav,
+    header nav.mobile-open {
+      z-index: 20002 !important;
+    }
+
+    header nav.mobile-open {
+      position: fixed !important;
+    }
+
+    .breadcrumb,
+    .about-breadcrumb,
+    .page-hero {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+  }
 </style>
 </head>
 <body>
