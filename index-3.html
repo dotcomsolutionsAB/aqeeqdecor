@@ -1845,7 +1845,8 @@
             }
 
             header {
-                position: static;
+                position: relative;
+                z-index: 10000;
             }
 
             .navbar {
@@ -1894,7 +1895,7 @@
                 border: 1px solid #e9e2d8;
                 border-radius: 16px;
                 box-shadow: 0 20px 40px rgba(29, 24, 18, 0.14);
-                z-index: 1300;
+                z-index: 10001;
             }
 
             nav.mobile-open {
@@ -1902,6 +1903,12 @@
                 visibility: visible !important;
                 pointer-events: auto !important;
                 transform: translateY(0) !important;
+                z-index: 10001 !important;
+            }
+
+            .hero-wrap {
+                position: relative;
+                z-index: 1;
             }
             nav > * {
                 flex: 0 0 auto;
