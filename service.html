@@ -2386,6 +2386,65 @@
       width: 100%;
     }
   }
+
+  body .about-breadcrumb {
+    position: relative;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(rgba(26, 24, 20, 0.38), rgba(26, 24, 20, 0.38)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  body .about-breadcrumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0.10) 100%);
+    pointer-events: none;
+  }
+
+  body .about-breadcrumb-inner {
+    position: relative;
+    z-index: 1;
+    padding: 36px 0;
+  }
+
+  body .about-breadcrumb h1 {
+    margin: 0 0 10px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+
+  body .about-breadcrumb p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  @media (max-width: 640px) {
+    body .about-breadcrumb {
+      min-height: 200px;
+    }
+
+    body .about-breadcrumb p {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+    }
+  }
   </style>
 </head>
 <body>
@@ -2479,12 +2538,10 @@
   <!-- Header Section Ends -->
 
   <!-- Breadcrumb Section Starts -->
-  <section class="breadcrumb position-relative mb-0">
-    <div class="overlay"></div>
-    <div class="container position-absolute top-50 start-50 translate-middle text-center">
-      <div class="breadcrumb-inner mt-8">
-        <h2 class="grey mb-0">Service List</h2>
-      </div>
+  <section class="about-breadcrumb">
+    <div class="container about-breadcrumb-inner">
+      <h1>Services</h1>
+      <p>Home / Services</p>
     </div>
   </section>
   <!-- Breadcrumb Section Ends -->
