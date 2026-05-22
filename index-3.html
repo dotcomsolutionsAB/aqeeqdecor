@@ -249,6 +249,10 @@
             align-items: center;
         }
 
+        .services-dropdown-toggle {
+            display: none;
+        }
+
         .nav-item > a {
             display: inline-flex;
             align-items: center;
@@ -1957,7 +1961,35 @@
                 position: relative;
             }
 
-            .nav-item.services-menu > a::after,
+            .services-dropdown-toggle {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 48px;
+                min-height: 52px;
+                height: 52px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border: 0;
+                border-left: 1px solid #e9e2d8;
+                background: transparent;
+                color: #47433c;
+                cursor: pointer;
+                z-index: 2;
+            }
+
+            .services-dropdown-toggle::before {
+                content: '▾';
+                font-size: 0.9rem;
+                line-height: 1;
+                transition: transform 0.25s ease;
+            }
+
+            .nav-item.services-menu > a::after {
+                display: none;
+            }
+
             .has-children > a::after {
                 position: absolute;
                 right: 16px;
@@ -1965,16 +1997,12 @@
                 transform: translateY(-50%);
             }
 
-            .nav-item.services-menu:hover > a::after {
-                transform: translateY(-50%) rotate(180deg);
-            }
-
             .has-children:hover > a::after {
                 transform: translateY(-50%) rotate(-90deg);
             }
 
-            .nav-item.services-menu.open > a::after {
-                transform: translateY(-50%) rotate(180deg);
+            .nav-item.services-menu.open .services-dropdown-toggle::before {
+                transform: rotate(180deg);
             }
 
             .has-children.open > a::after {
@@ -2009,7 +2037,6 @@
                 position: static;
             }
 
-            .nav-item.services-menu:hover > .dropdown-menu,
             .nav-item.services-menu.open > .dropdown-menu {
                 display: block;
             }
@@ -2033,7 +2060,6 @@
                 display: none;
             }
 
-            .has-children:hover > .sub-dropdown,
             .has-children.open > .sub-dropdown {
                 display: block;
             }
@@ -2539,6 +2565,7 @@
                 <a href="project.html">PROJECTS</a>
                 <div class="nav-item services-menu">
                     <a href="service.html">SERVICES</a>
+                    <button class="services-dropdown-toggle" type="button" aria-label="Toggle services menu" aria-expanded="false"></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">Curtains</a></li>
                         <li><a href="#">Wallpapers</a></li>
@@ -3171,6 +3198,8 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+                    const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
+                    if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
                         const childTrigger = child.querySelector(':scope > a');
                         if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
@@ -3181,8 +3210,25 @@
 
         if (servicesMenu) {
             const servicesTrigger = servicesMenu.querySelector(':scope > a');
+            const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
 
-            servicesTrigger.addEventListener('click', (event) => {
+            const scrollMenuTo = (element) => {
+                if (!mainNav || !element) return;
+                mainNav.scrollTo({
+                    top: Math.max(element.offsetTop - 12, 0),
+                    behavior: 'smooth'
+                });
+            };
+
+            const closeChildMenus = () => {
+                childMenuItems.forEach((child) => {
+                    child.classList.remove('open');
+                    const childTrigger = child.querySelector(':scope > a');
+                    if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
+                });
+            };
+
+            const toggleServicesMenu = (event) => {
                 if (!mobileMenuQuery.matches) return;
                 event.preventDefault();
                 event.stopPropagation();
@@ -3190,25 +3236,39 @@
 
                 if (isOpen) {
                     servicesMenu.classList.remove('open');
-                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    closeChildMenus();
                 } else {
                     servicesMenu.classList.add('open');
+                    window.requestAnimationFrame(() => {
+                        scrollMenuTo(servicesMenu);
+                    });
                 }
 
-                servicesTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-            });
+                if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+                if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            };
+
+            if (servicesDropdownToggle) {
+                servicesDropdownToggle.addEventListener('click', toggleServicesMenu);
+            } else if (servicesTrigger) {
+                servicesTrigger.addEventListener('click', toggleServicesMenu);
+            }
 
             childMenuItems.forEach((item) => {
                 const trigger = item.querySelector(':scope > a');
                 trigger.addEventListener('click', (event) => {
                     if (!mobileMenuQuery.matches) return;
                     event.preventDefault();
+                    event.stopPropagation();
                     const isOpen = item.classList.contains('open');
 
-                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    closeChildMenus();
 
                     if (!isOpen) {
                         item.classList.add('open');
+                        window.requestAnimationFrame(() => {
+                            scrollMenuTo(item);
+                        });
                     }
 
                     trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
@@ -3225,6 +3285,8 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+                    const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
+                    if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
                         const childTrigger = child.querySelector(':scope > a');
                         if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
@@ -3244,6 +3306,8 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+                    const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
+                    if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
                         const childTrigger = child.querySelector(':scope > a');
                         if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
