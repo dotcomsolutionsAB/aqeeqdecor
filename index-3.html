@@ -2507,6 +2507,114 @@
                 height: 680px;
             }
         }
+
+        @media (max-width: 900px) {
+            header nav.mobile-open {
+                display: flex !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                -webkit-overflow-scrolling: touch;
+                max-height: calc(100dvh - 108px);
+            }
+
+            header nav.mobile-open .services-menu {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                height: auto !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+
+            header nav.mobile-open .services-menu > a {
+                display: flex !important;
+                width: 100% !important;
+                min-height: 52px !important;
+                align-items: center !important;
+                justify-content: center !important;
+                color: #47433c !important;
+                background: #fff !important;
+            }
+
+            header nav.mobile-open .services-menu > .dropdown-menu {
+                position: static !important;
+                inset: auto !important;
+                width: 100% !important;
+                min-width: 100% !important;
+                max-height: none !important;
+                overflow: visible !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                transform: none !important;
+                margin: 0 !important;
+                padding: 8px 0 10px !important;
+                box-shadow: none !important;
+                border: 0 !important;
+                border-top: 1px solid #eee6db !important;
+                border-radius: 0 !important;
+                background: #fcfaf6 !important;
+                z-index: auto !important;
+            }
+
+            header nav.mobile-open .services-menu:not(.open) > .dropdown-menu {
+                display: none !important;
+            }
+
+            header nav.mobile-open .services-menu.open > .dropdown-menu {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            header nav.mobile-open .dropdown-menu > li,
+            header nav.mobile-open .sub-dropdown > li {
+                display: block !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+
+            header nav.mobile-open .dropdown-menu > li > a,
+            header nav.mobile-open .sub-dropdown > li > a {
+                display: flex !important;
+                width: 100% !important;
+                min-height: 44px !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                color: #5a544a !important;
+                background: transparent !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                border: 0 !important;
+                text-align: left !important;
+            }
+
+            header nav.mobile-open .sub-dropdown {
+                position: static !important;
+                width: calc(100% - 24px) !important;
+                min-width: 0 !important;
+                margin: 6px 12px 2px !important;
+                padding: 6px 0 !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                transform: none !important;
+                box-shadow: none !important;
+                border-radius: 10px !important;
+                border: 1px solid #ebe3d8 !important;
+                background: #fff !important;
+            }
+
+            header nav.mobile-open .has-children:not(.open) > .sub-dropdown {
+                display: none !important;
+            }
+
+            header nav.mobile-open .has-children.open > .sub-dropdown {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3171,7 +3279,13 @@
 
                 if (!isOpen && servicesMenu) {
                     servicesMenu.classList.remove('open');
-                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    const servicesDropdown = servicesMenu.querySelector(':scope > .dropdown-menu');
+                    if (servicesDropdown) servicesDropdown.style.display = 'none';
+                    childMenuItems.forEach((child) => {
+                        child.classList.remove('open');
+                        const subDropdown = child.querySelector(':scope > .sub-dropdown');
+                        if (subDropdown) subDropdown.style.display = 'none';
+                    });
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
                     const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
@@ -3186,10 +3300,13 @@
 
         if (servicesMenu) {
             const servicesTrigger = servicesMenu.querySelector(':scope > a');
+            const servicesDropdown = servicesMenu.querySelector(':scope > .dropdown-menu');
 
             const closeChildMenus = () => {
                 childMenuItems.forEach((child) => {
                     child.classList.remove('open');
+                    const subDropdown = child.querySelector(':scope > .sub-dropdown');
+                    if (subDropdown) subDropdown.style.display = 'none';
                     const childTrigger = child.querySelector(':scope > a');
                     if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
                 });
@@ -3203,9 +3320,11 @@
 
                 if (isOpen) {
                     servicesMenu.classList.remove('open');
+                    if (servicesDropdown) servicesDropdown.style.display = 'none';
                     closeChildMenus();
                 } else {
                     servicesMenu.classList.add('open');
+                    if (servicesDropdown) servicesDropdown.style.display = 'flex';
                 }
 
                 if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
@@ -3227,6 +3346,8 @@
 
                     if (!isOpen) {
                         item.classList.add('open');
+                        const subDropdown = item.querySelector(':scope > .sub-dropdown');
+                        if (subDropdown) subDropdown.style.display = 'flex';
                     }
 
                     trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
@@ -3240,7 +3361,13 @@
 
                 if (!clickedInsideMenu && !clickedToggle) {
                     servicesMenu.classList.remove('open');
-                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    const servicesDropdown = servicesMenu.querySelector(':scope > .dropdown-menu');
+                    if (servicesDropdown) servicesDropdown.style.display = 'none';
+                    childMenuItems.forEach((child) => {
+                        child.classList.remove('open');
+                        const subDropdown = child.querySelector(':scope > .sub-dropdown');
+                        if (subDropdown) subDropdown.style.display = 'none';
+                    });
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
@@ -3259,7 +3386,13 @@
             window.addEventListener('resize', () => {
                 if (!mobileMenuQuery.matches) {
                     servicesMenu.classList.remove('open');
-                    childMenuItems.forEach((child) => child.classList.remove('open'));
+                    const servicesDropdown = servicesMenu.querySelector(':scope > .dropdown-menu');
+                    if (servicesDropdown) servicesDropdown.style.display = '';
+                    childMenuItems.forEach((child) => {
+                        child.classList.remove('open');
+                        const subDropdown = child.querySelector(':scope > .sub-dropdown');
+                        if (subDropdown) subDropdown.style.display = '';
+                    });
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
