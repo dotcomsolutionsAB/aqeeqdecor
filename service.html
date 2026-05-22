@@ -702,7 +702,8 @@
   .aq-services-showcase-image img {
     min-height: 100%;
     height: 100%;
-    min-height: 460px;
+    min-height: 380px;
+    max-height: 380px;
   }
 
   .aq-services-showcase-copy {
@@ -803,16 +804,17 @@
   }
 
   .aq-services-cta {
-    background: #111;
+    background: linear-gradient(135deg, #4b5730 0%, #6d7740 55%, #87915c 100%);
     padding-top: 88px !important;
     padding-bottom: 88px !important;
   }
 
   .aq-services-cta-card {
-    background: #fff;
+    background: #f8f5ef;
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 38px;
     padding: 62px 30px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+    box-shadow: 0 25px 60px rgba(27,22,16,0.10);
   }
 
   .aq-services-cta .btn,
@@ -844,6 +846,10 @@
     .aq-services-showcase-copy {
       padding: 32px 24px;
     }
+    .aq-services-showcase-image img {
+      min-height: 320px;
+      max-height: 320px;
+    }
 
     .aq-process-grid {
       grid-template-columns: 1fr;
@@ -874,6 +880,10 @@
 
     .aq-service-image img {
       height: 220px;
+    }
+    .aq-services-showcase-image img {
+      min-height: 260px;
+      max-height: 260px;
     }
 
     .aq-service-content,
