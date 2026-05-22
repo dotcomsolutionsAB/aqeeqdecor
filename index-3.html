@@ -1882,8 +1882,12 @@
                 left: 14px;
                 right: 14px;
                 width: auto;
+                height: auto;
                 max-height: calc(100vh - 108px);
                 overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
                 gap: 10px;
                 justify-content: flex-start;
                 flex-direction: column;
@@ -1961,35 +1965,7 @@
                 position: relative;
             }
 
-            .services-dropdown-toggle {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 48px;
-                min-height: 52px;
-                height: 52px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                border: 0;
-                border-left: 1px solid #e9e2d8;
-                background: transparent;
-                color: #47433c;
-                cursor: pointer;
-                z-index: 2;
-            }
-
-            .services-dropdown-toggle::before {
-                content: '▾';
-                font-size: 0.9rem;
-                line-height: 1;
-                transition: transform 0.25s ease;
-            }
-
-            .nav-item.services-menu > a::after {
-                display: none;
-            }
-
+            .nav-item.services-menu > a::after,
             .has-children > a::after {
                 position: absolute;
                 right: 16px;
@@ -2001,8 +1977,8 @@
                 transform: translateY(-50%) rotate(-90deg);
             }
 
-            .nav-item.services-menu.open .services-dropdown-toggle::before {
-                transform: rotate(180deg);
+            .nav-item.services-menu.open > a::after {
+                transform: translateY(-50%) rotate(180deg);
             }
 
             .has-children.open > a::after {
@@ -2565,8 +2541,8 @@
                 <a href="project.html">PROJECTS</a>
                 <div class="nav-item services-menu">
                     <a href="service.html">SERVICES</a>
-                    <button class="services-dropdown-toggle" type="button" aria-label="Toggle services menu" aria-expanded="false"></button>
                     <ul class="dropdown-menu">
+                        <li><a href="service.html">All Services</a></li>
                         <li><a href="#">Curtains</a></li>
                         <li><a href="#">Wallpapers</a></li>
                         <li class="has-children">
@@ -3210,15 +3186,6 @@
 
         if (servicesMenu) {
             const servicesTrigger = servicesMenu.querySelector(':scope > a');
-            const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
-
-            const scrollMenuTo = (element) => {
-                if (!mainNav || !element) return;
-                mainNav.scrollTo({
-                    top: Math.max(element.offsetTop - 12, 0),
-                    behavior: 'smooth'
-                });
-            };
 
             const closeChildMenus = () => {
                 childMenuItems.forEach((child) => {
@@ -3239,18 +3206,12 @@
                     closeChildMenus();
                 } else {
                     servicesMenu.classList.add('open');
-                    window.requestAnimationFrame(() => {
-                        scrollMenuTo(servicesMenu);
-                    });
                 }
 
                 if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-                if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
             };
 
-            if (servicesDropdownToggle) {
-                servicesDropdownToggle.addEventListener('click', toggleServicesMenu);
-            } else if (servicesTrigger) {
+            if (servicesTrigger) {
                 servicesTrigger.addEventListener('click', toggleServicesMenu);
             }
 
@@ -3266,9 +3227,6 @@
 
                     if (!isOpen) {
                         item.classList.add('open');
-                        window.requestAnimationFrame(() => {
-                            scrollMenuTo(item);
-                        });
                     }
 
                     trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
@@ -3285,8 +3243,6 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
-                    const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
-                    if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
                         const childTrigger = child.querySelector(':scope > a');
                         if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
@@ -3306,8 +3262,6 @@
                     childMenuItems.forEach((child) => child.classList.remove('open'));
                     const servicesTrigger = servicesMenu.querySelector(':scope > a');
                     if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
-                    const servicesDropdownToggle = servicesMenu.querySelector('.services-dropdown-toggle');
-                    if (servicesDropdownToggle) servicesDropdownToggle.setAttribute('aria-expanded', 'false');
                     childMenuItems.forEach((child) => {
                         const childTrigger = child.querySelector(':scope > a');
                         if (childTrigger) childTrigger.setAttribute('aria-expanded', 'false');
