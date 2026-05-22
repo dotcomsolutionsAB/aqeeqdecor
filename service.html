@@ -2475,6 +2475,10 @@
     border: 1px solid #ece4d9 !important;
     border-radius: 18px !important;
     box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12) !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    max-height: none !important;
   }
 
   body header nav .dropdown-menu {
@@ -2503,6 +2507,7 @@
   body header nav .dropdown-menu > li,
   body header nav .sub-dropdown > li {
     position: relative !important;
+    overflow: visible !important;
   }
 
   body header nav .dropdown-menu > li > a,
@@ -2524,6 +2529,9 @@
     border-radius: 10px !important;
     text-decoration: none !important;
     line-height: normal !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
   }
 
   body header nav .dropdown-menu > li > a:hover,
@@ -2566,6 +2574,7 @@
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
+    display: block !important;
   }
 
   @media (max-width: 900px) {
