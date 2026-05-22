@@ -474,6 +474,426 @@
   display: block;
 }
 
+  .aq-services-intro,
+  .aq-services-grid,
+  .aq-services-showcase,
+  .aq-services-process {
+    background: #f8f5ef;
+  }
+
+  .aq-services-intro {
+    padding-top: 84px !important;
+    padding-bottom: 84px !important;
+  }
+
+  .aq-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7b7b5c;
+    margin-bottom: 18px;
+  }
+
+  .aq-kicker::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: rgba(109, 119, 64, 0.55);
+  }
+
+  .aq-services-copy h1,
+  .aq-section-heading h2,
+  .aq-services-showcase-copy h2,
+  .aq-services-process-copy h2,
+  .aq-services-cta-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 4.5vw, 4.9rem);
+    line-height: 0.94;
+    font-weight: 500;
+    color: #1f1c17;
+    margin-bottom: 22px;
+  }
+
+  .aq-services-copy h1 span,
+  .aq-section-heading h2 span,
+  .aq-services-showcase-copy h2 span,
+  .aq-services-process-copy h2 span,
+  .aq-services-cta-card h2 span {
+    color: #7b7b5c;
+  }
+
+  .aq-services-copy p,
+  .aq-section-heading p,
+  .aq-services-showcase-copy p,
+  .aq-services-process-copy p,
+  .aq-services-cta-card p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #6b655d;
+  }
+
+  .aq-mini-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #ece3d7;
+    border-radius: 18px;
+    padding: 16px 18px;
+    height: 100%;
+    box-shadow: 0 16px 40px rgba(27, 22, 16, 0.05);
+  }
+
+  .aq-mini-point i {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #6d7740;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .aq-services-image {
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(27, 22, 16, 0.12);
+  }
+
+  .aq-services-image img,
+  .aq-service-image img,
+  .aq-services-showcase-image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .aq-services-image img {
+    min-height: 620px;
+  }
+
+  .aq-services-floating-card {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    background: rgba(255,255,255,0.96);
+    border-radius: 24px;
+    padding: 20px 24px;
+    box-shadow: 0 18px 45px rgba(27, 22, 16, 0.12);
+    max-width: 240px;
+  }
+
+  .aq-services-floating-card span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    line-height: 0.9;
+    color: #6d7740;
+    margin-bottom: 6px;
+  }
+
+  .aq-services-grid {
+    padding-top: 88px !important;
+    padding-bottom: 88px !important;
+  }
+
+  .aq-section-heading {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aq-service-card {
+    background: #fff;
+    border: 1px solid #ece3d7;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 16px 40px rgba(27, 22, 16, 0.05);
+  }
+
+  .aq-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 26px 60px rgba(27, 22, 16, 0.10);
+  }
+
+  .aq-service-image img {
+    height: 285px;
+  }
+
+  .aq-service-content {
+    padding: 28px 26px 30px;
+  }
+
+  .aq-service-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(109, 119, 64, 0.12);
+    color: #6d7740;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .aq-service-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 14px;
+    color: #201c17;
+  }
+
+  .aq-service-content p {
+    color: #666057;
+    line-height: 1.9;
+    margin-bottom: 0;
+  }
+
+  .aq-subservices {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .aq-subservices li {
+    position: relative;
+    padding-left: 18px;
+    color: #4d4841;
+    line-height: 1.7;
+  }
+
+  .aq-subservices li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7b7b5c;
+  }
+
+  .aq-services-showcase {
+    padding-top: 32px;
+    padding-bottom: 88px;
+  }
+
+  .aq-services-showcase-panel {
+    background: #fff;
+    border: 1px solid #ece3d7;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: 0 18px 46px rgba(27, 22, 16, 0.06);
+  }
+
+  .aq-services-showcase-image img {
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .aq-services-showcase-copy {
+    padding: 42px 42px 38px;
+  }
+
+  .aq-service-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .aq-service-pill-list span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: #f3efe7;
+    border: 1px solid #e7ddcf;
+    color: #403b34;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .aq-services-process {
+    padding-top: 12px;
+    padding-bottom: 88px;
+  }
+
+  .aq-services-process-strip {
+    background: linear-gradient(135deg, #2f341f 0%, #556337 100%);
+    border-radius: 34px;
+    padding: 42px 38px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .aq-services-process-strip::before {
+    content: '';
+    position: absolute;
+    inset: auto -60px -80px auto;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .aq-services-process-copy h2,
+  .aq-services-process-copy p,
+  .aq-process-card h4,
+  .aq-process-card p {
+    color: #fff;
+  }
+
+  .aq-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .aq-process-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 24px 22px;
+    min-height: 100%;
+    backdrop-filter: blur(4px);
+  }
+
+  .aq-process-count {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .aq-process-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    margin-bottom: 10px;
+  }
+
+  .aq-process-card p {
+    margin-bottom: 0;
+    line-height: 1.8;
+    opacity: 0.92;
+  }
+
+  .aq-services-cta {
+    background: #111;
+    padding-top: 88px !important;
+    padding-bottom: 88px !important;
+  }
+
+  .aq-services-cta-card {
+    background: #fff;
+    border-radius: 38px;
+    padding: 62px 30px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  }
+
+  .aq-services-cta .btn,
+  .aq-services-cta .btn-outline-dark {
+    min-height: 54px;
+    min-width: 190px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 991px) {
+    .aq-services-intro,
+    .aq-services-grid,
+    .aq-services-showcase,
+    .aq-services-process,
+    .aq-services-cta {
+      padding-top: 64px !important;
+      padding-bottom: 64px !important;
+    }
+
+    .aq-services-image img {
+      min-height: 420px;
+    }
+
+    .aq-services-showcase-copy {
+      padding: 32px 24px;
+    }
+
+    .aq-process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .aq-services-copy h1,
+    .aq-section-heading h2,
+    .aq-services-showcase-copy h2,
+    .aq-services-process-copy h2,
+    .aq-services-cta-card h2 {
+      font-size: 2.35rem;
+      line-height: 0.98;
+    }
+
+    .aq-services-image img {
+      min-height: 320px;
+    }
+
+    .aq-services-floating-card {
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      max-width: none;
+    }
+
+    .aq-service-image img {
+      height: 220px;
+    }
+
+    .aq-service-content,
+    .aq-services-showcase-copy,
+    .aq-services-cta-card {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .aq-services-process-strip {
+      padding: 30px 18px;
+    }
+
+    .aq-service-pill-list span {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .aq-services-cta .btn,
+    .aq-services-cta .btn-outline-dark {
+      width: 100%;
+      min-width: 0;
+    }
+  }
 @media (max-width: 1199px) {
   nav {
     gap: 22px;
@@ -712,38 +1132,38 @@
 
 
   <!-- Services Hero Section -->
-  <section class="aq-services-intro py-5 position-relative overflow-hidden">
+  <section class="aq-services-intro position-relative overflow-hidden">
     <div class="container position-relative">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
           <div class="aq-services-copy pe-lg-4">
             <span class="aq-kicker">Aqeeq Decor Services</span>
-            <h1 class="mb-4">Complete Interior & Decor <span>Solutions</span> For Every Space.</h1>
-            <p class="mb-4">We create elegant residential and commercial spaces with premium furnishings, decor solutions, modern finishes and custom execution tailored to your lifestyle and vision.</p>
+            <h1>Complete Interior & Decor <span>Solutions</span> For Every Space.</h1>
+            <p>We create elegant residential and commercial spaces with premium furnishings, decor solutions, modern finishes and curated execution tailored to your vision, functionality and everyday comfort.</p>
 
-            <div class="aq-service-points row gy-3">
+            <div class="aq-service-points row gy-3 mt-2">
               <div class="col-sm-6">
                 <div class="aq-mini-point">
                   <i class="fa fa-check"></i>
-                  <span>Premium Interior Styling</span>
+                  <span>Luxury Styling Guidance</span>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="aq-mini-point">
                   <i class="fa fa-check"></i>
-                  <span>Turnkey Project Execution</span>
+                  <span>Custom Product Selection</span>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="aq-mini-point">
                   <i class="fa fa-check"></i>
-                  <span>Luxury Product Range</span>
+                  <span>Complete Space Coordination</span>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="aq-mini-point">
                   <i class="fa fa-check"></i>
-                  <span>Custom Design Consultation</span>
+                  <span>Modern Finish Execution</span>
                 </div>
               </div>
             </div>
@@ -752,10 +1172,10 @@
 
         <div class="col-lg-6">
           <div class="aq-services-image position-relative">
-            <img src="image/luxury-living-room-interior.jpg" alt="services" class="w-100">
+            <img src="image/luxury-living-room-interior.jpg" alt="Aqeeq Decor services" class="w-100">
             <div class="aq-services-floating-card">
               <span>15+</span>
-              <p class="mb-0">Years Of Interior Excellence</p>
+              <p class="mb-0">Years of refined interior experience and customer trust.</p>
             </div>
           </div>
         </div>
@@ -764,16 +1184,15 @@
   </section>
 
   <!-- Main Services Grid -->
-  <section class="aq-services-grid py-5">
+  <section class="aq-services-grid">
     <div class="container">
       <div class="aq-section-heading text-center mb-5">
-        <span class="aq-kicker">What We Offer</span>
-        <h2>Explore Our Signature <span>Services</span></h2>
-        <p>Carefully curated decor and interior solutions designed for modern living spaces.</p>
+        <span class="aq-kicker justify-content-center">What We Offer</span>
+        <h2>Signature Services For <span>Modern Living</span></h2>
+        <p>Discover coordinated decor and furnishing solutions designed to elevate every room with warmth, utility and timeless visual appeal.</p>
       </div>
 
       <div class="row gy-4">
-
         <div class="col-lg-4 col-md-6">
           <div class="aq-service-card h-100">
             <div class="aq-service-image">
@@ -782,7 +1201,7 @@
             <div class="aq-service-content">
               <span class="aq-service-tag">Curtains</span>
               <h3>Luxury Curtains</h3>
-              <p>Elegant fabric selections with custom stitching and premium installation solutions for modern interiors.</p>
+              <p>Elegant fabric selections, custom stitching and premium installation solutions that soften light beautifully and complete the styling of your interiors.</p>
             </div>
           </div>
         </div>
@@ -795,7 +1214,7 @@
             <div class="aq-service-content">
               <span class="aq-service-tag">Wallpapers</span>
               <h3>Designer Wallpapers</h3>
-              <p>Transform plain walls into luxurious statement spaces with curated wallpaper collections.</p>
+              <p>Transform plain walls into statement surfaces with textures, tones and patterns that create depth, elegance and a memorable finish.</p>
             </div>
           </div>
         </div>
@@ -808,15 +1227,14 @@
             <div class="aq-service-content">
               <span class="aq-service-tag">Furniture</span>
               <h3>Custom Furniture</h3>
-              <p>Sofas, beds, dining tables, office furniture and luxury seating solutions crafted for comfort and style.</p>
-
+              <p>Curated furniture solutions designed for comfort, visual harmony and long-term everyday use across residential and commercial environments.</p>
               <ul class="aq-subservices">
-                <li>Modular Furniture</li>
-                <li>Office Furniture</li>
-                <li>Sofas & Accent Chairs</li>
-                <li>Dining Tables & Chairs</li>
-                <li>Beds & Bedside Tables</li>
-                <li>Pouffee Collection</li>
+                <li>Modular furniture systems</li>
+                <li>Office furniture solutions</li>
+                <li>Sofas & accent chairs</li>
+                <li>Dining tables & dining chairs</li>
+                <li>Beds & bedside tables</li>
+                <li>Pouffee collection</li>
               </ul>
             </div>
           </div>
@@ -830,15 +1248,14 @@
             <div class="aq-service-content">
               <span class="aq-service-tag">Window Blinds</span>
               <h3>Premium Window Blinds</h3>
-              <p>Stylish light-control solutions with modern mechanisms and premium textures.</p>
-
+              <p>Smart light-control systems that balance privacy, function and finish while adding a sleek, contemporary layer to any room.</p>
               <ul class="aq-subservices">
-                <li>Roller Blinds</li>
-                <li>Zebra Blinds</li>
-                <li>Roman Blinds</li>
-                <li>Honeycomb Blinds</li>
-                <li>Wooden & Venetian Blinds</li>
-                <li>Outdoor & PVC Blinds</li>
+                <li>Roller & zebra blinds</li>
+                <li>Vertical & roman blinds</li>
+                <li>Honeycomb solutions</li>
+                <li>Outdoor blinds</li>
+                <li>PVC options</li>
+                <li>Wooden & aluminium venetian blinds</li>
               </ul>
             </div>
           </div>
@@ -852,7 +1269,7 @@
             <div class="aq-service-content">
               <span class="aq-service-tag">Mattress</span>
               <h3>Comfort Mattress Collection</h3>
-              <p>Premium comfort mattresses designed to enhance sleep quality and complete luxurious bedrooms.</p>
+              <p>Premium comfort-driven mattress options selected to improve sleep quality while complementing refined bedroom design aesthetics.</p>
             </div>
           </div>
         </div>
@@ -865,72 +1282,76 @@
             <div class="aq-service-content">
               <span class="aq-service-tag">Floorings</span>
               <h3>Modern Flooring Solutions</h3>
-              <p>Durable and elegant flooring systems designed for residential, commercial and luxury spaces.</p>
-
+              <p>Durable and elegant flooring systems chosen to suit lifestyle, footfall and spatial character across residential and commercial projects.</p>
               <ul class="aq-subservices">
-                <li>Wooden Flooring</li>
-                <li>PVC Flooring</li>
-                <li>Engineered Flooring</li>
-                <li>Sports Flooring</li>
-                <li>Gym Flooring</li>
+                <li>Wooden flooring</li>
+                <li>PVC flooring</li>
+                <li>Engineered flooring</li>
+                <li>Sports flooring</li>
+                <li>Gym flooring</li>
               </ul>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Section -->
-  <section class="aq-why-section py-5 position-relative overflow-hidden">
-    <div class="container position-relative">
-      <div class="row align-items-center gy-5">
-        <div class="col-lg-5">
-          <div class="aq-why-image">
-            <img src="image/modern-luxury-interior.jpg" alt="Interior Design" class="w-100">
+  <!-- Services Showcase -->
+  <section class="aq-services-showcase">
+    <div class="container">
+      <div class="aq-services-showcase-panel">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="aq-services-showcase-image h-100">
+              <img src="image/modern-luxury-interior.jpg" alt="Complete decor styling">
+            </div>
           </div>
-        </div>
-
-        <div class="col-lg-7">
-          <div class="aq-why-content ps-lg-5">
-            <span class="aq-kicker">Why Choose Aqeeq Decor</span>
-            <h2 class="mb-4">Designing Elegant Spaces With Precision & Style.</h2>
-            <p class="mb-4">From concept to execution, we deliver premium interior experiences through modern aesthetics, expert craftsmanship and curated decor collections.</p>
-
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="aq-why-box">
-                  <i class="fa fa-lightbulb-o"></i>
-                  <h5>Creative Concepts</h5>
-                  <p>Unique interior styling tailored for every client and space.</p>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="aq-why-box">
-                  <i class="fa fa-building-o"></i>
-                  <h5>Premium Execution</h5>
-                  <p>High-quality finishing with attention to detail and luxury aesthetics.</p>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="aq-why-box">
-                  <i class="fa fa-home"></i>
-                  <h5>Modern Designs</h5>
-                  <p>Contemporary solutions for homes, offices and commercial interiors.</p>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="aq-why-box">
-                  <i class="fa fa-users"></i>
-                  <h5>Client Focused</h5>
-                  <p>Personalized consultations and seamless project coordination.</p>
-                </div>
+          <div class="col-lg-7">
+            <div class="aq-services-showcase-copy h-100 d-flex flex-column justify-content-center">
+              <span class="aq-kicker">Complete Decor Experience</span>
+              <h2>Curated Selections That Bring <span>Every Element Together</span></h2>
+              <p>Our approach goes beyond supplying products. We help you create a cohesive visual language across furnishings, surfaces, window treatments and finishing details, ensuring each element complements the next beautifully.</p>
+              <div class="aq-service-pill-list">
+                <span>Living Rooms</span>
+                <span>Bedrooms</span>
+                <span>Offices</span>
+                <span>Studios</span>
+                <span>Commercial Spaces</span>
+                <span>Turnkey Styling</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="aq-services-process">
+    <div class="container">
+      <div class="aq-services-process-strip">
+        <div class="aq-services-process-copy text-center text-lg-start">
+          <span class="aq-kicker text-white justify-content-center justify-content-lg-start" style="color:#fff;">How We Work</span>
+          <h2>Designed With Care, Delivered With <span style="color:#d9ddb6;">Clarity</span></h2>
+          <p class="mb-0">A simple, collaborative process that helps us translate your preferences into a refined and functional decor outcome.</p>
+        </div>
+
+        <div class="aq-process-grid">
+          <div class="aq-process-card">
+            <span class="aq-process-count">1</span>
+            <h4>Understand</h4>
+            <p>We begin by understanding your space, usage, visual preferences and practical requirements.</p>
+          </div>
+          <div class="aq-process-card">
+            <span class="aq-process-count">2</span>
+            <h4>Curate</h4>
+            <p>Our team curates combinations of products, finishes and styling directions that work together seamlessly.</p>
+          </div>
+          <div class="aq-process-card">
+            <span class="aq-process-count">3</span>
+            <h4>Execute</h4>
+            <p>From selection to finishing, we coordinate the final execution so the result feels balanced and complete.</p>
           </div>
         </div>
       </div>
@@ -938,13 +1359,12 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="aq-services-cta py-5">
+  <section class="aq-services-cta">
     <div class="container">
       <div class="aq-services-cta-card text-center">
-        <span class="aq-kicker">Let’s Build Your Dream Space</span>
-        <h2>Ready To Transform Your Interiors?</h2>
-        <p>Connect with Aqeeq Decor for personalized interior consultation and complete decor solutions.</p>
-
+        <span class="aq-kicker justify-content-center">Let’s Build Your Dream Space</span>
+        <h2>Ready To Transform Your <span>Interiors?</span></h2>
+        <p>Connect with Aqeeq Decor for personalized consultation, curated recommendations and coordinated decor solutions for your next space.</p>
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
           <a href="contact.html" class="btn btn-dark px-4 py-3 rounded-pill">Book Consultation</a>
           <a href="project.html" class="btn btn-outline-dark px-4 py-3 rounded-pill">View Projects</a>
