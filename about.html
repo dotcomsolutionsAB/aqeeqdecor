@@ -2089,7 +2089,8 @@
         <a href="project.html">PROJECTS</a>
         <div class="nav-item services-menu">
           <a href="service.html">SERVICES</a>
-          <ul class="dropdown-menu">
+          <!-- Services dropdown temporarily disabled
+<ul class="dropdown-menu">
             <li><a href="#">Curtains</a></li>
             <li><a href="#">Wallpapers</a></li>
             <li class="has-children">
@@ -2133,7 +2134,8 @@
               </ul>
             </li>
           </ul>
-        </div>
+        -->
+</div>
         <a href="blogs.html">BLOGS</a>
         <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#">CONTACT US</a>
         <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
@@ -2562,8 +2564,8 @@
       });
     }
 
-    if (servicesMenu) {
-      const servicesTrigger = servicesMenu.querySelector(':scope > a');
+    if (servicesMenu && servicesMenu.querySelector(':scope > .dropdown-menu')) {
+            const servicesTrigger = servicesMenu.querySelector(':scope > a');
 
       servicesTrigger.addEventListener('click', (event) => {
         if (!mobileMenuQuery.matches) return;
