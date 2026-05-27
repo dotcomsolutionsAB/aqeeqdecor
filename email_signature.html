@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expo Email Signature - Static Preview</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      color: #1f2937;
+    }
+
+    .page-wrap {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    .preview-title {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .preview-title h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #111827;
+      font-weight: 800;
+    }
+
+    .preview-title p {
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .mail-box {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .mail-header {
+      padding: 18px 22px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #fafafa;
+    }
+
+    .mail-row {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .mail-row:last-child { margin-bottom: 0; }
+
+    .mail-label {
+      display: inline-block;
+      width: 70px;
+      color: #9ca3af;
+    }
+
+    .mail-body {
+      padding: 26px 22px 32px;
+      color: #374151;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .mail-body p { margin: 0 0 14px; }
+
+    .signature-space { margin-top: 26px; }
+
+    .copy-section {
+      margin-top: 22px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .copy-section h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    .copy-section p {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .code-label {
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .code-box {
+      margin-top: 10px;
+      background: #111827;
+      color: #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      overflow-x: auto;
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrap">
+    <div class="preview-title">
+      <h1>Static Email Signature Preview</h1>
+      <p>Modern, elegant and Gmail-friendly. No animation or JavaScript used.</p>
+    </div>
+
+    <div class="mail-box">
+      <div class="mail-header">
+        <div class="mail-row"><span class="mail-label">To</span> client@example.com</div>
+        <div class="mail-row"><span class="mail-label">Subject</span> Business Enquiry</div>
+      </div>
+
+      <div class="mail-body">
+        <p>Dear Sir,</p>
+        <p>Please find the required details below. We look forward to your response.</p>
+        <p>Regards,</p>
+
+        <div class="signature-space">
+          <!-- FINAL GMAIL-SAFE SIGNATURE START -->
+          <table cellpadding="0" cellspacing="0" border="0" style="width:680px; max-width:100%; font-family:Arial, Helvetica, sans-serif; background:#ffffff; border:1px solid #e5e7eb; border-radius:16px; overflow:hidden; box-shadow:0 8px 22px rgba(15,23,42,0.08);">
+            <tr>
+              <td style="width:190px; background:#2b1b12; padding:22px 18px; text-align:center; vertical-align:middle; border-right:4px solid #a16207;">
+                <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+                  <tr>
+                    <td style="text-align:center; background:#ffffff; border-radius:14px; padding:12px;">
+                      <img src="image/expo_logo.png" alt="Expo Group of Companies" width="145" style="display:block; width:145px; max-width:100%; height:auto; margin:0 auto; border:0; outline:none; text-decoration:none;">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top:13px; font-size:11px; line-height:16px; letter-spacing:1px; text-transform:uppercase; color:#fde68a; font-weight:bold;">
+                      Expo Chain<br>&amp; Bearing Stores
+                    </td>
+                  </tr>
+                </table>
+              </td>
+
+              <td style="padding:22px 24px; vertical-align:top;">
+                <table cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+                  <tr>
+                    <td style="font-size:21px; line-height:26px; font-weight:bold; color:#111827; padding-bottom:3px;">
+                      Aliasgar Rampurawala
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:13px; line-height:18px; font-weight:bold; color:#92400e; padding-bottom:11px;">
+                      Business Development
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:14px; line-height:20px; font-weight:bold; color:#374151; padding-bottom:6px;">
+                      Expo Chain &amp; Bearing Stores
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-size:13px; line-height:20px; color:#4b5563; padding-bottom:15px;">
+                      <span style="color:#92400e; font-weight:bold;">Phone:</span>
+                      <a href="tel:+91123456789" style="color:#4b5563; text-decoration:none;">+91 123456789</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="border-top:1px solid #e5e7eb; padding-top:13px;">
+                      <div style="font-size:12px; line-height:16px; color:#6b7280; margin-bottom:9px;">
+                        Brands we deal in:
+                      </div>
+
+                      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate; border-spacing:0;">
+  <tr>
+    <td style="padding:0 8px 8px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:88px; height:54px; border:1px solid #f3e8d8; background:#fffaf3; border-radius:10px;">
+        <tr>
+          <td style="width:88px; height:54px; padding:8px; text-align:center; vertical-align:middle;">
+            <img src="image/skf_logo.png" alt="SKF" width="70" height="34" style="display:block; width:70px; height:34px; object-fit:contain; margin:0 auto; border:0; outline:none; text-decoration:none;">
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td style="padding:0 8px 8px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:88px; height:54px; border:1px solid #f3e8d8; background:#fffaf3; border-radius:10px;">
+        <tr>
+          <td style="width:88px; height:54px; padding:8px; text-align:center; vertical-align:middle;">
+            <img src="image/wuerth_logo.png" alt="Wuerth" width="70" height="34" style="display:block; width:70px; height:34px; object-fit:contain; margin:0 auto; border:0; outline:none; text-decoration:none;">
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td style="padding:0 8px 8px 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:88px; height:54px; border:1px solid #f3e8d8; background:#fffaf3; border-radius:10px;">
+        <tr>
+          <td style="width:88px; height:54px; padding:8px; text-align:center; vertical-align:middle;">
+            <img src="image/george_fischer_logo.png" alt="George Fischer" width="70" height="34" style="display:block; width:70px; height:34px; object-fit:contain; margin:0 auto; border:0; outline:none; text-decoration:none;">
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 8px 0 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:88px; height:54px; border:1px solid #f3e8d8; background:#fffaf3; border-radius:10px;">
+        <tr>
+          <td style="width:88px; height:54px; padding:8px; text-align:center; vertical-align:middle;">
+            <img src="image/jk_fenner_logo.png" alt="JK Fenner" width="70" height="34" style="display:block; width:70px; height:34px; object-fit:contain; margin:0 auto; border:0; outline:none; text-decoration:none;">
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td style="padding:0 8px 0 0;">
+      <table cellpadding="0" cellspacing="0" border="0" style="width:88px; height:54px; border:1px solid #f3e8d8; background:#fffaf3; border-radius:10px;">
+        <tr>
+          <td style="width:88px; height:54px; padding:8px; text-align:center; vertical-align:middle;">
+            <img src="image/champion_seals_logo.png" alt="Champion Seals" width="70" height="34" style="display:block; width:70px; height:34px; object-fit:contain; margin:0 auto; border:0; outline:none; text-decoration:none;">
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td style="padding:0 8px 0 0;">&nbsp;</td>
+  </tr>
+</table>
+
+                      <div style="font-size:1px; color:#ffffff; line-height:1px; max-height:1px; overflow:hidden;">
+                        SKF Wuerth Würth George Fischer Georg Fischer GF Piping Systems JK Fenner Champion Seals Expo Chain Bearing Stores industrial bearings chains seals fasteners business development
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- FINAL GMAIL-SAFE SIGNATURE END -->
+        </div>
+      </div>
+    </div>
+
+    <div class="copy-section">
+      <h2>Gmail Use Instructions</h2>
+      <p>1. Replace local image paths like <strong>image/expo_logo.png</strong>, <strong>image/skf_logo.png</strong>, <strong>image/wuerth_logo.png</strong>, <strong>image/george_fischer_logo.png</strong>, <strong>image/jk_fenner_logo.png</strong>, and <strong>image/champion_seals_logo.png</strong> with public hosted image URLs before final Gmail use.</p>
+      <p>2. Open this preview in a browser, select only the signature card, copy it, and paste it in Gmail Settings → See all settings → Signature.</p>
+      <p>3. This version uses table-based HTML and inline CSS, which is safer for Gmail signatures.</p>
+
+      <div class="code-label">Public image URL example:</div>
+      <div class="code-box">&lt;img src="https://yourdomain.com/images/skf_logo.png" alt="SKF" width="70" height="34" style="width:70px; height:34px; object-fit:contain;"&gt;</div>
+    </div>
+  </div>
+</body>
+</html>
