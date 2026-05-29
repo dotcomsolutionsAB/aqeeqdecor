@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us | Aqeeq Decor</title>
+  <title>Premium Curtains, Blinds &amp; Home Furnishing in Pune | AQEEQ Decor</title>
+  <meta name="description"
+    content="AQEEQ Decor in Bhawani Peth, Pune offers premium curtains, blinds, wallpapers, flooring, upholstery and home furnishing with consultation, measurement and installation.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
@@ -695,13 +697,15 @@
     }
 
     .about-breadcrumb h1 {
-      margin: 0 0 10px;
+      max-width: 1040px;
+      margin: 0 auto 10px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-size: clamp(2.35rem, 4.5vw, 4.1rem);
       font-weight: 500;
-      line-height: 1;
+      line-height: 1.04;
       color: #fff;
       letter-spacing: 0.04em;
+      text-wrap: balance;
     }
 
     .about-breadcrumb p {
@@ -744,6 +748,99 @@
       color: #5d564e;
       line-height: 1.8;
       font-size: 15px;
+    }
+
+    .about-copy-panel {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px;
+      background: #fff;
+      border: 1px solid #f0ebe3;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy-panel p {
+      margin: 0;
+      color: #5d564e;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .about-copy-panel p+p {
+      margin-top: 16px;
+    }
+
+    .about-copy-panel strong {
+      color: var(--olive);
+      font-weight: 700;
+    }
+
+    .about-intro-grid,
+    .about-list-grid {
+      display: grid;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .about-intro-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .about-list-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .about-mini-card,
+    .about-list-card {
+      background: #fff;
+      border: 1px solid #f0ebe3;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-mini-card {
+      padding: 24px;
+    }
+
+    .about-mini-card h3,
+    .about-list-card h3 {
+      margin: 0 0 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--olive);
+    }
+
+    .about-mini-card p,
+    .about-list-card p {
+      margin: 0;
+      color: #5d564e;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .about-list-card {
+      min-height: 100%;
+      padding: 22px;
+    }
+
+    .about-local-areas {
+      max-width: 980px;
+      margin: 28px auto 0;
+      padding: 28px;
+      border: 1px solid #e7dfd6;
+      border-radius: 22px;
+      background: #fff;
+      color: #5d564e;
+      line-height: 1.9;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .about-local-areas strong {
+      color: var(--olive);
     }
 
     .about-hero-wrap {
@@ -1597,7 +1694,9 @@
 
       .about-services-grid,
       .about-values-grid,
-      .about-process-grid {
+      .about-process-grid,
+      .about-intro-grid,
+      .about-list-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1817,7 +1916,9 @@
       .about-story-grid,
       .about-values-grid,
       .about-why-grid,
-      .about-process-grid {
+      .about-process-grid,
+      .about-intro-grid,
+      .about-list-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -1909,6 +2010,11 @@
         min-height: 200px;
       }
 
+      .about-breadcrumb h1 {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        letter-spacing: 0.02em;
+      }
+
       .about-breadcrumb p {
         font-size: 0.82rem;
         letter-spacing: 0.1em;
@@ -1921,8 +2027,16 @@
       .about-story-grid,
       .about-values-grid,
       .about-why-grid,
-      .about-process-grid {
+      .about-process-grid,
+      .about-intro-grid,
+      .about-list-grid {
         grid-template-columns: 1fr;
+      }
+
+      .about-copy-panel,
+      .about-local-areas {
+        padding: 24px 18px;
+        border-radius: 18px;
       }
 
       .roadmap-wrap {
@@ -2227,11 +2341,11 @@
 
   <div class="top-bar">
     <div class="container">
-      <span>Premium Quality</span>
-      <span>Crafted to Last</span>
-      <span>Customizable Options</span>
-      <span>Expert Guidance</span>
-      <span>Fast Execution</span>
+      <span>Premium Curtains in Pune</span>
+      <span>Designer Blinds</span>
+      <span>Luxury Wallpapers</span>
+      <span>Flooring &amp; Upholstery</span>
+      <span>Custom Furnishing</span>
     </div>
   </div>
 
@@ -2315,157 +2429,86 @@
 
   <section class="about-breadcrumb">
     <div class="container about-breadcrumb-inner">
-      <h1>About Us</h1>
-      <p>Home / About Us</p>
+      <h1>About AQEEQ Decor - Premium Curtains, Blinds &amp; Home Furnishing in Pune</h1>
+      <p>Home / About AQEEQ Decor</p>
     </div>
   </section>
 
   <main>
 
+    <section class="about-section about-intro-section">
+      <div class="container">
+        <div class="about-copy-panel">
+          <p>At <strong>AQEEQ Decor</strong>, we believe every space tells a story - a story of comfort, elegance,
+            personality, and timeless design.</p>
+          <p>As one of the trusted names for premium curtains, blinds, wallpapers, flooring, upholstery, and home
+            furnishing in Pune, we specialize in transforming homes and commercial spaces into thoughtfully designed
+            environments that feel luxurious, functional, and uniquely yours.</p>
+          <p>From sophisticated window treatments to customized decor solutions, we bring together premium materials,
+            expert craftsmanship, and personalized consultation to create interiors that reflect refined living.</p>
+          <p>Whether you are designing a new home, renovating an existing space, or elevating your office interiors,
+            AQEEQ Decor offers tailored furnishing solutions designed around your lifestyle and aesthetic preferences.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="about-section about-story-section">
       <div class="container">
-        <h2 class="about-section-title">OUR STORY</h2>
-        <p class="about-section-copy">We help clients turn ideas into harmonious spaces by carefully combining
-          materials, finishes and furnishing elements that reflect both lifestyle and visual identity.</p>
-        <div class="about-story-grid">
-          <div class="roadmap-wrap">
-            <div class="roadmap-track">
-              <div class="roadmap-item">
-                <div class="roadmap-card">
-                  <span class="roadmap-year">2016</span>
-                  <h3>The Beginning</h3>
-                  <p>Aqeeq Decor started with a simple vision — to bring elegant, practical and high-quality décor
-                    solutions to homes and commercial spaces with a more personal approach.</p>
-                </div>
-                <div class="roadmap-node"></div>
-                <div class="roadmap-spacer"></div>
-              </div>
-
-              <div class="roadmap-item">
-                <div class="roadmap-spacer"></div>
-                <div class="roadmap-node"></div>
-                <div class="roadmap-card">
-                  <span class="roadmap-year">2018</span>
-                  <h3>Expanding Categories</h3>
-                  <p>As client trust grew, the offering expanded beyond curtains into wallpapers, blinds, furniture and
-                    coordinated décor products designed to complete a space beautifully.</p>
-                </div>
-              </div>
-
-              <div class="roadmap-item">
-                <div class="roadmap-card">
-                  <span class="roadmap-year">2020</span>
-                  <h3>Custom Solutions</h3>
-                  <p>The brand evolved into a more tailored décor partner, helping clients with customized
-                    recommendations, measurements, material selection and execution planning.</p>
-                </div>
-                <div class="roadmap-node"></div>
-                <div class="roadmap-spacer"></div>
-              </div>
-
-              <div class="roadmap-item">
-                <div class="roadmap-spacer"></div>
-                <div class="roadmap-node"></div>
-                <div class="roadmap-card">
-                  <span class="roadmap-year">2022</span>
-                  <h3>Execution Excellence</h3>
-                  <p>With a stronger focus on delivery quality and on-site coordination, Aqeeq Decor refined its process
-                    to offer a smoother and more polished end-to-end client experience.</p>
-                </div>
-              </div>
-
-              <div class="roadmap-item">
-                <div class="roadmap-card">
-                  <span class="roadmap-year">2024</span>
-                  <h3>Signature Identity</h3>
-                  <p>The company strengthened its design language with a curated mix of premium materials, practical
-                    layouts and elegant finishing across multiple décor categories.</p>
-                </div>
-                <div class="roadmap-node"></div>
-                <div class="roadmap-spacer"></div>
-              </div>
-
-              <div class="roadmap-item">
-                <div class="roadmap-spacer"></div>
-                <div class="roadmap-node"></div>
-                <div class="roadmap-card">
-                  <span class="roadmap-year">Present</span>
-                  <h3>Growing with Purpose</h3>
-                  <p>Today, Aqeeq Decor continues to shape refined residential and commercial interiors by combining
-                    thoughtful guidance, elegant products and dependable execution.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h2 class="about-section-title">Our Story</h2>
+        <p class="about-section-copy">Crafting elegant spaces across Pune with premium materials, careful selection, and
+          customized furnishing guidance.</p>
+        <div class="about-copy-panel">
+          <p>AQEEQ Decor was founded with a simple philosophy - beautiful interiors should feel personal, timeless, and
+            effortlessly elegant.</p>
+          <p>Over the years, we have helped homeowners, interior enthusiasts, and businesses across Pune create spaces
+            that combine luxury with practicality through carefully selected fabrics, premium materials, and customized
+            furnishing solutions.</p>
+          <p>Located in <strong>Bhawani Peth, Pune</strong>, our furnishing studio serves customers looking for designer
+            curtains, premium blinds, wallpapers, customized upholstery, sofa fabrics, flooring solutions, and bespoke
+            home decor accessories.</p>
+          <p>What sets us apart is our commitment to understanding every client's vision. We do not believe in
+            one-size-fits-all interiors. Every fabric, texture, blind system, wallpaper design, and furnishing detail is
+            thoughtfully curated to complement your space.</p>
         </div>
       </div>
     </section>
-
-    <section class="about-section founders-section">
-      <div class="container">
-        <h2 class="about-section-title">FOUNDERS</h2>
-        <p class="about-section-copy">Meet the visionaries behind Aqeeq Decor, bringing together elegant design
-          thinking, practical guidance and a passion for beautifully finished spaces.</p>
-        <div class="founders-grid">
-          <article class="founder-card">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80"
-              alt="Founder 1 placeholder portrait">
-            <div class="founder-body">
-              <h3>Founder Name One</h3>
-              <h4>Co-Founder & Creative Director</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel augue non turpis facilisis
-                dictum. He leads the design vision, helping shape interiors with elegance, balance and thoughtful
-                detail.</p>
-            </div>
-          </article>
-          <article class="founder-card">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80"
-              alt="Founder 2 placeholder portrait">
-            <div class="founder-body">
-              <h3>Founder Name Two</h3>
-              <h4>Co-Founder & Operations Lead</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat, tortor vel imperdiet
-                pulvinar, supports smooth execution, product coordination and client experience across every décor
-                journey.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
 
     <section class="about-section about-values-section about-why-section">
       <div class="container">
-        <h2 class="about-section-title">WHY CHOOSE US</h2>
-        <p class="about-section-copy">We combine aesthetic understanding with practical execution so clients feel
-          confident throughout the décor journey, from selection to finishing.</p>
+        <h2 class="about-section-title">Why Homeowners &amp; Businesses Choose AQEEQ Decor</h2>
+        <p class="about-section-copy">Premium quality, thoughtful customization, and dependable guidance from selection
+          to installation.</p>
         <div class="about-why-grid">
           <article class="about-why-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">✦</div>
-              <h3>Premium Quality</h3>
-              <p>We use carefully selected materials and finishes to deliver elegant decor solutions that last.</p>
+              <h3>Premium Quality Materials</h3>
+              <p>We source carefully selected fabrics, textures, and finishes to ensure your interiors feel elegant,
+                durable, and timeless.</p>
             </div>
           </article>
           <article class="about-why-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">⌂</div>
-              <h3>Tailored Solutions</h3>
-              <p>Every project is customized to your layout, style, taste, and practical requirements.</p>
+              <h3>Customized Design Solutions</h3>
+              <p>From made-to-measure curtains to customized blinds and upholstery, we tailor every detail according to
+                your space and requirements.</p>
             </div>
           </article>
           <article class="about-why-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">✓</div>
-              <h3>Expert Guidance</h3>
-              <p>From selection to installation, our team helps you make the right decor decisions with confidence.</p>
+              <h3>End-to-End Consultation</h3>
+              <p>From fabric selection and measurements to installation and styling guidance, our team ensures a seamless
+                experience.</p>
             </div>
           </article>
           <article class="about-why-card">
             <div class="about-why-card-body">
               <div class="about-card-icon">⚒</div>
-              <h3>Professional Execution</h3>
-              <p>We focus on smooth execution, timely delivery, and neat finishing across every category we offer.</p>
+              <h3>Trusted Service Across Pune</h3>
+              <p>We proudly serve residential and commercial furnishing needs across Bhawani Peth and key Pune
+                neighborhoods.</p>
             </div>
           </article>
         </div>
@@ -2474,57 +2517,99 @@
 
     <section class="about-section">
       <div class="container">
-        <h2 class="about-section-title">HOW WE WORK</h2>
-        <p class="about-section-copy">Our process is designed to feel simple and collaborative, helping clients shape
-          their space with clarity and confidence.</p>
+        <h2 class="about-section-title">Wide Range of Furnishing Solutions</h2>
+        <p class="about-section-copy">Explore premium decor categories curated for elegant homes, offices, and commercial
+          interiors in Pune.</p>
+        <div class="about-list-grid">
+          <article class="about-list-card">
+            <h3>Designer Curtains</h3>
+            <p>Premium curtain fabrics, sheer curtains, blackout curtains, and made-to-measure window treatments.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Premium Blinds</h3>
+            <p>Roller blinds, zebra blinds, Roman blinds, and motorized blinds tailored to your space.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Wallpapers</h3>
+            <p>Elegant wallpaper designs, textures, and finishes to add character to living and commercial spaces.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Upholstery</h3>
+            <p>Sofa upholstery, sofa fabrics, cushions, and soft furnishing details for refined comfort.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Flooring Solutions</h3>
+            <p>Premium flooring options selected for durability, finish, and visual harmony.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Home Furnishing</h3>
+            <p>Accessories and finishing touches that bring warmth, balance, and sophistication to your interiors.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Commercial Furnishing</h3>
+            <p>Elegant, functional solutions for offices, studios, retail spaces, and hospitality interiors.</p>
+          </article>
+          <article class="about-list-card">
+            <h3>Custom Decor Guidance</h3>
+            <p>Personalized recommendations for materials, colors, textures, and installation planning.</p>
+          </article>
+        </div>
+        <div class="about-local-areas">
+          <strong>Areas we serve in Pune:</strong> Bhawani Peth, Camp, Wanowrie, Kondhwa, Kalyani Nagar, NIBM,
+          Salisbury Park, Koregaon Park, Magarpatta, Hadapsar, and nearby locations.
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <h2 class="about-section-title">Our Process - Designed Around You</h2>
+        <p class="about-section-copy">A seamless furnishing journey, from consultation to professional installation.</p>
         <div class="about-process-grid">
           <article class="about-process-card">
             <div class="about-process-body">
               <div class="about-card-icon">01</div>
-              <h3>Understand the Space</h3>
-              <p>We begin with your layout, decor preferences, practical needs and the atmosphere you want the space to
-                create.</p>
+              <h3>Consultation</h3>
+              <p>We begin by understanding your style preferences, space requirements, and functional needs.</p>
             </div>
           </article>
           <article class="about-process-card">
             <div class="about-process-body">
               <div class="about-card-icon">02</div>
-              <h3>Curate the Right Mix</h3>
-              <p>We guide you through suitable categories, tones, finishes and combinations that work beautifully
-                together.</p>
+              <h3>Material Selection</h3>
+              <p>Choose from a curated range of premium fabrics, blinds, textures, wallpapers, and finishes.</p>
             </div>
           </article>
           <article class="about-process-card">
             <div class="about-process-body">
               <div class="about-card-icon">03</div>
-              <h3>Complete the Experience</h3>
-              <p>From final selections to smooth execution, we aim to deliver a polished and cohesive décor outcome.</p>
+              <h3>Measurement &amp; Customization</h3>
+              <p>Our team ensures precise measurements and customized recommendations tailored specifically for your
+                interiors.</p>
             </div>
           </article>
           <article class="about-process-card">
             <div class="about-process-body">
               <div class="about-card-icon">04</div>
-              <h3>Plan Measurements</h3>
-              <p>We assess dimensions, proportions and practical site requirements to ensure every recommendation fits
-                beautifully and functions properly.</p>
+              <h3>Professional Installation</h3>
+              <p>We complete the process with professional fitting and installation to deliver a polished, refined
+                finish.</p>
             </div>
           </article>
-          <article class="about-process-card">
-            <div class="about-process-body">
-              <div class="about-card-icon">05</div>
-              <h3>Finalize Selections</h3>
-              <p>We help you confidently finalize materials, finishes, colors and product combinations that align with
-                your vision and budget.</p>
-            </div>
-          </article>
-          <article class="about-process-card">
-            <div class="about-process-body">
-              <div class="about-card-icon">06</div>
-              <h3>Deliver & Install</h3>
-              <p>Our team coordinates smooth delivery and neat installation so the final result feels refined, complete
-                and ready to enjoy.</p>
-            </div>
-          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <h2 class="about-section-title">Creating Spaces That Feel Like Home</h2>
+        <div class="about-copy-panel">
+          <p>At AQEEQ Decor, we understand that interiors are not just about aesthetics - they are about creating spaces
+            where memories are made.</p>
+          <p>Whether it is a luxurious living room, a cozy bedroom, an elegant office, or a modern commercial space, we
+            strive to deliver furnishing solutions that bring warmth, sophistication, and functionality together.</p>
+          <p><strong>Our mission is simple:</strong> to help Pune transform ordinary spaces into extraordinary
+            experiences.</p>
         </div>
       </div>
     </section>
@@ -2532,12 +2617,12 @@
     <section class="about-cta-section">
       <div class="container">
         <div class="about-cta-wrap">
-          <span class="about-section-kicker">Let’s Work Together</span>
-          <h2>Ready to create a more elegant and functional space?</h2>
-          <p>Whether you are furnishing a new home, enhancing a room or planning décor for a commercial setting, Aqeeq
-            Decor is here to guide you with clarity, detail and style.</p>
+          <span class="about-section-kicker">Transform Your Space with AQEEQ Decor</span>
+          <h2>Looking for premium curtains, blinds, wallpapers, or customized furnishing solutions in Pune?</h2>
+          <p>Visit our studio or schedule a consultation with our experts for personalized recommendations, measurements,
+            and installation support. Experience interiors designed with elegance, comfort, and attention to detail.</p>
           <div class="about-cta-actions">
-            <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#" class="about-btn-primary">Contact Us</a>
+            <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#" class="about-btn-primary">Book Your Consultation Today</a>
             <a href="tel:+918698725668" class="about-btn-secondary"><span class="cta-call-icon"
                 aria-hidden="true">☎</span><span>Call +91 86987 25668</span></a>
           </div>
@@ -2656,65 +2741,6 @@
     <a href="#" class="bg-secondary position-relative align-items-center rounded-circle d-block"></a>
   </div>
   <!--Back-to-top Button end-->
-
-  <!-- Intereal Info Starts -->
-  <div class="modal fade intereal-info-modal" id="interealModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog  h-100 my-0 rounded-0 me-0 modal-sm">
-      <div class="modal-content h-100 rounded-0">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close me-4" data-bs-dismiss="modal" aria-label="Close"><i
-              class="fa fa-times bg-secondary text-center white" aria-hidden="true"></i></button>
-        </div>
-        <div class="modal-body mt-5 mx-3">
-          <div class="logo mb-4">
-            <img src="image/logo1.png" alt="logo">
-          </div>
-          <div class="info mb-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat.</p>
-            <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-              id est laborum.</p>
-          </div>
-          <div class="contact-info mb-4">
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                <li>256 Elizaberth Ave, CA, 90025</li>
-              </ul>
-            </div>
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                <li>+569 2316 2156</li>
-              </ul>
-            </div>
-            <div>
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                    data-cfemail="b4dddad2dbf4dddac0d1c6d1d5d89ad7dbd9">[email&#160;protected]</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-socials mb-4">
-            <ul class="d-flex gap-1 my-2">
-              <li><a href=""><i class="fa fa-facebook bg-primary bg-opacity-25 rounded-circle text-center"
-                    aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter bg-primary bg-opacity-25 rounded-circle text-center"
-                    aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin bg-primary bg-opacity-25 rounded-circle text-center"
-                    aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus bg-primary bg-opacity-25 rounded-circle text-center"
-                    aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Intereal Info Ends -->
 
   <script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
