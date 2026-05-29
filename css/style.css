@@ -1279,16 +1279,25 @@ footer .overlay {
   background-color: #252525;
   opacity: 0.9;
 }
-footer .footer-middle .footer-socials li a i {
+footer .footer-middle .footer-socials li a {
   height: 40px;
   width: 40px;
-  font-size: 15px;
-  line-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
   transition: all 0.3s ease;
 }
-footer .footer-middle .footer-socials li a i:hover {
+footer .footer-middle .footer-socials li a svg {
+  display: block;
+}
+footer .footer-middle .footer-socials li a:hover {
   background-color: #906E49 !important;
   color: #ffffff;
+  transform: translateY(-2px);
   transition: all 0.3s ease;
 }
 
