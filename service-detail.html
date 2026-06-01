@@ -7,7 +7,8 @@
   <title>Luxury Curtains | AQEEQ Decor</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="image/01_intereal_thumbnail.png">
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
+  <link rel="apple-touch-icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,6 +22,7 @@
 
   <style>
     :root {
+      --container: 1240px;
       --aq-olive: #566236;
       --aq-olive-dark: #2f351f;
       --aq-cream: #f6f2eb;
@@ -33,6 +35,338 @@
     body {
       background: var(--aq-soft);
       color: var(--aq-text);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body .container {
+      width: min(var(--container), calc(100% - 48px));
+      max-width: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .top-bar {
+      background: linear-gradient(90deg, #556337, #434e2b 55%, #59673d);
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .top-bar .container {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.95;
+      white-space: nowrap;
+    }
+
+    .top-bar span::before {
+      content: '✦';
+      font-size: 10px;
+      opacity: 0.8;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid #ece7df;
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      position: relative;
+      z-index: 1201;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #e9e2d8;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--aq-olive);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      line-height: 1;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--aq-olive);
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.34em;
+      color: var(--aq-muted);
+      margin-top: 2px;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    header nav a {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #47433c;
+      transition: color 0.2s ease;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+      color: var(--aq-olive);
+    }
+
+    .nav-item {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-item > a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .nav-item.services-menu > a::after,
+    .has-children > a::after {
+      content: '▾';
+      font-size: 0.85em;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-item.services-menu:hover > a::after {
+      transform: rotate(180deg);
+    }
+
+    .has-children {
+      position: relative;
+    }
+
+    .has-children:hover > a::after {
+      transform: rotate(-90deg);
+    }
+
+    .dropdown-menu,
+    .sub-dropdown {
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+      background: #fff;
+      border: 1px solid #ece4d9;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12);
+      min-width: 0;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 280px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+      z-index: 60;
+      display: block;
+    }
+
+    .nav-item.services-menu:hover > .dropdown-menu,
+    .nav-item.services-menu:focus-within > .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu > li,
+    .sub-dropdown > li {
+      position: relative;
+    }
+
+    .dropdown-menu > li > a,
+    .sub-dropdown > li > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 12px 18px;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5a544a;
+      transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    .dropdown-menu > li > a:hover,
+    .sub-dropdown > li > a:hover {
+      background: rgba(74, 84, 48, 0.12);
+      color: var(--aq-olive);
+      padding-left: 22px;
+    }
+
+    .sub-dropdown {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      min-width: 240px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 70;
+    }
+
+    .has-children::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -14px;
+      width: 14px;
+      height: 100%;
+    }
+
+    .has-children:hover > a {
+      color: var(--aq-olive);
+    }
+
+    .has-children:hover > .sub-dropdown,
+    .has-children:focus-within > .sub-dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: var(--aq-olive);
+      color: #fff !important;
+      font-family: "Inter", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid var(--aq-olive);
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .call-btn:hover {
+      background: var(--aq-olive-dark);
+      border-color: var(--aq-olive-dark);
+      color: #fff !important;
+    }
+
+    .call-icon {
+      display: inline-flex;
+      line-height: 1;
+    }
+
+    .breadcrumb {
+      min-height: 260px;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 0;
+      background:
+        linear-gradient(90deg, rgba(21, 24, 15, 0.78), rgba(86, 98, 54, 0.52)),
+        url('image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg') center / cover no-repeat;
+    }
+
+    .breadcrumb .overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 72% 40%, rgba(255, 255, 255, 0.14), transparent 32%);
+    }
+
+    .breadcrumb-inner h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 0.98;
+      color: #fff;
+      text-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
     }
 
     .service-detail {
@@ -205,7 +539,48 @@
       align-items: start;
     }
 
-    .aq-content-panel,
+    .aq-content-panel {
+      padding: clamp(26px, 3.2vw, 38px);
+      overflow: hidden;
+    }
+
+    .aq-gallery-panel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #202616 0%, #566236 100%);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 26px 70px rgba(35, 30, 24, 0.14);
+    }
+
+    .aq-gallery-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.16), rgba(255, 255, 255, 0.04));
+      pointer-events: none;
+    }
+
+    .aq-gallery-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .aq-gallery-panel .aq-kicker {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .aq-gallery-panel h3 {
+      color: #fff;
+    }
+
+    .aq-gallery-panel p {
+      max-width: 690px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
     .aq-gallery-panel {
       padding: clamp(26px, 3.2vw, 38px);
     }
@@ -287,9 +662,9 @@
     .aq-gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-auto-rows: 168px;
+      grid-auto-rows: 180px;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .aq-gallery-item {
@@ -300,6 +675,7 @@
       padding: 0;
       cursor: pointer;
       background: #d8d0c4;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
       animation: aqImageIn 0.8s ease both;
     }
 
@@ -337,7 +713,7 @@
     }
 
     .aq-gallery-item::after {
-      content: 'View';
+      content: 'Open Image';
       position: absolute;
       right: 14px;
       bottom: 14px;
@@ -353,6 +729,263 @@
       opacity: 0;
       transform: translateY(8px);
       transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .aq-services-cta {
+      padding: 56px 0 0;
+      background: #faf8f4;
+    }
+
+    .aq-services-cta-card {
+      padding: 30px 24px 30px 42px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(90deg, #32291e 0%, #4a4827 38%, #55612f 100%);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .aq-services-cta-card .aq-kicker {
+      min-height: auto;
+      margin: 0 0 14px;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.86);
+      letter-spacing: 0.14em;
+    }
+
+    .aq-services-cta-card h2 {
+      max-width: 980px;
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.35rem, 4.2vw, 3.8rem);
+      line-height: 0.98;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .aq-services-cta-card h2 span {
+      color: #efe8d9;
+    }
+
+    .aq-services-cta-card p {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+
+    .aq-cta-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .aq-services-cta .aq-detail-btn,
+    .aq-services-cta .aq-detail-btn-outline {
+      min-height: 52px;
+      min-width: 190px;
+      border-radius: 12px;
+      padding: 0 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transform: none;
+    }
+
+    .aq-services-cta .aq-detail-btn {
+      background: #fff;
+      color: #2b2b2b;
+      border: 1px solid #fff;
+    }
+
+    .aq-services-cta .aq-detail-btn:hover {
+      background: rgba(255, 255, 255, 0.92);
+      color: #2b2b2b;
+      transform: none;
+    }
+
+    .aq-services-cta .aq-detail-btn-outline {
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: #fff;
+    }
+
+    .aq-services-cta .aq-detail-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.34);
+      color: #fff;
+      transform: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: linear-gradient(90deg, #566236, #3f4826 50%, #58643a);
+      color: #fff;
+      padding: 0;
+    }
+
+    .footer-grid {
+      padding: 42px 0 22px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1.1fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    footer h4 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    footer ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.82);
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .footer-brand p,
+    .footer-links li,
+    .footer-contact p,
+    .footer-newsletter p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    footer .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    footer .social-links a,
+    footer .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    footer .social-links a:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+    }
+
+    footer .footer-contact p {
+      margin: 0 0 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    footer .contact-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    footer .contact-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    footer .contact-text {
+      display: inline-block;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+      transition: color 0.2s ease;
+    }
+
+    footer a.contact-text:hover {
+      color: #fff;
+    }
+
+    footer .contact-icon-top {
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      padding: 14px;
+      outline: 0;
+    }
+
+    .newsletter-form button {
+      border: 0;
+      align-self: stretch;
+      padding: 0 16px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .newsletter-form button:hover {
+      background: #fff;
+      color: var(--aq-olive);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.72);
+      padding: 16px 0 22px;
     }
 
     .aq-gallery-item:hover img,
@@ -499,6 +1132,80 @@
         padding: 68px 0 74px;
       }
 
+      .breadcrumb {
+        min-height: 220px;
+      }
+
+      body .container {
+        width: min(var(--container), calc(100% - 32px));
+      }
+
+      .top-bar .container {
+        gap: 14px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      header nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px;
+        border: 1px solid var(--aq-line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 20px 50px rgba(27, 22, 16, 0.14);
+      }
+
+      header nav.mobile-open {
+        display: flex;
+      }
+
+      header nav > a,
+      header nav .nav-item > a,
+      .call-btn {
+        width: 100%;
+        justify-content: space-between;
+        padding: 13px 14px;
+        border-radius: 8px;
+      }
+
+      .nav-item {
+        display: block;
+      }
+
+      .dropdown-menu,
+      .sub-dropdown {
+        position: static;
+        display: none;
+        min-width: 0;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 8px;
+        margin: 4px 0 8px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .nav-item.services-menu.open > .dropdown-menu,
+      .has-children.open > .sub-dropdown {
+        display: block;
+      }
+
+      .has-children:hover > a::after,
+      .nav-item.services-menu:hover > a::after {
+        transform: none;
+      }
+
       .aq-detail-hero,
       .aq-content-grid {
         grid-template-columns: 1fr;
@@ -515,9 +1222,65 @@
       .aq-process-grid {
         grid-template-columns: 1fr;
       }
+
+      .aq-services-cta {
+        padding: 50px 0 0;
+      }
+
+      .aq-services-cta-card {
+        padding: 26px 20px 26px 26px;
+        border-radius: 24px;
+        min-height: auto;
+      }
+
+      .aq-services-cta-card h2 {
+        font-size: clamp(2.1rem, 6vw, 3rem);
+      }
+
+      .aq-cta-actions {
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .aq-services-cta .aq-detail-btn,
+      .aq-services-cta .aq-detail-btn-outline {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 575px) {
+      body .container {
+        width: min(var(--container), calc(100% - 24px));
+      }
+
+      .top-bar .container {
+        min-height: auto;
+        padding-top: 9px;
+        padding-bottom: 9px;
+      }
+
+      .top-bar span {
+        font-size: 11px;
+      }
+
+      .navbar {
+        min-height: 74px;
+      }
+
+      .breadcrumb {
+        min-height: 190px;
+      }
+
+      .logo-text strong {
+        font-size: 1.55rem;
+      }
+
       .service-detail-title h2 {
         font-size: 2.8rem;
       }
@@ -542,6 +1305,47 @@
       .aq-detail-btn-outline {
         width: 100%;
       }
+
+      .aq-services-cta-card {
+        padding: 22px 16px 22px 18px;
+        border-radius: 22px;
+      }
+
+      .aq-services-cta-card .aq-kicker,
+      .aq-services-cta-card h2,
+      .aq-services-cta-card p {
+        text-align: left;
+      }
+
+      .aq-services-cta-card h2 {
+        font-size: clamp(1.95rem, 9vw, 2.7rem);
+      }
+
+      .aq-services-cta-card p {
+        font-size: 0.86rem;
+        line-height: 1.7;
+      }
+
+      .aq-cta-actions,
+      .aq-cta-actions .aq-detail-btn,
+      .aq-cta-actions .aq-detail-btn-outline {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px;
+      }
+
+      .newsletter-form button {
+        min-height: 44px;
+        border-radius: 6px;
+      }
     }
   </style>
 
@@ -549,156 +1353,93 @@
 </head>
 <body>
 
-  <!-- Header Section Starts -->
-  <Header class="position-relative z-3">
-    <div class="header-top py-3">
-      <div class="container">
-        <div class="header-top-inner d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <div class="header-contact">
-            <ul class="d-flex white flex-wrap">
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="tel:+918698725668"><i class="fa fa-phone me-2" aria-hidden="true"></i>+91 86987 25668</a></li>
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="mailto:info@aqeeqdecor.com"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i>info@aqeeqdecor.com</a></li>
-              <li class="small"><i class="fa fa-clock-o me-2" aria-hidden="true"></i>Mon - Sat: 10:00 - 19:00</li>
-            </ul>
-          </div>
-          <div class="social-links">
-            <ul class="d-flex gap-2">
-              <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div> 
+  <div class="top-bar">
+    <div class="container">
+      <span>Premium Quality</span>
+      <span>Crafted to Last</span>
+      <span>Customizable Options</span>
+      <span>Expert Guidance</span>
+      <span>Fast Execution</span>
     </div>
-    <div class="header-nav header-nav-menu" id="header-nav-menu">
-      <div class="container">
-        <div class="header-nav-inner border-top border-light py-3">
-          <div class="row gx-xl-5 align-items-center justify-content-between">
-            <div class="col-xl-2 col-md-3 col-6 order-1">
-              <div class="header-logo">
-                <a href="index.html"><img src="image/logo.png" alt="logo" class="w-100"></a>
-              </div>
-            </div>
-            <div class="col-xl-7 col-0 order-3 order-xl-2">
-              <div class="header-nav">
-                <div class="navbar-collapse " id="bs-example-navbar-collapse-1">
-                  <ul class="navbar-nav flex-row align-items-center justify-content-center" id="responsive-menu">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Home
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index.html">Home 1</a></li>
-                        <li><a class="dropdown-item text-capitalize border-grey"
-                            href="index-2.html">Home 2</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="index-3.html">Home 3</a></li>         
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize" 
-                            href="team.html">Our Team</a></li>
-                        <li><a class="dropdown-item text-capitalize" 
-                            href="team-detail.html">Team Detail</a></li>    
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-list.html">Career</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="career-detail.html">Career Detail</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="faq.html">Faq</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="pricing.html">pricing</a></li>
-                        <li><a class="dropdown-item  text-capitalize"
-                            href="testimonial.html">Testimonial</a></li>
-                        <li><a class="dropdown-item text-capitalize"
-                            href="coming-soon.html">Coming Soon</a></li>
-                        <li><a class="dropdown-item  text-capitalize" 
-                            href="error.html">404Error</a></li>   
-                        <li><a class="dropdown-item  text-capitalize" 
-                            href="search.html">Search Result</a></li>   
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase active" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Services
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service.html">All Services</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html?service=curtains">Curtains</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html?service=wallpapers">Wallpapers</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html?service=furniture">Furniture</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html?service=window-blinds">Window Blinds</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html?service=mattress">Mattress</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="service-detail.html?service=floorings">Floorings</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Projects
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project.html">Projet List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="project-detail.html">Projet Detail</a></li>    
-                      </ul>
-                    </li>
-                    <li class="nav-item dropdown ">
-                      <a class="nav-link dropdown-toggle text fw-medium text-uppercase" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Blog
-                      </a>
-                      <ul class="dropdown-menu bg-lightgrey p-0 rounded-0 border-0">
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-list.html">Blog List</a></li>
-                        <li><a class="dropdown-item text-capitalize black border-0"
-                            href="blog-detail.html">Blog Single</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text fw-medium text-uppercase" href="contact.html">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-4 col-0  order-2 order-xl-3">
-              <div class="header-icons d-none d-xl-block">
-                <ul class="d-flex align-items-center gap-4  justify-content-xl-end">
-                  <li><a class="position-relative" data-bs-toggle="modal" data-bs-target="#interealModal"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                  </a></li>
-                  <li><a href="consultation.html" class="btn-secondary">Get A Qoute</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div id="slicknav-mobile"></div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home">
+        <div class="logo-text">
+          <strong>AQEEQ</strong>
+          <span>DECOR</span>
         </div>
-      </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <a href="index-3.html">HOME</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="project.html">PROJECTS</a>
+        <div class="nav-item services-menu">
+          <a href="service.html" class="active">SERVICES</a>
+          <ul class="dropdown-menu">
+            <li><a href="service.html">All Services</a></li>
+            <li><a href="service-detail.html?service=curtains">Curtains</a></li>
+            <li><a href="service-detail.html?service=wallpapers">Wallpapers</a></li>
+            <li class="has-children">
+              <a href="service-detail.html?service=furniture">Furniture</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Modular</a></li>
+                <li><a href="#">Office furniture</a></li>
+                <li><a href="#">Sofas</a></li>
+                <li><a href="#">Dining table</a></li>
+                <li><a href="#">Dining chair</a></li>
+                <li><a href="#">Accent chair</a></li>
+                <li><a href="#">Beds</a></li>
+                <li><a href="#">Bedside table</a></li>
+                <li><a href="#">Pouffee</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a href="service-detail.html?service=window-blinds">Window Blinds</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Blinds</a></li>
+                <li><a href="#">Roller</a></li>
+                <li><a href="#">Zebra</a></li>
+                <li><a href="#">Vertical</a></li>
+                <li><a href="#">Roman</a></li>
+                <li><a href="#">Honeycomb</a></li>
+                <li><a href="#">Outdoor</a></li>
+                <li><a href="#">PVC</a></li>
+                <li><a href="#">Mansoon</a></li>
+                <li><a href="#">Wooden</a></li>
+                <li><a href="#">Aluminium Venetian</a></li>
+              </ul>
+            </li>
+            <li><a href="service-detail.html?service=mattress">Mattress</a></li>
+            <li class="has-children">
+              <a href="service-detail.html?service=floorings">Floorings</a>
+              <ul class="sub-dropdown">
+                <li><a href="#">Wooden</a></li>
+                <li><a href="#">PVC</a></li>
+                <li><a href="#">Engineered</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Gym</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <a href="blogs.html">BLOGS</a>
+        <a href="contact.html">CONTACT US</a>
+        <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
+          <span class="call-icon" aria-hidden="true">☎</span>
+          <span>+91 86987 25668</span>
+        </a>
+      </nav>
     </div>
-  </Header>
-  <!-- Header Section Ends -->
+  </header>
 
   <!-- Breadcrumb Section Starts -->
   <section class="breadcrumb position-relative mb-0">
@@ -842,215 +1583,119 @@
     </div>
   </div>
 
-  <!-- Appointment Section Starts -->
-  <div class="appointment py-5 bg-secondarylight">
+  <section class="aq-services-cta">
     <div class="container">
-      <div class="appointment-inner">
-        <div class="row align-items-center gy-4">
-          <div class="col-lg-3 col-md-4">
-            <div class="appointment-left">
-              <ul class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                <li class="me-3 pe-3 border-end border-2 border-white"><img src="image/chat.png" alt="chat" style="height: 44px; width: 44px;"></li>
-                <li class="teko">
-                  <span class="h6 primary mb-0">Book Your Visit</span>
-                  <span class="d-block h3 mb-0">+91 86987 25668</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-8">
-            <div class="appointment-center">
-              <p class="mb-0">Bring room photos, measurements, or a simple idea. Our team will help you choose coordinated materials, colors, finishes, and installation details.</p>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="appointment-right text-center text-lg-end">
-              <a href="contact.html" class="btn-primary">Book An Appointment</a>
-            </div>
-          </div>
+      <div class="aq-services-cta-card">
+        <span class="aq-kicker">Let’s Work Together</span>
+        <h2>Ready To Create A More Elegant And Functional Space?</h2>
+        <p>Whether you are furnishing a new home, enhancing a room or planning decor for a commercial setting, Aqeeq Decor is here to guide you with clarity, detail and style.</p>
+        <div class="aq-cta-actions">
+          <a href="contact.html" class="aq-detail-btn">Contact Us</a>
+          <a href="tel:+918698725668" class="aq-detail-btn-outline" aria-label="Call +91 86987 25668">
+            <span class="call-icon" aria-hidden="true">☎</span>
+            <span>Call +91 86987 25668</span>
+          </a>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Appointment Section Ends -->
+  </section>
 
-  <!-- Footer Section Starts -->
-  <footer class="section-padding position-relative pb-5">
-    <div class="overlay"></div>
-    <div class="container position-relative">
-      <div class="footer-inner white">
-        <div class="footer-top pb-5 mb-5 border-bottom border-2 border-light">
-          <div class="row align-items-center gx-lg-5 gy-4">
-            <div class="col-lg-3 col-md-4">
-              <div class="footer-top-left">
-                <img src="image/logo.png" alt="footer logo" class="w-100">
-              </div>
-            </div>
-            <div class="col-lg-9 col-md-8">
-              <div class="footer-top-right">
-                <p class="white mb-0 h6 fw-normal fst-italic">Thoughtfully selected curtains, wallpapers, furniture, blinds, mattresses, and flooring for homes and commercial spaces.</p>
-              </div>
-            </div>
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index-3.html" class="logo" aria-label="Aqeeq Decor home" style="color:#fff; margin-bottom: 14px;">
+          <div class="logo-text">
+            <strong style="color: #8fa15f;">AQEEQ</strong>
+            <span style="color: rgba(255,255,255,0.75);">DECOR</span>
           </div>
+        </a>
+        <p>Thoughtfully designed decor solutions crafted with quality materials and a passion for detail.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M15.1 8H13c-.5 0-.8.3-.8.9v1.8H15l-.4 2.9h-2.4V21H9.2v-7.4H6.8v-2.9h2.4V8.6c0-2.4 1.4-3.7 3.6-3.7 1 0 1.9.1 2.3.1v3Z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M6.5 9.2H3.4V20h3.1V9.2ZM5 4a1.8 1.8 0 1 0 0 3.6A1.8 1.8 0 0 0 5 4Zm15.5 9.8c0-3.1-1.7-4.8-4.1-4.8-1.9 0-2.7 1-3.2 1.8V9.2h-3V20h3.1v-5.9c0-1.5.8-2.4 2.1-2.4 1.2 0 1.9.8 1.9 2.5V20h3.1v-6.2Z"/>
+            </svg>
+          </a>
         </div>
-        <div class="footer-middle mb-5  pb-5 border-bottom border-light text-center text-md-start">
-          <div class="row gx-lg-5 gy-5">
-            <div class="col-lg-4">
-              <div class="footer-info">
-                <p>Aqeeq Decor helps you create refined, practical interiors with coordinated materials and guided product selection.</p>
-                <p class="mb-4">Visit our showroom or connect with us for decor guidance, product recommendations, and installation support.</p>
-                <div class="footer-socials mb-4">
-                  <ul class="d-flex gap-1 my-2 justify-content-center justify-content-md-start">
-                    <li>
-                      <a href="#" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                          <path fill="currentColor" d="M15.1 8H13c-.5 0-.8.3-.8.9v1.8H15l-.4 2.9h-2.4V21H9.2v-7.4H6.8v-2.9h2.4V8.6c0-2.4 1.4-3.7 3.6-3.7 1 0 1.9.1 2.3.1v3Z"/>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                          <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-                          <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                          <path fill="currentColor" d="M6.5 9.2H3.4V20h3.1V9.2ZM5 4a1.8 1.8 0 1 0 0 3.6A1.8 1.8 0 0 0 5 4Zm15.5 9.8c0-3.1-1.7-4.8-4.1-4.8-1.9 0-2.7 1-3.2 1.8V9.2h-3V20h3.1v-5.9c0-1.5.8-2.4 2.1-2.4 1.2 0 1.9.8 1.9 2.5V20h3.1v-6.2Z"/>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="contact-info">
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                      <li>Pune, Maharashtra</li>
-                    </ul>
-                  </div>
-                  <div class="mb-3">
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                      <li>+91 86987 25668</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
-                      <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                      <li><a href="mailto:info@aqeeqdecor.com">info@aqeeqdecor.com</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="quick-links">
-                <h4 class="white mb-2">Quick Link</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="service.html">Services</a></li>
-                  <li><a href="project.html">Projects</a></li>
-                  <li><a href="blogs.html">Blogs</a></li>
-                  <li><a href="">Policies</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-              <div class="services">
-                <h4 class="white mb-2">Services</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <ul class="d-flex flex-column gap-3">
-                  <li><a href="service-detail.html?service=curtains">Curtains</a></li>
-                  <li><a href="service-detail.html?service=wallpapers">Wallpapers</a></li>
-                  <li><a href="service-detail.html?service=furniture">Furniture</a></li>
-                  <li><a href="service-detail.html?service=window-blinds">Window Blinds</a></li>
-                  <li><a href="service-detail.html?service=mattress">Mattress</a></li>
-                  <li><a href="service-detail.html?service=floorings">Floorings</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="services">
-                <h4 class="white mb-2">Get Decor Updates</h4>
-                <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <p class="mb-3">Subscribe for new collections, finish ideas, and practical styling notes from Aqeeq Decor.</p>
-                <div class="subscribe">
-                  <input type="email" placeholder="Email" class="mb-2">
-                  <a href="" class="btn-primary">Subscribe</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom text-center">
-          <p class="mb-0"> &copy;2026 Aqeeq Decor. All rights reserved.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="index-3.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>OPENING HOURS</h4>
+        <ul>
+          <li>Mon - Sat: 10 am - 8 pm</li>
+          <li>Sunday: Open on Request</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>CONTACT US</h4>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <a class="contact-text" href="tel:+918698725668">+91 86987 25668</a>
+        </p>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <a class="contact-text" href="tel:+918319163736">+91 83191 63736</a>
+        </p>
+        <p>
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+          </span>
+          <a class="contact-text" href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a>
+        </p>
+        <p>
+          <span class="contact-icon contact-icon-top" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+        </p>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>NEWSLETTER</h4>
+        <p>Subscribe to get updates on new collections &amp; offers.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email">
+          <button aria-label="Submit">Submit</button>
         </div>
       </div>
     </div>
+    <div class="container copyright">© 2026 Aqeeq Decor. All Rights Reserved.</div>
   </footer>
-  <!-- Footer Section Ends -->
 
   <!--Back-to-top Button start-->
   <div id="back-to-top">
     <a href="#" class="bg-secondary position-relative align-items-center rounded-circle d-block"></a>
   </div>
   <!--Back-to-top Button end-->
-
-  <!-- Aqeeq Decor Info Starts -->
-  <div class="modal fade intereal-info-modal" id="interealModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog  h-100 my-0 rounded-0 me-0 modal-sm">
-      <div class="modal-content h-100 rounded-0">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close me-4" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times bg-secondary text-center white" aria-hidden="true"></i></button>
-        </div>
-        <div class="modal-body mt-5 mx-3">
-          <div class="logo mb-4">
-            <img src="image/logo1.png" alt="logo">
-          </div>
-          <div class="info mb-4">
-            <p>Aqeeq Decor curates home furnishing and decor solutions that balance comfort, material quality, and visual warmth.</p>
-            <p class="mb-0">Our team supports you with product selection, measurements, finishes, and installation guidance for homes, offices, and commercial spaces.</p>
-          </div>
-          <div class="contact-info mb-4">
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                <li>Pune, Maharashtra</li>
-              </ul>
-            </div>
-            <div class="mb-2 pb-2 border-bottom border-grey">
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                <li>+91 86987 25668</li>
-              </ul>
-            </div>
-            <div>
-              <ul class="align-items-center d-flex gap-2">
-                <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                <li><a href="mailto:info@aqeeqdecor.com">info@aqeeqdecor.com</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-socials mb-4">
-            <ul class="d-flex gap-1 my-2">
-              <li><a href=""><i class="fa fa-facebook bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-              <li><a href=""><i class="fa fa-google-plus bg-primary bg-opacity-25 rounded-circle text-center" aria-hidden="true"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Aqeeq Decor Info Ends -->
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
@@ -1360,6 +2005,98 @@
         if (event.key === 'Escape') {
           closeLightbox();
         }
+      });
+
+      const mobileMenuQuery = window.matchMedia('(max-width: 991px)');
+      const servicesMenu = document.querySelector('.services-menu');
+      const childMenuItems = document.querySelectorAll('.services-menu .has-children');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mainNav = document.querySelector('header nav');
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function (event) {
+          if (!mobileMenuQuery.matches) return;
+          event.preventDefault();
+          const isOpen = mainNav.classList.toggle('mobile-open');
+          menuToggle.classList.toggle('active', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+          if (!isOpen && servicesMenu) {
+            servicesMenu.classList.remove('open');
+            childMenuItems.forEach(function (child) {
+              child.classList.remove('open');
+            });
+          }
+        });
+      }
+
+      if (servicesMenu && servicesMenu.querySelector(':scope > .dropdown-menu')) {
+        const servicesTrigger = servicesMenu.querySelector(':scope > a');
+
+        if (servicesTrigger) {
+          servicesTrigger.addEventListener('click', function (event) {
+            if (!mobileMenuQuery.matches) return;
+            event.preventDefault();
+            servicesMenu.classList.toggle('open');
+          });
+        }
+
+        childMenuItems.forEach(function (item) {
+          const trigger = item.querySelector(':scope > a');
+
+          if (!trigger) return;
+
+          trigger.addEventListener('click', function (event) {
+            if (!mobileMenuQuery.matches) return;
+            event.preventDefault();
+            const isOpen = item.classList.contains('open');
+
+            childMenuItems.forEach(function (child) {
+              child.classList.remove('open');
+            });
+
+            if (!isOpen) {
+              item.classList.add('open');
+            }
+          });
+        });
+      }
+
+      document.addEventListener('click', function (event) {
+        if (!mobileMenuQuery.matches || !mainNav || !menuToggle) return;
+
+        const clickedInsideMenu = event.target.closest('header nav');
+        const clickedToggle = event.target.closest('.menu-toggle');
+
+        if (!clickedInsideMenu && !clickedToggle) {
+          mainNav.classList.remove('mobile-open');
+          menuToggle.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+
+          if (servicesMenu) {
+            servicesMenu.classList.remove('open');
+          }
+
+          childMenuItems.forEach(function (child) {
+            child.classList.remove('open');
+          });
+        }
+      });
+
+      mobileMenuQuery.addEventListener('change', function (event) {
+        if (event.matches || !mainNav || !menuToggle) return;
+
+        mainNav.classList.remove('mobile-open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        if (servicesMenu) {
+          servicesMenu.classList.remove('open');
+        }
+
+        childMenuItems.forEach(function (child) {
+          child.classList.remove('open');
+        });
       });
     });
   </script>
