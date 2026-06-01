@@ -1766,6 +1766,13 @@
     }
 
     @media (min-width: 901px) {
+      header .nav-item.services-menu,
+      header .nav-item.services-menu > .dropdown-menu,
+      header .nav-item.services-menu .has-children,
+      header .nav-item.services-menu .sub-dropdown {
+        overflow: visible !important;
+      }
+
       header .nav-item.services-menu > .dropdown-menu {
         position: absolute !important;
         top: 100% !important;
@@ -1787,17 +1794,31 @@
         z-index: 60 !important;
       }
 
-      header .nav-item.services-menu:hover > .dropdown-menu {
+      header .nav-item.services-menu:hover > .dropdown-menu,
+      header .nav-item.services-menu:focus-within > .dropdown-menu {
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
         transform: translateY(0) !important;
       }
 
+      header .nav-item.services-menu .has-children > a::after {
+        content: '▾' !important;
+        display: inline-block !important;
+        margin-left: 10px !important;
+        transform: rotate(-90deg) !important;
+      }
+
+      header .nav-item.services-menu .has-children:hover > a,
+      header .nav-item.services-menu .has-children:focus-within > a {
+        color: var(--aq-olive) !important;
+      }
+
       header .nav-item.services-menu .sub-dropdown {
         position: absolute !important;
-        top: 0 !important;
-        left: 100% !important;
+        top: -10px !important;
+        left: calc(100% - 2px) !important;
+        right: auto !important;
         min-width: 240px !important;
         width: auto !important;
         margin: 0 !important;
@@ -1811,13 +1832,25 @@
         border-radius: 18px !important;
         background: #fff !important;
         box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12) !important;
-        z-index: 70 !important;
+        z-index: 120 !important;
       }
 
-      header .nav-item.services-menu .has-children:hover > .sub-dropdown {
+      header .nav-item.services-menu .has-children::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: -18px !important;
+        width: 18px !important;
+        height: 100% !important;
+        display: block !important;
+      }
+
+      header .nav-item.services-menu .has-children:hover > .sub-dropdown,
+      header .nav-item.services-menu .has-children:focus-within > .sub-dropdown {
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
+        display: block !important;
       }
     }
 
