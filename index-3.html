@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aqeeq Decor | Home</title>
-    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
-    <link rel="apple-touch-icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
+    <link rel="icon" type="image/svg+xml"
+        href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
+    <link rel="apple-touch-icon"
+        href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -179,8 +184,6 @@
 
         .logo-icon::before,
         .logo-icon::after {
-            content: '';
-            position: absolute;
             left: 50%;
             transform: translateX(-50%);
             background: #7a705f;
@@ -253,7 +256,7 @@
             display: none;
         }
 
-        .nav-item > a {
+        .nav-item>a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -261,15 +264,15 @@
             width: auto;
         }
 
-        .nav-item.services-menu > a::after,
-        .has-children > a::after {
+        .nav-item.services-menu>a::after,
+        .has-children>a::after {
             content: '▾';
             font-size: 0.85em;
             line-height: 1;
             transition: transform 0.25s ease;
         }
 
-        .nav-item.services-menu:hover > a::after {
+        .nav-item.services-menu:hover>a::after {
             transform: rotate(180deg);
         }
 
@@ -277,7 +280,7 @@
             position: relative;
         }
 
-        .has-children:hover > a::after {
+        .has-children:hover>a::after {
             transform: rotate(-90deg);
         }
 
@@ -298,28 +301,26 @@
             right: 0;
             min-width: 280px;
             opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
             transform: translateY(10px);
             transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
             z-index: 60;
             display: block;
         }
 
-        .nav-item.services-menu:hover > .dropdown-menu {
+        .nav-item.services-menu:hover>.dropdown-menu {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
             transform: translateY(0);
         }
 
-        .dropdown-menu > li,
-        .sub-dropdown > li {
+        .dropdown-menu>li,
+        .sub-dropdown>li {
             position: relative;
         }
 
-        .dropdown-menu > li > a,
-        .sub-dropdown > li > a {
+        .dropdown-menu>li>a,
+        .sub-dropdown>li>a {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -334,19 +335,19 @@
             text-align: left;
         }
 
-        .dropdown-menu > li > a:hover,
-        .sub-dropdown > li > a:hover {
+        .dropdown-menu>li>a:hover,
+        .sub-dropdown>li>a:hover {
             background: rgba(74, 84, 48, 0.12);
             color: var(--olive);
             padding-left: 22px;
         }
 
-        .has-children:hover > a {
+        .has-children:hover>a {
             color: var(--olive);
         }
 
-        .dropdown-menu > li > a,
-        .sub-dropdown > li > a {
+        .dropdown-menu>li>a,
+        .sub-dropdown>li>a {
             border-radius: 10px;
         }
 
@@ -365,15 +366,13 @@
         }
 
         .has-children::before {
-            content: '';
-            position: absolute;
             top: 0;
             right: -14px;
             width: 14px;
             height: 100%;
         }
 
-        .has-children:hover > .sub-dropdown {
+        .has-children:hover>.sub-dropdown {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
@@ -415,6 +414,7 @@
             transform-origin: 50% 100%;
             animation: ringPhone 1.4s ease-in-out infinite;
         }
+
         .call-text {
             display: inline-block;
             line-height: 1;
@@ -422,10 +422,8 @@
 
         .call-icon::before,
         .call-icon::after {
-            content: '';
-            position: absolute;
             inset: -6px;
-            border: 1px solid rgba(255,255,255,0.45);
+            border: 1px solid rgba(255, 255, 255, 0.45);
             border-radius: 999px;
             opacity: 0;
             transform: scale(0.7);
@@ -437,13 +435,35 @@
         }
 
         @keyframes ringPhone {
-            0%, 100% { transform: rotate(0deg); }
-            10% { transform: rotate(14deg); }
-            20% { transform: rotate(-12deg); }
-            30% { transform: rotate(14deg); }
-            40% { transform: rotate(-10deg); }
-            50% { transform: rotate(8deg); }
-            60% { transform: rotate(0deg); }
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            10% {
+                transform: rotate(14deg);
+            }
+
+            20% {
+                transform: rotate(-12deg);
+            }
+
+            30% {
+                transform: rotate(14deg);
+            }
+
+            40% {
+                transform: rotate(-10deg);
+            }
+
+            50% {
+                transform: rotate(8deg);
+            }
+
+            60% {
+                transform: rotate(0deg);
+            }
         }
 
         @keyframes ringPulse {
@@ -451,9 +471,11 @@
                 opacity: 0;
                 transform: scale(0.7);
             }
+
             30% {
                 opacity: 0.6;
             }
+
             100% {
                 opacity: 0;
                 transform: scale(1.35);
@@ -473,8 +495,6 @@
             border-radius: 50%;
             border: 1px solid #ebe4db;
             background: #fff;
-            display: grid;
-            place-items: center;
             color: #6f6659;
             font-size: 15px;
             cursor: pointer;
@@ -576,7 +596,7 @@
             align-items: flex-start;
             gap: 12px;
             padding: 14px 14px;
-            background: rgba(255,255,255,0.58);
+            background: rgba(255, 255, 255, 0.58);
             border: 1px solid #e6ddd2;
             border-radius: 14px;
         }
@@ -586,11 +606,9 @@
             height: 38px;
             border-radius: 50%;
             border: 1px solid #dacfc3;
-            display: grid;
-            place-items: center;
             font-size: 15px;
             color: var(--olive);
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             flex-shrink: 0;
         }
 
@@ -627,6 +645,7 @@
         .hero-slide img {
             max-width: 100%;
         }
+
         .hero-slide,
         .hero-slide img {
             height: 100%;
@@ -641,8 +660,6 @@
         }
 
         .hero-image::after {
-            content: '';
-            position: absolute;
             inset: 0;
             background: linear-gradient(90deg, rgba(243, 239, 233, 0.12) 0%, rgba(243, 239, 233, 0) 18%, rgba(0, 0, 0, 0.04) 100%);
             pointer-events: none;
@@ -697,15 +714,19 @@
             0% {
                 opacity: 0;
             }
+
             4% {
                 opacity: 1;
             }
+
             21% {
                 opacity: 1;
             }
+
             25% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 0;
             }
@@ -715,9 +736,11 @@
             0% {
                 transform: scale(1.03);
             }
+
             25% {
                 transform: scale(1.09);
             }
+
             100% {
                 transform: scale(1.09);
             }
@@ -757,20 +780,18 @@
             row-gap: 18px;
             color: #fff;
             box-shadow: 0 18px 40px rgba(29, 24, 18, 0.12);
-            border: 1px solid rgba(255,255,255,0.12);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             isolation: isolate;
             transition: transform 0.24s ease, box-shadow 0.24s ease;
         }
 
         .creative-card::before {
-            content: '';
-            position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.38) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.38) 100%);
             z-index: 0;
         }
 
-        .creative-card > * {
+        .creative-card>* {
             position: relative;
             z-index: 1;
         }
@@ -819,7 +840,7 @@
         }
 
         .creative-card--soft::before {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.18) 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.18) 100%);
         }
 
         .creative-top {
@@ -837,8 +858,8 @@
             min-height: 34px;
             padding: 0 14px;
             border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.26);
-            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            background: rgba(255, 255, 255, 0.10);
             color: inherit;
             font-size: 11px;
             font-weight: 700;
@@ -847,7 +868,7 @@
         }
 
         .creative-card--soft .creative-badge {
-            background: rgba(255,255,255,0.44);
+            background: rgba(255, 255, 255, 0.44);
             border-color: rgba(45, 36, 28, 0.08);
         }
 
@@ -876,6 +897,7 @@
             color: inherit;
             opacity: 0.92;
         }
+
         .creative-copy {
             grid-area: copy;
             display: grid;
@@ -901,22 +923,22 @@
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: #fff;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.20);
-            box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
             transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
             margin-top: 2px;
         }
 
         .creative-card:hover .creative-footer {
             transform: translateY(-2px);
-            background: rgba(255,255,255,0.18);
-            border-color: rgba(255,255,255,0.28);
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.28);
         }
 
         .creative-card--soft .creative-footer {
             color: #2d241c;
-            background: rgba(255,255,255,0.54);
+            background: rgba(255, 255, 255, 0.54);
             border-color: rgba(45, 36, 28, 0.08);
         }
 
@@ -1060,8 +1082,8 @@
         }
 
         .why-card:hover .feature-icon {
-            background: rgba(255,255,255,0.14);
-            border-color: rgba(255,255,255,0.45);
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.45);
             color: #fff;
         }
 
@@ -1230,7 +1252,7 @@
         .form-field textarea {
             width: 100%;
             border: 1px solid rgba(74, 84, 48, 0.24);
-            background: rgba(255,255,255,0.88);
+            background: rgba(255, 255, 255, 0.88);
             border-radius: 14px;
             min-height: 58px;
             padding: 16px 18px;
@@ -1278,7 +1300,7 @@
             height: 20px;
             border: 1.5px solid rgba(74, 84, 48, 0.36);
             border-radius: 6px;
-            background: rgba(255,255,255,0.84);
+            background: rgba(255, 255, 255, 0.84);
             margin: 0;
             position: relative;
             cursor: pointer;
@@ -1291,8 +1313,6 @@
         }
 
         .checkbox-option input:checked::after {
-            content: '';
-            position: absolute;
             left: 6px;
             top: 2px;
             width: 5px;
@@ -1326,6 +1346,7 @@
             from {
                 transform: translateX(0);
             }
+
             to {
                 transform: translateX(-50%);
             }
@@ -1462,7 +1483,7 @@
             bottom: 24px;
             transform: translateX(-5%);
             width: min(92%, 760px);
-            background: rgba(255,255,255,0.94);
+            background: rgba(255, 255, 255, 0.94);
             border: 1px solid #ece4d9;
             border-radius: 16px;
             box-shadow: 0 14px 28px rgba(38, 31, 23, 0.12);
@@ -1477,10 +1498,10 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            background: rgba(255,255,255,0.94);
+            background: rgba(255, 255, 255, 0.94);
         }
 
-        .mini-feature + .mini-feature {
+        .mini-feature+.mini-feature {
             border-left: 1px solid #eee6db;
         }
 
@@ -1521,7 +1542,7 @@
             font-weight: 700;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.86);
+            color: rgba(255, 255, 255, 0.86);
         }
 
         .home-cta-title {
@@ -1540,7 +1561,7 @@
             margin: 16px 0 0;
             font-size: 0.88rem;
             line-height: 1.75;
-            color: rgba(255,255,255,0.88);
+            color: rgba(255, 255, 255, 0.88);
         }
 
         .home-cta-actions {
@@ -1574,20 +1595,20 @@
         }
 
         .home-cta-primary:hover {
-            background: rgba(255,255,255,0.92);
+            background: rgba(255, 255, 255, 0.92);
         }
 
         .home-cta-secondary {
             min-width: 238px;
             gap: 10px;
             color: #fff;
-            border: 1px solid rgba(255,255,255,0.22);
-            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .home-cta-secondary:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.34);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.34);
         }
 
         .home-cta-secondary .call-icon {
@@ -1632,7 +1653,7 @@
         .footer-links li,
         .footer-contact p,
         .footer-newsletter p {
-            color: rgba(255,255,255,0.82);
+            color: rgba(255, 255, 255, 0.82);
             font-size: 14px;
             line-height: 1.8;
         }
@@ -1665,18 +1686,18 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.25);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-size: 15px;
             color: #fff;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             transition: background 0.2s ease, transform 0.2s ease;
         }
 
         .social-links a:hover {
-            background: rgba(255,255,255,0.18);
+            background: rgba(255, 255, 255, 0.18);
             transform: translateY(-2px);
         }
 
@@ -1695,8 +1716,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.26);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.26);
             color: #fff;
             line-height: 1;
             margin-top: 0;
@@ -1716,13 +1737,14 @@
         .contact-text {
             display: inline-block;
             line-height: 1.8;
-            color: rgba(255,255,255,0.82);
+            color: rgba(255, 255, 255, 0.82);
             transition: color 0.2s ease;
         }
 
         a.contact-text:hover {
             color: #fff;
         }
+
         .contact-icon-top {
             align-self: flex-start;
             margin-top: 2px;
@@ -1732,7 +1754,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid rgba(255,255,255,0.28);
+            border: 1px solid rgba(255, 255, 255, 0.28);
             border-radius: 10px;
             overflow: hidden;
             margin-top: 14px;
@@ -1748,12 +1770,12 @@
         }
 
         .newsletter-form input::placeholder {
-            color: rgba(255,255,255,0.65);
+            color: rgba(255, 255, 255, 0.65);
         }
 
         .newsletter-form button {
             border: 0;
-            background: rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.12);
             color: #fff;
             padding: 14px 16px;
             cursor: pointer;
@@ -1771,9 +1793,9 @@
         }
 
         .copyright {
-            border-top: 1px solid rgba(255,255,255,0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
             text-align: center;
-            color: rgba(255,255,255,0.72);
+            color: rgba(255, 255, 255, 0.72);
             font-size: 13px;
             padding: 16px 0 22px;
         }
@@ -1929,14 +1951,16 @@
                 position: relative;
                 z-index: 1;
             }
-            nav > * {
+
+            nav>* {
                 flex: 0 0 auto;
             }
+
             body.menu-open {
                 overflow: hidden;
             }
 
-            nav > a,
+            nav>a,
             .nav-item,
             .call-btn {
                 width: 100%;
@@ -1945,7 +1969,7 @@
                 background: #fff;
             }
 
-            nav > a {
+            nav>a {
                 justify-content: center;
                 text-align: center;
                 padding: 14px 16px;
@@ -1962,37 +1986,39 @@
                 background: var(--olive);
                 border-color: var(--olive);
             }
+
             .why-choose-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
             .testimonials-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .nav-item > a {
+            .nav-item>a {
                 justify-content: center;
                 text-align: center;
                 padding: 14px 44px 14px 16px;
                 position: relative;
             }
 
-            .nav-item.services-menu > a::after,
-            .has-children > a::after {
+            .nav-item.services-menu>a::after,
+            .has-children>a::after {
                 position: absolute;
                 right: 16px;
                 top: 50%;
                 transform: translateY(-50%);
             }
 
-            .has-children:hover > a::after {
+            .has-children:hover>a::after {
                 transform: translateY(-50%) rotate(-90deg);
             }
 
-            .nav-item.services-menu.open > a::after {
+            .nav-item.services-menu.open>a::after {
                 transform: translateY(-50%) rotate(180deg);
             }
 
-            .has-children.open > a::after {
+            .has-children.open>a::after {
                 transform: translateY(-50%) rotate(-90deg);
             }
 
@@ -2024,7 +2050,7 @@
                 position: static;
             }
 
-            .nav-item.services-menu.open > .dropdown-menu {
+            .nav-item.services-menu.open>.dropdown-menu {
                 display: block;
             }
 
@@ -2047,7 +2073,7 @@
                 display: none;
             }
 
-            .has-children.open > .sub-dropdown {
+            .has-children.open>.sub-dropdown {
                 display: block;
             }
 
@@ -2055,6 +2081,7 @@
             .banner-layout {
                 grid-template-columns: 1fr;
             }
+
             .creative-grid {
                 grid-template-columns: 1fr;
             }
@@ -2137,18 +2164,18 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .dropdown-menu > li > a,
-            .sub-dropdown > li > a {
+            .dropdown-menu>li>a,
+            .sub-dropdown>li>a {
                 padding-top: 12px;
                 padding-bottom: 12px;
             }
 
-            .dropdown-menu > li > a {
+            .dropdown-menu>li>a {
                 padding-left: 16px;
                 padding-right: 16px;
             }
 
-            .sub-dropdown > li > a {
+            .sub-dropdown>li>a {
                 padding-left: 14px;
                 padding-right: 14px;
             }
@@ -2158,6 +2185,7 @@
             .container {
                 width: calc(100% - 24px);
             }
+
             nav {
                 top: 82px;
                 left: 12px;
@@ -2188,8 +2216,8 @@
                 font-size: 1rem;
             }
 
-            nav > a,
-            .nav-item > a,
+            nav>a,
+            .nav-item>a,
             .call-btn {
                 padding-top: 13px;
                 padding-bottom: 13px;
@@ -2207,6 +2235,7 @@
                 border-color: var(--olive);
                 font-size: 0.92rem;
             }
+
             .call-btn .call-icon,
             .home-cta-secondary .call-icon {
                 position: relative;
@@ -2228,9 +2257,11 @@
                 background-size: 16px 16px;
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.61a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.47-1.29a2 2 0 0 1 2.11-.45c.83.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
             }
+
             .why-choose-grid {
                 grid-template-columns: 1fr;
             }
+
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
@@ -2325,6 +2356,7 @@
             .section {
                 padding-top: 42px;
             }
+
             .creative-strip {
                 padding-top: 24px;
             }
@@ -2462,6 +2494,7 @@
                 padding: 22px 16px 22px 18px;
                 border-radius: 22px;
             }
+
             .home-cta-content {
                 align-items: flex-start;
                 text-align: left;
@@ -2539,7 +2572,7 @@
                 overflow: visible !important;
             }
 
-            header nav.mobile-open .services-menu > a {
+            header nav.mobile-open .services-menu>a {
                 display: flex !important;
                 width: 100% !important;
                 min-height: 52px !important;
@@ -2549,7 +2582,7 @@
                 background: #fff !important;
             }
 
-            header nav.mobile-open .services-menu > .dropdown-menu {
+            header nav.mobile-open .services-menu>.dropdown-menu {
                 position: static !important;
                 inset: auto !important;
                 width: 100% !important;
@@ -2570,17 +2603,17 @@
                 z-index: auto !important;
             }
 
-            header nav.mobile-open .services-menu:not(.open) > .dropdown-menu {
+            header nav.mobile-open .services-menu:not(.open)>.dropdown-menu {
                 display: none !important;
             }
 
-            header nav.mobile-open .services-menu.open > .dropdown-menu {
+            header nav.mobile-open .services-menu.open>.dropdown-menu {
                 display: flex !important;
                 flex-direction: column !important;
             }
 
-            header nav.mobile-open .dropdown-menu > li,
-            header nav.mobile-open .sub-dropdown > li {
+            header nav.mobile-open .dropdown-menu>li,
+            header nav.mobile-open .sub-dropdown>li {
                 display: block !important;
                 width: 100% !important;
                 height: auto !important;
@@ -2588,8 +2621,8 @@
                 overflow: visible !important;
             }
 
-            header nav.mobile-open .dropdown-menu > li > a,
-            header nav.mobile-open .sub-dropdown > li > a {
+            header nav.mobile-open .dropdown-menu>li>a,
+            header nav.mobile-open .sub-dropdown>li>a {
                 display: flex !important;
                 width: 100% !important;
                 min-height: 44px !important;
@@ -2619,20 +2652,21 @@
                 background: #fff !important;
             }
 
-            header nav.mobile-open .has-children:not(.open) > .sub-dropdown {
+            header nav.mobile-open .has-children:not(.open)>.sub-dropdown {
                 display: none !important;
             }
 
-            header nav.mobile-open .has-children.open > .sub-dropdown {
+            header nav.mobile-open .has-children.open>.sub-dropdown {
                 display: flex !important;
                 flex-direction: column !important;
             }
         }
-      .nav-item.services-menu.no-dropdown > a::after,
-  .nav-item.services-menu.no-dropdown>a::after {
-    content: none !important;
-    display: none !important;
-  }
+
+        .nav-item.services-menu.no-dropdown>a::after,
+        .nav-item.services-menu.no-dropdown>a::after {
+            content: none !important;
+            display: none !important;
+        }
 
         .hero-wrap {
             background: #11130c;
@@ -2656,8 +2690,6 @@
         }
 
         .hero-image::before {
-            content: '';
-            position: absolute;
             inset: 0;
             z-index: 2;
             background: linear-gradient(90deg, rgba(21, 25, 13, 0.82) 0%, rgba(32, 35, 20, 0.62) 44%, rgba(0, 0, 0, 0.30) 100%);
@@ -2894,15 +2926,19 @@
             0% {
                 opacity: 0;
             }
+
             3% {
                 opacity: 1;
             }
+
             17% {
                 opacity: 1;
             }
+
             20% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 0;
             }
@@ -2912,9 +2948,11 @@
             0% {
                 transform: scale(1.04);
             }
+
             20% {
                 transform: scale(1.10);
             }
+
             100% {
                 transform: scale(1.10);
             }
@@ -2925,14 +2963,17 @@
                 color: #fff;
                 border-bottom-color: #e8decf;
             }
+
             17% {
                 color: #fff;
                 border-bottom-color: #e8decf;
             }
+
             20% {
                 color: rgba(255, 255, 255, 0.64);
                 border-bottom-color: rgba(255, 255, 255, 0.26);
             }
+
             100% {
                 color: rgba(255, 255, 255, 0.64);
                 border-bottom-color: rgba(255, 255, 255, 0.26);
@@ -2940,6 +2981,7 @@
         }
 
         @media (max-width: 900px) {
+
             .hero,
             .hero-content {
                 min-height: 540px;
@@ -2976,54 +3018,275 @@
             }
         }
 
-        @media (max-width: 560px) {
-            .hero,
-            .hero-content {
-                min-height: 580px;
+        .hero,
+        .hero-content {
+            min-height: 580px;
+        }
+
+        .hero-kicker {
+            font-size: 0.7rem;
+            letter-spacing: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 2.75rem;
+        }
+
+        .hero-content p {
+            font-size: 0.98rem;
+        }
+
+        .hero-actions,
+        .hero-content .btn-dark,
+        .hero-content .btn-outline,
+        .feature-item {
+            width: 100%;
+        }
+
+        .hero-content .btn-dark,
+        .hero-content .btn-outline {
+            max-width: none;
+        }
+
+        .hero-features {
+            margin-top: 28px;
+        }
+
+        .hero-slide-markers button {
+            width: 28px;
+        }
+
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 40%),
+                linear-gradient(135deg, #31381f 0%, #4a5430 52%, #6a7450 100%);
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.45s ease, visibility 0.45s ease;
+        }
+
+        .page-loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .page-loader__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            text-align: center;
+            padding: 26px 28px;
+        }
+
+        .page-loader__mark {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            display: grid;
+            place-items: center;
+        }
+
+        .page-loader__mark::before,
+        .page-loader__mark::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            animation: loaderPulse 2s ease-out infinite;
+        }
+
+        .page-loader__mark::after {
+            animation-delay: 0.55s;
+        }
+
+        .page-loader__core {
+            position: relative;
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .page-loader__core::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            border-top-color: #f6f3ee;
+            border-right-color: rgba(246, 243, 238, 0.45);
+            animation: loaderSpin 1.25s linear infinite;
+        }
+
+        .page-loader__core span {
+            position: relative;
+            z-index: 1;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #f6f3ee;
+        }
+
+        .page-loader__text {
+            display: grid;
+            gap: 6px;
+        }
+
+        .page-loader__title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: #fff;
+        }
+
+        .page-loader__subtitle {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .page-loader__bar {
+            width: 170px;
+            height: 4px;
+            border-radius: 999px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .page-loader__bar span {
+            display: block;
+            width: 42%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, rgba(246, 243, 238, 0.1) 0%, #f6f3ee 55%, rgba(246, 243, 238, 0.24) 100%);
+            animation: loaderSlide 1.35s ease-in-out infinite;
+        }
+
+        body.is-loading {
+            overflow: hidden;
+        }
+
+        @keyframes loaderSpin {
+            from {
+                transform: rotate(0deg);
             }
 
-            .hero-kicker {
-                font-size: 0.7rem;
-                letter-spacing: 0;
-            }
-
-            .hero-content h1 {
-                font-size: 2.75rem;
-            }
-
-            .hero-content p {
-                font-size: 0.98rem;
-            }
-
-            .hero-actions,
-            .hero-content .btn-dark,
-            .hero-content .btn-outline,
-            .feature-item {
-                width: 100%;
-            }
-
-            .hero-content .btn-dark,
-            .hero-content .btn-outline {
-                max-width: none;
-            }
-
-            .hero-features {
-                margin-top: 28px;
-            }
-
-            .hero-slide-markers button {
-                width: 28px;
+            to {
+                transform: rotate(360deg);
             }
         }
-</style>
-  <link rel="stylesheet" href="css/whatsapp-chat.css">
+
+        @keyframes loaderPulse {
+            0% {
+                transform: scale(0.72);
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.45;
+            }
+
+            100% {
+                transform: scale(1.22);
+                opacity: 0;
+            }
+        }
+
+        @keyframes loaderSlide {
+            0% {
+                transform: translateX(-130%);
+            }
+
+            100% {
+                transform: translateX(360%);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-loader__mark {
+                width: 96px;
+                height: 96px;
+            }
+
+            .page-loader__core {
+                width: 66px;
+                height: 66px;
+            }
+
+            .page-loader__core span {
+                font-size: 1.35rem;
+            }
+
+            .page-loader__title {
+                font-size: 1.4rem;
+            }
+
+            .page-loader__subtitle {
+                letter-spacing: 0.18em;
+                font-size: 0.72rem;
+            }
+
+            .page-loader__bar {
+                width: 148px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/whatsapp-chat.css">
 </head>
+
 <body>
-  <a class="whatsapp-chat-button" href="https://wa.me/918698725668" target="_blank" rel="noopener" aria-label="Chat with Aqeeq Decor on WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-      <path d="M16.01 3.2C8.95 3.2 3.2 8.77 3.2 15.62c0 2.18.59 4.31 1.72 6.18L3.2 28.8l7.22-1.68a13.08 13.08 0 0 0 5.59 1.25c7.06 0 12.79-5.57 12.79-12.42S23.07 3.2 16.01 3.2Zm0 22.39a10.33 10.33 0 0 1-5.27-1.44l-.38-.23-4.28 1 1.02-4.08-.25-.4a9.3 9.3 0 0 1-1.42-4.82c0-5.3 4.75-9.62 10.58-9.62s10.58 4.31 10.58 9.62-4.75 9.97-10.58 9.97Zm5.8-7.21c-.32-.16-1.88-.92-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.56-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.62s1.13 3.04 1.29 3.25c.16.21 2.23 3.41 5.4 4.78.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37Z"/>
-    </svg>
-  </a>
+
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+
+        <div class="page-loader__inner">
+
+            <div class="page-loader__mark">
+
+                <div class="page-loader__core"><span>AD</span></div>
+
+            </div>
+
+            <div class="page-loader__text">
+
+                <div class="page-loader__title">Aqeeq Decor</div>
+
+                <div class="page-loader__subtitle">Crafting elegant spaces</div>
+
+            </div>
+
+            <div class="page-loader__bar"><span></span></div>
+
+        </div>
+
+    </div>
+    <a class="whatsapp-chat-button" href="https://wa.me/918698725668" target="_blank" rel="noopener"
+        aria-label="Chat with Aqeeq Decor on WhatsApp">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path
+                d="M16.01 3.2C8.95 3.2 3.2 8.77 3.2 15.62c0 2.18.59 4.31 1.72 6.18L3.2 28.8l7.22-1.68a13.08 13.08 0 0 0 5.59 1.25c7.06 0 12.79-5.57 12.79-12.42S23.07 3.2 16.01 3.2Zm0 22.39a10.33 10.33 0 0 1-5.27-1.44l-.38-.23-4.28 1 1.02-4.08-.25-.4a9.3 9.3 0 0 1-1.42-4.82c0-5.3 4.75-9.62 10.58-9.62s10.58 4.31 10.58 9.62-4.75 9.97-10.58 9.97Zm5.8-7.21c-.32-.16-1.88-.92-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.56-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.62s1.13 3.04 1.29 3.25c.16.21 2.23 3.41 5.4 4.78.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37Z" />
+        </svg>
+    </a>
     <div class="top-bar">
         <div class="container">
             <span>Premium Quality</span>
@@ -3118,7 +3381,8 @@
                 <div class="hero-content">
                     <span class="hero-kicker">Aqeeq Decor | Furnishing Studio</span>
                     <h1>Crafted Furnishings For A Home That Feels Yours</h1>
-                    <p>Upgrade your space with curated curtains, wallpapers, furniture, window blinds, mattresses, and flooring solutions designed around your style, comfort, and everyday living.</p>
+                    <p>Upgrade your space with curated curtains, wallpapers, furniture, window blinds, mattresses, and
+                        flooring solutions designed around your style, comfort, and everyday living.</p>
                     <div class="hero-actions">
                         <a href="service.html" class="btn-dark">Explore Collection</a>
                         <a href="contact.html" class="btn-outline">Book Consultation</a>
@@ -3144,7 +3408,8 @@
 
                 <div class="hero-image">
                     <div class="hero-slide is-active" id="hero-slide-1">
-                        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="image/Website Hero Seciton.png">
+                        <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+                            poster="image/Website Hero Seciton.png">
                             <source src="https://cdn.pixabay.com/video/2024/09/04/229646_large.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -3162,11 +3427,16 @@
                     </div>
                 </div>
                 <div class="hero-slide-markers" aria-label="Hero slider controls">
-                    <button class="is-active" type="button" data-hero-slide="0" aria-label="Show hero video slide" aria-controls="hero-slide-1" aria-current="true">01</button>
-                    <button type="button" data-hero-slide="1" aria-label="Show hero slide 2" aria-controls="hero-slide-2">02</button>
-                    <button type="button" data-hero-slide="2" aria-label="Show hero slide 3" aria-controls="hero-slide-3">03</button>
-                    <button type="button" data-hero-slide="3" aria-label="Show hero slide 4" aria-controls="hero-slide-4">04</button>
-                    <button type="button" data-hero-slide="4" aria-label="Show hero slide 5" aria-controls="hero-slide-5">05</button>
+                    <button class="is-active" type="button" data-hero-slide="0" aria-label="Show hero video slide"
+                        aria-controls="hero-slide-1" aria-current="true">01</button>
+                    <button type="button" data-hero-slide="1" aria-label="Show hero slide 2"
+                        aria-controls="hero-slide-2">02</button>
+                    <button type="button" data-hero-slide="2" aria-label="Show hero slide 3"
+                        aria-controls="hero-slide-3">03</button>
+                    <button type="button" data-hero-slide="3" aria-label="Show hero slide 4"
+                        aria-controls="hero-slide-4">04</button>
+                    <button type="button" data-hero-slide="4" aria-label="Show hero slide 5"
+                        aria-controls="hero-slide-5">05</button>
                 </div>
             </section>
         </div>
@@ -3174,18 +3444,23 @@
         <section class="creative-strip">
             <div class="container">
                 <div class="creative-grid">
-                    <a href="#home-cta" class="creative-card creative-card--olive" aria-label="Go to consultation call to action section">
+                    <a href="#home-cta" class="creative-card creative-card--olive"
+                        aria-label="Go to consultation call to action section">
                         <div class="creative-top">
                             <span class="creative-badge">Design Consultation</span>
                         </div>
                         <div class="creative-copy">
                             <h3>Bring Your Dream Space<br>To Life With<br>Refined Interiors</h3>
-                            <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or office. Let us help you shape a space that feels premium, inviting and completely aligned with your lifestyle.</p>
-                            <p>From the first consultation to final styling, our team helps translate your ideas into a visually balanced interior that feels warm, thoughtful and truly complete.</p>
+                            <p>Discover decor ideas, furniture styling and elegant finishes tailored to your home or
+                                office. Let us help you shape a space that feels premium, inviting and completely
+                                aligned with your lifestyle.</p>
+                            <p>From the first consultation to final styling, our team helps translate your ideas into a
+                                visually balanced interior that feels warm, thoughtful and truly complete.</p>
                         </div>
                         <div class="creative-footer">Explore With Us</div>
                         <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Elegant living space inspiration">
+                            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"
+                                alt="Elegant living space inspiration">
                         </div>
                     </a>
                 </div>
@@ -3197,7 +3472,9 @@
                 <h2 class="section-title">SHOP BY CATEGORY</h2>
                 <div class="category-grid">
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Curtains"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
+                                alt="Curtains"></div>
                         <div class="card-body">
                             <h3>Curtains</h3>
                             <a href="#" class="card-link">View Collection</a>
@@ -3205,7 +3482,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Wallpapers"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+                                alt="Wallpapers"></div>
                         <div class="card-body">
                             <h3>Wallpapers</h3>
                             <a href="#" class="card-link">View Collection</a>
@@ -3213,7 +3492,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Furniture"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80"
+                                alt="Furniture"></div>
                         <div class="card-body">
                             <h3>Furniture</h3>
                             <a href="#" class="card-link">View Collection</a>
@@ -3221,7 +3502,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Window Blinds"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80"
+                                alt="Window Blinds"></div>
                         <div class="card-body">
                             <h3>Window Blinds</h3>
                             <a href="#" class="card-link">View Collection</a>
@@ -3229,7 +3512,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80&sat=-30" alt="Mattress"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80&sat=-30"
+                                alt="Mattress"></div>
                         <div class="card-body">
                             <h3>Mattress</h3>
                             <a href="#" class="card-link">View Collection</a>
@@ -3237,7 +3522,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Floorings"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80"
+                                alt="Floorings"></div>
                         <div class="card-body">
                             <h3>Floorings</h3>
                             <a href="#" class="card-link">View Collection</a>
@@ -3250,18 +3537,24 @@
         <section class="creative-strip">
             <div class="container">
                 <div class="creative-grid">
-                    <a href="#home-cta" class="creative-card creative-card--warm" aria-label="Go to home page call to action section for customized decor solutions">
+                    <a href="#home-cta" class="creative-card creative-card--warm"
+                        aria-label="Go to home page call to action section for customized decor solutions">
                         <div class="creative-top">
                             <span class="creative-badge">Custom Solutions</span>
                         </div>
                         <div class="creative-copy">
                             <h3>Made Around<br>Your Style &<br>Space Needs</h3>
-                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement. Create a polished look with products designed around your room dimensions, finishes and personal taste.</p>
-                            <p>We combine function, finish and visual harmony so each detail works together beautifully, helping you achieve a custom result that feels thoughtfully planned from edge to edge.</p>
+                            <p>From curtains to flooring, every selection can be refined to suit your exact requirement.
+                                Create a polished look with products designed around your room dimensions, finishes and
+                                personal taste.</p>
+                            <p>We combine function, finish and visual harmony so each detail works together beautifully,
+                                helping you achieve a custom result that feels thoughtfully planned from edge to edge.
+                            </p>
                         </div>
                         <div class="creative-footer">Book Your Project</div>
                         <div class="creative-image">
-                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80" alt="Custom furniture and styling concept">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80"
+                                alt="Custom furniture and styling concept">
                         </div>
                     </a>
                 </div>
@@ -3274,7 +3567,8 @@
                     <div class="why-card">
                         <div class="feature-icon">✦</div>
                         <h3>Premium Quality</h3>
-                        <p>We use carefully selected materials and finishes to deliver elegant decor solutions that last.</p>
+                        <p>We use carefully selected materials and finishes to deliver elegant decor solutions that
+                            last.</p>
                     </div>
                     <div class="why-card">
                         <div class="feature-icon">⌂</div>
@@ -3284,12 +3578,14 @@
                     <div class="why-card">
                         <div class="feature-icon">✓</div>
                         <h3>Expert Guidance</h3>
-                        <p>From selection to installation, our team helps you make the right decor decisions with confidence.</p>
+                        <p>From selection to installation, our team helps you make the right decor decisions with
+                            confidence.</p>
                     </div>
                     <div class="why-card">
                         <div class="feature-icon">⚒</div>
                         <h3>Professional Execution</h3>
-                        <p>We focus on smooth execution, timely delivery, and neat finishing across every category we offer.</p>
+                        <p>We focus on smooth execution, timely delivery, and neat finishing across every category we
+                            offer.</p>
                     </div>
                 </div>
             </div>
@@ -3301,11 +3597,13 @@
                     <div class="banner-layout">
                         <div class="banner-text">
                             <h2>Custom Furniture<br>Made for You</h2>
-                            <p>Choose your fabric, finish, size and more. We bring your vision to life with precision and care.</p>
+                            <p>Choose your fabric, finish, size and more. We bring your vision to life with precision
+                                and care.</p>
                             <button class="btn-outline">Book a Consultation</button>
                         </div>
                         <div class="banner-visual">
-                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80" alt="Fabric samples and interior design materials">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80"
+                                alt="Fabric samples and interior design materials">
                         </div>
                     </div>
 
@@ -3348,7 +3646,9 @@
                 <h2 class="section-title">FEATURED COLLECTIONS</h2>
                 <div class="collection-grid">
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Curtains Collection"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
+                                alt="Curtains Collection"></div>
                         <div class="card-body">
                             <h3>Curtains</h3>
                             <a href="#" class="card-link">Explore</a>
@@ -3356,7 +3656,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80" alt="Furniture Collection"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80"
+                                alt="Furniture Collection"></div>
                         <div class="card-body">
                             <h3>Furniture</h3>
                             <a href="#" class="card-link">Explore</a>
@@ -3364,7 +3666,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Window Blinds Collection"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80"
+                                alt="Window Blinds Collection"></div>
                         <div class="card-body">
                             <h3>Window Blinds</h3>
                             <a href="#" class="card-link">Explore</a>
@@ -3372,7 +3676,9 @@
                     </article>
 
                     <article class="card">
-                        <div class="card-image"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Floorings Collection"></div>
+                        <div class="card-image"><img
+                                src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80"
+                                alt="Floorings Collection"></div>
                         <div class="card-body">
                             <h3>Floorings</h3>
                             <a href="#" class="card-link">Explore</a>
@@ -3414,7 +3720,8 @@
                                     <span>+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    We offer Curtains, Wallpapers, Furniture, Window Blinds, Mattresses, and Flooring solutions tailored to homes, offices, and commercial spaces.
+                                    We offer Curtains, Wallpapers, Furniture, Window Blinds, Mattresses, and Flooring
+                                    solutions tailored to homes, offices, and commercial spaces.
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -3423,7 +3730,8 @@
                                     <span>+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    Yes, we provide customised solutions based on your space, theme, measurements, preferred materials, and design preferences.
+                                    Yes, we provide customised solutions based on your space, theme, measurements,
+                                    preferred materials, and design preferences.
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -3432,7 +3740,8 @@
                                     <span>+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    Absolutely. We can arrange a site visit to understand your requirements, take measurements, and suggest the most suitable decor options.
+                                    Absolutely. We can arrange a site visit to understand your requirements, take
+                                    measurements, and suggest the most suitable decor options.
                                 </div>
                             </div>
                         </div>
@@ -3443,7 +3752,8 @@
                                     <span>+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    Yes, our team supports you from product selection and design guidance to delivery and professional installation.
+                                    Yes, our team supports you from product selection and design guidance to delivery
+                                    and professional installation.
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -3452,7 +3762,8 @@
                                     <span>+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    You can use the Get a Quote button on the website or contact us directly with your requirements, and we will prepare a detailed quotation for you.
+                                    You can use the Get a Quote button on the website or contact us directly with your
+                                    requirements, and we will prepare a detailed quotation for you.
                                 </div>
                             </div>
                             <div class="faq-item">
@@ -3461,7 +3772,8 @@
                                     <span>+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    Yes, we work on both residential and commercial projects, delivering decor solutions that match the purpose and style of each space.
+                                    Yes, we work on both residential and commercial projects, delivering decor solutions
+                                    that match the purpose and style of each space.
                                 </div>
                             </div>
                         </div>
@@ -3476,7 +3788,11 @@
                 <div class="testimonials-grid">
                     <article class="testimonial-card">
                         <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">&ldquo;We had taken services from Aqeeq decor for our 3 bedroom flat and had a very good experience with them. They have wide range of products and helped in selecting right curtains and roller blinds for our flat. They are effective in managing the products in your budget without compromising much in quality or choice. We will recommend this place for all your curtain or decor needs.&rdquo;</p>
+                        <p class="testimonial-text">&ldquo;We had taken services from Aqeeq decor for our 3 bedroom flat
+                            and had a very good experience with them. They have wide range of products and helped in
+                            selecting right curtains and roller blinds for our flat. They are effective in managing the
+                            products in your budget without compromising much in quality or choice. We will recommend
+                            this place for all your curtain or decor needs.&rdquo;</p>
                         <div class="testimonial-author">
                             <strong>Mr. Vikas Pandey</strong>
                             <span>Client</span>
@@ -3485,7 +3801,11 @@
 
                     <article class="testimonial-card">
                         <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">&ldquo;Purchasing three seater sofa from aqeeq decor was really fine experience. Murtaza explained me all minute details of fabrics price and quality of sofa. Also I bought it instantly and they gave precise timeline of the delivery and that was 2 weeks as it is been made at there factory. But I received the delivery on time perfectly without any additional charges. Definitely a wonderful experience.&rdquo;</p>
+                        <p class="testimonial-text">&ldquo;Purchasing three seater sofa from aqeeq decor was really fine
+                            experience. Murtaza explained me all minute details of fabrics price and quality of sofa.
+                            Also I bought it instantly and they gave precise timeline of the delivery and that was 2
+                            weeks as it is been made at there factory. But I received the delivery on time perfectly
+                            without any additional charges. Definitely a wonderful experience.&rdquo;</p>
                         <div class="testimonial-author">
                             <strong>Mr. Ravindra</strong>
                             <span>Client</span>
@@ -3494,7 +3814,13 @@
 
                     <article class="testimonial-card">
                         <div class="testimonial-rating">★★★★★</div>
-                        <p class="testimonial-text">&ldquo;Aqeeq decor is one of the best and unique organisation for Curtains, blinds, wall papers best furnishing etx. BEST suited to suggest, offer, execute to everyone's taste. We were amazed to see their range. Modern, classic and very tasteful as per customer's choice. Infact we learnt a lot from them. About latest, unique and classic Stuff and appropriate price point. Their handling and treating customers for the entire customer journey is class apart. They give memorable products and experience. Thanks Team Aqeeq&rdquo;</p>
+                        <p class="testimonial-text">&ldquo;Aqeeq decor is one of the best and unique organisation for
+                            Curtains, blinds, wall papers best furnishing etx. BEST suited to suggest, offer, execute to
+                            everyone's taste. We were amazed to see their range. Modern, classic and very tasteful as
+                            per customer's choice. Infact we learnt a lot from them. About latest, unique and classic
+                            Stuff and appropriate price point. Their handling and treating customers for the entire
+                            customer journey is class apart. They give memorable products and experience. Thanks Team
+                            Aqeeq&rdquo;</p>
                         <div class="testimonial-author">
                             <strong>Mr. Sen</strong>
                             <span>Client</span>
@@ -3541,7 +3867,8 @@
                         </div>
 
                         <div class="checkbox-group">
-                            <div class="form-group-title">Which is the type of property you are looking products for?</div>
+                            <div class="form-group-title">Which is the type of property you are looking products for?
+                            </div>
                             <div class="checkbox-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
                                 <label class="checkbox-option"><input type="checkbox"> Commercial</label>
                                 <label class="checkbox-option"><input type="checkbox"> Residential</label>
@@ -3550,7 +3877,8 @@
 
                         <div class="form-grid">
                             <div class="form-field full-width">
-                                <label for="area">Which area are you located in? <span style="color:#8f5447;">*</span></label>
+                                <label for="area">Which area are you located in? <span
+                                        style="color:#8f5447;">*</span></label>
                                 <select id="area">
                                     <option value="">Select your area</option>
                                     <option>Pune</option>
@@ -3561,7 +3889,8 @@
                             </div>
                             <div class="form-field full-width">
                                 <label for="message">Tell us more about your requirement</label>
-                                <textarea id="message" placeholder="Share your space, preferred products, budget, or any specific requirement"></textarea>
+                                <textarea id="message"
+                                    placeholder="Share your space, preferred products, budget, or any specific requirement"></textarea>
                             </div>
                         </div>
 
@@ -3576,9 +3905,12 @@
                     <div class="home-cta-content">
                         <p class="home-cta-kicker">Let’s Work Together</p>
                         <h2 class="home-cta-title">Ready To Create A More Elegant And Functional Space?</h2>
-                        <p class="home-cta-text">Whether you are furnishing a new home, enhancing a room or planning décor for a commercial setting, Aqeeq Decor is here to guide you with clarity, detail and style.</p>
+                        <p class="home-cta-text">Whether you are furnishing a new home, enhancing a room or planning
+                            décor for a commercial setting, Aqeeq Decor is here to guide you with clarity, detail and
+                            style.</p>
                         <div class="home-cta-actions">
-                            <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#" class="home-cta-primary">Contact Us</a>
+                            <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#" class="home-cta-primary">Contact
+                                Us</a>
                             <a href="tel:+918698725668" class="home-cta-secondary" aria-label="Call +91 86987 25668">
                                 <span class="call-icon" aria-hidden="true">☎</span>
                                 <span>Call +91 86987 25668</span>
@@ -3593,7 +3925,8 @@
     <footer>
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="/" class="logo" aria-label="Aqeeq Decor home" style="color:#fff; margin-bottom: 14px; display: inline-flex;">
+                <a href="/" class="logo" aria-label="Aqeeq Decor home"
+                    style="color:#fff; margin-bottom: 14px; display: inline-flex;">
                     <div class="logo-text">
                         <strong style="color: #8fa15f;">AQEEQ</strong>
                         <span style="color: rgba(255,255,255,0.75);">DECOR</span>
@@ -3603,19 +3936,22 @@
                 <div class="social-links">
                     <a href="#" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                            <path fill="currentColor" d="M15.1 8H13c-.5 0-.8.3-.8.9v1.8H15l-.4 2.9h-2.4V21H9.2v-7.4H6.8v-2.9h2.4V8.6c0-2.4 1.4-3.7 3.6-3.7 1 0 1.9.1 2.3.1v3Z"/>
+                            <path fill="currentColor"
+                                d="M15.1 8H13c-.5 0-.8.3-.8.9v1.8H15l-.4 2.9h-2.4V21H9.2v-7.4H6.8v-2.9h2.4V8.6c0-2.4 1.4-3.7 3.6-3.7 1 0 1.9.1 2.3.1v3Z" />
                         </svg>
                     </a>
                     <a href="#" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                            <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
+                            <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor"
+                                stroke-width="2" />
+                            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                            <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" />
                         </svg>
                     </a>
                     <a href="#" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
-                            <path fill="currentColor" d="M6.5 9.2H3.4V20h3.1V9.2ZM5 4a1.8 1.8 0 1 0 0 3.6A1.8 1.8 0 0 0 5 4Zm15.5 9.8c0-3.1-1.7-4.8-4.1-4.8-1.9 0-2.7 1-3.2 1.8V9.2h-3V20h3.1v-5.9c0-1.5.8-2.4 2.1-2.4 1.2 0 1.9.8 1.9 2.5V20h3.1v-6.2Z"/>
+                            <path fill="currentColor"
+                                d="M6.5 9.2H3.4V20h3.1V9.2ZM5 4a1.8 1.8 0 1 0 0 3.6A1.8 1.8 0 0 0 5 4Zm15.5 9.8c0-3.1-1.7-4.8-4.1-4.8-1.9 0-2.7 1-3.2 1.8V9.2h-3V20h3.1v-5.9c0-1.5.8-2.4 2.1-2.4 1.2 0 1.9.8 1.9 2.5V20h3.1v-6.2Z" />
                         </svg>
                     </a>
                 </div>
@@ -3645,27 +3981,40 @@
                 <h4>CONTACT US</h4>
                 <p>
                     <span class="contact-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z" />
+                        </svg>
                     </span>
                     <a class="contact-text" href="tel:+918698725668">+91 86987 25668</a>
                 </p>
                 <p>
                     <span class="contact-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.03 9.74a16 16 0 0 0 6.23 6.23l1.29-1.29a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z" />
+                        </svg>
                     </span>
                     <a class="contact-text" href="tel:+918319163736">+91 83191 63736</a>
                 </p>
                 <p>
                     <span class="contact-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                            <path d="m22 6-10 7L2 6" />
+                        </svg>
                     </span>
                     <a class="contact-text" href="mailto:aqeeqdecor@gmail.com">aqeeqdecor@gmail.com</a>
                 </p>
                 <p>
                     <span class="contact-icon contact-icon-top" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21s-7-4.35-7-11a7 7 0 1 1 14 0c0 6.65-7 11-7 11z" />
+                            <circle cx="12" cy="10" r="2.5" />
+                        </svg>
                     </span>
-                    <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk, Bhawani Peth, Pune - 411042</span>
+                    <span class="contact-text">Showroom Address: Shop no. 16, Mehta Apartments, Juna Motor Stand Chowk,
+                        Bhawani Peth, Pune - 411042</span>
                 </p>
             </div>
 
@@ -3714,7 +4063,7 @@
                 if (video) {
                     if (isActive) {
                         video.currentTime = 0;
-                        video.play().catch(() => {});
+                        video.play().catch(() => { });
                     } else {
                         video.pause();
                     }
@@ -3909,6 +4258,38 @@
             mainNav.classList.remove('mobile-open');
             document.body.classList.remove('menu-open');
         }
+        (function () {
+
+            const loader = document.getElementById('pageLoader');
+
+            if (!loader) return;
+
+            document.body.classList.add('is-loading');
+
+            const hideLoader = () => {
+
+                loader.classList.add('is-hidden');
+
+                document.body.classList.remove('is-loading');
+
+                window.setTimeout(() => {
+
+                    loader.remove();
+
+                }, 520);
+
+            };
+
+            window.addEventListener('load', () => {
+
+                window.setTimeout(hideLoader, 320);
+
+            }, { once: true });
+
+            window.setTimeout(hideLoader, 2600);
+
+        })();
     </script>
 </body>
+
 </html>
