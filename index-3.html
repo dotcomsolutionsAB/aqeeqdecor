@@ -2633,6 +2633,372 @@
     content: none !important;
     display: none !important;
   }
+
+        .hero-wrap {
+            background: #11130c;
+            border-bottom: 0;
+            overflow: hidden;
+        }
+
+        .hero {
+            display: block;
+            min-height: clamp(620px, calc(100vh - 92px), 820px);
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            min-height: 100%;
+            height: 100%;
+            background: #11130c;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(90deg, rgba(21, 25, 13, 0.82) 0%, rgba(32, 35, 20, 0.62) 44%, rgba(0, 0, 0, 0.30) 100%);
+            pointer-events: none;
+        }
+
+        .hero-image::after {
+            z-index: 3;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.58) 100%);
+        }
+
+        .hero-slide {
+            height: 100%;
+            animation: heroFade 30s infinite ease-in-out;
+            transform: scale(1.04);
+        }
+
+        .hero-slide img,
+        .hero-slide video {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            animation: heroZoom 30s infinite ease-in-out;
+        }
+
+        .hero-slide video {
+            filter: saturate(0.92) contrast(1.02);
+        }
+
+        .hero-slide:nth-child(1),
+        .hero-slide:nth-child(1) img,
+        .hero-slide:nth-child(1) video {
+            animation-delay: 0s;
+        }
+
+        .hero-slide:nth-child(2),
+        .hero-slide:nth-child(2) img {
+            animation-delay: 6s;
+        }
+
+        .hero-slide:nth-child(3),
+        .hero-slide:nth-child(3) img {
+            animation-delay: 12s;
+        }
+
+        .hero-slide:nth-child(4),
+        .hero-slide:nth-child(4) img {
+            animation-delay: 18s;
+        }
+
+        .hero-slide:nth-child(5),
+        .hero-slide:nth-child(5) img {
+            animation-delay: 24s;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            width: min(var(--container), calc(100% - 48px));
+            min-height: clamp(620px, calc(100vh - 92px), 820px);
+            margin: 0 auto;
+            padding: clamp(92px, 10vw, 136px) 0 clamp(60px, 7vw, 88px);
+            background: transparent;
+            color: #fff;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 0 14px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.10);
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-content h1 {
+            max-width: 780px;
+            margin-bottom: 24px;
+            color: #fff;
+            font-size: 6.6rem;
+            line-height: 0.9;
+            letter-spacing: 0;
+            text-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+        }
+
+        .hero-content p {
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 1.08rem;
+            line-height: 1.85;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .hero-content .btn-dark,
+        .hero-content .btn-outline {
+            min-height: 52px;
+            border-radius: 999px;
+            padding: 0 24px;
+            letter-spacing: 0;
+            text-decoration: none;
+        }
+
+        .hero-content .btn-dark {
+            background: #fff;
+            color: #3f4826;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .hero-content .btn-dark:hover {
+            background: #e8decf;
+            color: #2f351e;
+        }
+
+        .hero-content .btn-outline {
+            border-color: rgba(255, 255, 255, 0.46);
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-content .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            max-width: 760px;
+            margin-top: 34px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.20);
+        }
+
+        .feature-item {
+            width: min(100%, 310px);
+            min-height: 86px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 8px;
+            backdrop-filter: blur(12px);
+        }
+
+        .feature-icon {
+            border-color: rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.14);
+            color: #f1e7d6;
+        }
+
+        .feature-item strong,
+        .feature-item span {
+            color: #fff;
+        }
+
+        .feature-item span {
+            opacity: 0.78;
+        }
+
+        .hero-slide-markers {
+            position: absolute;
+            right: max(24px, calc((100vw - var(--container)) / 2));
+            bottom: 38px;
+            z-index: 6;
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.64);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        .hero-slide-markers span {
+            color: rgba(255, 255, 255, 0.64);
+            width: 34px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+            animation: heroMarker 30s infinite ease-in-out;
+        }
+
+        .hero-slide-markers span:nth-child(2) {
+            animation-delay: 6s;
+        }
+
+        .hero-slide-markers span:nth-child(3) {
+            animation-delay: 12s;
+        }
+
+        .hero-slide-markers span:nth-child(4) {
+            animation-delay: 18s;
+        }
+
+        .hero-slide-markers span:nth-child(5) {
+            animation-delay: 24s;
+        }
+
+        @keyframes heroFade {
+            0% {
+                opacity: 0;
+            }
+            3% {
+                opacity: 1;
+            }
+            17% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes heroZoom {
+            0% {
+                transform: scale(1.04);
+            }
+            20% {
+                transform: scale(1.10);
+            }
+            100% {
+                transform: scale(1.10);
+            }
+        }
+
+        @keyframes heroMarker {
+            0% {
+                color: #fff;
+                border-bottom-color: #e8decf;
+            }
+            17% {
+                color: #fff;
+                border-bottom-color: #e8decf;
+            }
+            20% {
+                color: rgba(255, 255, 255, 0.64);
+                border-bottom-color: rgba(255, 255, 255, 0.26);
+            }
+            100% {
+                color: rgba(255, 255, 255, 0.64);
+                border-bottom-color: rgba(255, 255, 255, 0.26);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero,
+            .hero-content {
+                min-height: 660px;
+            }
+
+            .hero-content {
+                width: min(var(--container), calc(100% - 30px));
+                padding: 86px 0 64px;
+            }
+
+            .hero-content h1 {
+                max-width: 620px;
+                font-size: 4.8rem;
+                line-height: 0.92;
+            }
+
+            .hero-content p {
+                max-width: 560px;
+            }
+
+            .hero-image,
+            .hero-slide,
+            .hero-slide img,
+            .hero-slide video {
+                min-height: 100%;
+                height: 100%;
+            }
+
+            .hero-slide-markers {
+                left: 15px;
+                right: 15px;
+                bottom: 22px;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero,
+            .hero-content {
+                min-height: 720px;
+            }
+
+            .hero-kicker {
+                font-size: 0.7rem;
+                letter-spacing: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 3.35rem;
+            }
+
+            .hero-content p {
+                font-size: 0.98rem;
+            }
+
+            .hero-actions,
+            .hero-content .btn-dark,
+            .hero-content .btn-outline,
+            .feature-item {
+                width: 100%;
+            }
+
+            .hero-content .btn-dark,
+            .hero-content .btn-outline {
+                max-width: none;
+            }
+
+            .hero-features {
+                margin-top: 28px;
+            }
+
+            .hero-slide-markers span {
+                width: 28px;
+            }
+        }
 </style>
 </head>
 <body>
@@ -2665,15 +3031,14 @@
                 <a href="https://aqeeqdecor.ongoingsites.xyz/index-3.html">HOME</a>
                 <a href="https://aqeeqdecor.ongoingsites.xyz/about.html">ABOUT US</a>
                 <a href="project.html">PROJECTS</a>
-                <div class="nav-item services-menu no-dropdown">
+                <div class="nav-item services-menu">
                     <a href="service.html">SERVICES</a>
-                    <!-- Services dropdown temporarily disabled
-<ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
                         <li><a href="service.html">All Services</a></li>
-                        <li><a href="#">Curtains</a></li>
-                        <li><a href="#">Wallpapers</a></li>
+                        <li><a href="service-detail.html?service=curtains">Curtains</a></li>
+                        <li><a href="service-detail.html?service=wallpapers">Wallpapers</a></li>
                         <li class="has-children">
-                            <a href="#">Furniture</a>
+                            <a href="service-detail.html?service=furniture">Furniture</a>
                             <ul class="sub-dropdown">
                                 <li><a href="#">Modular</a></li>
                                 <li><a href="#">Office furniture</a></li>
@@ -2687,7 +3052,7 @@
                             </ul>
                         </li>
                         <li class="has-children">
-                            <a href="#">Window Blinds</a>
+                            <a href="service-detail.html?service=window-blinds">Window Blinds</a>
                             <ul class="sub-dropdown">
                                 <li><a href="#">Blinds</a></li>
                                 <li><a href="#">Roller</a></li>
@@ -2702,9 +3067,9 @@
                                 <li><a href="#">Aluminium Venetian</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Mattress</a></li>
+                        <li><a href="service-detail.html?service=mattress">Mattress</a></li>
                         <li class="has-children">
-                            <a href="#">Floorings</a>
+                            <a href="service-detail.html?service=floorings">Floorings</a>
                             <ul class="sub-dropdown">
                                 <li><a href="#">Wooden</a></li>
                                 <li><a href="#">PVC</a></li>
@@ -2714,8 +3079,7 @@
                             </ul>
                         </li>
                     </ul>
-                -->
-</div>
+                </div>
                 <a href="blogs.html">BLOGS</a>
                 <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#">CONTACT US</a>
                 <a href="tel:+918698725668" class="call-btn" aria-label="Call +91 86987 25668">
@@ -2730,9 +3094,13 @@
         <div class="hero-wrap">
             <section class="hero">
                 <div class="hero-content">
-                    <h1>Furniture That Defines Your Space</h1>
-                    <p>Upgrade your home with beautifully designed Curtains, Wallpapers, Furniture, Window Blinds, and Flooring solutions — all tailored to match your style and space.</p>
-                    <button class="btn-dark">Explore Collection</button>
+                    <span class="hero-kicker">Aqeeq Decor | Furnishing Studio</span>
+                    <h1>Crafted Furnishings For A Home That Feels Yours</h1>
+                    <p>Upgrade your space with curated curtains, wallpapers, furniture, window blinds, mattresses, and flooring solutions designed around your style, comfort, and everyday living.</p>
+                    <div class="hero-actions">
+                        <a href="service.html" class="btn-dark">Explore Collection</a>
+                        <a href="contact.html" class="btn-outline">Book Consultation</a>
+                    </div>
 
                     <div class="hero-features">
                         <div class="feature-item">
@@ -2754,6 +3122,11 @@
 
                 <div class="hero-image">
                     <div class="hero-slide">
+                        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="image/Website Hero Seciton.png">
+                            <source src="https://cdn.pixabay.com/video/2024/09/04/229646_large.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-slide">
                         <img src="image/Website Hero Seciton.png" alt="Aqeeq Decor hero interior design showcase">
                     </div>
                     <div class="hero-slide">
@@ -2765,6 +3138,13 @@
                     <div class="hero-slide">
                         <img src="image/8.png" alt="Aqeeq Decor slider image 4">
                     </div>
+                </div>
+                <div class="hero-slide-markers" aria-hidden="true">
+                    <span>01</span>
+                    <span>02</span>
+                    <span>03</span>
+                    <span>04</span>
+                    <span>05</span>
                 </div>
             </section>
         </div>
