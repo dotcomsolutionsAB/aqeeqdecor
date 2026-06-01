@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Service Detail - Intereal</title>
+  <title>Luxury Curtains | AQEEQ Decor</title>
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="image/01_intereal_thumbnail.png">
@@ -19,6 +19,532 @@
   <!-- Font Awesome 4.7.0 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <style>
+    :root {
+      --aq-olive: #566236;
+      --aq-olive-dark: #2f351f;
+      --aq-cream: #f6f2eb;
+      --aq-soft: #fcfaf6;
+      --aq-line: #e8ded0;
+      --aq-text: #211d18;
+      --aq-muted: #6e665b;
+    }
+
+    body {
+      background: var(--aq-soft);
+      color: var(--aq-text);
+    }
+
+    .service-detail {
+      padding: 90px 0 96px;
+      background: linear-gradient(180deg, #fcfaf6 0%, #f3efe7 100%);
+      overflow: hidden;
+    }
+
+    .aq-detail-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.55fr);
+      gap: 34px;
+      align-items: stretch;
+      margin-bottom: 34px;
+    }
+
+    .aq-detail-panel,
+    .aq-detail-aside,
+    .aq-gallery-panel,
+    .aq-content-panel,
+    .similar-services-inner,
+    .cv-box {
+      border: 1px solid var(--aq-line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 20px 52px rgba(35, 30, 24, 0.07);
+    }
+
+    .aq-detail-panel {
+      padding: clamp(30px, 4vw, 52px);
+      min-height: 100%;
+    }
+
+    .aq-kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 14px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: rgba(86, 98, 54, 0.12);
+      color: var(--aq-olive);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .service-detail-title h2,
+    .aq-content-panel h3,
+    .aq-gallery-panel h3,
+    .aq-process-card h4,
+    .aq-detail-aside h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--aq-text);
+      line-height: 1;
+    }
+
+    .service-detail-title h2 {
+      margin-bottom: 20px;
+      font-size: 4rem;
+    }
+
+    .service-detail-title .secondary {
+      color: var(--aq-olive);
+    }
+
+    .service-detail-title p,
+    .service-overview p,
+    .aq-detail-aside p,
+    .aq-process-card p,
+    .aq-gallery-panel p {
+      color: var(--aq-muted);
+      line-height: 1.85;
+    }
+
+    .aq-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .aq-detail-btn,
+    .aq-detail-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .aq-detail-btn {
+      background: var(--aq-olive);
+      color: #fff;
+    }
+
+    .aq-detail-btn-outline {
+      border: 1px solid var(--aq-line);
+      color: var(--aq-olive-dark);
+      background: #fff;
+    }
+
+    .aq-detail-btn:hover,
+    .aq-detail-btn-outline:hover {
+      transform: translateY(-2px);
+    }
+
+    .aq-detail-btn:hover {
+      background: var(--aq-olive-dark);
+      color: #fff;
+    }
+
+    .aq-detail-btn-outline:hover {
+      border-color: var(--aq-olive);
+      color: var(--aq-olive);
+    }
+
+    .service-image {
+      margin-top: 34px;
+      overflow: hidden;
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+      background: #d8d0c4;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .aq-detail-aside {
+      padding: 28px;
+      background: linear-gradient(180deg, #fff 0%, #f7f2ea 100%);
+    }
+
+    .aq-detail-aside h3 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .aq-service-meta {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .aq-service-meta li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--aq-line);
+      color: var(--aq-muted);
+    }
+
+    .aq-service-meta strong {
+      color: var(--aq-text);
+    }
+
+    .aq-content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.48fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .aq-content-panel,
+    .aq-gallery-panel {
+      padding: clamp(26px, 3.2vw, 38px);
+    }
+
+    .aq-content-panel h3,
+    .aq-gallery-panel h3 {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+
+    .overview-listing {
+      margin-top: 30px;
+    }
+
+    .overview-listing h4 {
+      color: var(--aq-olive-dark);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .overview-listing ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .overview-listing li {
+      color: #49443c;
+      line-height: 1.7;
+    }
+
+    .overview-listing i,
+    .similar-services i {
+      color: var(--aq-olive);
+    }
+
+    .aq-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .aq-process-card {
+      padding: 22px;
+      border: 1px solid var(--aq-line);
+      border-radius: 8px;
+      background: #fff;
+      animation: aqFadeUp 0.75s ease both;
+    }
+
+    .aq-process-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .aq-process-card:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .aq-process-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: var(--aq-cream);
+      color: var(--aq-olive);
+      font-weight: 800;
+    }
+
+    .aq-process-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .aq-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 168px;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .aq-gallery-item {
+      position: relative;
+      overflow: hidden;
+      border: 0;
+      border-radius: 8px;
+      padding: 0;
+      cursor: pointer;
+      background: #d8d0c4;
+      animation: aqImageIn 0.8s ease both;
+    }
+
+    .aq-gallery-item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .aq-gallery-item:nth-child(4) {
+      grid-column: span 2;
+    }
+
+    .aq-gallery-item:nth-child(2) {
+      animation-delay: 0.08s;
+    }
+
+    .aq-gallery-item:nth-child(3) {
+      animation-delay: 0.16s;
+    }
+
+    .aq-gallery-item:nth-child(4) {
+      animation-delay: 0.24s;
+    }
+
+    .aq-gallery-item:nth-child(5) {
+      animation-delay: 0.32s;
+    }
+
+    .aq-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease, filter 0.45s ease;
+    }
+
+    .aq-gallery-item::after {
+      content: 'View';
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      min-height: 34px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--aq-olive-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .aq-gallery-item:hover img,
+    .aq-gallery-item:focus img {
+      transform: scale(1.07);
+      filter: brightness(0.78);
+    }
+
+    .aq-gallery-item:hover::after,
+    .aq-gallery-item:focus::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .similar-services {
+      position: sticky;
+      top: 24px;
+    }
+
+    .similar-services-inner {
+      padding: 28px;
+    }
+
+    .similar-services h4 {
+      color: var(--aq-olive);
+      border-bottom-color: var(--aq-line) !important;
+    }
+
+    .similar-services a {
+      color: var(--aq-text);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cv-box {
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--aq-olive-dark) 0%, var(--aq-olive) 100%);
+    }
+
+    .cv-box .overlay {
+      display: none;
+    }
+
+    .cv-box p,
+    .cv-box h3,
+    .cv-box span {
+      color: #fff;
+    }
+
+    .cv-box .btn-primary {
+      border-radius: 999px;
+      background: #fff;
+      color: var(--aq-olive-dark);
+    }
+
+    .aq-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      background: rgba(15, 17, 10, 0.84);
+    }
+
+    .aq-lightbox.is-open {
+      display: flex;
+    }
+
+    .aq-lightbox-inner {
+      position: relative;
+      width: min(1040px, 100%);
+      animation: aqLightboxIn 0.28s ease both;
+    }
+
+    .aq-lightbox img {
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
+      background: #11130c;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    .aq-lightbox-caption {
+      margin-top: 14px;
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .aq-lightbox-close {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--aq-olive-dark);
+      font-size: 1.45rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @keyframes aqFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes aqImageIn {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes aqLightboxIn {
+      from {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 991px) {
+      .service-detail {
+        padding: 68px 0 74px;
+      }
+
+      .aq-detail-hero,
+      .aq-content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .similar-services {
+        position: static;
+      }
+
+      .aq-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .aq-process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .service-detail-title h2 {
+        font-size: 2.8rem;
+      }
+
+      .aq-gallery-grid {
+        grid-auto-rows: 150px;
+        gap: 10px;
+      }
+
+      .aq-gallery-item,
+      .aq-gallery-item:nth-child(1),
+      .aq-gallery-item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .aq-detail-actions {
+        flex-direction: column;
+      }
+
+      .aq-detail-btn,
+      .aq-detail-btn-outline {
+        width: 100%;
+      }
+    }
+  </style>
+
 
 </head>
 <body>
@@ -30,9 +556,9 @@
         <div class="header-top-inner d-flex flex-column flex-md-row justify-content-between align-items-center">
           <div class="header-contact">
             <ul class="d-flex white flex-wrap">
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="tel:+33877554332"><i class="fa fa-phone me-2" aria-hidden="true"></i>+33 877 554 332</a></li>
-              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="/cdn-cgi/l/email-protection#127b7c747d52657770617b66773c717d7f"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i><span class="__cf_email__" data-cfemail="4821262e27083f2d2a3b213c2d662b2725">[email&#160;protected]</span></a></li>
-              <li class="small"><i class="fa fa-clock-o me-2" aria-hidden="true"></i>Mon - Fri: 9:00 - 18:30</li>
+              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="tel:+918698725668"><i class="fa fa-phone me-2" aria-hidden="true"></i>+91 86987 25668</a></li>
+              <li class="me-3 pe-3 border-end border-lightgrey small"><a href="mailto:info@aqeeqdecor.com"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i>info@aqeeqdecor.com</a></li>
+              <li class="small"><i class="fa fa-clock-o me-2" aria-hidden="true"></i>Mon - Sat: 10:00 - 19:00</li>
             </ul>
           </div>
           <div class="social-links">
@@ -188,100 +714,118 @@
   <!-- Service Detail Section Starts -->
   <section class="service-detail">
     <div class="container">
-      <div class="service-detail-inner text-center text-lg-start">
-        <div class="row gx-lg-5 gy-5">
-          <div class="col-lg-8">
-            <div class="service-detail-left">
-              <div class="service-detail-title mb-4 pb-4 border-dashed">
-                <h2 class="mb-0"><span class="secondary">Interior</span> Design</h2>
-                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias libero placeat provident repellat qui quod culpa eius sit adipisci, dolorum optio illum.</p>
+      <div class="aq-detail-hero">
+        <div class="aq-detail-panel service-detail-left">
+          <span class="aq-kicker">Aqeeq Decor Service Detail</span>
+          <div class="service-detail-title">
+            <h2><span class="secondary">Luxury</span> Curtains</h2>
+            <p>Elegant curtain solutions with custom fabric selection, stitching, lining and installation support for refined residential and commercial interiors.</p>
+          </div>
+          <div class="aq-detail-actions">
+            <a href="contact.html" class="aq-detail-btn">Book Consultation</a>
+            <a href="service.html" class="aq-detail-btn-outline">View All Services</a>
+          </div>
+          <div class="service-image">
+            <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Luxury curtains service">
+          </div>
+        </div>
+
+        <aside class="aq-detail-aside">
+          <h3>Designed Around Your Space</h3>
+          <p>Every selection is guided by room scale, light, privacy, finish, and the mood you want to create. Our team helps you move from inspiration to a finished, installation-ready solution.</p>
+          <ul class="aq-service-meta">
+            <li><strong>Scope</strong><span data-service-meta="scope">Fabric, stitching, lining</span></li>
+            <li><strong>Best For</strong><span data-service-meta="bestFor">Homes, offices, suites</span></li>
+            <li><strong>Support</strong><span data-service-meta="support">Selection to installation</span></li>
+          </ul>
+          <a href="tel:+918698725668" class="aq-detail-btn w-100">Call +91 86987 25668</a>
+        </aside>
+      </div>
+
+      <div class="aq-gallery-panel mb-4">
+        <span class="aq-kicker">Visual Inspiration</span>
+        <h3>Explore The Look In Detail</h3>
+        <p>Click any picture to view it clearly. The animated grid gives a quick feel for textures, finishes, proportions, and styling direction.</p>
+        <div class="aq-gallery-grid" aria-label="Service image gallery"></div>
+      </div>
+
+      <div class="aq-content-grid">
+        <div class="aq-content-panel">
+          <div class="service-overview">
+            <span class="aq-kicker">Service Overview</span>
+            <h3>Curtains Overview</h3>
+            <p>Our curtain service helps you choose the right fabric weight, texture, heading style and finish for every room. From sheer layering to blackout privacy, each solution is planned around light, mood, usage and decor style.</p>
+            <p>We support measurement, product guidance and professional installation so the final result feels polished, functional and tailored to your space.</p>
+          </div>
+
+          <div class="overview-listing">
+            <h4>Product Highlights</h4>
+            <div class="sperator bg-primary mb-3 ms-lg-0" style="width: 40px; height: 2px;"></div>
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <ul>
+                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Sheer, semi-sheer and blackout curtains</li>
+                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Custom stitching and finishing</li>
+                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Premium curtain rods and channels</li>
+                </ul>
               </div>
-              <div class="service-image mb-4">
-                <img src="image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg" alt="apartment">
-              </div>
-              <div class="service-overview mb-4">
-                <h4>Job Overview</h4>
-                <div class="sperator bg-primary mb-3 ms-lg-0" style="width: 40px; height: 2px;"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur viverra, metus ut hendrerit luctus, tellus magna rutrum felis, vitae tempor lorem neque in diam. Proin facilisis non neque at fermentum. Sed imperdiet id nibh ut scelerisque. Suspendisse potenti.</p>
-                <p class="mb-3">Nullam vel urna pretium, vestibulum arcu vel, mattis quam. Duis sed ornare mi, sed feugiat risus. Donec dapibus malesuada lectus at porttitor. Cras mi justo, condimentum vitae viverra a, posuere vel elit. Mauris neque urna, faucibus commodo nulla mattis, ornare mattis est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras euismod iaculis ex nec aliquam.</p>
-                <div class="service-overview-image">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <img src="image/office-building-2022-12-15-19-40-07-utc.jpg" alt="">
-                    </div>
-                    <div class="col-md-6">
-                      <img src="image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="overview-listing">
-                <h4>PRESENT YOUR PROBLEM IN A SHORT AND CONCISE MANNER</h4>
-                <div class="sperator bg-primary mb-3 ms-lg-0" style="width: 40px; height: 2px;"></div>
-                <div class="row gy-3">
-                  <div class="col-md-6">
-                    <ul>
-                      <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>30% work time for project support and implementation.</li>
-                      <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>70% work time for marketing & sales.</li>
-                      <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Energetic in search for new projects, and new channels to get sales orders.</li>
-                      <li class="d-flex gap-2 align-items-center"><i class="fa fa-star-o me-2" aria-hidden="true"></i>The candidate must have good computer literacy. (Microsoft Office Application)</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul>
-                      <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Development experience with Angular, Node.JS, or ColdFusion.</li>
-                      <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>HTML, CSS, XHTML, XML</li>
-                      <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Hypervisors, SAN’s, load balancers, firewalls, and Web Application Firewall (WAF).</li>
-                      <li class="d-flex gap-2 align-items-center"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Experience with Higher Logic (a collaboration platform)</li>
-                    </ul>
-                  </div>
-                </div>
+              <div class="col-md-6">
+                <ul>
+                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Layered window styling</li>
+                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Fabric and color consultation</li>
+                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Professional measurement and installation</li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="service-detail-right">
-              <div class="similar-services bg-secondarylight p-4 mb-4">
-                <div class="similar-services-inner p-4 bg-white">
-                  <h4 class="secondary border-bottom pb-3 text-start">Similar Services</h4>
-                  <div class="sperator bg-secondary mb-3 ms-0" style="width: 40px; height: 2px; margin-top: -10px;"></div>
-                  <ul>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Interior service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Architecture service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Architecture service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Exterior service</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>General Contractor</a>
-                    </li>
-                    <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Interior Decorator</a>
-                    </li>
-                    <li class="d-flex align-items-center">
-                      <a href="" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Hospitality Design</a>
-                    </li>
-                  </ul>
-                </div>
+
+          <div class="aq-process-grid">
+            <div class="aq-process-card">
+              <span class="aq-process-count">01</span>
+              <h4>Consult</h4>
+              <p>We understand your room, usage, preferred finish, and budget direction.</p>
+            </div>
+            <div class="aq-process-card">
+              <span class="aq-process-count">02</span>
+              <h4>Curate</h4>
+              <p>We shortlist materials, colors, patterns, and practical combinations.</p>
+            </div>
+            <div class="aq-process-card">
+              <span class="aq-process-count">03</span>
+              <h4>Install</h4>
+              <p>We coordinate measurements, finishing details, and final installation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-detail-right">
+          <div class="similar-services mb-4">
+            <div class="similar-services-inner">
+              <h4 class="secondary border-bottom pb-3 text-start">Similar Services</h4>
+              <div class="sperator bg-secondary mb-3 ms-0" style="width: 40px; height: 2px; margin-top: -10px;"></div>
+              <ul>
+                <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
+                  <a href="service-detail.html?service=wallpapers" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Designer Wallpapers</a>
+                </li>
+                <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
+                  <a href="service-detail.html?service=furniture" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Custom Furniture</a>
+                </li>
+                <li class="d-flex align-items-center">
+                  <a href="service-detail.html?service=window-blinds" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Premium Window Blinds</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="cv-box py-5 px-4 text-center white position-relative">
+            <div class="overlay bg-primary opacity-50"></div>
+            <div class="cv-box-inner position-relative">
+              <div class="cv-icon text-center mb-3">
+                <i class="fa fa-phone bg-secondary text-center rounded-circle white" aria-hidden="true"></i>
               </div>
-              <div class="cv-box py-5 px-4 text-center white position-relative">
-                <div class="overlay bg-primary opacity-50"></div>
-                <div class="cv-box-inner position-relative">
-                  <div class="cv-icon text-center mb-3">
-                    <i class="fa fa-phone bg-secondary text-center rounded-circle white" aria-hidden="true"></i>
-                  </div>
-                  <span class="fw-medium h5 teko white text-capitalize">Do You Need Help?</span>
-                  <h3 class="white">+569 2316 2156</h3>
-                  <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  <a href="contact.html" class="btn-primary">Contact Us</a>
-                </div>
-              </div>
+              <span class="fw-medium h5 teko white text-capitalize">Need Help Choosing?</span>
+              <h3 class="white">+91 86987 25668</h3>
+              <p class="mb-4">Share your room size, preferred look, and budget. We will guide you toward a refined solution that feels practical and polished.</p>
+              <a href="contact.html" class="btn-primary">Contact Us</a>
             </div>
           </div>
         </div>
@@ -289,6 +833,14 @@
     </div>
   </section>
   <!-- Service Detail Section Ends -->
+
+  <div class="aq-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+    <div class="aq-lightbox-inner">
+      <button type="button" class="aq-lightbox-close" aria-label="Close image preview">&times;</button>
+      <img src="" alt="">
+      <div class="aq-lightbox-caption"></div>
+    </div>
+  </div>
 
   <!-- Appointment Section Starts -->
   <div class="appointment py-5 bg-secondarylight">
@@ -300,20 +852,20 @@
               <ul class="d-flex align-items-center justify-content-center justify-content-lg-start">
                 <li class="me-3 pe-3 border-end border-2 border-white"><img src="image/chat.png" alt="chat" style="height: 44px; width: 44px;"></li>
                 <li class="teko">
-                  <span class="h6 primary mb-0">Book Your Schedule</span>
-                  <span class="d-block h3 mb-0">666 888 0000</span>
+                  <span class="h6 primary mb-0">Book Your Visit</span>
+                  <span class="d-block h3 mb-0">+91 86987 25668</span>
                 </li>
               </ul>
             </div>
           </div>
           <div class="col-lg-6 col-md-8">
             <div class="appointment-center">
-              <p class="mb-0">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="mb-0">Bring room photos, measurements, or a simple idea. Our team will help you choose coordinated materials, colors, finishes, and installation details.</p>
             </div>
           </div>
           <div class="col-lg-3">
             <div class="appointment-right text-center text-lg-end">
-              <a href="consultation.html" class="btn-primary">Book An Appointment</a>
+              <a href="contact.html" class="btn-primary">Book An Appointment</a>
             </div>
           </div>
         </div>
@@ -336,7 +888,7 @@
             </div>
             <div class="col-lg-9 col-md-8">
               <div class="footer-top-right">
-                <p class="white mb-0 h6 fw-normal fst-italic">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporatu incididunt ut labore et dolore magna aliqua.”</p>
+                <p class="white mb-0 h6 fw-normal fst-italic">Thoughtfully selected curtains, wallpapers, furniture, blinds, mattresses, and flooring for homes and commercial spaces.</p>
               </div>
             </div>
           </div>
@@ -345,8 +897,8 @@
           <div class="row gx-lg-5 gy-5">
             <div class="col-lg-4">
               <div class="footer-info">
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-                <p class="mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui reprehenderit dolor officia. </p>
+                <p>Aqeeq Decor helps you create refined, practical interiors with coordinated materials and guided product selection.</p>
+                <p class="mb-4">Visit our showroom or connect with us for decor guidance, product recommendations, and installation support.</p>
                 <div class="footer-socials mb-4">
                   <ul class="d-flex gap-1 my-2 justify-content-center justify-content-md-start">
                     <li>
@@ -378,19 +930,19 @@
                   <div class="mb-3">
                     <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
                       <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                      <li>256 Elizaberth Ave, CA, 90025</li>
+                      <li>Pune, Maharashtra</li>
                     </ul>
                   </div>
                   <div class="mb-3">
                     <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
                       <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                      <li>+569 2316 2156</li>
+                      <li>+91 86987 25668</li>
                     </ul>
                   </div>
                   <div>
                     <ul class="align-items-center d-flex gap-2 justify-content-center justify-content-md-start">
                       <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                      <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff96919990bf96918b9a8d9a9e93d19c9092">[email&#160;protected]</a></li>
+                      <li><a href="mailto:info@aqeeqdecor.com">info@aqeeqdecor.com</a></li>
                     </ul>
                   </div>
                 </div>
@@ -403,8 +955,8 @@
                 <ul class="d-flex flex-column gap-3">
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="service.html">Services</a></li>
-                  <li><a href="service.html">Attorneys</a></li>
-                  <li><a href="blog-list.html">News & Articles</a></li>
+                  <li><a href="project.html">Projects</a></li>
+                  <li><a href="blogs.html">Blogs</a></li>
                   <li><a href="">Policies</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -415,20 +967,20 @@
                 <h4 class="white mb-2">Services</h4>
                 <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
                 <ul class="d-flex flex-column gap-3">
-                  <li><a href="service.html">Perfect Planning</a></li>
-                  <li><a href="service.html">Professional Design</a></li>
-                  <li><a href="service.html">Best Interior</a></li>
-                  <li><a href="service.html">Furniture Design</a></li>
-                  <li><a href="service.html">Complete Decoration</a></li>
-                  <li><a href="service.html">Terms & Conditions</a></li>
+                  <li><a href="service-detail.html?service=curtains">Curtains</a></li>
+                  <li><a href="service-detail.html?service=wallpapers">Wallpapers</a></li>
+                  <li><a href="service-detail.html?service=furniture">Furniture</a></li>
+                  <li><a href="service-detail.html?service=window-blinds">Window Blinds</a></li>
+                  <li><a href="service-detail.html?service=mattress">Mattress</a></li>
+                  <li><a href="service-detail.html?service=floorings">Floorings</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="services">
-                <h4 class="white mb-2">Get interesting news</h4>
+                <h4 class="white mb-2">Get Decor Updates</h4>
                 <div class="border-bottom border-white w-25 mb-4 m-auto ms-md-1"></div>
-                <p class="mb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ea dolorum.</p>
+                <p class="mb-3">Subscribe for new collections, finish ideas, and practical styling notes from Aqeeq Decor.</p>
                 <div class="subscribe">
                   <input type="email" placeholder="Email" class="mb-2">
                   <a href="" class="btn-primary">Subscribe</a>
@@ -438,7 +990,7 @@
           </div>
         </div>
         <div class="footer-bottom text-center">
-          <p class="mb-0"> &copy;2025 Intereal. All rights reserved.</p>
+          <p class="mb-0"> &copy;2026 Aqeeq Decor. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -451,7 +1003,7 @@
   </div>
   <!--Back-to-top Button end-->
 
-  <!-- Intereal Info Starts -->
+  <!-- Aqeeq Decor Info Starts -->
   <div class="modal fade intereal-info-modal" id="interealModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog  h-100 my-0 rounded-0 me-0 modal-sm">
       <div class="modal-content h-100 rounded-0">
@@ -463,26 +1015,26 @@
             <img src="image/logo1.png" alt="logo">
           </div>
           <div class="info mb-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Aqeeq Decor curates home furnishing and decor solutions that balance comfort, material quality, and visual warmth.</p>
+            <p class="mb-0">Our team supports you with product selection, measurements, finishes, and installation guidance for homes, offices, and commercial spaces.</p>
           </div>
           <div class="contact-info mb-4">
             <div class="mb-2 pb-2 border-bottom border-grey">
               <ul class="align-items-center d-flex gap-2">
                 <li class="h5 mb-0"><i class="fa fa-map-marker me-2" aria-hidden="true"></i></li>
-                <li>256 Elizaberth Ave, CA, 90025</li>
+                <li>Pune, Maharashtra</li>
               </ul>
             </div>
             <div class="mb-2 pb-2 border-bottom border-grey">
               <ul class="align-items-center d-flex gap-2">
                 <li class="h5 mb-0"><i class="fa fa-phone me-2" aria-hidden="true"></i></li>
-                <li>+569 2316 2156</li>
+                <li>+91 86987 25668</li>
               </ul>
             </div>
             <div>
               <ul class="align-items-center d-flex gap-2">
                 <li class="h5 mb-0"><i class="fa fa-envelope-o me-2" aria-hidden="true"></i></li>
-                <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff96919990bf96918b9a8d9a9e93d19c9092">[email&#160;protected]</a></li>
+                <li><a href="mailto:info@aqeeqdecor.com">info@aqeeqdecor.com</a></li>
               </ul>
             </div>
           </div>
@@ -498,7 +1050,7 @@
       </div>
     </div>
   </div>
-  <!-- Intereal Info Ends -->
+  <!-- Aqeeq Decor Info Ends -->
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.7.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
@@ -587,24 +1139,104 @@
         }
       };
 
-      const params = new URLSearchParams(window.location.search);
-      const key = params.get('service') || window.location.hash.replace('#', '');
-      const selectedService = servicePages[key];
+      const serviceMeta = {
+        curtains: {
+          scope: 'Fabric, stitching, lining',
+          bestFor: 'Homes, offices, suites',
+          support: 'Selection to installation'
+        },
+        wallpapers: {
+          scope: 'Texture, pattern, feature walls',
+          bestFor: 'Bedrooms, lounges, offices',
+          support: 'Selection and installation guidance'
+        },
+        furniture: {
+          scope: 'Custom forms and finishes',
+          bestFor: 'Homes and workspaces',
+          support: 'Planning, sizing, coordination'
+        },
+        'window-blinds': {
+          scope: 'Light control and privacy',
+          bestFor: 'Windows, balconies, offices',
+          support: 'Measure, select, install'
+        },
+        mattress: {
+          scope: 'Comfort and support planning',
+          bestFor: 'Bedrooms and suites',
+          support: 'Product guidance'
+        },
+        floorings: {
+          scope: 'Material and finish selection',
+          bestFor: 'Residential and commercial',
+          support: 'Selection to execution'
+        }
+      };
 
-      if (!selectedService) {
-        return;
-      }
+      const galleryImages = {
+        curtains: [
+          { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Layered curtain styling in a warm interior' },
+          { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Curtain and decor material inspiration' },
+          { src: 'image/Website Hero Seciton.png', alt: 'Aqeeq Decor furnishing showcase' },
+          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Soft living room furnishing detail' },
+          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated dining interior finish' }
+        ],
+        wallpapers: [
+          { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Designer wallpaper and furniture setting' },
+          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Styled open space with wall finish inspiration' },
+          { src: 'image/7.png', alt: 'Aqeeq Decor wallpaper mood image' },
+          { src: 'image/modern-bathroom-interior-design-2022-12-16-11-57-19-utc.jpg', alt: 'Textured modern wall finish' },
+          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Feature wall with refined decor' }
+        ],
+        furniture: [
+          { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Custom furniture in a warm interior' },
+          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Living room furniture and soft furnishings' },
+          { src: 'image/6.png', alt: 'Aqeeq Decor furniture showcase' },
+          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Dining furniture composition' },
+          { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Bedroom furniture setting' }
+        ],
+        'window-blinds': [
+          { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Window blind styling inspiration' },
+          { src: 'image/8.png', alt: 'Aqeeq Decor window treatment image' },
+          { src: 'image/Website Hero Seciton.png', alt: 'Modern window furnishing showcase' },
+          { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Bright apartment window styling' },
+          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with soft window light' }
+        ],
+        mattress: [
+          { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Comfort mattress in bedroom setting' },
+          { src: 'image/bedroom-interior-design-3d-rendering-2021-08-26-18-15-32-utc1.jpg', alt: 'Bedroom comfort planning' },
+          { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Warm bedroom furnishing mood' },
+          { src: 'image/6.png', alt: 'Aqeeq Decor bedroom product showcase' },
+          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated interior finish detail' }
+        ],
+        floorings: [
+          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Modern flooring and dining room finish' },
+          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Living room flooring and decor finish' },
+          { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Apartment flooring inspiration' },
+          { src: 'image/7.png', alt: 'Aqeeq Decor flooring showcase' },
+          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with coordinated flooring' }
+        ]
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const requestedKey = params.get('service') || window.location.hash.replace('#', '');
+      const key = servicePages[requestedKey] ? requestedKey : 'curtains';
+      const selectedService = servicePages[key];
 
       const allServices = Object.entries(servicePages);
       const title = document.querySelector('.service-detail-title h2');
       const intro = document.querySelector('.service-detail-title p');
       const breadcrumbTitle = document.querySelector('.breadcrumb-inner h2');
       const heroImage = document.querySelector('.service-image img');
-      const overviewTitle = document.querySelector('.service-overview h4');
+      const overviewTitle = document.querySelector('.service-overview h3');
       const overviewParagraphs = document.querySelectorAll('.service-overview > p');
       const listingTitle = document.querySelector('.overview-listing h4');
       const listingRow = document.querySelector('.overview-listing .row');
       const similarServices = document.querySelector('.similar-services ul');
+      const galleryGrid = document.querySelector('.aq-gallery-grid');
+      const meta = serviceMeta[key] || serviceMeta.curtains;
+      const metaScope = document.querySelector('[data-service-meta="scope"]');
+      const metaBestFor = document.querySelector('[data-service-meta="bestFor"]');
+      const metaSupport = document.querySelector('[data-service-meta="support"]');
 
       document.title = selectedService.title + ' | AQEEQ Decor';
 
@@ -627,6 +1259,18 @@
 
       if (overviewTitle) {
         overviewTitle.textContent = selectedService.overviewTitle;
+      }
+
+      if (metaScope) {
+        metaScope.textContent = meta.scope;
+      }
+
+      if (metaBestFor) {
+        metaBestFor.textContent = meta.bestFor;
+      }
+
+      if (metaSupport) {
+        metaSupport.textContent = meta.support;
       }
 
       selectedService.paragraphs.forEach(function (paragraph, index) {
@@ -663,6 +1307,60 @@
           })
           .join('');
       }
+
+      if (galleryGrid) {
+        const selectedGallery = galleryImages[key] || galleryImages.curtains;
+
+        galleryGrid.innerHTML = selectedGallery.map(function (image, index) {
+          return '<button type="button" class="aq-gallery-item" data-gallery-index="' + index + '" aria-label="Open ' + image.alt + '"><img src="' + image.src + '" alt="' + image.alt + '"></button>';
+        }).join('');
+      }
+
+      const lightbox = document.querySelector('.aq-lightbox');
+      const lightboxImage = document.querySelector('.aq-lightbox img');
+      const lightboxCaption = document.querySelector('.aq-lightbox-caption');
+      const lightboxClose = document.querySelector('.aq-lightbox-close');
+
+      const closeLightbox = function () {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      };
+
+      document.querySelectorAll('.aq-gallery-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          const image = item.querySelector('img');
+          if (!lightbox || !lightboxImage || !image) return;
+
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+
+          if (lightboxCaption) {
+            lightboxCaption.textContent = image.alt;
+          }
+
+          lightbox.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener('click', function (event) {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          closeLightbox();
+        }
+      });
     });
   </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"e2e296138d64407b8469055f5cbf0b42","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
