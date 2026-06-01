@@ -301,6 +301,8 @@
             right: 0;
             min-width: 280px;
             opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
             transform: translateY(10px);
             transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
             z-index: 60;
@@ -637,9 +639,14 @@
         .feature-icon {
             width: 34px;
             height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.26);
             font-size: 15px;
+            line-height: 1;
+            text-align: center;
             color: #f3eadb;
             background: rgba(255, 255, 255, 0.14);
             flex-shrink: 0;
@@ -1831,6 +1838,12 @@
             padding: 16px 0 22px;
         }
 
+        @media (min-width: 901px) {
+            .hero {
+                min-height: calc(100vh - 126px);
+            }
+        }
+
         @media (max-width: 1200px) {
             .container {
                 width: min(var(--container), calc(100% - 36px));
@@ -2583,7 +2596,7 @@
             }
 
             .hero {
-                min-height: clamp(460px, 58vh, 600px);
+                min-height: calc(100vh - 126px);
             }
         }
 
