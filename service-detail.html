@@ -494,6 +494,167 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/plugin.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const servicePages = {
+        curtains: {
+          title: 'Luxury Curtains',
+          titleHtml: '<span class="secondary">Luxury</span> Curtains',
+          intro: 'Elegant curtain solutions with custom fabric selection, stitching, lining and installation support for refined residential and commercial interiors.',
+          image: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg',
+          imageAlt: 'Luxury curtains service',
+          overviewTitle: 'Curtains Overview',
+          paragraphs: [
+            'Our curtain service helps you choose the right fabric weight, texture, heading style and finish for every room. From sheer layering to blackout privacy, each solution is planned around light, mood, usage and decor style.',
+            'We support measurement, product guidance and professional installation so the final result feels polished, functional and tailored to your space.'
+          ],
+          highlights: ['Sheer, semi-sheer and blackout curtains', 'Custom stitching and finishing', 'Premium curtain rods and channels', 'Layered window styling', 'Fabric and color consultation', 'Professional measurement and installation']
+        },
+        wallpapers: {
+          title: 'Designer Wallpapers',
+          titleHtml: 'Designer <span class="secondary">Wallpapers</span>',
+          intro: 'Statement wallpaper selections that bring texture, tone and personality to feature walls, bedrooms, living spaces and commercial interiors.',
+          image: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg',
+          imageAlt: 'Designer wallpapers service',
+          overviewTitle: 'Wallpapers Overview',
+          paragraphs: [
+            'Wallpapers can transform a plain wall into a warm, expressive design feature. We help you select patterns, textures and finishes that complement furniture, lighting and the scale of the room.',
+            'Our team guides you through product suitability, surface preparation and installation requirements for a clean, lasting finish.'
+          ],
+          highlights: ['Textured and patterned wallpapers', 'Feature wall planning', 'Bedroom and living room options', 'Commercial wall finishes', 'Color and material coordination', 'Installation guidance']
+        },
+        furniture: {
+          title: 'Custom Furniture',
+          titleHtml: '<span class="secondary">Custom</span> Furniture',
+          intro: 'Furniture solutions curated for comfort, proportion, durability and visual harmony across homes, offices and hospitality spaces.',
+          image: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg',
+          imageAlt: 'Custom furniture service',
+          overviewTitle: 'Furniture Overview',
+          paragraphs: [
+            'Our custom furniture approach focuses on pieces that fit your space, lifestyle and finish preferences. We help coordinate forms, fabrics, dimensions and details so the room feels complete and practical.',
+            'From sofas and accent chairs to dining, office and bedroom furniture, each selection is guided by comfort, everyday use and a cohesive interior language.'
+          ],
+          highlights: ['Modular furniture systems', 'Office furniture solutions', 'Sofas and accent chairs', 'Dining tables and chairs', 'Beds and bedside tables', 'Pouffee collection']
+        },
+        'window-blinds': {
+          title: 'Premium Window Blinds',
+          titleHtml: 'Premium <span class="secondary">Window Blinds</span>',
+          intro: 'Smart window blind systems for controlled light, privacy and a sleek contemporary finish across homes and workspaces.',
+          image: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg',
+          imageAlt: 'Premium window blinds service',
+          overviewTitle: 'Window Blinds Overview',
+          paragraphs: [
+            'Window blinds offer a clean and practical way to manage light, heat and privacy. We help match the right blind type to the room function, window size and interior style.',
+            'Our range includes modern options for bedrooms, living rooms, offices, balconies and outdoor-facing openings.'
+          ],
+          highlights: ['Roller and zebra blinds', 'Vertical and roman blinds', 'Honeycomb solutions', 'Outdoor blinds', 'PVC options', 'Wooden and aluminium venetian blinds']
+        },
+        mattress: {
+          title: 'Comfort Mattress Collection',
+          titleHtml: 'Comfort <span class="secondary">Mattress</span> Collection',
+          intro: 'Comfort-driven mattress options selected to improve rest while complementing a refined bedroom design.',
+          image: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg',
+          imageAlt: 'Comfort mattress collection service',
+          overviewTitle: 'Mattress Overview',
+          paragraphs: [
+            'A good mattress shapes both sleep quality and the everyday comfort of your bedroom. We help you compare support levels, comfort profiles and sizes based on your lifestyle and room plan.',
+            'The result is a bedroom setup that feels thoughtfully designed, balanced and restful.'
+          ],
+          highlights: ['Comfort and support guidance', 'Bedroom-size planning', 'Premium sleep solutions', 'Soft, medium and firm options', 'Practical product selection', 'Bedroom styling coordination']
+        },
+        floorings: {
+          title: 'Modern Flooring Solutions',
+          titleHtml: 'Modern <span class="secondary">Flooring</span> Solutions',
+          intro: 'Durable flooring systems selected for lifestyle, footfall, maintenance and the visual character of each space.',
+          image: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg',
+          imageAlt: 'Modern flooring solutions service',
+          overviewTitle: 'Flooring Overview',
+          paragraphs: [
+            'Flooring sets the foundation for the entire interior experience. We help you choose finishes that balance durability, warmth, maintenance and design continuity across the property.',
+            'Whether the requirement is residential elegance or commercial performance, our guidance keeps material choice aligned with daily use and long-term value.'
+          ],
+          highlights: ['Wooden flooring', 'PVC flooring', 'Engineered flooring', 'Sports flooring', 'Gym flooring', 'Finish and material guidance']
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const key = params.get('service') || window.location.hash.replace('#', '');
+      const selectedService = servicePages[key];
+
+      if (!selectedService) {
+        return;
+      }
+
+      const allServices = Object.entries(servicePages);
+      const title = document.querySelector('.service-detail-title h2');
+      const intro = document.querySelector('.service-detail-title p');
+      const breadcrumbTitle = document.querySelector('.breadcrumb-inner h2');
+      const heroImage = document.querySelector('.service-image img');
+      const overviewTitle = document.querySelector('.service-overview h4');
+      const overviewParagraphs = document.querySelectorAll('.service-overview > p');
+      const listingTitle = document.querySelector('.overview-listing h4');
+      const listingRow = document.querySelector('.overview-listing .row');
+      const similarServices = document.querySelector('.similar-services ul');
+
+      document.title = selectedService.title + ' | AQEEQ Decor';
+
+      if (title) {
+        title.innerHTML = selectedService.titleHtml;
+      }
+
+      if (intro) {
+        intro.textContent = selectedService.intro;
+      }
+
+      if (breadcrumbTitle) {
+        breadcrumbTitle.textContent = selectedService.title;
+      }
+
+      if (heroImage) {
+        heroImage.src = selectedService.image;
+        heroImage.alt = selectedService.imageAlt;
+      }
+
+      if (overviewTitle) {
+        overviewTitle.textContent = selectedService.overviewTitle;
+      }
+
+      selectedService.paragraphs.forEach(function (paragraph, index) {
+        if (overviewParagraphs[index]) {
+          overviewParagraphs[index].textContent = paragraph;
+        }
+      });
+
+      if (listingTitle) {
+        listingTitle.textContent = 'Product Highlights';
+      }
+
+      if (listingRow) {
+        const midpoint = Math.ceil(selectedService.highlights.length / 2);
+        const highlightColumns = [
+          selectedService.highlights.slice(0, midpoint),
+          selectedService.highlights.slice(midpoint)
+        ];
+
+        listingRow.innerHTML = highlightColumns.map(function (items) {
+          return '<div class="col-md-6"><ul>' + items.map(function (item) {
+            return '<li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>' + item + '</li>';
+          }).join('') + '</ul></div>';
+        }).join('');
+      }
+
+      if (similarServices) {
+        similarServices.innerHTML = allServices
+          .filter(function ([serviceKey]) {
+            return serviceKey !== key;
+          })
+          .map(function ([serviceKey, service]) {
+            return '<li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3"><a href="service-detail.html?service=' + serviceKey + '" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>' + service.title + '</a></li>';
+          })
+          .join('');
+      }
+    });
+  </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"e2e296138d64407b8469055f5cbf0b42","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

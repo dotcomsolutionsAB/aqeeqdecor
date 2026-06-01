@@ -619,6 +619,8 @@
     border: 1px solid #ece3d7;
     border-radius: 30px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 16px 40px rgba(27, 22, 16, 0.05);
   }
@@ -634,6 +636,9 @@
 
   .aq-service-content {
     padding: 28px 26px 30px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
   }
 
   .aq-service-tag {
@@ -688,6 +693,35 @@
     height: 8px;
     border-radius: 50%;
     background: #7b7b5c;
+  }
+
+  .aq-service-action {
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  .aq-service-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: #556337;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .aq-service-button:hover,
+  .aq-service-button:focus {
+    background: #373f22;
+    color: #fff;
+    transform: translateY(-2px);
   }
 
   .aq-services-showcase {
@@ -3014,6 +3048,9 @@
               <span class="aq-service-tag">Curtains</span>
               <h3>Luxury Curtains</h3>
               <p>Elegant fabric selections, custom stitching and premium installation solutions that soften light beautifully and complete the styling of your interiors. From sheer layering to blackout finishes, our curtain collections are curated to balance privacy, ambience and refined visual detail.</p>
+              <div class="aq-service-action">
+                <a href="service-detail.html?service=curtains" class="aq-service-button" aria-label="View details for Luxury Curtains">View Details <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -3027,6 +3064,9 @@
               <span class="aq-service-tag">Wallpapers</span>
               <h3>Designer Wallpapers</h3>
               <p>Transform plain walls into statement surfaces with textures, tones and patterns that create depth, elegance and a memorable finish. Our wallpaper selections help define feature walls, soften large spaces and introduce character through subtle luxury or bold visual impact.</p>
+              <div class="aq-service-action">
+                <a href="service-detail.html?service=wallpapers" class="aq-service-button" aria-label="View details for Designer Wallpapers">View Details <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -3048,6 +3088,9 @@
                 <li>Beds & bedside tables</li>
                 <li>Pouffee collection</li>
               </ul>
+              <div class="aq-service-action">
+                <a href="service-detail.html?service=furniture" class="aq-service-button" aria-label="View details for Custom Furniture">View Details <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -3069,6 +3112,9 @@
                 <li>PVC options</li>
                 <li>Wooden & aluminium venetian blinds</li>
               </ul>
+              <div class="aq-service-action">
+                <a href="service-detail.html?service=window-blinds" class="aq-service-button" aria-label="View details for Premium Window Blinds">View Details <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -3082,6 +3128,9 @@
               <span class="aq-service-tag">Mattress</span>
               <h3>Comfort Mattress Collection</h3>
               <p>Premium comfort-driven mattress options selected to improve sleep quality while complementing refined bedroom design aesthetics. We help you choose the right support, finish and comfort profile so the bedroom feels thoughtfully designed as well as deeply restful.</p>
+              <div class="aq-service-action">
+                <a href="service-detail.html?service=mattress" class="aq-service-button" aria-label="View details for Comfort Mattress Collection">View Details <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </div>
@@ -3102,6 +3151,9 @@
                 <li>Sports flooring</li>
                 <li>Gym flooring</li>
               </ul>
+              <div class="aq-service-action">
+                <a href="service-detail.html?service=floorings" class="aq-service-button" aria-label="View details for Modern Flooring Solutions">View Details <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
         </div>
