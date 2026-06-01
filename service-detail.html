@@ -353,8 +353,32 @@
     }
 
     .call-icon {
+      position: relative;
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      font-size: 16px;
       line-height: 1;
+      transform-origin: 50% 100%;
+      animation: ringPhone 1.4s ease-in-out infinite;
+    }
+
+    .call-icon::before,
+    .call-icon::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      opacity: 0;
+      transform: scale(0.7);
+      animation: ringPulse 1.4s ease-out infinite;
+    }
+
+    .call-icon::after {
+      animation-delay: 0.35s;
     }
 
     .about-breadcrumb {
@@ -425,8 +449,7 @@
     .aq-detail-aside,
     .aq-gallery-panel,
     .aq-content-panel,
-    .similar-services-inner,
-    .cv-box {
+    .similar-services-inner {
       border: 1px solid var(--aq-line);
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.88);
@@ -1076,25 +1099,12 @@
       text-decoration: none;
     }
 
-    .cv-box {
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--aq-olive-dark) 0%, var(--aq-olive) 100%);
+    #back-to-top a {
+      background-color: var(--aq-olive) !important;
     }
 
-    .cv-box .overlay {
-      display: none;
-    }
-
-    .cv-box p,
-    .cv-box h3,
-    .cv-box span {
-      color: #fff;
-    }
-
-    .cv-box .btn-primary {
-      border-radius: 999px;
-      background: #fff;
-      color: var(--aq-olive-dark);
+    #back-to-top a:hover {
+      background-color: var(--aq-olive-dark) !important;
     }
 
     .aq-lightbox {
@@ -1180,6 +1190,44 @@
       to {
         opacity: 1;
         transform: scale(1);
+      }
+    }
+
+    @keyframes ringPhone {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(14deg);
+      }
+      20% {
+        transform: rotate(-12deg);
+      }
+      30% {
+        transform: rotate(14deg);
+      }
+      40% {
+        transform: rotate(-10deg);
+      }
+      50% {
+        transform: rotate(8deg);
+      }
+      60% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes ringPulse {
+      0% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      30% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.35);
       }
     }
 
@@ -1758,18 +1806,6 @@
                   <a href="service-detail.html?service=window-blinds" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Premium Window Blinds</a>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div class="cv-box py-5 px-4 text-center white position-relative">
-            <div class="overlay bg-primary opacity-50"></div>
-            <div class="cv-box-inner position-relative">
-              <div class="cv-icon text-center mb-3">
-                <i class="fa fa-phone bg-secondary text-center rounded-circle white" aria-hidden="true"></i>
-              </div>
-              <span class="fw-medium h5 teko white text-capitalize">Need Help Choosing?</span>
-              <h3 class="white">+91 86987 25668</h3>
-              <p class="mb-4">Share your room size, preferred look, and budget. We will guide you toward a refined solution that feels practical and polished.</p>
-              <a href="contact.html" class="btn-primary">Contact Us</a>
             </div>
           </div>
         </div>
