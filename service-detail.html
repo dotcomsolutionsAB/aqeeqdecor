@@ -10,6 +10,10 @@
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
   <link rel="apple-touch-icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!--CSS Plugins-->
@@ -23,16 +27,20 @@
   <style>
     :root {
       --container: 1240px;
-      --aq-olive: #566236;
-      --aq-olive-dark: #2f351f;
-      --aq-cream: #f6f2eb;
-      --aq-soft: #fcfaf6;
-      --aq-line: #e8ded0;
-      --aq-text: #211d18;
-      --aq-muted: #6e665b;
+      --aq-olive: #4a5430;
+      --aq-olive-dark: #31381f;
+      --aq-cream: #f6f3ee;
+      --aq-soft: #fbfaf7;
+      --aq-line: #e7e1d8;
+      --aq-text: #2b2b2b;
+      --aq-muted: #756f66;
     }
 
     body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
       background: var(--aq-soft);
       color: var(--aq-text);
     }
@@ -139,7 +147,7 @@
     }
 
     .logo {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 14px;
       flex-shrink: 0;
@@ -180,6 +188,8 @@
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: 0.06em;
+      line-height: normal;
+      text-transform: none;
       color: #47433c;
       transition: color 0.2s ease;
     }
@@ -329,6 +339,8 @@
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: 0.02em;
+      line-height: normal;
+      text-transform: none;
       border: 1px solid var(--aq-olive);
       transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
       white-space: nowrap;
@@ -345,28 +357,54 @@
       line-height: 1;
     }
 
-    .breadcrumb {
-      min-height: 260px;
+    .about-breadcrumb {
+      position: relative;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       margin: 0;
+      padding: 0;
       overflow: hidden;
-      border-radius: 0;
-      background:
-        linear-gradient(90deg, rgba(21, 24, 15, 0.78), rgba(86, 98, 54, 0.52)),
-        url('image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg') center / cover no-repeat;
+      background-image: linear-gradient(rgba(26, 24, 20, 0.38), rgba(26, 24, 20, 0.38)), url('image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
-    .breadcrumb .overlay {
+    .about-breadcrumb::after {
+      content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 72% 40%, rgba(255, 255, 255, 0.14), transparent 32%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0.10) 100%);
+      pointer-events: none;
     }
 
-    .breadcrumb-inner h2 {
+    .about-breadcrumb-inner {
+      position: relative;
+      z-index: 1;
+      padding: 36px 0;
+    }
+
+    .about-breadcrumb h1 {
+      margin: 0 0 10px;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 0.98;
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      font-weight: 500;
+      line-height: 1;
       color: #fff;
-      text-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    .about-breadcrumb p {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.86);
     }
 
     .service-detail {
@@ -661,15 +699,16 @@
 
     .aq-gallery-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-auto-rows: 180px;
-      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
       margin-top: 28px;
     }
 
     .aq-gallery-item {
       position: relative;
       overflow: hidden;
+      width: 100%;
+      aspect-ratio: 4 / 3;
       border: 0;
       border-radius: 8px;
       padding: 0;
@@ -680,12 +719,12 @@
     }
 
     .aq-gallery-item:nth-child(1) {
-      grid-column: span 2;
-      grid-row: span 2;
+      grid-column: auto;
+      grid-row: auto;
     }
 
     .aq-gallery-item:nth-child(4) {
-      grid-column: span 2;
+      grid-column: auto;
     }
 
     .aq-gallery-item:nth-child(2) {
@@ -846,20 +885,31 @@
     footer h4 {
       margin: 0 0 14px;
       color: #fff;
-      font-size: 0.88rem;
-      font-weight: 800;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
       letter-spacing: 0.04em;
+      text-transform: none;
     }
 
     footer ul {
       list-style: none;
       margin: 0;
       padding: 0;
-      display: grid;
-      gap: 10px;
+      display: block;
+    }
+
+    footer .footer-links li {
+      margin-bottom: 6px;
     }
 
     footer a {
+      font-family: "Inter", sans-serif;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      text-transform: none;
       color: rgba(255, 255, 255, 0.82);
       transition: color 0.2s ease;
     }
@@ -873,7 +923,9 @@
     .footer-contact p,
     .footer-newsletter p {
       color: rgba(255, 255, 255, 0.82);
+      font-family: "Inter", sans-serif;
       font-size: 14px;
+      font-weight: 400;
       line-height: 1.8;
       margin-bottom: 0;
     }
@@ -894,7 +946,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
       transition: background 0.2s ease, transform 0.2s ease;
     }
 
@@ -970,7 +1022,11 @@
       padding: 0 16px;
       background: rgba(255, 255, 255, 0.12);
       color: #fff;
-      font-weight: 800;
+      min-width: 84px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       cursor: pointer;
       transition: background 0.2s ease, color 0.2s ease;
     }
@@ -983,7 +1039,7 @@
     .copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.14);
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 13px;
       color: rgba(255, 255, 255, 0.72);
       padding: 16px 0 22px;
     }
@@ -1127,17 +1183,39 @@
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1200px) {
+      body .container {
+        width: min(var(--container), calc(100% - 36px));
+      }
+
+      .navbar {
+        gap: 20px;
+      }
+
+      header nav {
+        gap: 16px;
+      }
+
+      header nav a {
+        font-size: 0.98rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
       .service-detail {
         padding: 68px 0 74px;
       }
 
-      .breadcrumb {
-        min-height: 220px;
+      .about-breadcrumb {
+        min-height: 240px;
       }
 
       body .container {
-        width: min(var(--container), calc(100% - 32px));
+        width: min(var(--container), calc(100% - 28px));
       }
 
       .top-bar .container {
@@ -1146,54 +1224,145 @@
 
       .menu-toggle {
         display: inline-flex;
+        flex: 0 0 auto;
+        position: relative;
+        z-index: 31;
+      }
+
+      header {
+        position: relative;
+        z-index: 10000;
+      }
+
+      .navbar {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        gap: 16px;
+      }
+
+      .logo {
+        width: auto;
+        justify-content: flex-start;
+        flex: 0 0 auto;
+        position: relative;
+        z-index: 31;
       }
 
       header nav {
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 16px;
-        right: 16px;
-        display: none;
+        position: fixed;
+        top: 88px;
+        left: 14px;
+        right: 14px;
+        width: auto;
+        height: auto;
+        max-height: calc(100vh - 108px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
-        padding: 10px;
-        border: 1px solid var(--aq-line);
-        border-radius: 8px;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 12px;
+        border: 1px solid #e9e2d8;
+        border-radius: 16px;
         background: #fff;
-        box-shadow: 0 20px 50px rgba(27, 22, 16, 0.14);
+        box-shadow: 0 20px 40px rgba(29, 24, 18, 0.14);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+        z-index: 10001;
       }
 
       header nav.mobile-open {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
       }
 
       header nav > a,
-      header nav .nav-item > a,
+      .nav-item,
       .call-btn {
         width: 100%;
-        justify-content: space-between;
-        padding: 13px 14px;
-        border-radius: 8px;
+        border: 1px solid #e9e2d8;
+        border-radius: 12px;
+        background: #fff;
+      }
+
+      header nav > a {
+        justify-content: center;
+        text-align: center;
+        padding: 14px 16px;
+      }
+
+      header nav .nav-item > a {
+        justify-content: center;
+        text-align: center;
+        padding: 14px 44px 14px 16px;
+        position: relative;
+        width: 100%;
+      }
+
+      .call-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        padding: 14px 16px;
+        color: #fff !important;
+        background: var(--aq-olive);
+        border-color: var(--aq-olive);
       }
 
       .nav-item {
-        display: block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        overflow: hidden;
+      }
+
+      .nav-item.services-menu > a::after,
+      .has-children > a::after {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       .dropdown-menu,
       .sub-dropdown {
         position: static;
         display: none;
-        min-width: 0;
-        width: 100%;
+        min-width: 100%;
         box-shadow: none;
-        border-radius: 8px;
-        margin: 4px 0 8px;
+        border-radius: 0;
+        border: 0;
+        border-top: 1px solid #eee6db;
+        margin: 0;
+        padding: 8px 0 10px;
+        background: #fcfaf6;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
         transform: none;
+      }
+
+      .sub-dropdown {
+        min-width: 100%;
+        margin: 6px 12px 2px;
+        padding: 6px 0;
+        border: 1px solid #ebe3d8;
+        border-radius: 10px;
+        background: #fff;
       }
 
       .nav-item.services-menu.open > .dropdown-menu,
@@ -1201,9 +1370,17 @@
         display: block;
       }
 
-      .has-children:hover > a::after,
-      .nav-item.services-menu:hover > a::after {
-        transform: none;
+      .nav-item.services-menu.open > a::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .has-children.open > a::after,
+      .has-children:hover > a::after {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+
+      .has-children::before {
+        display: none;
       }
 
       .aq-detail-hero,
@@ -1261,19 +1438,27 @@
 
       .top-bar .container {
         min-height: auto;
-        padding-top: 9px;
-        padding-bottom: 9px;
+        gap: 8px 14px;
+        padding: 10px 0;
       }
 
       .top-bar span {
         font-size: 11px;
       }
 
+      header nav {
+        top: 82px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-height: calc(100vh - 98px);
+      }
+
       .navbar {
         min-height: 74px;
       }
 
-      .breadcrumb {
+      .about-breadcrumb {
         min-height: 190px;
       }
 
@@ -1281,12 +1466,32 @@
         font-size: 1.55rem;
       }
 
+      .logo-text span {
+        letter-spacing: 0.22em;
+      }
+
+      header nav a {
+        font-size: 1rem;
+      }
+
+      header nav > a,
+      header nav .nav-item > a,
+      .call-btn {
+        padding-top: 13px;
+        padding-bottom: 13px;
+      }
+
+      .call-btn {
+        font-size: 0.92rem;
+      }
+
       .service-detail-title h2 {
         font-size: 2.8rem;
       }
 
       .aq-gallery-grid {
-        grid-auto-rows: 150px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
         gap: 10px;
       }
 
@@ -1442,12 +1647,10 @@
   </header>
 
   <!-- Breadcrumb Section Starts -->
-  <section class="breadcrumb position-relative mb-0">
-    <div class="overlay"></div>
-    <div class="container position-absolute top-50 start-50 translate-middle text-center">
-      <div class="breadcrumb-inner mt-8">
-        <h2 class="grey mb-0">Service Detail</h2>
-      </div>
+  <section class="about-breadcrumb">
+    <div class="container about-breadcrumb-inner">
+      <h1>Service Detail</h1>
+      <p>Home / Services / Service Detail</p>
     </div>
   </section>
   <!-- Breadcrumb Section Ends -->
@@ -1823,42 +2026,48 @@
           { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Curtain and decor material inspiration' },
           { src: 'image/Website Hero Seciton.png', alt: 'Aqeeq Decor furnishing showcase' },
           { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Soft living room furnishing detail' },
-          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated dining interior finish' }
+          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated dining interior finish' },
+          { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Curtain styling in a bright apartment interior' }
         ],
         wallpapers: [
           { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Designer wallpaper and furniture setting' },
           { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Styled open space with wall finish inspiration' },
           { src: 'image/7.png', alt: 'Aqeeq Decor wallpaper mood image' },
           { src: 'image/modern-bathroom-interior-design-2022-12-16-11-57-19-utc.jpg', alt: 'Textured modern wall finish' },
-          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Feature wall with refined decor' }
+          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Feature wall with refined decor' },
+          { src: 'image/5.png', alt: 'Aqeeq Decor wallpaper design detail' }
         ],
         furniture: [
           { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Custom furniture in a warm interior' },
           { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Living room furniture and soft furnishings' },
           { src: 'image/6.png', alt: 'Aqeeq Decor furniture showcase' },
           { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Dining furniture composition' },
-          { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Bedroom furniture setting' }
+          { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Bedroom furniture setting' },
+          { src: 'image/4.png', alt: 'Aqeeq Decor furniture detail showcase' }
         ],
         'window-blinds': [
           { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Window blind styling inspiration' },
           { src: 'image/8.png', alt: 'Aqeeq Decor window treatment image' },
           { src: 'image/Website Hero Seciton.png', alt: 'Modern window furnishing showcase' },
           { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Bright apartment window styling' },
-          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with soft window light' }
+          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with soft window light' },
+          { src: 'image/2.png', alt: 'Aqeeq Decor window blind finish detail' }
         ],
         mattress: [
           { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Comfort mattress in bedroom setting' },
           { src: 'image/bedroom-interior-design-3d-rendering-2021-08-26-18-15-32-utc1.jpg', alt: 'Bedroom comfort planning' },
           { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Warm bedroom furnishing mood' },
           { src: 'image/6.png', alt: 'Aqeeq Decor bedroom product showcase' },
-          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated interior finish detail' }
+          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated interior finish detail' },
+          { src: 'image/1.png', alt: 'Aqeeq Decor mattress and bedroom styling detail' }
         ],
         floorings: [
           { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Modern flooring and dining room finish' },
           { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Living room flooring and decor finish' },
           { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Apartment flooring inspiration' },
           { src: 'image/7.png', alt: 'Aqeeq Decor flooring showcase' },
-          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with coordinated flooring' }
+          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with coordinated flooring' },
+          { src: 'image/3.png', alt: 'Aqeeq Decor flooring material detail' }
         ]
       };
 
@@ -1870,7 +2079,8 @@
       const allServices = Object.entries(servicePages);
       const title = document.querySelector('.service-detail-title h2');
       const intro = document.querySelector('.service-detail-title p');
-      const breadcrumbTitle = document.querySelector('.breadcrumb-inner h2');
+      const breadcrumbTitle = document.querySelector('.about-breadcrumb h1');
+      const breadcrumbTrail = document.querySelector('.about-breadcrumb p');
       const heroImage = document.querySelector('.service-image img');
       const overviewTitle = document.querySelector('.service-overview h3');
       const overviewParagraphs = document.querySelectorAll('.service-overview > p');
@@ -1895,6 +2105,10 @@
 
       if (breadcrumbTitle) {
         breadcrumbTitle.textContent = selectedService.title;
+      }
+
+      if (breadcrumbTrail) {
+        breadcrumbTrail.textContent = 'Home / Services / ' + selectedService.title;
       }
 
       if (heroImage) {
@@ -2007,7 +2221,7 @@
         }
       });
 
-      const mobileMenuQuery = window.matchMedia('(max-width: 991px)');
+      const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
       const servicesMenu = document.querySelector('.services-menu');
       const childMenuItems = document.querySelectorAll('.services-menu .has-children');
       const menuToggle = document.querySelector('.menu-toggle');
