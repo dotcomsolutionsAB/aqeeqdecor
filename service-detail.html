@@ -1764,12 +1764,96 @@
         flex-direction: column !important;
       }
     }
+
+    @media (min-width: 901px) {
+      header .nav-item.services-menu > .dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        left: auto !important;
+        min-width: 280px !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 12px 0 !important;
+        display: block !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateY(10px) !important;
+        border: 1px solid #ece4d9 !important;
+        border-radius: 18px !important;
+        background: #fff !important;
+        box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12) !important;
+        z-index: 60 !important;
+      }
+
+      header .nav-item.services-menu:hover > .dropdown-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+      }
+
+      header .nav-item.services-menu .sub-dropdown {
+        position: absolute !important;
+        top: 0 !important;
+        left: 100% !important;
+        min-width: 240px !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 12px 0 !important;
+        display: block !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateX(0) !important;
+        border: 1px solid #ece4d9 !important;
+        border-radius: 18px !important;
+        background: #fff !important;
+        box-shadow: 0 20px 45px rgba(29, 24, 18, 0.12) !important;
+        z-index: 70 !important;
+      }
+
+      header .nav-item.services-menu .has-children:hover > .sub-dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      header nav.mobile-open .services-menu.open .has-children > a::after {
+        display: inline-block !important;
+      }
+
+      header nav.mobile-open .services-menu.open .has-children:not(.open) > .sub-dropdown {
+        display: none !important;
+      }
+
+      header nav.mobile-open .services-menu.open .has-children.open > .sub-dropdown {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
   </style>
 
 
   <link rel="stylesheet" href="css/whatsapp-chat.css">
+  <link rel="stylesheet" href="css/page-loader.css">
 </head>
 <body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="page-loader__inner">
+      <div class="page-loader__mark">
+        <div class="page-loader__core"><span>AD</span></div>
+      </div>
+      <div class="page-loader__text">
+        <div class="page-loader__title">Aqeeq Decor</div>
+        <div class="page-loader__subtitle">Crafting elegant spaces</div>
+      </div>
+      <div class="page-loader__bar"><span></span></div>
+    </div>
+  </div>
   <a class="whatsapp-chat-button" href="https://wa.me/918698725668" target="_blank" rel="noopener" aria-label="Chat with Aqeeq Decor on WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
       <path d="M16.01 3.2C8.95 3.2 3.2 8.77 3.2 15.62c0 2.18.59 4.31 1.72 6.18L3.2 28.8l7.22-1.68a13.08 13.08 0 0 0 5.59 1.25c7.06 0 12.79-5.57 12.79-12.42S23.07 3.2 16.01 3.2Zm0 22.39a10.33 10.33 0 0 1-5.27-1.44l-.38-.23-4.28 1 1.02-4.08-.25-.4a9.3 9.3 0 0 1-1.42-4.82c0-5.3 4.75-9.62 10.58-9.62s10.58 4.31 10.58 9.62-4.75 9.97-10.58 9.97Zm5.8-7.21c-.32-.16-1.88-.92-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.56-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.62s1.13 3.04 1.29 3.25c.16.21 2.23 3.41 5.4 4.78.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.61-.37Z"/>
@@ -2520,6 +2604,7 @@
       });
     });
   </script>
+  <script src="js/page-loader.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"e2e296138d64407b8469055f5cbf0b42","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
