@@ -2,11 +2,11 @@
   --floating-action-size: 58px;
   --floating-action-offset: 22px;
   position: fixed;
-  left: var(--floating-action-offset);
-  bottom: var(--floating-action-offset);
-  z-index: 15000;
-  width: var(--floating-action-size);
-  height: var(--floating-action-size);
+  left: 22px !important;
+  bottom: 22px !important;
+  z-index: 15000 !important;
+  width: 58px !important;
+  height: 58px !important;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -35,13 +35,13 @@
   --floating-action-size: 58px;
   --floating-action-offset: 22px;
   position: fixed !important;
-  right: var(--floating-action-offset) !important;
-  bottom: var(--floating-action-offset) !important;
+  right: 22px !important;
+  bottom: 22px !important;
   left: auto !important;
   z-index: 15000 !important;
   display: block !important;
-  width: var(--floating-action-size);
-  height: var(--floating-action-size);
+  width: 58px !important;
+  height: 58px !important;
 }
 
 #back-to-top a {
@@ -49,8 +49,8 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: var(--floating-action-size) !important;
-  height: var(--floating-action-size) !important;
+  width: 58px !important;
+  height: 58px !important;
   border-radius: 50% !important;
   background: #4a5430 !important;
   color: #fff !important;
@@ -82,6 +82,10 @@
   .whatsapp-chat-button {
     --floating-action-size: 54px;
     --floating-action-offset: 16px;
+    left: 16px !important;
+    bottom: 16px !important;
+    width: 54px !important;
+    height: 54px !important;
   }
 
   .whatsapp-chat-button svg {
@@ -92,6 +96,15 @@
   #back-to-top {
     --floating-action-size: 54px;
     --floating-action-offset: 16px;
+    right: 16px !important;
+    bottom: 16px !important;
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  #back-to-top a {
+    width: 54px !important;
+    height: 54px !important;
   }
 
   #back-to-top a::before {
