@@ -1859,6 +1859,27 @@
         display: inline-block !important;
       }
 
+      header nav.mobile-open {
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+      }
+
+      header nav.mobile-open > a,
+      header nav.mobile-open > .nav-item,
+      header nav.mobile-open > .call-btn {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      header nav.mobile-open .services-menu > .dropdown-menu,
+      header nav.mobile-open .services-menu .sub-dropdown {
+        left: auto !important;
+        right: auto !important;
+        max-width: 100% !important;
+      }
+
       header nav.mobile-open .services-menu.open .has-children:not(.open) > .sub-dropdown {
         display: none !important;
       }
