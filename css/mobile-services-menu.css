@@ -1,3 +1,26 @@
+header nav .services-menu .has-children > a,
+header nav .nav-item.services-menu .has-children > a {
+  position: relative !important;
+  padding-right: 44px !important;
+}
+
+header nav .services-menu .has-children > a::after,
+header nav .nav-item.services-menu .has-children > a::after {
+  content: '▾' !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  transform: translateY(-50%) rotate(-90deg) !important;
+  transform-origin: 50% 50% !important;
+}
+
 @media (max-width: 900px) {
   header nav.mobile-open {
     display: flex !important;
@@ -88,6 +111,22 @@
     align-items: center !important;
     justify-content: space-between !important;
     box-sizing: border-box !important;
+  }
+
+  header nav.mobile-open .services-menu .has-children > a {
+    position: relative !important;
+    padding-right: 44px !important;
+  }
+
+  header nav.mobile-open .services-menu .has-children > a::after {
+    top: 50% !important;
+    right: 16px !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+  }
+
+  header nav.mobile-open .services-menu .has-children.open > a::after {
+    transform: translateY(-50%) rotate(180deg) !important;
   }
 
   header nav.mobile-open .services-menu .sub-dropdown {
