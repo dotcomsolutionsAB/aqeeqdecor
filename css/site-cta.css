@@ -136,6 +136,13 @@
   transform: none;
 }
 
+.call-btn .call-icon,
+header .call-btn .call-icon,
+body header .call-btn .call-icon,
+.home-cta-secondary .call-icon,
+.cta-call-btn .call-icon,
+.blog-cta .btn-ghost .call-icon,
+.project-cta .btn-ghost .call-icon,
 .about-cta-actions .about-btn-secondary .cta-call-icon,
 .cta-call-icon {
   position: relative;
@@ -144,17 +151,30 @@
   justify-content: center;
   width: 18px;
   height: 18px;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  color: transparent !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 16px 16px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.61a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.47-1.29a2 2 0 0 1 2.11-.45c.83.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  line-height: 1 !important;
+  color: inherit !important;
+  background: none !important;
+  background-image: none !important;
   transform-origin: 50% 100%;
   animation: ringPhone 1.4s ease-in-out infinite !important;
 }
 
+.call-btn .call-icon::before,
+.call-btn .call-icon::after,
+header .call-btn .call-icon::before,
+header .call-btn .call-icon::after,
+body header .call-btn .call-icon::before,
+body header .call-btn .call-icon::after,
+.home-cta-secondary .call-icon::before,
+.home-cta-secondary .call-icon::after,
+.cta-call-btn .call-icon::before,
+.cta-call-btn .call-icon::after,
+.blog-cta .btn-ghost .call-icon::before,
+.blog-cta .btn-ghost .call-icon::after,
+.project-cta .btn-ghost .call-icon::before,
+.project-cta .btn-ghost .call-icon::after,
 .about-cta-actions .about-btn-secondary .cta-call-icon::before,
 .about-cta-actions .about-btn-secondary .cta-call-icon::after,
 .cta-call-icon::before,
@@ -171,6 +191,13 @@
   animation: ringPulse 1.4s ease-out infinite !important;
 }
 
+.call-btn .call-icon::after,
+header .call-btn .call-icon::after,
+body header .call-btn .call-icon::after,
+.home-cta-secondary .call-icon::after,
+.cta-call-btn .call-icon::after,
+.blog-cta .btn-ghost .call-icon::after,
+.project-cta .btn-ghost .call-icon::after,
 .about-cta-actions .about-btn-secondary .cta-call-icon::after,
 .cta-call-icon::after {
   animation-delay: 0.35s !important;
