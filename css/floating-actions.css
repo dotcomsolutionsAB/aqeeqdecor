@@ -1,0 +1,80 @@
+:root {
+  --floating-action-size: 58px;
+  --floating-action-offset: 22px;
+}
+
+.whatsapp-chat-button,
+#back-to-top {
+  position: fixed !important;
+  bottom: calc(var(--floating-action-offset) + env(safe-area-inset-bottom, 0px)) !important;
+  z-index: 2147483000 !important;
+  width: var(--floating-action-size) !important;
+  height: var(--floating-action-size) !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.whatsapp-chat-button {
+  left: var(--floating-action-offset) !important;
+  right: auto !important;
+}
+
+#back-to-top {
+  left: auto !important;
+  right: var(--floating-action-offset) !important;
+  display: block !important;
+  transform: none !important;
+}
+
+#back-to-top a {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: var(--floating-action-size) !important;
+  height: var(--floating-action-size) !important;
+  min-width: var(--floating-action-size) !important;
+  min-height: var(--floating-action-size) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #4a5430 !important;
+  color: #fff !important;
+  box-shadow: 0 14px 32px rgba(29, 24, 18, 0.18) !important;
+  text-decoration: none !important;
+}
+
+#back-to-top a:hover {
+  background: #31381f !important;
+  color: #fff !important;
+}
+
+#back-to-top a::before {
+  content: '' !important;
+  display: block !important;
+  width: 13px !important;
+  height: 13px !important;
+  border-top: 3px solid currentColor !important;
+  border-left: 3px solid currentColor !important;
+  transform: translateY(4px) rotate(45deg) !important;
+}
+
+#back-to-top a::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 575px) {
+  :root {
+    --floating-action-size: 54px;
+    --floating-action-offset: 16px;
+  }
+
+  #back-to-top a::before {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
