@@ -38,22 +38,31 @@
   color: #312b24;
 }
 
-.about-cta-section {
+.about-cta-section,
+.aq-services-cta {
   padding: 62px 0 14px;
+  background: transparent;
 }
 
-.about-cta-wrap {
+.about-cta-wrap,
+.aq-services-cta-card {
   background: linear-gradient(135deg, #2f281f 0%, #4a5430 100%);
   border-radius: 22px;
   padding: 56px 46px;
   color: #fff;
   box-shadow: none;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 0;
+  overflow: visible;
 }
 
-.about-cta-wrap .about-section-kicker {
+.about-cta-wrap .about-section-kicker,
+.aq-services-cta-card .aq-kicker {
   display: inline-block;
   margin-bottom: 14px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -61,15 +70,23 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
-.about-cta-wrap h2 {
+.about-cta-wrap h2,
+.aq-services-cta-card h2 {
+  max-width: none;
   margin: 0 0 14px;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.3rem, 4vw, 3.5rem);
   line-height: 1;
+  font-weight: 500;
   color: #fff;
 }
 
-.about-cta-wrap p {
+.aq-services-cta-card h2 span {
+  color: inherit;
+}
+
+.about-cta-wrap p,
+.aq-services-cta-card p {
   max-width: 760px;
   margin: 0;
   color: rgba(255, 255, 255, 0.84);
@@ -77,7 +94,8 @@
   font-size: 15px;
 }
 
-.about-cta-actions {
+.about-cta-actions,
+.aq-cta-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -85,29 +103,37 @@
   margin-top: 26px;
 }
 
-.about-cta-actions .about-btn-primary {
+.about-cta-actions .about-btn-primary,
+.aq-services-cta .aq-detail-btn {
   background: #fff;
   color: #2d2a25;
+  border: 0;
   box-shadow: none;
   min-width: 180px;
 }
 
-.about-cta-actions .about-btn-primary:hover {
+.about-cta-actions .about-btn-primary:hover,
+.aq-services-cta .aq-detail-btn:hover {
   background: #f7f3ed;
   color: #2d2a25;
+  transform: none;
 }
 
-.about-cta-actions .about-btn-secondary {
+.about-cta-actions .about-btn-secondary,
+.aq-services-cta .aq-detail-btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.26);
+  background: transparent;
   color: #fff;
   min-width: 220px;
   position: relative;
   gap: 10px;
 }
 
-.about-cta-actions .about-btn-secondary:hover {
+.about-cta-actions .about-btn-secondary:hover,
+.aq-services-cta .aq-detail-btn-outline:hover {
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
+  transform: none;
 }
 
 .cta-call-icon {
@@ -164,22 +190,27 @@
 }
 
 @media (max-width: 640px) {
-  .about-cta-section {
+  .about-cta-section,
+  .aq-services-cta {
     padding: 52px 0 8px;
   }
 
-  .about-cta-wrap {
+  .about-cta-wrap,
+  .aq-services-cta-card {
     padding: 34px 20px;
     border-radius: 20px;
   }
 
-  .about-cta-actions {
+  .about-cta-actions,
+  .aq-cta-actions {
     flex-direction: column;
     align-items: stretch;
   }
 
   .about-cta-actions .about-btn-primary,
-  .about-cta-actions .about-btn-secondary {
+  .about-cta-actions .about-btn-secondary,
+  .aq-services-cta .aq-detail-btn,
+  .aq-services-cta .aq-detail-btn-outline {
     width: 100%;
     min-width: 0;
   }
