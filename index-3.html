@@ -1507,6 +1507,33 @@
             margin: 0 0 24px;
         }
 
+        .banner-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-height: 50px;
+            border-radius: 8px;
+            border: 1px solid var(--olive);
+            background: var(--olive);
+            color: #fff;
+            padding: 0 24px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 14px 26px rgba(74, 84, 48, 0.18);
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .banner-cta:hover {
+            background: var(--olive-dark);
+            border-color: var(--olive-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
         .banner-visual {
             position: relative;
             height: 100%;
@@ -2404,6 +2431,11 @@
                 max-width: none;
             }
 
+            .banner-cta {
+                width: 100%;
+                min-height: 50px;
+            }
+
             .section {
                 padding-top: 42px;
             }
@@ -3291,7 +3323,7 @@
             </div>
         </section>
 
-        <section class="custom-banner">
+        <section class="custom-banner" id="custom-furniture">
             <div class="container">
                 <div class="banner-card">
                     <div class="banner-layout">
@@ -3299,7 +3331,7 @@
                             <h2>Custom Furniture<br>Made for You</h2>
                             <p>Choose your fabric, finish, size and more. We bring your vision to life with precision
                                 and care.</p>
-                            <button class="btn-outline">Book a Consultation</button>
+                            <a href="contact.html" class="banner-cta">Book a Consultation</a>
                         </div>
                         <div class="banner-visual">
                             <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80"
