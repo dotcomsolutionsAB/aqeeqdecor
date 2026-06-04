@@ -11,6 +11,9 @@
   width: var(--floating-action-size) !important;
   height: var(--floating-action-size) !important;
   margin: 0 !important;
+}
+
+.whatsapp-chat-button {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
@@ -26,6 +29,16 @@
   right: var(--floating-action-offset) !important;
   display: block !important;
   transform: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+}
+
+#back-to-top.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 #back-to-top a {

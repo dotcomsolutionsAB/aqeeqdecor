@@ -20,6 +20,23 @@
     return button;
   }
 
+  function shouldShowBackToTop() {
+    const doc = document.documentElement;
+    const body = document.body;
+    const pageHeight = Math.max(
+      doc.scrollHeight,
+      body ? body.scrollHeight : 0,
+      doc.offsetHeight,
+      body ? body.offsetHeight : 0
+    );
+    const viewportHeight = window.innerHeight || doc.clientHeight || 0;
+    const scrollableDistance = Math.max(pageHeight - viewportHeight, 0);
+
+    if (!scrollableDistance) return false;
+
+    return window.scrollY >= scrollableDistance / 2;
+  }
+
   function pinFloatingActions() {
     const size = sizeQuery.matches ? '54px' : '58px';
     const offset = sizeQuery.matches ? '16px' : '22px';
@@ -27,6 +44,7 @@
     const whatsapp = document.querySelector('.whatsapp-chat-button');
     const backToTop = ensureBackToTop();
     const backToTopLink = backToTop.querySelector('a');
+    const showBackToTop = shouldShowBackToTop();
 
     if (whatsapp) {
       whatsapp.style.setProperty('position', 'fixed', 'important');
@@ -47,9 +65,12 @@
     backToTop.style.setProperty('width', size, 'important');
     backToTop.style.setProperty('height', size, 'important');
     backToTop.style.setProperty('display', 'block', 'important');
-    backToTop.style.setProperty('opacity', '1', 'important');
-    backToTop.style.setProperty('visibility', 'visible', 'important');
     backToTop.style.setProperty('z-index', '2147483000', 'important');
+    backToTop.style.setProperty('opacity', showBackToTop ? '1' : '0', 'important');
+    backToTop.style.setProperty('visibility', showBackToTop ? 'visible' : 'hidden', 'important');
+    backToTop.style.setProperty('pointer-events', showBackToTop ? 'auto' : 'none', 'important');
+    backToTop.classList.toggle('is-visible', showBackToTop);
+    backToTop.setAttribute('aria-hidden', showBackToTop ? 'false' : 'true');
 
     if (backToTopLink) {
       backToTopLink.style.setProperty('width', size, 'important');
@@ -58,6 +79,7 @@
       backToTopLink.style.setProperty('align-items', 'center', 'important');
       backToTopLink.style.setProperty('justify-content', 'center', 'important');
       backToTopLink.style.setProperty('border-radius', '50%', 'important');
+      backToTopLink.setAttribute('tabindex', showBackToTop ? '0' : '-1');
     }
   }
 
