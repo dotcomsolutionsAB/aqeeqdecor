@@ -136,10 +136,15 @@
   transform: none;
 }
 
+.aq-detail-call-btn {
+  gap: 10px;
+}
+
 .call-btn .call-icon,
 header .call-btn .call-icon,
 body header .call-btn .call-icon,
 .home-cta-secondary .call-icon,
+.aq-detail-btn .call-icon,
 .cta-call-btn .call-icon,
 .blog-cta .btn-ghost .call-icon,
 .project-cta .btn-ghost .call-icon,
@@ -169,6 +174,8 @@ body header .call-btn .call-icon::before,
 body header .call-btn .call-icon::after,
 .home-cta-secondary .call-icon::before,
 .home-cta-secondary .call-icon::after,
+.aq-detail-btn .call-icon::before,
+.aq-detail-btn .call-icon::after,
 .cta-call-btn .call-icon::before,
 .cta-call-btn .call-icon::after,
 .blog-cta .btn-ghost .call-icon::before,
@@ -195,6 +202,7 @@ body header .call-btn .call-icon::after,
 header .call-btn .call-icon::after,
 body header .call-btn .call-icon::after,
 .home-cta-secondary .call-icon::after,
+.aq-detail-btn .call-icon::after,
 .cta-call-btn .call-icon::after,
 .blog-cta .btn-ghost .call-icon::after,
 .project-cta .btn-ghost .call-icon::after,
