@@ -1566,7 +1566,65 @@
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.61a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.47-1.29a2 2 0 0 1 2.11-.45c.83.3 1.71.51 2.61.63A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") !important;
             }
         }
-</style>
+        .top-bar {
+            overflow: hidden;
+        }
+
+        .top-bar-slider {
+            min-height: 42px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .top-bar-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: topBarSlide 34s linear infinite;
+            will-change: transform;
+        }
+
+        .top-bar-group {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding-right: 30px;
+            white-space: nowrap;
+        }
+
+        @keyframes topBarSlide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .top-bar-track {
+                animation: none;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .top-bar-slider {
+                min-height: 38px;
+            }
+
+            .top-bar-track {
+                animation-duration: 28s;
+            }
+
+            .top-bar-group {
+                gap: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
   <link rel="stylesheet" href="css/whatsapp-chat.css">
     <link rel="stylesheet" href="css/page-loader.css">
     <link rel="stylesheet" href="css/mobile-services-menu.css">
@@ -1592,12 +1650,33 @@
     </svg>
   </a>
     <div class="top-bar">
-        <div class="container">
-            <span>Premium Quality</span>
-            <span>Crafted to Last</span>
-            <span>Customizable Options</span>
-            <span>Expert Guidance</span>
-            <span>Fast Execution</span>
+        <div class="top-bar-slider" aria-label="Aqeeq Decor highlights">
+            <div class="top-bar-track">
+                <div class="top-bar-group">
+                    <span>Premium Quality</span>
+                    <span>Crafted to Last</span>
+                    <span>Customizable Options</span>
+                    <span>Expert Guidance</span>
+                    <span>Fast Execution</span>
+                    <span>Premium Materials</span>
+                    <span>Tailored Styling</span>
+                    <span>On-Time Delivery</span>
+                    <span>Elegant Designs</span>
+                    <span>Free Consultation</span>
+                </div>
+                <div class="top-bar-group" aria-hidden="true">
+                    <span>Premium Quality</span>
+                    <span>Crafted to Last</span>
+                    <span>Customizable Options</span>
+                    <span>Expert Guidance</span>
+                    <span>Fast Execution</span>
+                    <span>Premium Materials</span>
+                    <span>Tailored Styling</span>
+                    <span>On-Time Delivery</span>
+                    <span>Elegant Designs</span>
+                    <span>Free Consultation</span>
+                </div>
+            </div>
         </div>
     </div>
 
