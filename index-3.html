@@ -86,29 +86,60 @@
             background: linear-gradient(90deg, #556337, #434e2b 55%, #59673d);
             color: #fff;
             font-size: 12px;
+            overflow: hidden;
         }
 
-        .top-bar .container {
+        .top-bar-slider {
             min-height: 42px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            width: 100%;
         }
 
-        .top-bar span {
+        .top-bar-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: topBarSlide 24s linear infinite;
+            will-change: transform;
+        }
+
+        .top-bar-group {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding-right: 30px;
+            white-space: nowrap;
+        }
+
+        .top-bar-group span {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             opacity: 0.95;
-            white-space: nowrap;
         }
 
-        .top-bar span::before {
+        .top-bar-group span::before {
             content: '✦';
             font-size: 10px;
             opacity: 0.8;
+        }
+
+        @keyframes topBarSlide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .top-bar-track {
+                animation: none;
+                transform: none;
+            }
         }
 
         header {
@@ -2274,14 +2305,21 @@
                 max-height: calc(100vh - 98px);
             }
 
-            .top-bar .container {
-                gap: 8px 14px;
-                padding: 10px 0;
-                min-height: auto;
-            }
-
             .top-bar {
                 font-size: 11px;
+            }
+
+            .top-bar-slider {
+                min-height: 38px;
+            }
+
+            .top-bar-track {
+                animation-duration: 20s;
+            }
+
+            .top-bar-group {
+                gap: 20px;
+                padding-right: 20px;
             }
 
             .logo-text strong {
@@ -3021,12 +3059,23 @@
         </svg>
     </a>
     <div class="top-bar">
-        <div class="container">
-            <span>Premium Quality</span>
-            <span>Crafted to Last</span>
-            <span>Customizable Options</span>
-            <span>Expert Guidance</span>
-            <span>Fast Execution</span>
+        <div class="top-bar-slider" aria-label="Aqeeq Decor highlights">
+            <div class="top-bar-track">
+                <div class="top-bar-group">
+                    <span>Premium Quality</span>
+                    <span>Crafted to Last</span>
+                    <span>Customizable Options</span>
+                    <span>Expert Guidance</span>
+                    <span>Fast Execution</span>
+                </div>
+                <div class="top-bar-group" aria-hidden="true">
+                    <span>Premium Quality</span>
+                    <span>Crafted to Last</span>
+                    <span>Customizable Options</span>
+                    <span>Expert Guidance</span>
+                    <span>Fast Execution</span>
+                </div>
+            </div>
         </div>
     </div>
 
