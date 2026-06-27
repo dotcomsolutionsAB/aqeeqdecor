@@ -547,11 +547,19 @@
 
         .meta-card span {
             display: block;
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+        }
+
+        .meta-card span svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+            stroke: currentColor;
+            stroke-width: 1.6;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .meta-card strong {
@@ -1645,15 +1653,21 @@
 
                         <div class="project-meta">
                             <div class="meta-card">
-                                <span>Location</span>
+                                <span role="img" aria-label="Location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </span>
                                 <strong>Pune Residence</strong>
                             </div>
                             <div class="meta-card">
-                                <span>Category</span>
+                                <span role="img" aria-label="Category">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+                                </span>
                                 <strong>Living & Dining</strong>
                             </div>
                             <div class="meta-card">
-                                <span>Scope</span>
+                                <span role="img" aria-label="Scope">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+                                </span>
                                 <strong>Complete Décor Styling</strong>
                             </div>
                         </div>
