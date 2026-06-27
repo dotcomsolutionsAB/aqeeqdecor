@@ -752,116 +752,180 @@
             color: var(--olive);
         }
 
-        .process-grid {
-            position: relative;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 16px;
+        .process-strip .eyebrow {
+            margin: 0 0 6px;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
         }
 
-        /* lifecycle connector line running through the step nodes */
-        .process-grid::before {
+        /* ---- Circular life-cycle diagram ---- */
+        .lifecycle {
+            position: relative;
+            max-width: 900px;
+            margin: 28px auto 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "s1 s2"
+                "s4 s3";
+            column-gap: 220px;
+            row-gap: 150px;
+        }
+
+        /* dashed orbit ring behind the cards */
+        .lifecycle::before {
             content: "";
             position: absolute;
-            top: 44px;
-            left: 12.5%;
-            right: 12.5%;
-            height: 2px;
-            background: repeating-linear-gradient(90deg, rgba(74,84,48,0.45) 0 9px, transparent 9px 17px);
+            top: 50%;
+            left: 50%;
+            width: 372px;
+            height: 372px;
+            transform: translate(-50%, -50%);
+            border: 2px dashed rgba(74,84,48,0.32);
+            border-radius: 50%;
             z-index: 1;
         }
 
-        /* forward arrowheads between steps */
-        .flow-arrow {
+        .lifecycle-hub {
             position: absolute;
-            top: 44px;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
+            width: 168px;
+            height: 168px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            color: var(--cream);
+            background: radial-gradient(circle at 32% 28%, #5e6d39 0%, #4a5430 45%, #353d1f 100%);
+            box-shadow: 0 0 0 12px rgba(246,243,238,0.85), 0 22px 44px rgba(53,61,31,0.28);
+            z-index: 3;
+        }
+
+        .lifecycle-hub svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--cream);
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-bottom: 6px;
+        }
+
+        .lifecycle-hub span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            opacity: 0.78;
+        }
+
+        .lifecycle-hub strong {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.55rem;
+            line-height: 1.1;
+        }
+
+        /* clockwise direction arrows seated on the orbit */
+        .cyc-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
             width: 0;
             height: 0;
-            border-top: 6px solid transparent;
-            border-bottom: 6px solid transparent;
-            border-left: 9px solid var(--olive);
             z-index: 2;
         }
 
-        .flow-arrow.pos-1 { left: 25%; }
-        .flow-arrow.pos-2 { left: 50%; }
-        .flow-arrow.pos-3 { left: 75%; }
+        .cyc-arrow.top {
+            transform: translate(-50%, -50%) translateY(-186px);
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 12px solid var(--olive);
+        }
 
-        /* loop-back arc: step 04 returns to step 01 */
-        .process-loop {
+        .cyc-arrow.right {
+            transform: translate(-50%, -50%) translateX(186px);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 12px solid var(--olive);
+        }
+
+        .cyc-arrow.bottom {
+            transform: translate(-50%, -50%) translateY(186px);
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-right: 12px solid var(--olive);
+        }
+
+        .cyc-arrow.left {
+            transform: translate(-50%, -50%) translateX(-186px);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 12px solid var(--olive);
+        }
+
+        .lifecycle-step {
             position: relative;
-            height: 30px;
-            margin: 16px 12.5% 0;
-            border: 2px dashed rgba(74,84,48,0.4);
-            border-top: 0;
-            border-radius: 0 0 20px 20px;
-        }
-
-        .process-loop::before {
-            content: "";
-            position: absolute;
-            left: -6px;
-            top: -9px;
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 9px solid rgba(74,84,48,0.6);
-        }
-
-        .process-loop::after {
-            content: "Repeat for every space";
-            position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%);
-            padding: 0 10px;
-            background: #f3f2ec;
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--muted);
-            white-space: nowrap;
-        }
-
-        .process-card {
-            position: relative;
-            background: rgba(255,255,255,0.9);
+            z-index: 2;
+            background: rgba(255,255,255,0.94);
             border: 1px solid rgba(74,84,48,0.14);
-            border-radius: 18px;
-            padding: 22px 18px;
-            text-align: center;
+            border-radius: 20px;
+            padding: 22px 22px;
+            box-shadow: 0 14px 30px rgba(74,84,48,0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        .process-number {
-            position: relative;
-            z-index: 3;
-            width: 44px;
-            height: 44px;
+        .lifecycle-step:hover {
+            transform: translateY(-4px);
+            border-color: rgba(74,84,48,0.3);
+            box-shadow: 0 20px 40px rgba(74,84,48,0.14);
+        }
+
+        .lifecycle-step.step-1 { grid-area: s1; }
+        .lifecycle-step.step-2 { grid-area: s2; }
+        .lifecycle-step.step-3 { grid-area: s3; }
+        .lifecycle-step.step-4 { grid-area: s4; }
+
+        .step-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .step-num {
+            flex: 0 0 auto;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            margin: 0 auto 14px;
             display: grid;
             place-items: center;
             background: var(--olive);
             color: #fff;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            box-shadow: 0 0 0 6px rgba(255,255,255,0.95);
+            box-shadow: 0 0 0 5px rgba(74,84,48,0.08);
         }
 
-        .process-card h3 {
-            margin: 0 0 8px;
+        .lifecycle-step h3 {
+            margin: 0;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.45rem;
             color: var(--olive);
         }
 
-        .process-card p {
+        .lifecycle-step p {
             margin: 0;
-            font-size: 14px;
+            font-size: 13.5px;
             color: #5d564e;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         .project-cta {
@@ -1119,11 +1183,30 @@
             .featured-project { grid-template-columns: 1fr; }
             .featured-project-visual { min-height: 420px; }
             .project-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .process-grid::before,
-            .flow-arrow,
-            .process-loop { display: none; }
-            .process-number { box-shadow: none; }
+            .lifecycle { column-gap: 150px; row-gap: 120px; }
+        }
+
+        @media (max-width: 760px) {
+            .lifecycle {
+                grid-template-columns: 1fr;
+                grid-template-areas: "s1" "s2" "s3" "s4";
+                max-width: 460px;
+                row-gap: 0;
+            }
+            .lifecycle::before,
+            .lifecycle-hub,
+            .cyc-arrow { display: none; }
+            /* vertical timeline connector for stacked steps */
+            .lifecycle-step { margin-bottom: 26px; }
+            .lifecycle-step:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                left: 41px;
+                bottom: -26px;
+                width: 2px;
+                height: 26px;
+                background: repeating-linear-gradient(180deg, rgba(74,84,48,0.4) 0 6px, transparent 6px 12px);
+            }
         }
 
         @media (max-width: 900px) {
@@ -1284,8 +1367,7 @@
 
             .projects-grid,
             .footer-grid,
-            .project-cta,
-            .process-grid {
+            .project-cta {
                 grid-template-columns: 1fr;
             }
 
@@ -1351,7 +1433,6 @@
 
             .projects-grid,
             .project-meta,
-            .process-grid,
             .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -1875,33 +1956,40 @@
                 </div>
 
                 <div class="process-strip">
+                    <p class="eyebrow">Our Design Journey</p>
                     <h2>How We Shape Every Project</h2>
-                    <div class="process-grid">
-                        <div class="process-card">
-                            <div class="process-number">01</div>
-                            <h3>Consult</h3>
+
+                    <div class="lifecycle">
+                        <div class="lifecycle-hub" aria-hidden="true">
+                            <div>
+                                <svg viewBox="0 0 24 24" focusable="false"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v4h-4"/></svg>
+                                <span>The Aqeeq</span>
+                                <strong>Process</strong>
+                            </div>
+                        </div>
+
+                        <span class="cyc-arrow top" aria-hidden="true"></span>
+                        <span class="cyc-arrow right" aria-hidden="true"></span>
+                        <span class="cyc-arrow bottom" aria-hidden="true"></span>
+                        <span class="cyc-arrow left" aria-hidden="true"></span>
+
+                        <div class="lifecycle-step step-1">
+                            <div class="step-head"><span class="step-num">01</span><h3>Consult</h3></div>
                             <p>We understand your space, style preferences, functionality needs and overall project vision.</p>
                         </div>
-                        <div class="process-card">
-                            <div class="process-number">02</div>
-                            <h3>Curate</h3>
+                        <div class="lifecycle-step step-2">
+                            <div class="step-head"><span class="step-num">02</span><h3>Curate</h3></div>
                             <p>Our team selects materials, finishes and décor elements aligned with your budget and aesthetic goals.</p>
                         </div>
-                        <div class="process-card">
-                            <div class="process-number">03</div>
-                            <h3>Execute</h3>
+                        <div class="lifecycle-step step-3">
+                            <div class="step-head"><span class="step-num">03</span><h3>Execute</h3></div>
                             <p>With attention to detail, we manage measurements, customization, delivery and installation seamlessly.</p>
                         </div>
-                        <div class="process-card">
-                            <div class="process-number">04</div>
-                            <h3>Refine</h3>
+                        <div class="lifecycle-step step-4">
+                            <div class="step-head"><span class="step-num">04</span><h3>Refine</h3></div>
                             <p>The final styling touches bring balance, elegance and a complete finish to every interior.</p>
                         </div>
-                        <span class="flow-arrow pos-1" aria-hidden="true"></span>
-                        <span class="flow-arrow pos-2" aria-hidden="true"></span>
-                        <span class="flow-arrow pos-3" aria-hidden="true"></span>
                     </div>
-                    <div class="process-loop" aria-hidden="true"></div>
                 </div>
 
             </div>
