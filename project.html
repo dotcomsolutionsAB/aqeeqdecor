@@ -539,33 +539,50 @@
         }
 
         .meta-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
             border: 1px solid rgba(74,84,48,0.16);
             background: rgba(255,255,255,0.76);
             border-radius: 18px;
-            padding: 18px 16px;
+            padding: 16px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .meta-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(74,84,48,0.32);
+            box-shadow: 0 14px 30px rgba(74,84,48,0.12);
         }
 
         .meta-card span {
-            display: block;
-            color: var(--muted);
-            margin-bottom: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: linear-gradient(140deg, rgba(74,84,48,0.14), rgba(74,84,48,0.06));
+            color: var(--olive);
         }
 
         .meta-card span svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             display: block;
             stroke: currentColor;
-            stroke-width: 1.6;
+            stroke-width: 1.7;
             fill: none;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
 
         .meta-card strong {
+            display: block;
             font-size: 15px;
             color: var(--olive);
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .project-actions {
