@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Luxury Curtains | AQEEQ Decor</title>
+  <title>Zebra Blinds | AQEEQ Decor</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234a5430"/><text x="50%25" y="56%25" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="%23f6f3ee">AD</text></svg>'>
@@ -2015,6 +2015,698 @@
   <link rel="stylesheet" href="css/mobile-services-menu.css">
   <link rel="stylesheet" href="css/site-cta.css?v=20260608-1">
   <link rel="stylesheet" href="css/floating-actions.css?v=20260604-2">
+
+  <!-- Zebra Blinds page styles -->
+  <style>
+    :root {
+      --zb-stripe-sheer: rgba(255, 255, 255, 0.18);
+      --zb-stripe-solid: rgba(118, 111, 102, 0.55);
+    }
+
+    .zb-section {
+      padding: clamp(46px, 6vw, 84px) 0;
+    }
+
+    .zb-section.zb-alt {
+      background: var(--aq-cream);
+    }
+
+    .zb-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(74, 84, 48, 0.12);
+      color: var(--aq-olive);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .zb-section-title {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--aq-text);
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      line-height: 1.05;
+      margin: 14px 0 10px;
+    }
+
+    .zb-section-sub {
+      color: var(--aq-muted);
+      max-width: 640px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .zb-head-center {
+      text-align: center;
+    }
+
+    .zb-head-center .zb-section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ---------- Breadcrumb mini ---------- */
+    .zb-crumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--aq-muted);
+      margin-bottom: 20px;
+    }
+
+    .zb-crumb a {
+      color: var(--aq-muted);
+    }
+
+    .zb-crumb a:hover {
+      color: var(--aq-olive);
+    }
+
+    .zb-crumb span {
+      color: var(--aq-olive);
+      font-weight: 600;
+    }
+
+    /* ---------- Hero ---------- */
+    .zb-hero {
+      background: linear-gradient(160deg, #faf8f3 0%, #f2ede3 100%);
+      padding: clamp(36px, 5vw, 64px) 0 clamp(40px, 5vw, 70px);
+      border-bottom: 1px solid var(--aq-line);
+    }
+
+    .zb-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+    }
+
+    .zb-hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: 0.01em;
+      color: var(--aq-text);
+      margin: 0 0 14px;
+    }
+
+    .zb-hero-lead {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+      color: var(--aq-olive);
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+
+    .zb-hero-text {
+      color: var(--aq-muted);
+      line-height: 1.85;
+      max-width: 520px;
+      margin: 0 0 26px;
+    }
+
+    .zb-feature-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 520px;
+    }
+
+    .zb-feature {
+      text-align: center;
+    }
+
+    .zb-feature-ic {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      border: 1px solid var(--aq-line);
+      box-shadow: 0 10px 26px rgba(35, 30, 24, 0.06);
+      color: var(--aq-olive);
+    }
+
+    .zb-feature-ic svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .zb-feature p {
+      margin: 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--aq-text);
+    }
+
+    /* window mock with zebra blind */
+    .zb-window {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(35, 30, 24, 0.16);
+      border: 10px solid #fff;
+      aspect-ratio: 4 / 4.6;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .zb-blind {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          var(--zb-stripe-solid) 0,
+          var(--zb-stripe-solid) 16px,
+          var(--zb-stripe-sheer) 16px,
+          var(--zb-stripe-sheer) 32px
+        );
+      backdrop-filter: saturate(1.05);
+    }
+
+    .zb-blind-cap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 16px;
+      background: linear-gradient(180deg, #6c6657, #514c40);
+    }
+
+    /* ---------- Filter pills ---------- */
+    .zb-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .zb-pill {
+      appearance: none;
+      border: 1px solid var(--aq-line);
+      background: #fff;
+      color: var(--aq-text);
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .zb-pill:hover {
+      border-color: var(--aq-olive);
+      color: var(--aq-olive);
+    }
+
+    .zb-pill.active {
+      background: var(--aq-olive);
+      border-color: var(--aq-olive);
+      color: #fff;
+    }
+
+    /* ---------- Visualize / comparison ---------- */
+    .zb-visualize-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(26px, 4vw, 52px);
+      align-items: center;
+    }
+
+    .zb-pos-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--aq-text);
+      margin: 26px 0 14px;
+    }
+
+    .zb-pos-row {
+      display: flex;
+      gap: 14px;
+    }
+
+    .zb-pos {
+      flex: 1;
+      border: 1px solid var(--aq-line);
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .zb-pos:hover {
+      border-color: var(--aq-olive);
+    }
+
+    .zb-pos.active {
+      border-color: var(--aq-olive);
+      box-shadow: 0 0 0 2px rgba(74, 84, 48, 0.18);
+    }
+
+    .zb-pos-vis {
+      height: 46px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      background-color: #cdbfa6;
+    }
+
+    .zb-pos-vis.open {
+      background-image: repeating-linear-gradient(to bottom, rgba(90,80,60,0.55) 0 4px, rgba(255,255,255,0.85) 4px 12px);
+    }
+
+    .zb-pos-vis.semi {
+      background-image: repeating-linear-gradient(to bottom, rgba(90,80,60,0.55) 0 8px, rgba(255,255,255,0.7) 8px 16px);
+    }
+
+    .zb-pos-vis.closed {
+      background-image: repeating-linear-gradient(to bottom, rgba(90,80,60,0.7) 0 14px, rgba(120,110,90,0.5) 14px 16px);
+    }
+
+    .zb-pos strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--aq-text);
+    }
+
+    .zb-pos small {
+      color: var(--aq-muted);
+      font-size: 0.72rem;
+    }
+
+    .zb-hint {
+      margin-top: 16px;
+      color: var(--aq-olive);
+      font-size: 0.86rem;
+    }
+
+    .zb-compare {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 16 / 11;
+      box-shadow: 0 30px 70px rgba(35, 30, 24, 0.18);
+      background-size: cover;
+      background-position: center;
+      user-select: none;
+      cursor: ew-resize;
+    }
+
+    .zb-compare-layer {
+      position: absolute;
+      inset: 0;
+    }
+
+    .zb-compare-open {
+      background-image:
+        repeating-linear-gradient(to bottom,
+          rgba(120,110,92,0.42) 0 5px,
+          rgba(255,255,255,0.10) 5px 18px);
+    }
+
+    .zb-compare-closed {
+      background-image:
+        repeating-linear-gradient(to bottom,
+          rgba(96,88,72,0.85) 0 15px,
+          rgba(150,140,120,0.6) 15px 18px);
+      clip-path: inset(0 0 0 50%);
+    }
+
+    .zb-compare-tag {
+      position: absolute;
+      top: 14px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      background: rgba(43, 43, 43, 0.6);
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    .zb-compare-tag.open { left: 14px; }
+    .zb-compare-tag.closed { right: 14px; }
+
+    .zb-compare-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #fff;
+      transform: translateX(-1px);
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    .zb-compare-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      color: var(--aq-olive);
+      font-size: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* ---------- Popular fabrics ---------- */
+    .zb-fabric-wrap {
+      position: relative;
+    }
+
+    .zb-fabric-track {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 6px 2px 14px;
+      scrollbar-width: none;
+    }
+
+    .zb-fabric-track::-webkit-scrollbar { display: none; }
+
+    .zb-fabric {
+      flex: 0 0 auto;
+      width: 150px;
+      border: 1px solid var(--aq-line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .zb-fabric:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(35, 30, 24, 0.1);
+    }
+
+    .zb-fabric.active {
+      border-color: var(--aq-olive);
+      box-shadow: 0 0 0 2px rgba(74, 84, 48, 0.2);
+    }
+
+    .zb-swatch {
+      height: 92px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .zb-fabric strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--aq-text);
+    }
+
+    .zb-fabric small {
+      color: var(--aq-muted);
+      font-size: 0.72rem;
+    }
+
+    .zb-arrow {
+      position: absolute;
+      top: 42%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--aq-line);
+      background: #fff;
+      color: var(--aq-text);
+      font-size: 18px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(35, 30, 24, 0.12);
+    }
+
+    .zb-arrow:hover { color: var(--aq-olive); border-color: var(--aq-olive); }
+    .zb-arrow.prev { left: -10px; }
+    .zb-arrow.next { right: -10px; }
+
+    /* ---------- Light control guide ---------- */
+    .zb-guide-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .zb-guide {
+      text-align: center;
+    }
+
+    .zb-guide-img {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3.4;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 16px 34px rgba(35, 30, 24, 0.1);
+      margin-bottom: 14px;
+    }
+
+    .zb-guide-blind {
+      position: absolute;
+      inset: 0;
+    }
+
+    .zb-guide-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 700;
+      color: var(--aq-text);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .zb-guide-name svg { width: 17px; height: 17px; color: var(--aq-olive); }
+
+    .zb-guide p {
+      margin: 0;
+      color: var(--aq-muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    /* ---------- Rooms / why / cta ---------- */
+    .zb-bottom-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: clamp(20px, 3vw, 34px);
+      align-items: stretch;
+    }
+
+    .zb-card {
+      background: #fff;
+      border: 1px solid var(--aq-line);
+      border-radius: 14px;
+      padding: clamp(22px, 3vw, 32px);
+    }
+
+    .zb-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--aq-text);
+      font-size: 1.7rem;
+      margin: 0 0 6px;
+    }
+
+    .zb-card .zb-card-sub {
+      color: var(--aq-muted);
+      font-size: 0.86rem;
+      margin: 0 0 18px;
+    }
+
+    .zb-room-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .zb-room {
+      border: 1px solid var(--aq-line);
+      border-radius: 10px;
+      padding: 16px 8px;
+      text-align: center;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .zb-room:hover {
+      border-color: var(--aq-olive);
+      background: var(--aq-cream);
+    }
+
+    .zb-room svg { width: 26px; height: 26px; color: var(--aq-olive); margin-bottom: 8px; }
+
+    .zb-room strong { display: block; font-size: 0.8rem; color: var(--aq-text); }
+    .zb-room small { color: var(--aq-muted); font-size: 0.68rem; }
+
+    .zb-why-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .zb-why-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--aq-line);
+      color: var(--aq-text);
+      font-size: 0.9rem;
+    }
+
+    .zb-why-list li:last-child { border-bottom: 0; }
+
+    .zb-check {
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(74, 84, 48, 0.12);
+      color: var(--aq-olive);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+    }
+
+    .zb-cta-card {
+      background: linear-gradient(160deg, #2f281f 0%, #4a5430 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: clamp(24px, 3vw, 34px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .zb-cta-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      margin: 0 0 10px;
+      color: #fff;
+    }
+
+    .zb-cta-card p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .zb-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .zb-cta-btn.solid {
+      background: #d8c7a8;
+      color: #2d2a25;
+    }
+
+    .zb-cta-btn.solid:hover { background: #e6d9c1; }
+
+    .zb-cta-btn.ghost {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      margin-top: 12px;
+    }
+
+    .zb-cta-btn.ghost:hover { background: rgba(255, 255, 255, 0.1); }
+
+    .zb-cta-or {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.78rem;
+      margin: 12px 0 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ---------- Trust strip ---------- */
+    .zb-trust {
+      border-top: 1px solid var(--aq-line);
+      background: #fff;
+    }
+
+    .zb-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      padding: 30px 0;
+    }
+
+    .zb-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .zb-trust-item svg { width: 26px; height: 26px; color: var(--aq-olive); flex: 0 0 auto; }
+    .zb-trust-item strong { display: block; font-size: 0.85rem; color: var(--aq-text); }
+    .zb-trust-item small { color: var(--aq-muted); font-size: 0.74rem; }
+
+    .zb-trust-foot {
+      border-top: 1px solid var(--aq-line);
+      text-align: center;
+      padding: 16px 0;
+      color: var(--aq-muted);
+      font-size: 0.86rem;
+    }
+
+    .zb-trust-foot span { color: var(--aq-olive); font-weight: 600; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 992px) {
+      .zb-hero-grid,
+      .zb-visualize-grid { grid-template-columns: 1fr; }
+      .zb-window { max-width: 420px; margin: 0 auto; }
+      .zb-guide-grid { grid-template-columns: repeat(3, 1fr); }
+      .zb-bottom-grid { grid-template-columns: 1fr; }
+      .zb-trust-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .zb-feature-row { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .zb-guide-grid { grid-template-columns: repeat(2, 1fr); }
+      .zb-room-grid { grid-template-columns: repeat(3, 1fr); }
+      .zb-trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .zb-pos-row { flex-wrap: wrap; }
+    }
+  </style>
+
 </head>
 <body class="about-modern">
   <div class="page-loader" id="pageLoader" aria-hidden="true">
@@ -2110,7 +2802,7 @@
               <ul class="sub-dropdown">
                 <li><a href="service-detail.html?service=window-blinds&category=blinds">Blinds</a></li>
                 <li><a href="service-detail.html?service=window-blinds&category=roller">Roller</a></li>
-                <li><a href="zebra-blinds.html">Zebra</a></li>
+                <li><a href="zebra-blinds.html" class="active">Zebra</a></li>
                 <li><a href="service-detail.html?service=window-blinds&category=vertical">Vertical</a></li>
                 <li><a href="service-detail.html?service=window-blinds&category=roman">Roman</a></li>
                 <li><a href="service-detail.html?service=window-blinds&category=honeycomb">Honeycomb</a></li>
@@ -2144,169 +2836,312 @@
     </div>
   </header>
 
-  <!-- Breadcrumb Section Starts -->
-  <section class="about-breadcrumb">
-    <div class="container about-breadcrumb-inner">
-      <h1>Service Detail</h1>
-      <p>Home / Services / Service Detail</p>
-    </div>
-  </section>
-  <!-- Breadcrumb Section Ends -->
-
   <main>
-  <!-- Service Detail Section Starts -->
-  <section class="service-detail">
-    <div class="container">
-      <div class="aq-detail-hero">
-        <div class="aq-detail-panel service-detail-left">
-          <span class="aq-kicker">Aqeeq Decor Service Detail</span>
-          <div class="service-detail-title">
-            <h2><span class="secondary">Luxury</span> Curtains</h2>
-            <p>Elegant curtain solutions with custom fabric selection, stitching, lining and installation support for refined residential and commercial interiors.</p>
-          </div>
-          <div class="aq-detail-actions">
-            <a href="contact.html" class="aq-detail-btn">Book Consultation</a>
-            <a href="service.html" class="aq-detail-btn-outline">View All Services</a>
-          </div>
-          <div class="service-image">
-            <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Luxury curtains service">
-          </div>
-        </div>
+    <!-- ============ HERO ============ -->
+    <section class="zb-hero">
+      <div class="container">
+        <nav class="zb-crumb" aria-label="Breadcrumb">
+          <a href="index-3.html">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span>Zebra Blinds</span>
+        </nav>
 
-        <aside class="aq-detail-aside">
-          <h3>Designed Around Your Space</h3>
-          <p>Every selection is guided by room scale, light, privacy, finish, and the mood you want to create. Our team helps you move from inspiration to a finished, installation-ready solution.</p>
-          <ul class="aq-service-meta">
-            <li><strong>Scope</strong><span data-service-meta="scope">Fabric, stitching, lining</span></li>
-            <li><strong>Best For</strong><span data-service-meta="bestFor">Homes, offices, suites</span></li>
-            <li><strong>Support</strong><span data-service-meta="support">Selection to installation</span></li>
-          </ul>
-          <a href="tel:+918698725668" class="aq-detail-btn aq-detail-call-btn w-100"><span class="call-icon" aria-hidden="true">☎</span><span>Call +91 86987 25668</span></a>
-        </aside>
-      </div>
+        <div class="zb-hero-grid">
+          <div>
+            <h1 class="zb-hero-title">ZEBRA BLINDS</h1>
+            <p class="zb-hero-lead">Style. Light. Privacy. All in perfect balance.</p>
+            <p class="zb-hero-text">Zebra blinds combine sheer and solid fabric stripes that glide past each other &ndash; giving you complete control over light and privacy.</p>
 
-      <div class="aq-gallery-panel mb-4">
-        <span class="aq-kicker">Visual Inspiration</span>
-        <h3>Explore The Look In Detail</h3>
-        <p>Click any picture to view it clearly. The animated grid gives a quick feel for textures, finishes, proportions, and styling direction.</p>
-        <div class="aq-gallery-grid" aria-label="Service image gallery">
-          <button type="button" class="aq-gallery-item" data-gallery-index="0" aria-label="Open Layered curtain styling in a warm interior">
-            <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Layered curtain styling in a warm interior" loading="lazy" decoding="async">
-          </button>
-          <button type="button" class="aq-gallery-item" data-gallery-index="1" aria-label="Open Curtain and decor material inspiration">
-            <img src="image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg" alt="Curtain and decor material inspiration" loading="lazy" decoding="async">
-          </button>
-          <button type="button" class="aq-gallery-item" data-gallery-index="2" aria-label="Open Aqeeq Decor furnishing showcase">
-            <img src="image/Website Hero Seciton.png" alt="Aqeeq Decor furnishing showcase" loading="lazy" decoding="async">
-          </button>
-          <button type="button" class="aq-gallery-item" data-gallery-index="3" aria-label="Open Soft living room furnishing detail">
-            <img src="image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg" alt="Soft living room furnishing detail" loading="lazy" decoding="async">
-          </button>
-          <button type="button" class="aq-gallery-item" data-gallery-index="4" aria-label="Open Coordinated dining interior finish">
-            <img src="image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg" alt="Coordinated dining interior finish" loading="lazy" decoding="async">
-          </button>
-          <button type="button" class="aq-gallery-item" data-gallery-index="5" aria-label="Open Curtain styling in a bright apartment interior">
-            <img src="image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg" alt="Curtain styling in a bright apartment interior" loading="lazy" decoding="async">
-          </button>
-        </div>
-      </div>
-
-      <!-- <div class="aq-content-grid">
-        <div class="aq-content-panel">
-          <div class="service-overview">
-            <span class="aq-kicker">Service Overview</span>
-            <h3>Curtains Overview</h3>
-            <p>Our curtain service helps you choose the right fabric weight, texture, heading style and finish for every room. From sheer layering to blackout privacy, each solution is planned around light, mood, usage and decor style.</p>
-            <p>We support measurement, product guidance and professional installation so the final result feels polished, functional and tailored to your space.</p>
-          </div>
-
-          <div class="overview-listing">
-            <h4>Product Highlights</h4>
-            <div class="sperator bg-primary mb-3 ms-lg-0" style="width: 40px; height: 2px;"></div>
-            <div class="row gy-3">
-              <div class="col-md-6">
-                <ul>
-                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Sheer, semi-sheer and blackout curtains</li>
-                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Custom stitching and finishing</li>
-                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Premium curtain rods and channels</li>
-                </ul>
+            <div class="zb-feature-row">
+              <div class="zb-feature">
+                <span class="zb-feature-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+                </span>
+                <p>Light Control<br>Your Way</p>
               </div>
-              <div class="col-md-6">
-                <ul>
-                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Layered window styling</li>
-                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Fabric and color consultation</li>
-                  <li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>Professional measurement and installation</li>
-                </ul>
+              <div class="zb-feature">
+                <span class="zb-feature-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="m3 3 18 18"/></svg>
+                </span>
+                <p>Privacy<br>On Demand</p>
+              </div>
+              <div class="zb-feature">
+                <span class="zb-feature-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/></svg>
+                </span>
+                <p>UV Protection<br>&amp; Heat Control</p>
+              </div>
+              <div class="zb-feature">
+                <span class="zb-feature-ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 23.6V2Z"/><path d="M12 2 9.1 8.2l-6.8.7 5 4.6-1.4 6.7L12 17"/></svg>
+                </span>
+                <p>Premium<br>Quality</p>
               </div>
             </div>
           </div>
 
-          <div class="aq-process-grid">
-            <div class="aq-process-card">
-              <span class="aq-process-count">01</span>
-              <h4>Consult</h4>
-              <p>We understand your room, usage, preferred finish, and budget direction.</p>
-            </div>
-            <div class="aq-process-card">
-              <span class="aq-process-count">02</span>
-              <h4>Curate</h4>
-              <p>We shortlist materials, colors, patterns, and practical combinations.</p>
-            </div>
-            <div class="aq-process-card">
-              <span class="aq-process-count">03</span>
-              <h4>Install</h4>
-              <p>We coordinate measurements, finishing details, and final installation.</p>
+          <div>
+            <div class="zb-window" style="background-image:url('image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg');">
+              <div class="zb-blind"></div>
+              <div class="zb-blind-cap"></div>
             </div>
           </div>
-        </div>
-
-        <div class="service-detail-right">
-          <div class="similar-services mb-4">
-            <div class="similar-services-inner">
-              <h4 class="secondary border-bottom pb-3 text-start">Similar Services</h4>
-              <div class="sperator bg-secondary mb-3 ms-0" style="width: 40px; height: 2px; margin-top: -10px;"></div>
-              <ul>
-                <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                  <a href="service-detail.html?service=wallpapers" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Designer Wallpapers</a>
-                </li>
-                <li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3">
-                  <a href="service-detail.html?service=furniture" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Custom Furniture</a>
-                </li>
-                <li class="d-flex align-items-center">
-                  <a href="service-detail.html?service=window-blinds" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>Premium Window Blinds</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </div>
-  </section>
-  <!-- Service Detail Section Ends -->
-
-  <div class="aq-lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview">
-    <div class="aq-lightbox-inner">
-      <button type="button" class="aq-lightbox-close" aria-label="Close image preview">&times;</button>
-      <img src="image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg" alt="Layered curtain styling in a warm interior">
-      <div class="aq-lightbox-caption"></div>
-    </div>
-  </div>
-
-  <section class="about-cta-section">
-    <div class="container">
-      <div class="about-cta-wrap">
-        <span class="about-section-kicker">Transform Your Space with AQEEQ Decor</span>
-        <h2>Looking for premium curtains, blinds, wallpapers, or customized furnishing solutions in Pune?</h2>
-        <p>Visit our studio or schedule a consultation with our experts for personalized recommendations, measurements, and installation support. Experience interiors designed with elegance, comfort, and attention to detail.</p>
-        <div class="about-cta-actions">
-          <a href="https://aqeeqdecor.ongoingsites.xyz/contact.html#" class="about-btn-primary">Book Your Consultation Today</a>
-          <a href="tel:+918698725668" class="about-btn-secondary"><span class="cta-call-icon" aria-hidden="true">☎</span><span>Call +91 86987 25668</span></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ============ FILTER BY COLLECTION ============ -->
+    <section class="zb-section">
+      <div class="container">
+        <span class="zb-eyebrow">Filter By Fabric Collection</span>
+        <h2 class="zb-section-title">Find your perfect fabric</h2>
+        <div class="zb-pills" id="zbPills">
+          <button type="button" class="zb-pill active" data-collection="all">All Collections</button>
+          <button type="button" class="zb-pill" data-collection="sheer">Sheer Elegance</button>
+          <button type="button" class="zb-pill" data-collection="linen">Linen Texture</button>
+          <button type="button" class="zb-pill" data-collection="natural">Natural Weave</button>
+          <button type="button" class="zb-pill" data-collection="blackout">Premium Blackout</button>
+          <button type="button" class="zb-pill" data-collection="filtering">Light Filtering</button>
+          <button type="button" class="zb-pill" data-collection="designer">Designer Collection</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VISUALIZE / COMPARE ============ -->
+    <section class="zb-section zb-alt">
+      <div class="container">
+        <div class="zb-visualize-grid">
+          <div>
+            <span class="zb-eyebrow">Visualize. Adjust. Perfect.</span>
+            <h2 class="zb-section-title">See it in your space</h2>
+            <p class="zb-section-sub">See how different zebra fabrics look in your space. Adjust the position to control light and privacy.</p>
+
+            <p class="zb-pos-title">Position Control</p>
+            <div class="zb-pos-row" id="zbPositions">
+              <button type="button" class="zb-pos" data-pos="100">
+                <span class="zb-pos-vis open"></span>
+                <strong>Open</strong>
+                <small>Max Light</small>
+              </button>
+              <button type="button" class="zb-pos active" data-pos="50">
+                <span class="zb-pos-vis semi"></span>
+                <strong>Semi Open</strong>
+                <small>Balanced</small>
+              </button>
+              <button type="button" class="zb-pos" data-pos="0">
+                <span class="zb-pos-vis closed"></span>
+                <strong>Closed</strong>
+                <small>Max Privacy</small>
+              </button>
+            </div>
+            <p class="zb-hint">Use the slider on the image to see the light control in action.</p>
+          </div>
+
+          <div class="zb-compare" id="zbCompare" style="background-image:url('image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg');">
+            <div class="zb-compare-layer zb-compare-open"></div>
+            <div class="zb-compare-layer zb-compare-closed" id="zbClosed"></div>
+            <span class="zb-compare-tag open">OPEN</span>
+            <span class="zb-compare-tag closed">CLOSED</span>
+            <div class="zb-compare-handle" id="zbHandle">
+              <span class="zb-compare-knob">&#8596;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POPULAR FABRICS ============ -->
+    <section class="zb-section">
+      <div class="container">
+        <span class="zb-eyebrow">Popular Zebra Fabrics</span>
+        <h2 class="zb-section-title">Curated colours &amp; textures</h2>
+
+        <div class="zb-fabric-wrap">
+          <button type="button" class="zb-arrow prev" id="zbPrev" aria-label="Previous fabrics">&#8249;</button>
+          <div class="zb-fabric-track" id="zbFabrics">
+            <button type="button" class="zb-fabric" data-collection="sheer">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#f4f2ee 0 9px,#ffffff 9px 18px);border:1px solid #ece7df;"></span>
+              <strong>Snow White</strong>
+              <small>Sheer Elegance</small>
+            </button>
+            <button type="button" class="zb-fabric" data-collection="filtering">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#efe9dd 0 9px,#fbf7ef 9px 18px);"></span>
+              <strong>Ivory Linen</strong>
+              <small>Light Filtering</small>
+            </button>
+            <button type="button" class="zb-fabric" data-collection="linen">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#ddd0b9 0 9px,#efe6d4 9px 18px);"></span>
+              <strong>Beige Natural</strong>
+              <small>Linen Texture</small>
+            </button>
+            <button type="button" class="zb-fabric active" data-collection="filtering">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#b9bab4 0 9px,#dcdcd6 9px 18px);"></span>
+              <strong>Grey Mist</strong>
+              <small>Light Filtering</small>
+            </button>
+            <button type="button" class="zb-fabric" data-collection="natural">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#c3b59c 0 9px,#d8ccb6 9px 18px);"></span>
+              <strong>Taupe Weave</strong>
+              <small>Natural Weave</small>
+            </button>
+            <button type="button" class="zb-fabric" data-collection="blackout">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#5f615e 0 9px,#7c7e7a 9px 18px);"></span>
+              <strong>Charcoal Grey</strong>
+              <small>Premium Blackout</small>
+            </button>
+            <button type="button" class="zb-fabric" data-collection="designer">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#7d6450 0 9px,#9c8268 9px 18px);"></span>
+              <strong>Mocha Brown</strong>
+              <small>Designer Collection</small>
+            </button>
+            <button type="button" class="zb-fabric" data-collection="blackout">
+              <span class="zb-swatch" style="background:repeating-linear-gradient(to bottom,#23232a 0 9px,#3c3c44 9px 18px);"></span>
+              <strong>Midnight Black</strong>
+              <small>Premium Blackout</small>
+            </button>
+          </div>
+          <button type="button" class="zb-arrow next" id="zbNext" aria-label="Next fabrics">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIGHT CONTROL GUIDE ============ -->
+    <section class="zb-section zb-alt">
+      <div class="container">
+        <div class="zb-head-center">
+          <span class="zb-eyebrow">Light Control Guide</span>
+          <h2 class="zb-section-title">Find the perfect balance for your space</h2>
+        </div>
+
+        <div class="zb-guide-grid" style="margin-top:30px;">
+          <div class="zb-guide">
+            <div class="zb-guide-img" style="background-image:url('image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg');">
+              <span class="zb-guide-blind" style="background-image:repeating-linear-gradient(to bottom,rgba(120,110,92,0.35) 0 4px,rgba(255,255,255,0.05) 4px 16px);"></span>
+            </div>
+            <span class="zb-guide-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>Open (Max Light)</span>
+            <p>Maximum natural light<br>Clear outside view</p>
+          </div>
+          <div class="zb-guide">
+            <div class="zb-guide-img" style="background-image:url('image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg');">
+              <span class="zb-guide-blind" style="background-image:repeating-linear-gradient(to bottom,rgba(120,110,92,0.5) 0 7px,rgba(255,255,255,0.08) 7px 16px);"></span>
+            </div>
+            <span class="zb-guide-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M3 12h2M19 12h2"/></svg>Semi Open</span>
+            <p>Soft light<br>Daytime privacy</p>
+          </div>
+          <div class="zb-guide">
+            <div class="zb-guide-img" style="background-image:url('image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg');">
+              <span class="zb-guide-blind" style="background-image:repeating-linear-gradient(to bottom,rgba(110,100,82,0.6) 0 9px,rgba(200,190,170,0.25) 9px 16px);"></span>
+            </div>
+            <span class="zb-guide-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2"/></svg>Half Open (Balanced)</span>
+            <p>Balanced light &amp; privacy<br>Ideal for everyday</p>
+          </div>
+          <div class="zb-guide">
+            <div class="zb-guide-img" style="background-image:url('image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg');">
+              <span class="zb-guide-blind" style="background-image:repeating-linear-gradient(to bottom,rgba(96,88,72,0.72) 0 12px,rgba(150,140,120,0.4) 12px 16px);"></span>
+            </div>
+            <span class="zb-guide-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M7 8h10M7 16h10"/></svg>Semi Closed</span>
+            <p>Enhanced privacy<br>Minimal light</p>
+          </div>
+          <div class="zb-guide">
+            <div class="zb-guide-img" style="background-image:url('image/bedroom-interior-design-3d-rendering-2021-08-26-18-15-32-utc1.jpg');">
+              <span class="zb-guide-blind" style="background-image:repeating-linear-gradient(to bottom,rgba(74,68,56,0.88) 0 14px,rgba(110,100,84,0.65) 14px 16px);"></span>
+            </div>
+            <span class="zb-guide-name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>Closed (Max Privacy)</span>
+            <p>Complete privacy<br>Minimal light</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ROOMS / WHY / CTA ============ -->
+    <section class="zb-section">
+      <div class="container">
+        <div class="zb-bottom-grid">
+          <div class="zb-card">
+            <h3>Choose By Room</h3>
+            <p class="zb-card-sub">We help you pick the right zebra blind for every space.</p>
+            <div class="zb-room-grid">
+              <div class="zb-room">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v5"/><path d="M2 18h20M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2M5 18v2M19 18v2"/></svg>
+                <strong>Living Room</strong>
+                <small>Balanced Light</small>
+              </div>
+              <div class="zb-room">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-3a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v3"/><path d="M3 18v2M21 18v2M5 12V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/></svg>
+                <strong>Bedroom</strong>
+                <small>Privacy &amp; Comfort</small>
+              </div>
+              <div class="zb-room">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 13h18M9 21v-5h6v5"/></svg>
+                <strong>Office</strong>
+                <small>Glare Control</small>
+              </div>
+              <div class="zb-room">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 20h18M7 11V7M17 11V7M12 11V5"/></svg>
+                <strong>Kids Room</strong>
+                <small>Safe &amp; Stylish</small>
+              </div>
+              <div class="zb-room">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11l1 9M19 11l-1 9M12 3v8M8 5h8"/></svg>
+                <strong>Dining Area</strong>
+                <small>Day &amp; Night Use</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="zb-card">
+            <h3>Why Choose Zebra Blinds?</h3>
+            <ul class="zb-why-list">
+              <li><span class="zb-check">&#10003;</span>Smooth dual-layer design</li>
+              <li><span class="zb-check">&#10003;</span>Easy light &amp; privacy control</li>
+              <li><span class="zb-check">&#10003;</span>Modern &amp; elegant look</li>
+              <li><span class="zb-check">&#10003;</span>Durable and easy to maintain</li>
+              <li><span class="zb-check">&#10003;</span>Perfect for all interiors</li>
+            </ul>
+          </div>
+
+          <div class="zb-cta-card">
+            <h3>Not Sure Which Fabric Suits You?</h3>
+            <p>Get expert advice and see samples in real.</p>
+            <a href="contact.html" class="zb-cta-btn solid">Order Free Samples</a>
+            <p class="zb-cta-or">or</p>
+            <a href="contact.html" class="zb-cta-btn ghost">Book a Free Consultation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="zb-trust">
+      <div class="container">
+        <div class="zb-trust-grid">
+          <div class="zb-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.2 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.2l1.4-6.7-5-4.6 6.8-.7L12 2Z"/></svg>
+            <div><strong>Premium Quality</strong><small>Fabrics</small></div>
+          </div>
+          <div class="zb-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/></svg>
+            <div><strong>Custom Made</strong><small>Perfect Fit</small></div>
+          </div>
+          <div class="zb-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2 8 8M22 10l-6 6M4 14l6 6M2 22l4-1 14-14a2.8 2.8 0 0 0-4-4L2 17l-1 4Z"/></svg>
+            <div><strong>Professional</strong><small>Installation</small></div>
+          </div>
+          <div class="zb-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div><strong>5 Year Warranty</strong><small>Peace of Mind</small></div>
+          </div>
+          <div class="zb-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V6a3 3 0 0 1 6 0M5 11h14l-1 9H6l-1-9Z"/></svg>
+            <div><strong>Easy to Clean</strong><small>Low Maintenance</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="zb-trust-foot">
+        Trusted by Thousands of Happy Homes &nbsp;|&nbsp; <span>Made to Measure. Made for You.</span>
+      </div>
+    </section>
   </main>
-
   <footer>
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -2409,322 +3244,7 @@
   <script src="js/plugin.js"></script>
   <script src="js/main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const servicePages = {
-        curtains: {
-          title: 'Luxury Curtains',
-          titleHtml: '<span class="secondary">Luxury</span> Curtains',
-          intro: 'Elegant curtain solutions with custom fabric selection, stitching, lining and installation support for refined residential and commercial interiors.',
-          image: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg',
-          imageAlt: 'Luxury curtains service',
-          overviewTitle: 'Curtains Overview',
-          paragraphs: [
-            'Our curtain service helps you choose the right fabric weight, texture, heading style and finish for every room. From sheer layering to blackout privacy, each solution is planned around light, mood, usage and decor style.',
-            'We support measurement, product guidance and professional installation so the final result feels polished, functional and tailored to your space.'
-          ],
-          highlights: ['Sheer, semi-sheer and blackout curtains', 'Custom stitching and finishing', 'Premium curtain rods and channels', 'Layered window styling', 'Fabric and color consultation', 'Professional measurement and installation']
-        },
-        wallpapers: {
-          title: 'Designer Wallpapers',
-          titleHtml: 'Designer <span class="secondary">Wallpapers</span>',
-          intro: 'Statement wallpaper selections that bring texture, tone and personality to feature walls, bedrooms, living spaces and commercial interiors.',
-          image: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg',
-          imageAlt: 'Designer wallpapers service',
-          overviewTitle: 'Wallpapers Overview',
-          paragraphs: [
-            'Wallpapers can transform a plain wall into a warm, expressive design feature. We help you select patterns, textures and finishes that complement furniture, lighting and the scale of the room.',
-            'Our team guides you through product suitability, surface preparation and installation requirements for a clean, lasting finish.'
-          ],
-          highlights: ['Textured and patterned wallpapers', 'Feature wall planning', 'Bedroom and living room options', 'Commercial wall finishes', 'Color and material coordination', 'Installation guidance']
-        },
-        furniture: {
-          title: 'Custom Furniture',
-          titleHtml: '<span class="secondary">Custom</span> Furniture',
-          intro: 'Furniture solutions curated for comfort, proportion, durability and visual harmony across homes, offices and hospitality spaces.',
-          image: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg',
-          imageAlt: 'Custom furniture service',
-          overviewTitle: 'Furniture Overview',
-          paragraphs: [
-            'Our custom furniture approach focuses on pieces that fit your space, lifestyle and finish preferences. We help coordinate forms, fabrics, dimensions and details so the room feels complete and practical.',
-            'From sofas and accent chairs to dining, office and bedroom furniture, each selection is guided by comfort, everyday use and a cohesive interior language.'
-          ],
-          highlights: ['Modular furniture systems', 'Office furniture solutions', 'Sofas and accent chairs', 'Dining tables and chairs', 'Beds and bedside tables', 'Pouffee collection']
-        },
-        'window-blinds': {
-          title: 'Premium Window Blinds',
-          titleHtml: 'Premium <span class="secondary">Window Blinds</span>',
-          intro: 'Smart window blind systems for controlled light, privacy and a sleek contemporary finish across homes and workspaces.',
-          image: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg',
-          imageAlt: 'Premium window blinds service',
-          overviewTitle: 'Window Blinds Overview',
-          paragraphs: [
-            'Window blinds offer a clean and practical way to manage light, heat and privacy. We help match the right blind type to the room function, window size and interior style.',
-            'Our range includes modern options for bedrooms, living rooms, offices, balconies and outdoor-facing openings.'
-          ],
-          highlights: ['Roller and zebra blinds', 'Vertical and roman blinds', 'Honeycomb solutions', 'Outdoor blinds', 'PVC options', 'Wooden and aluminium venetian blinds']
-        },
-        mattress: {
-          title: 'Comfort Mattress Collection',
-          titleHtml: 'Comfort <span class="secondary">Mattress</span> Collection',
-          intro: 'Comfort-driven mattress options selected to improve rest while complementing a refined bedroom design.',
-          image: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg',
-          imageAlt: 'Comfort mattress collection service',
-          overviewTitle: 'Mattress Overview',
-          paragraphs: [
-            'A good mattress shapes both sleep quality and the everyday comfort of your bedroom. We help you compare support levels, comfort profiles and sizes based on your lifestyle and room plan.',
-            'The result is a bedroom setup that feels thoughtfully designed, balanced and restful.'
-          ],
-          highlights: ['Comfort and support guidance', 'Bedroom-size planning', 'Premium sleep solutions', 'Soft, medium and firm options', 'Practical product selection', 'Bedroom styling coordination']
-        },
-        floorings: {
-          title: 'Modern Flooring Solutions',
-          titleHtml: 'Modern <span class="secondary">Flooring</span> Solutions',
-          intro: 'Durable flooring systems selected for lifestyle, footfall, maintenance and the visual character of each space.',
-          image: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg',
-          imageAlt: 'Modern flooring solutions service',
-          overviewTitle: 'Flooring Overview',
-          paragraphs: [
-            'Flooring sets the foundation for the entire interior experience. We help you choose finishes that balance durability, warmth, maintenance and design continuity across the property.',
-            'Whether the requirement is residential elegance or commercial performance, our guidance keeps material choice aligned with daily use and long-term value.'
-          ],
-          highlights: ['Wooden flooring', 'PVC flooring', 'Engineered flooring', 'Sports flooring', 'Gym flooring', 'Finish and material guidance']
-        }
-      };
-
-      const serviceMeta = {
-        curtains: {
-          scope: 'Fabric, stitching, lining',
-          bestFor: 'Homes, offices, suites',
-          support: 'Selection to installation'
-        },
-        wallpapers: {
-          scope: 'Texture, pattern, feature walls',
-          bestFor: 'Bedrooms, lounges, offices',
-          support: 'Selection and installation guidance'
-        },
-        furniture: {
-          scope: 'Custom forms and finishes',
-          bestFor: 'Homes and workspaces',
-          support: 'Planning, sizing, coordination'
-        },
-        'window-blinds': {
-          scope: 'Light control and privacy',
-          bestFor: 'Windows, balconies, offices',
-          support: 'Measure, select, install'
-        },
-        mattress: {
-          scope: 'Comfort and support planning',
-          bestFor: 'Bedrooms and suites',
-          support: 'Product guidance'
-        },
-        floorings: {
-          scope: 'Material and finish selection',
-          bestFor: 'Residential and commercial',
-          support: 'Selection to execution'
-        }
-      };
-
-      const galleryImages = {
-        curtains: [
-          { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Layered curtain styling in a warm interior' },
-          { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Curtain and decor material inspiration' },
-          { src: 'image/Website Hero Seciton.png', alt: 'Aqeeq Decor furnishing showcase' },
-          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Soft living room furnishing detail' },
-          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated dining interior finish' },
-          { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Curtain styling in a bright apartment interior' }
-        ],
-        wallpapers: [
-          { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Designer wallpaper and furniture setting' },
-          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Styled open space with wall finish inspiration' },
-          { src: 'image/7.png', alt: 'Aqeeq Decor wallpaper mood image' },
-          { src: 'image/modern-bathroom-interior-design-2022-12-16-11-57-19-utc.jpg', alt: 'Textured modern wall finish' },
-          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Feature wall with refined decor' },
-          { src: 'image/5.png', alt: 'Aqeeq Decor wallpaper design detail' }
-        ],
-        furniture: [
-          { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Custom furniture in a warm interior' },
-          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Living room furniture and soft furnishings' },
-          { src: 'image/6.png', alt: 'Aqeeq Decor furniture showcase' },
-          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Dining furniture composition' },
-          { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Bedroom furniture setting' },
-          { src: 'image/4.png', alt: 'Aqeeq Decor furniture detail showcase' }
-        ],
-        'window-blinds': [
-          { src: 'image/luxury-interior-design-2021-10-21-02-43-57-utc.jpg', alt: 'Window blind styling inspiration' },
-          { src: 'image/8.png', alt: 'Aqeeq Decor window treatment image' },
-          { src: 'image/Website Hero Seciton.png', alt: 'Modern window furnishing showcase' },
-          { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Bright apartment window styling' },
-          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with soft window light' },
-          { src: 'image/2.png', alt: 'Aqeeq Decor window blind finish detail' }
-        ],
-        mattress: [
-          { src: 'image/interior-design-of-a-bedroom-2022-11-16-06-07-23-utc.jpg', alt: 'Comfort mattress in bedroom setting' },
-          { src: 'image/bedroom-interior-design-3d-rendering-2021-08-26-18-15-32-utc1.jpg', alt: 'Bedroom comfort planning' },
-          { src: 'image/vintage-wooden-home-interior-design-2022-12-16-00-19-04-utc.jpg', alt: 'Warm bedroom furnishing mood' },
-          { src: 'image/6.png', alt: 'Aqeeq Decor bedroom product showcase' },
-          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Coordinated interior finish detail' },
-          { src: 'image/1.png', alt: 'Aqeeq Decor mattress and bedroom styling detail' }
-        ],
-        floorings: [
-          { src: 'image/modern-composition-of-dining-room-interior-2022-12-07-04-28-22-utc.jpg', alt: 'Modern flooring and dining room finish' },
-          { src: 'image/interior-design-of-stylish-living-room-2022-12-07-04-16-53-utc.jpg', alt: 'Living room flooring and decor finish' },
-          { src: 'image/apartment-with-pop-of-yellow-2021-08-26-15-43-11-utc.jpg', alt: 'Apartment flooring inspiration' },
-          { src: 'image/7.png', alt: 'Aqeeq Decor flooring showcase' },
-          { src: 'image/interior-design-of-scandinavian-open-space-2022-12-07-04-19-53-utc.jpg', alt: 'Open space with coordinated flooring' },
-          { src: 'image/3.png', alt: 'Aqeeq Decor flooring material detail' }
-        ]
-      };
-
-      const params = new URLSearchParams(window.location.search);
-      const requestedKey = params.get('service') || window.location.hash.replace('#', '');
-      const key = servicePages[requestedKey] ? requestedKey : 'curtains';
-      const selectedService = servicePages[key];
-
-      const allServices = Object.entries(servicePages);
-      const title = document.querySelector('.service-detail-title h2');
-      const intro = document.querySelector('.service-detail-title p');
-      const breadcrumbTitle = document.querySelector('.about-breadcrumb h1');
-      const breadcrumbTrail = document.querySelector('.about-breadcrumb p');
-      const heroImage = document.querySelector('.service-image img');
-      const overviewTitle = document.querySelector('.service-overview h3');
-      const overviewParagraphs = document.querySelectorAll('.service-overview > p');
-      const listingTitle = document.querySelector('.overview-listing h4');
-      const listingRow = document.querySelector('.overview-listing .row');
-      const similarServices = document.querySelector('.similar-services ul');
-      const galleryGrid = document.querySelector('.aq-gallery-grid');
-      const meta = serviceMeta[key] || serviceMeta.curtains;
-      const metaScope = document.querySelector('[data-service-meta="scope"]');
-      const metaBestFor = document.querySelector('[data-service-meta="bestFor"]');
-      const metaSupport = document.querySelector('[data-service-meta="support"]');
-
-      document.title = selectedService.title + ' | AQEEQ Decor';
-
-      if (title) {
-        title.innerHTML = selectedService.titleHtml;
-      }
-
-      if (intro) {
-        intro.textContent = selectedService.intro;
-      }
-
-      if (breadcrumbTitle) {
-        breadcrumbTitle.textContent = selectedService.title;
-      }
-
-      if (breadcrumbTrail) {
-        breadcrumbTrail.textContent = 'Home / Services / ' + selectedService.title;
-      }
-
-      if (heroImage) {
-        heroImage.src = selectedService.image;
-        heroImage.alt = selectedService.imageAlt;
-      }
-
-      if (overviewTitle) {
-        overviewTitle.textContent = selectedService.overviewTitle;
-      }
-
-      if (metaScope) {
-        metaScope.textContent = meta.scope;
-      }
-
-      if (metaBestFor) {
-        metaBestFor.textContent = meta.bestFor;
-      }
-
-      if (metaSupport) {
-        metaSupport.textContent = meta.support;
-      }
-
-      selectedService.paragraphs.forEach(function (paragraph, index) {
-        if (overviewParagraphs[index]) {
-          overviewParagraphs[index].textContent = paragraph;
-        }
-      });
-
-      if (listingTitle) {
-        listingTitle.textContent = 'Product Highlights';
-      }
-
-      if (listingRow) {
-        const midpoint = Math.ceil(selectedService.highlights.length / 2);
-        const highlightColumns = [
-          selectedService.highlights.slice(0, midpoint),
-          selectedService.highlights.slice(midpoint)
-        ];
-
-        listingRow.innerHTML = highlightColumns.map(function (items) {
-          return '<div class="col-md-6"><ul>' + items.map(function (item) {
-            return '<li class="d-flex gap-2 align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-2 mb-2"><i class="fa fa-star-o me-2" aria-hidden="true"></i>' + item + '</li>';
-          }).join('') + '</ul></div>';
-        }).join('');
-      }
-
-      if (similarServices) {
-        similarServices.innerHTML = allServices
-          .filter(function ([serviceKey]) {
-            return serviceKey !== key;
-          })
-          .map(function ([serviceKey, service]) {
-            return '<li class="d-flex align-items-center border-bottom border-dash border-top-0 border-start-0 border-end-0 pb-3 mb-3"><a href="service-detail.html?service=' + serviceKey + '" class="text"><i class="fa fa-check me-3" aria-hidden="true"></i>' + service.title + '</a></li>';
-          })
-          .join('');
-      }
-
-      if (galleryGrid) {
-        const selectedGallery = galleryImages[key] || galleryImages.curtains;
-
-        galleryGrid.innerHTML = selectedGallery.map(function (image, index) {
-          return '<button type="button" class="aq-gallery-item" data-gallery-index="' + index + '" aria-label="Open ' + image.alt + '"><img src="' + image.src + '" alt="' + image.alt + '"></button>';
-        }).join('');
-      }
-
-      const lightbox = document.querySelector('.aq-lightbox');
-      const lightboxImage = document.querySelector('.aq-lightbox img');
-      const lightboxCaption = document.querySelector('.aq-lightbox-caption');
-      const lightboxClose = document.querySelector('.aq-lightbox-close');
-
-      const closeLightbox = function () {
-        if (!lightbox) return;
-        lightbox.classList.remove('is-open');
-        document.body.style.overflow = '';
-      };
-
-      document.querySelectorAll('.aq-gallery-item').forEach(function (item) {
-        item.addEventListener('click', function () {
-          const image = item.querySelector('img');
-          if (!lightbox || !lightboxImage || !image) return;
-
-          lightboxImage.src = image.src;
-          lightboxImage.alt = image.alt;
-
-          if (lightboxCaption) {
-            lightboxCaption.textContent = image.alt;
-          }
-
-          lightbox.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      if (lightboxClose) {
-        lightboxClose.addEventListener('click', closeLightbox);
-      }
-
-      if (lightbox) {
-        lightbox.addEventListener('click', function (event) {
-          if (event.target === lightbox) {
-            closeLightbox();
-          }
-        });
-      }
-
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') {
-          closeLightbox();
-        }
-      });
-
+    document.addEventListener("DOMContentLoaded", function () {
       const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
       const servicesMenu = document.querySelector('.services-menu');
       const childMenuItems = document.querySelectorAll('.services-menu .has-children');
@@ -2814,6 +3334,80 @@
 
         childMenuItems.forEach(function (child) {
           child.classList.remove('open');
+        });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      /* ---- Collection filter pills ---- */
+      var pills = document.querySelectorAll('#zbPills .zb-pill');
+      var fabricCards = document.querySelectorAll('#zbFabrics .zb-fabric');
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          pills.forEach(function (p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          var col = pill.getAttribute('data-collection');
+          fabricCards.forEach(function (card) {
+            var show = col === 'all' || card.getAttribute('data-collection') === col;
+            card.style.display = show ? '' : 'none';
+          });
+        });
+      });
+
+      /* ---- Fabric swatch selection ---- */
+      fabricCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          fabricCards.forEach(function (c) { c.classList.remove('active'); });
+          card.classList.add('active');
+        });
+      });
+
+      /* ---- Fabric carousel arrows ---- */
+      var track = document.getElementById('zbFabrics');
+      var prev = document.getElementById('zbPrev');
+      var next = document.getElementById('zbNext');
+      if (track && prev && next) {
+        prev.addEventListener('click', function () { track.scrollBy({ left: -340, behavior: 'smooth' }); });
+        next.addEventListener('click', function () { track.scrollBy({ left: 340, behavior: 'smooth' }); });
+      }
+
+      /* ---- Comparison slider + position control ---- */
+      var compare = document.getElementById('zbCompare');
+      var handle = document.getElementById('zbHandle');
+      var closed = document.getElementById('zbClosed');
+      var positions = document.querySelectorAll('#zbPositions .zb-pos');
+
+      function setReveal(openPercent) {
+        // openPercent = how much of the OPEN (light) view is shown from the left
+        var p = Math.max(0, Math.min(100, openPercent));
+        if (handle) handle.style.left = p + '%';
+        if (closed) closed.style.clipPath = 'inset(0 0 0 ' + p + '%)';
+      }
+
+      setReveal(50);
+
+      if (compare && handle && closed) {
+        var dragging = false;
+        function moveTo(clientX) {
+          var rect = compare.getBoundingClientRect();
+          var p = ((clientX - rect.left) / rect.width) * 100;
+          setReveal(p);
+          positions.forEach(function (b) { b.classList.remove('active'); });
+        }
+        compare.addEventListener('mousedown', function (e) { dragging = true; moveTo(e.clientX); });
+        window.addEventListener('mousemove', function (e) { if (dragging) moveTo(e.clientX); });
+        window.addEventListener('mouseup', function () { dragging = false; });
+        compare.addEventListener('touchstart', function (e) { dragging = true; moveTo(e.touches[0].clientX); }, { passive: true });
+        compare.addEventListener('touchmove', function (e) { if (dragging) moveTo(e.touches[0].clientX); }, { passive: true });
+        compare.addEventListener('touchend', function () { dragging = false; });
+      }
+
+      positions.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          positions.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          setReveal(parseInt(btn.getAttribute('data-pos'), 10));
         });
       });
     });
